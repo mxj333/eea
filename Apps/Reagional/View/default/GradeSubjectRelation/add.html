@@ -1,0 +1,65 @@
+<include file="Public:header"/>
+<include file="Public:left"/>
+<load href="__MPUBLIC__/Css/add.css"/>
+<eq name="everyModelCss" value="1">
+<load href="__MPUBLIC__/Css/{$Think.controller_name|strtolower}Add.css"/>
+</eq>
+
+<eq name="everyModelJs" value="1">
+<load href="__MPUBLIC__/Js/model/{$Think.controller_name|strtolower}Add.js"/>
+</eq>
+<div id="list" class="margin_t10">
+    <ul class="list_header">
+        <li><span class="title">年级学科管理</span><span class="return">返回</span></li>
+    </ul>
+    <form enctype="multipart/form-data" action="/Reagional/GradeSubjectRelation/add/" method="post">
+        <ul class="list_list">
+            <li class="w460">
+                <div class="row_left">学制：</div>
+                <div class="row_right">
+                    <select name="gsr_school_type">
+                        <volist name="school_type" id="st_name">
+                            <option value="{$key}" <if condition="$vo['gsr_school_type'] eq $key">selected</if>>{$st_name}</option>
+                        </volist>
+                    </select>
+                </div>
+            </li>
+            <li class="w460">
+                <div class="row_left">年级：</div>
+                <div class="row_right">
+                    <select name="gsr_grade">
+                        <volist name="grade" id="g_name">
+                            <option value="{$key}" <if condition="$vo['gsr_grade'] eq $key">selected</if>>{$g_name}</option>
+                        </volist>
+                    </select>
+                </div>
+            </li>
+            <li class="w460">
+                <div class="row_left">学科：</div>
+                <div class="row_right">
+                    <input type="hidden" name="gsr_subject" value="{$vo.gsr_subject}">
+                    <volist name="subject" id="s_name">
+                        <span attr="{$key}" <in name="key" value="$vo['gsr_subject']">class="on"</in>>{$s_name}</span>
+                    </volist>
+                </div>
+            </li>
+            <li class="w460">
+                <div class="row_left">状态：</div>
+                <div class="row_right">
+                    <select name="gsr_status">
+                        <volist name="status" id="s_name">
+                            <option value="{$key}" <if condition="$vo['gsr_status'] eq $key">selected</if>>{$s_name}</option>
+                        </volist>
+                    </select>
+                </div>
+            </li>
+            <li>
+                <span class="row_right">
+                    <input type="hidden" name="gsr_id" value="{$vo.gsr_id}">
+                    <button type="submit" value="" class="save btn">保存</button>
+                </span>
+            </li>
+        </ul>
+    </form>
+</div>
+<include file="Public:footer"/>

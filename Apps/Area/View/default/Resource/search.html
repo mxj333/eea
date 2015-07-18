@@ -1,0 +1,133 @@
+<include file="Public:headerTop"/>
+<include file="Public:headerNav"/>
+<include file="Public:headerSearch"/>
+<include file="Public:headerAdv1"/>
+<include file="Public:headerBottom"/>
+<eq name="everyModelCss" value="1">
+    <load href="__MPUBLIC__/Css/{$Think.controller_name|strtolower}Search.css"/>
+</eq>
+<eq name="everyModelJs" value="1">
+    <load href="__MPUBLIC__/Js/model/{$Think.controller_name|strtolower}Search.js"/>
+</eq>
+	<div class="tree_location"></div>
+    <include file="Resource:tree"/>
+    <div class="resources">
+        <div class="filter">
+            <p>条件筛选</p>
+            <ul class="conditions">
+                <li class="category">
+                    <label>使用类别：</label>
+                    <span>
+                        <a class="on" href="javascript:void(0);">不限</a>
+                        <volist name="res_cate" id="cate_title">
+                            <a attr="{$key}" href="javascript:void(0);">{$cate_title}</a>
+                        </volist>
+                    </span>
+                </li>
+                <if condition="$regionChildren">
+                    <li class="region">
+                        <label>地区：</label>
+                        <span>
+                            <a class="on" href="javascript:void(0);">不限</a>
+                            <volist name="regionChildren" id="region_child">
+                                <a attr="{$key}" href="javascript:void(0);">{$region_child}</a>
+                            </volist>
+                        </span>
+                        <span class="more">更多</span>
+                    </li>
+                </if>
+                <if condition="$time_scope">
+                    <li class="time">
+                        <label>时间：</label>
+                        <span>
+                            <a class="on" href="javascript:void(0);">不限</a>
+                            <volist name="time_scope" id="time_val">
+                                <a attr="{$time_val}" href="javascript:void(0);">{$time_val}</a>
+                            </volist>
+                        </span>
+                        <span class="more">更多</span>
+                    </li>
+                </if>
+            </ul>
+        </div>
+        <div class="resourceList">
+            <div class="sort">
+                <span class="sortTitle">资源列表</span>
+                <span class="sortRule">
+                    <span class="default">默认</span>
+                    <span>上传时间<label attr="1" class="on"></label></span>
+                    <span>评分<label attr="2"></label></span>
+                    <span>下载<label attr="3"></label></span>
+                    <span>评论数<label attr="4"></label></span>
+                    <span>智慧币数量<label attr="5"></label></span>
+                </span>
+                <span class="searchBox">
+                    <form name="search" action="{$search_keywords_link}" method="post">
+                        <input type="text" name="keywords" value="<if condition='$keywords'>{$keywords}</if>" />
+                        <label class="search"><span></span></label>
+                    </form>
+                </span>
+            </div>
+            <ul class="resource">
+                <volist name="resourceList[3]['list']" id="res_info">
+                    <li>
+                        <span class="re_detail">
+                            <a href="{$res_info|getUrlAddress=###, 'detail','resource'}"><img src="{$res_info.res_image}" width="80" height="80" alt="{$res_info.res_title}" /></a>
+                            <span>
+                                <a href="{$res_info|getUrlAddress=###,'detail','resource'}">{$res_info.res_title|getShortTitle=###,25}</a>
+                                <p>简介：{$res_info.res_summary|getShortTitle=###,35}</p>
+                                <span>智慧豆：{$res_info.res_download_points|intval}个</span>
+                                <span>上传时间：{$res_info.res_created|date='Y-m-d',###}</span>
+                                <span>下载量：{$res_info.res_downloads|intval}</span>
+                            </span>
+                        </span>
+                        <span class="re_infor">
+                            <p>{$res_info.res_hits|intval}人阅读</p>
+                            <p class="star">
+                                <for start="0" end="$res_info['score']">
+                                    <img src="__MPUBLIC__/Images/star1.png">
+                                </for>
+                                <for start="0" end="5-$res_info['score']">
+                                    <img src="__MPUBLIC__/Images/star2.png">
+                                </for>
+                                <span>{$res_info.score|intval}分</span>
+                            </p>
+                            <p>({$res_info.res_comment_count|intval}人评价)</p>
+                        </span>
+                    </li>
+                </volist>
+            </ul>
+            <div class="pageBtn">
+                {$resourceList[3]['page']}
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div class="bigAd">
+        <volist name="advertList[12]['list']" id="advertInfo">
+            <a href="{$advertInfo.adv_url}">
+                <img src="{$advertInfo.adv_image}" alt="{$advertInfo.adv_title}" title="{$advertInfo.adv_title}" width="{$advertList[12]['pos_info']['ap_width']}" height="{$advertList[12]['pos_info']['ap_height']}" border="0">
+            </a>
+        </volist>
+    </div>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $.ajax({
+            type : 'POST',
+            url : AREA_MODULE.toLowerCase() + '/index/getAdvert',
+            data : {type:9},
+            dataType : 'json',
+            success : function(data) {
+                $('.newsAd').carouselAd({
+                    'width' : '320px',
+                    'height' : '135px',
+                    'adWidth' : '320px',
+                    'adHeight' : '135px',
+                    'carouselType' : '1',
+                    'data' : data,
+                });
+            }
+        });
+    });
+    </script>
+<include file="Public:footer"/>

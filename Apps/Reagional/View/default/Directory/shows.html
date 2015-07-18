@@ -1,0 +1,47 @@
+<include file="Public:header"/>
+<include file="Public:left"/>
+<load href="__MPUBLIC__/Css/add.css"/>
+<eq name="everyModelJs" value="1">
+<load href="__MPUBLIC__/Js/model/{$Think.controller_name|strtolower}Shows.js"/>
+</eq>
+<div id="list" class="margin_t10">
+    <ul class="list_header">
+        <li><span class="title">{:L('SHOWS')}</span><span class="return">返回</span></li>
+    </ul>
+    <form enctype="multipart/form-data" action="/Reagional/Directory/shows/" method="post">
+        <ul class="list_list">
+            <li style="height:auto;">
+                <div class="row_left">当前目录信息</div>
+                <div class="row_right">
+                    {$tag[4][$vo['d_school_type']]}
+                    {$tag[5][$vo['d_subject']]}
+                    {$tag[6][$vo['d_version']]}
+                    {$tag[7][$vo['d_grade']]}
+                    {$tag[8][$vo['d_semester']]}
+                    {$vo['d_title']}
+                </div>
+            </li>
+            <li style="height:auto;">
+                <div class="row_left">调整到:</div>
+            </li>
+            <li class="w460">
+                <div class="row_left">版本</div>
+                <div class="row_right">
+                    <select name="d_version">
+                        <option value="">请选择</option>
+                        <volist name="version" id="v_id">
+                            <option value="{$key}">{$tag[6][$v_id]}</option>
+                        </volist>
+                    </select>
+                </div>
+            </li>
+            <li>
+                <span class="row_right">
+                    <input type="hidden" name="d_id" value="{$vo.d_id}">
+                    <button type="submit" value="" class="save btn">保存</button>
+                </span>
+            </li>
+        </ul>
+    </form>
+</div>
+<include file="Public:footer"/>

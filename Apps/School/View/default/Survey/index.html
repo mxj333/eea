@@ -1,0 +1,15 @@
+<include file="Public:header"/>
+<eq name="everyModelCss" value="1">
+    <load href="__MPUBLIC__/Css/{$Think.controller_name|strtolower}.css"/>
+</eq>
+<eq name="everyModelJs" value="1">
+    <load href="__MPUBLIC__/Js/model/{$Think.controller_name|strtolower}.js"/>
+</eq>
+    <include file="Survey:left"/>
+    <include file="Survey:rightNav"/>
+        <div class="school">
+            <h3 class="survey_title">学校简介</h3>
+            <p>{$sInfo.s_description}</p>
+        </div>
+    <include file="Survey:rightBottom"/>
+<include file="Public:footer"/>

@@ -1,0 +1,125 @@
+.upload {
+    background: none repeat scroll 0 0 #0181e3;
+    border: 1px solid #006ec3;
+    color: #fff;
+    font-family: "Microsoft YaHei";
+    margin: 8px 15px 0 0;
+    padding: 6px;
+    float:right;
+    border-radius: 3px;
+}
+.table_box{
+    border: 1px solid #ccc;
+    width:860px;
+    margin-top:25px;
+}
+.table_header{
+    line-height:32px;
+    height:32px;
+    border-bottom: 1px solid #ccc;
+    background: none repeat scroll 0 0 #eee;
+}
+.table_box span{
+    display:block;
+    float:left;
+    text-align:center;
+}
+#filelist{
+    height:155px;
+}
+#filelist > div{
+    height:30px;
+    line-height:30px;
+    border-bottom:#ccc dashed 1px;
+}
+#container{
+    border-top: 1px solid #ccc;
+    height: 49px;
+    margin-top: 15px;
+    position: relative;
+}
+#container span{
+    line-height: 48px;
+    margin-left: 15px;
+}
+.fig{
+    width:29px;
+    height:29px;
+    float:right;
+    margin:10px 25px 0px 0px;
+    background:url(../Images/add.png) no-repeat -29px 0px;
+}
+.progress{
+    background:#eee;
+    color:#fff;
+    display:block;
+    line-height:10px;
+    height:10px;
+    text-align:center;
+    width:148px;
+    position:relative;
+    top:10px;
+}
+.bar{
+    background:#0181e3;
+    display:block;
+    height:10px;
+    margin:0px;
+}
+.progress label{
+    bottom:0;
+    left:65px;
+    position:absolute;
+}
+.marg{
+    margin:30px 20px 20px 24px;
+}
+.searchResult{
+    min-height:250px;
+}
+.back{
+    float:right;
+    margin-right:20px;
+}
+.searchList{
+    width:475px;
+}
+.searchBtns{
+    margin-top:20px;
+}
+.searchBtns .searchSave{
+    margin-right:0px;
+}
+.onLabel.on{
+    padding:10px 20px;
+    border-bottom:#ccc solid 1px;
+}
+.onLabel span{
+    display:inline-block;
+    line-height:28px;
+    width:78px;
+    overflow:hidden;
+    border:1px solid #0181e3;
+    color:#333;
+    cursor:pointer;
+    text-align:center;
+    margin:0px 5px;
+    height:28px;
+}
+.subColumn{
+    position:absolute;
+    top:0px;
+    left:0px;
+    background:#0181e3;
+    width:78px;
+    line-height:28px;
+}
+.ellipsis_del {
+    background:url(../Images/opration.png) no-repeat -11px 0px;
+    display:inline-block;
+    width:12px;
+    height:12px;
+}
+.list_list{
+    border-bottom:#ccc dotted 1px;
+}

@@ -1,0 +1,12 @@
+<include file="Public:header"/>
+<include file="Public:left"/>
+<include file="Public:right"/>
+<load href="__MPUBLIC__/Css/list.css"/>
+<eq name="everyModelCss" value="1">
+    <load href="__MPUBLIC__/Css/{$Think.controller_name|strtolower}.css"/>
+</eq>
+<eq name="everyModelJs" value="1">
+    <load href="__MPUBLIC__/Js/model/{$Think.controller_name|strtolower}.js"/>
+</eq>
+{$indexTpl}
+<include file="Public:footer"/>

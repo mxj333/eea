@@ -1,0 +1,61 @@
+.s_wrap{
+    width:1010px;
+}
+.studentList{
+    margin-top:40px;
+}
+.listItem > span,.listItem > a{
+    display:inline-block;
+}
+.listItem > span,.listItem > a{
+    margin:0px 0px 10px 10px;
+    float:left;
+}
+.listItem > span{
+    width:238px;
+    height:145px;
+    border-right:#a8a8a8 solid 1px;
+    border-bottom:#a8a8a8 solid 1px;
+    background:#fff;
+    box-shadow:1px 1px 1px -1px #646464;
+    padding-top:35px;
+}
+.listItem > span span{
+    display:block;
+    font-size:18px;
+    color:#666;
+    font-weight:bold;
+    line-height:25px;
+}
+.listItem > span label{
+    display:block;
+    width:27px;
+    height:23px;
+    background:url(../Images/pics.png) no-repeat -135px -138px;
+    float:right;
+    margin:45px 25px 0px 0px;
+}
+.listItem > a{
+    position:relative;
+    width:180px;
+    height:180px;
+    overflow:hidden;
+}
+.listItem > a span{
+    display:block;
+    height:30px;
+    width:170px;
+    line-height:30px;
+    overflow:hidden;
+    position:absolute;
+    bottom:0px;
+    color:#f2f2f2;
+    padding-left:10px;
+    font-size:14px;
+    background:rgba(0,0,0,0.5);
+    background:#000 \0;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+}
+#dkt_footer{
+    border-top:none;
+}

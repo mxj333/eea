@@ -1,0 +1,32 @@
+#dkt_content{
+    font-family:"宋体";
+    height:750px;
+}
+.app_item{
+    width:249px;
+    height:108px;
+    border-left:#ccc dashed 1px;
+    border-bottom:#ccc dashed 1px;
+    float:left;
+}
+.app_item > a,.itemDetail{
+    margin:20px 0px 0px 10px;
+}
+.itemDetail a:first-child{
+    font-weight:normal;
+    color:#333;
+}
+.itemDetail > p{
+    color:#646464;
+}
+.itemDetail .star,.itemDetail > p{
+    margin-top:12px;
+}
+.itemDetail .star span{
+    color:#ccc;
+    font-size:12px;
+    margin-top:-1px;
+}
+#dkt_footer{
+    margin-top:30px;
+}

@@ -1,0 +1,37 @@
+<include file="Public:header"/>
+<include file="Public:left"/>
+<include file="Public:right"/>
+<load href="__MPUBLIC__/Css/list.css"/>
+<eq name="everyModelCss" value="1">
+    <load href="__MPUBLIC__/Css/{$Think.controller_name|strtolower}.css"/>
+</eq>
+<eq name="everyModelJs" value="1">
+    <load href="__MPUBLIC__/Js/model/{$Think.controller_name|strtolower}.js"/>
+</eq>
+<include file="Article:cate"/>
+<style>
+.article {
+    margin-left:10px;
+    float:left;
+}
+.article #list {
+    width:736px;
+}
+#list ul li{
+    width:726px;
+}
+</style>
+<div class="article">
+    {$indexTpl}
+</div>
+<script>
+function add() {
+    if ($('.captionHighLight').size() == 1 && $('.captionHighLight').next().size() == 0) {
+        location.href = CONTROLLER + '/add/ca_id/' + $('input[name=ca_id]').val();
+    } else {
+        showMessage('请在最底层栏目下添加资讯');
+    }
+}
+
+</script>
+<include file="Public:footer"/>

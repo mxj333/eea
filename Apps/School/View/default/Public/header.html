@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <load href="__PUBLIC__/Js/jquery.js,__MPUBLIC__/Js/common.js"/>
+    <load href="__PUBLIC__/Css/base.css,__MPUBLIC__/Css/common.css"/>
+    <title>{$sInfo.s_title}</title>
+    <script type="text/javascript">
+        var ROOT = '__ROOT__';
+        var APP = '__APP__';
+        var MODULE = '__MODULE__';
+        var ACTION = '__ACTION__';
+        var SELF = '__SELF__';
+        var CONTROLLER = '__CONTROLLER__';
+        var MPUBLIC = '__MPUBLIC__';
+        var PUBLIC = '__PUBLIC__';
+        var SCHOOL_MODULE = '{$school_module}';
+    </script>
+</head>
+<body>
+<div id="dkt_header">
+    <div class="logo_login wrap">
+        <a class="logo" href="javascript:void(0);">
+            <span></span>
+            <label class="foYa font16 color_555">{$sInfo.s_title}</label>
+            <label class="foAr color_999"></label>
+        </a>
+        <div class="login">
+            <div class="no_login">
+                <a href="javascript:void(0);">注册</a>
+                <a href="javascript:void(0);">登录</a>
+            </div>
+            <div class="end_login">
+                <a href="javascript:void(0);">网站导航</a>
+                <a href="javascript:void(0);">个人中心</a>
+                <a class="userName" href="javascript:void(0);">Mr.zheng</a>
+            </div>
+        </div>
+    </div>
+    <div class="h_nav">
+        <ul class="nav wrap">
+            <li><a <if condition="strtolower(CONTROLLER_NAME) eq 'index'">class="on" href="javascript:void(0);"<else/>href="{$info|getUrlAddress=###, 'index', 'index'}"</if>>首页</a></li>
+            <li><a <if condition="strtolower(CONTROLLER_NAME) eq 'survey'">class="on" href="javascript:void(0);"<else/>href="{$info|getUrlAddress=###, 'index', 'survey'}"</if>>学校概况</a></li>
+            <li><a <if condition="strtolower(CONTROLLER_NAME) eq 'notice'">class="on" href="javascript:void(0);"<else/>href="{$info|getUrlAddress=###, 'search', 'notice'}"</if>>通知公告</a></li>
+            <li><a <if condition="strtolower(CONTROLLER_NAME) eq 'resource'">class="on" href="javascript:void(0);"<else/>href="{$info|getUrlAddress=###, 'search', 'resource'}"</if>>校内资源</a></li>
+            <li><a <if condition="strtolower(CONTROLLER_NAME) eq 'article'">class="on" href="javascript:void(0);"<else/>href="{$info|getUrlAddress=###, 'search', 'article'}"</if>>新闻中心</a></li>
+            <li><a <if condition="strtolower(CONTROLLER_NAME) eq 'student'">class="on" href="javascript:void(0);"<else/>href="{$info|getUrlAddress=###, 'index', 'student'}"</if>>学生园地</a></li>
+        </ul>
+    </div>
+</div>
+<div id="dkt_content">

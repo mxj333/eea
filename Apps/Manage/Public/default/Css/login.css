@@ -1,0 +1,39 @@
+body {
+    background-color: #1D3647;
+    background:url('../Images/login_bg.jpg') repeat-x;
+}
+.top {
+    height:42px;
+}
+.content {
+    height:532px;
+}
+.show {
+    float: left;
+    height: 530px;
+    line-height: 530px;
+    text-align: center;
+    width: 49%;
+}
+.login {
+    width:49%;
+    float:left;
+    background:url('../Images/login_content_bg.jpg') no-repeat;
+    height:532px;
+}
+.footer {
+    height:20px;
+}
+#login {
+    margin:180px 0px 0px 30px;
+    font-size:16px;
+    line-height:30px;
+}
+#login input {
+    font-size:16px;
+    height:30px;
+
+}
+#login > div {
+    margin:8px;
+}

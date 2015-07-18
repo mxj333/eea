@@ -1,0 +1,48 @@
+.studentAdd {
+    border: 1px solid #0181e3;
+    margin-bottom: 0;
+    color: #333;
+    cursor: pointer;
+    display: inline-block;
+    line-height: 28px;
+    position: relative;
+    text-align: center;
+    width: 78px;
+}
+.studentAdd span {
+    background: rgba(0, 0, 0, 0) url("../Images/funcBtns.png") no-repeat scroll 0 0;
+    display: block;
+    float: left;
+    height: 15px;
+    margin: 6px -5px 0 15px;
+    width: 15px;
+}
+.student > span {
+    border: 1px solid #ccc;
+    color: #333;
+    cursor: pointer;
+    display: inline-block;
+    line-height: 28px;
+    margin: 0 7px 10px 0;
+    position: relative;
+    text-align: center;
+    width: 78px;
+}
+.student span.hover {
+    background: #f7f7f7 none repeat scroll 0 0;
+}
+.delecte {
+    background: rgba(0, 0, 0, 0) url("../Images/delecte.png") no-repeat scroll 0 0;
+    display: none;
+    height: 13px;
+    position: absolute;
+    right: -7px;
+    top: -7px;
+    width: 13px;
+}
+.student span.hover .delecte{
+    display:block;
+}
+.student span.hover .delecte.on{
+    background: url("../Images/delecte.png") no-repeat -13px 0px;
+}

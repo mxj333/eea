@@ -1,0 +1,155 @@
+<include file="Public:header"/>
+<include file="Public:left"/>
+<script type="text/javascript">
+    var region_title = "{$re_title}";
+    var region_id = "{$re_id}";
+    var chart_width = "{$width}";
+    var knowledge_title = "{$kp_title}";
+    var knowledge_id = "{$kp_id}";
+    var directory_title = "{$d_title}";
+    var directory_id = "{$d_id}";
+</script>
+<eq name="everyModelCss" value="1">
+<load href="__MPUBLIC__/Css/statistics.css"/>
+</eq>
+<eq name="everyModelJs" value="1">
+<load href="__MPUBLIC__/Js/model/resourcestatistics.js"/>
+</eq>
+<div id="list" class="margin_t5">
+        <ul class="list_header">
+            <li>
+                <span class="title">
+                    资源统计
+                </span>
+            </li>
+        </ul>
+        <div class="search margin_t10">
+            <form method="post" action="/Manage/ResourceStatistics/index">
+                <!--<div>
+                    <label>单选</label>
+                    <span>
+                        <input type="radio" name="res_type" value=1 checked/>
+                    </span>
+                    <label>多选</label>
+                    <span>
+                        <input type="radio" name="res_type" value=2 />
+                    </span>
+                </div>
+                <div>
+                    <label>地区</label>
+                    <span class="region_cascade"></span>
+                    <a class="hide region_add" href="javascript:;">添加</a>
+                </div>-->
+                <div>
+                    <label>时间</label>
+                    <span>
+                        <input type="text" onclick="WdatePicker();" name="res_starttime" value="{$res_starttime}">
+                    </span>
+                    <label class="date_line">--</label>
+                    <span>
+                        <input type="text" onclick="WdatePicker();" name="res_endtime" value="{$res_endtime}">
+                    </span>
+                </div>
+                <div class="cascade_condition">
+                    <label>版本</label>
+                    <span>
+                        <select name="ver_id">
+                            <option value="">全部</option>
+                            <volist name="version" id="vertype">
+                                <option value="{$key}" <if condition="$ver_id neq '' && $ver_id eq $key">selected</if>>{$vertype}</option>
+                            </volist>
+                        </select>
+                    </span>
+                    <label>学制</label>
+                    <span>
+                        <select name="st_id">
+                            <option value="">全部</option>
+                            <volist name="school_type" id="stype">
+                                <option value="{$key}" <if condition="$st_id neq '' && $st_id eq $key">selected</if>>{$stype}</option>
+                            </volist>
+                        </select>
+                    </span>
+                    <label>年级</label>
+                    <span>
+                        <select name="grade_id">
+                            <option value="">全部</option>
+                            <volist name="grade" id="gradetype">
+                                <option value="{$key}" <if condition="$grade_id neq '' && $grade_id eq $key">selected</if>>{$gradetype}</option>
+                            </volist>
+                        </select>
+                    </span>
+                    <label>学期</label>
+                    <span>
+                        <select name="sem_id">
+                            <option value="">全部</option>
+                            <volist name="semester" id="semtype">
+                                <option value="{$key}" <if condition="$sem_id neq '' && $sem_id eq $key">selected</if>>{$semtype}</option>
+                            </volist>
+                        </select>
+                    </span>
+                    <label>学科</label>
+                    <span>
+                        <select name="sub_id">
+                            <option value="">全部</option>
+                            <volist name="subject" id="sub">
+                                <option value="{$key}" <if condition="$sub_id neq '' && $sub_id eq $key">selected</if>>{$sub}</option>
+                            </volist>
+                        </select>
+                    </span>
+                </div>
+                <div>
+                    <label>知识点</label>
+                    <span class="knowledge_cascade"></span>
+                </div>
+                <div>
+                    <label>目录</label>
+                    <span class="directory_cascade"></span>
+                </div>
+                <div>
+                    <label>Y轴</label>
+                    <span>
+                        <select name="check_y">
+                            <option value="0">总个数</option>
+                            <option value="1" <if condition="$check_y eq 1">selected</if>>下载量</option>
+                            <option value="2" <if condition="$check_y eq 2">selected</if>>访问量</option>
+                        </select>
+                    </span>
+                    <label>X轴</label>
+                    <span>
+                        <select name="check_x">
+                            <option value="0">使用类型</option>
+                            <option value="1" <if condition="$check_x eq 1">selected</if>>时间</option>
+                            <option value="2" <if condition="$check_x eq 2">selected</if>>来源</option>
+                            <!--<option value="3" <if condition="$check_x eq 3">selected</if>>地区</option>-->
+                            <option value="4" <if condition="$check_x eq 4">selected</if>>学科</option>
+                            <option value="5" <if condition="$check_x eq 5">selected</if>>学制</option>
+                            <option value="6" <if condition="$check_x eq 6">selected</if>>版本</option>
+                            <option value="10" <if condition="$check_x eq 10">selected</if>>年级</option>
+                            <option value="11" <if condition="$check_x eq 11">selected</if>>学期</option>
+                            <option value="7" <if condition="$check_x eq 7">selected</if>>知识点</option>
+                            <option value="8" <if condition="$check_x eq 8">selected</if>>课文目录</option>
+                            <option value="9" <if condition="$check_x eq 9">selected</if>>格式类型</option>
+                        </select>
+                    </span>
+                    <label class="hide time_cascade">类型</label>
+                    <span class="hide time_cascade">
+                        <select name="check_time_type">
+                            <option value="0">自动</option>
+                            <option value="year" <if condition="$check_time_type eq 'year'">selected</if>>年</option>
+                            <option value="month" <if condition="$check_time_type eq 'month'">selected</if>>月</option>
+                            <option value="day" <if condition="$check_time_type eq 'day'">selected</if>>日</option>
+                        </select>
+                    </span>
+                </div>
+                <div>
+                    <input type="submit" class="btn" name="check" value="查询" />
+                    <a class="export btn" href="javascript:;">导出</a>
+                </div>
+            </form>
+        </div>
+        <ul class="list_list">
+            <li class="w460">
+                <div id="my_chart"></div>
+            </li>
+        </ul>
+<include file="Public:footer"/>

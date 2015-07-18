@@ -1,0 +1,24 @@
+<include file="Article:prev"/>
+<load href="/Public/Js/ckplayer6.7/ckplayer.js"/>
+<li class="w460">
+    <div class="row_left">视频：</div>
+    <div class="row_right">
+        <neq name="pic.0.f_savepath" value="">
+        <div id="a1"></div>
+        <script type="text/javascript">
+            var flashvars={
+                f:'{$Think.config.uploads_root_path|substr=1}{$Think.config.article_file_path}{$pic.0.f_savepath}/{$pic.0.f_id}.{$pic.0.f_ext}', //视频地址
+                c:'0',
+                e:'2',//视频结束后的动作，0是调用js函数，1是循环播放，2是暂停播放，3是调用视频推荐列表的插件，4是清除视频流并调用js功能和1差不多
+                p:'1',//视频默认0是暂停，1是播放
+                g:'0',//视频直接g秒开始播放
+                loaded:'loadedHandler'
+            };
+            var video=['{$Think.config.uploads_root_path|substr=1}{$Think.config.article_file_path}{$pic.0.f_savepath}/{$pic.0.f_id}.{$pic.0.f_ext}->video/mp4'];
+            CKobject.embed('/Public/Js/ckplayer6.7/ckplayer.swf','a1','ckplayer_a1','698','508',false,flashvars,video);
+        </script>
+        </neq>
+        <input type="file" name="video">
+    </div>
+</li>
+<include file="Article:back"/>

@@ -1,0 +1,31 @@
+<include file="Public:header"/>
+<include file="Public:left"/>
+<load href="__MPUBLIC__/Css/add.css"/>
+<eq name="everyModelCss" value="1">
+    <load href="__MPUBLIC__/Css/studentResume.css"/>
+</eq>
+<div id="list" class="margin_t10">
+    <ul class="list_header">
+        <li><span class="title">子女展示</span><span class="return">返回</span></li>
+    </ul>
+    <form enctype="multipart/form-data" action="/Schoolback/Parent/resume/" method="post">
+        <ul class="list_list">
+            <foreach name="mr_list" item="mr_info" key="mr_key">
+                <li style="height:auto;">
+                    <label>子女：</label>
+                    <input type="text" name="parent" num="{$mr_key+1}" value="{$mr_info.me_nickname}"/>
+                    <input type="hidden" name="parent_id[]" value="{$mr_info.me_id}"/>
+                    <label>关系：</label>
+                    <select name="mr_type[]">
+                        <foreach name="mr_type" item="mr_name" key="mr_id">
+                            <option value="{$mr_id}" <if condition="$mr_info['mr_type'] eq $mr_id">selected="selected"</if>>{$mr_name}</option>
+                        </foreach>
+                    </select>
+                    <label>手机号：</label>
+                    <input type="text" name="phone" readonly="true" value="{$mr_info.me_phone}"/>
+                </li>
+            </foreach>
+        </ul>
+    </form>
+</div>
+<include file="Public:footer"/>

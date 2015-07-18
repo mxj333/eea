@@ -1,0 +1,19 @@
+.setTeacher{
+    border: 1px solid #ccc;
+    height: 28px;
+    margin: 0 15px 15px 0;
+    width: 148px;
+}
+.setTeacher a{
+    color: #333;
+    display: block;
+    float: left;
+    text-align: center;
+    width: 78px;
+    line-height: 28px;
+}
+.setTeacher a:first-child{
+    background: #0181e3 none repeat scroll 0 0;
+    color: #fff;
+    width: 70px;
+}

@@ -1,0 +1,41 @@
+    <load href="__MPUBLIC__/Css/cover.css"/>
+    <load href="__PUBLIC__/Js/cover.js"/>
+    <div class="lgp_cover">
+        <div class="lgp_box">
+            <div class="lgp_head">
+                <label class="lgp_boxTitle"></label>
+                <span class="lgp_closed"></span>
+            </div>
+            <div class="lgp_detail">
+                <form action="#" method="post">
+                    <div class="remomend_app">
+                        <a href="javascript:void(0);">
+                            <img src="__MPUBLIC__/Tmp/appHead.png" width="60" height="60" border="0" alt="user" />
+                            小样0123
+                        </a>
+                        <div class="appName">
+                            <label>应用名称</label>
+                            <input type="text" name="name" />
+                        </div>
+                        <div class="explain">
+                            <label>推荐说明</label>
+                            <textarea name="explain"></textarea>
+                        </div>
+                        <input class="app_submit" type="button" value="提 交" name="submit" />
+                    </div>
+                <form>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    $(function(){
+        $(".logo_search .my_recommend").click(function(){
+            $(this).cover({
+                "boxWidth" : "475px",
+                "boxHeight" : "308",
+                "boxTitle" : "我要推荐",
+            });
+            $(".remomend_app").css({"display":"block"});
+        });
+    });
+    </script>

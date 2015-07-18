@@ -1,0 +1,101 @@
+#dkt_content{
+    font-family:"宋体";
+}
+.location{
+    border:none;
+    margin-top:0px;
+    width:1000px;
+    height:45px;
+}
+.active_hotNews{
+    width:310px;
+    float:left;
+    margin-right:40px;
+}
+.column{
+    height:36px;
+}
+.column span{
+    display:block;
+    float:left;
+    width:300px;
+    background:#ccc;
+    line-height:36px;
+}
+.column span a{
+    margin-left:20px;
+    color:#333;
+    font-size:18px;
+    font-weight:bold;
+}
+.column .angle{
+    width:10px;
+    height:36px;
+    background:url(../../../Images/Front/School/news_bg.png) no-repeat;
+}
+.item{
+    margin-top:20px;
+    height:80px;
+}
+.item > a,.item div,.newsExpress{
+    float:left;
+}
+.item div{
+    margin-left:10px;
+    width:220px;
+    color:#646464;
+}
+.item div a{
+    font-size:14px;
+    font-weight:bold;
+    margin-bottom:10px;
+    color:#333;
+}
+.item div p{
+    margin-top:10px;
+    line-height:20px;
+}
+.HotNewsList li,.newsList li{
+    line-height:38px;
+    border-bottom:#bebebe dashed 1px;
+}
+.HotNewsList li > span{
+    display:inline-block;
+    width:18px;
+    line-height:18px;
+    background:#eaac03;
+    color:#fff;
+    text-align:center;
+    margin-right:3px;
+}
+.HotNewsList li > a{
+    font-size:14px;
+    color:#333;
+}
+.newsExpress{
+    width:650px;
+}
+.newsExpress .news_title{
+    font-size:18px;
+    border-bottom:#1b629b solid 2px;
+}
+.newsExpress .news_title a{
+    display:block;
+    width:110px;
+    line-height:35px;
+    text-align:center;
+    margin:0px;
+    color:#fff;
+    background:#1b629b;
+}
+.newsList li{
+    line-height:55px;
+    font-size:16px;
+}
+.newsList li > a{
+    color:#333;
+}
+.newsList li > span{
+    float:right;
+    margin-right:-5px;
+}

@@ -1,0 +1,40 @@
+<include file="Public:header"/>
+<load href="/Public/Css/gallery.css"/>
+<eq name="everyModelCss" value="1">
+    <load href="__MPUBLIC__/Css/{$Think.controller_name|strtolower}Shows.css"/>
+</eq>
+<eq name="everyModelJs" value="1">
+    <load href="__MPUBLIC__/Js/model/{$Think.controller_name|strtolower}Shows.js"/>
+</eq>
+    <include file="Survey:left"/>
+    <include file="Survey:rightNav"/>
+        <div class="school">
+            <h3 class="survey_title">校园展示</h3>
+            <div class="schoolShow">
+                <div class="picList">
+                    <div class="DB_imgSet">
+                        <div class="DB_imgWin"><img alt="" title="" src="{$images[0]['fileoriginalpath']}"></div>
+                        <div class="DB_prevBtn"></div>
+                        <div class="DB_nextBtn"></div>
+                    </div>
+                    <div class="DB_thumSet">
+                        <ul class="DB_thumMove">
+                            <volist name="images" id="img_info">
+                                <li>
+                                    <a href="{$img_info.fileoriginalpath}" alt="{$img_info.sf_title}" title="{$img_info.sf_title}">
+                                        <img src="{$img_info.filepath}" width="80" height="80" alt="{$img_info.sf_title}" title="{$img_info.sf_title}" />
+                                        <img class="thumCover" src="__MPUBLIC__/Images/cover.png"/>
+                                    </a>
+                                </li>
+                            </volist>
+                        </ul>
+                        <div class="DB_thumLine"></div>
+                        <div class="DB_prevPageBtn"><img src="__MPUBLIC__/Images/prev_page.png" alt="上一页"/></div>
+                        <div class="DB_nextPageBtn"><img src="__MPUBLIC__/Images/next_page.png" alt="下一页"/></div>
+                    </div>
+                    <div class="pic_abstract">{$images[0]['sf_remark']}</div>
+                </div>
+            </div>
+        </div>
+    <include file="Survey:rightBottom"/>
+<include file="Public:footer"/>

@@ -1,0 +1,254 @@
+<include file="Public:headerTop"/>
+<include file="Public:headerNav"/>
+<include file="Public:headerSearch"/>
+<include file="App:headerNav"/>
+<include file="Public:headerBottom"/>
+<load href="__MPUBLIC__/Css/{$Think.controller_name|strtolower}Common.css"/>
+<load href="__MPUBLIC__/Css/cover.css"/>
+<load href="__MPUBLIC__/Js/model/cover.js"/>
+<eq name="everyModelCss" value="1">
+    <load href="__MPUBLIC__/Css/{$Think.controller_name|strtolower}.css"/>
+</eq>
+<eq name="everyModelJs" value="1">
+    <load href="__MPUBLIC__/Js/model/{$Think.controller_name|strtolower}.js"/>
+</eq>
+    <div class="apps c_left marT20">
+        <div class="recommend_app">
+            <h3>
+                <a href="javascript:void(0);">推荐应用</a>
+                <span class="join"></span>
+                <span class="title_page">
+                    <label class="prevPage"></label>
+                    1/3
+                    <label class="nextPage"></label>
+                </span>
+            </h3>
+            <volist name="recommend" id="rec_info">
+                <a class="a_show" href="{$rec_info|getUrlAddress=###,'detail','app'}">
+                    <img width="60" height="60" border="0" alt="{$rec_info.a_title}" title="{$rec_info.a_title}" src="{$rec_info.a_logo}">
+                    {$rec_info.a_title|getShortTitle=###,10}
+                </a>
+            </volist>
+        </div>
+        <div class="special marT20">
+            <h3 class="app_title">
+                <a href="javascript:void(0);">
+                    <span>
+                        <label></label>
+                        最新专题
+                    </span>
+                </a>
+            </h3>
+            <include file="Adv:specialAdv"/>
+        </div>
+        <div class="newApp marT20">
+            <h3 class="app_title">
+                <a href="javascript:void(0);">
+                    <span>
+                        <label></label>
+                        最新应用
+                    </span>
+                </a>
+            </h3>
+            <volist name="new" id="new_info">
+                <div class="app_item">
+                    <a href="{$new_info|getUrlAddress=###,'detail','app'}"><img width="60" height="60" border="0" alt="{$new_info.a_title}" title="{$new_info.a_title}" src="{$new_info.a_logo}"></a>
+                    <div class="itemDetail">
+                        <a href="{$new_info|getUrlAddress=###,'detail','app'}">{$new_info.a_title|getShortTitle=###,8}</a>
+                        <a class="my_recommend" href="{$new_info.a_link}">进入</a>
+                        <p class="star">
+                            <for start="0" end="$new_info['score']">
+                                <img src="__MPUBLIC__/Images/star1.png">
+                            </for>
+                            <for start="0" end="5-$new_info['score']">
+                                <img src="__MPUBLIC__/Images/star2.png">
+                            </for>
+                            <span>{$new_info.score|intval}分</span>
+                        </p>
+                    </div>
+                    <p>{$new_info.a_description|getShortTitle=###,40}</p>
+                </div>
+            </volist>
+        </div>
+        <div class="appClassify">
+            <h3 class="app_title">
+                <a href="javascript:void(0);">
+                    <span>
+                        <label></label>
+                        应用分类
+                    </span>
+                </a>
+            </h3>
+            <div class="classify">
+                <volist name="category[1][type]" id="cate_info">
+                    <span>
+                        <a class="classBtn" href="javascript:void(0);">{$cate_info}</a>
+                    </span>
+                </volist>
+            </div>
+            <volist name="category[1]['list']" id="app_list">
+                <div class="app_cate">
+                    <volist name="app_list" id="app_info">
+                        <div class="app_item">
+                            <a href="{$app_info|getUrlAddress=###,'detail','app'}"><img width="60" height="60" border="0" alt="{$app_info.a_title}" title="{$app_info.a_title}" src="{$app_info.a_logo}"></a>
+                            <div class="itemDetail">
+                                <a href="{$app_info|getUrlAddress=###,'detail','app'}">{$app_info.a_title|getShortTitle=###,8}</a>
+                                <a class="my_recommend" href="{$app_info.a_link}">进入</a>
+                                <p class="star">
+                                    <for start="0" end="$app_info['score']">
+                                        <img src="__MPUBLIC__/Images/star1.png">
+                                    </for>
+                                    <for start="0" end="5-$app_info['score']">
+                                        <img src="__MPUBLIC__/Images/star2.png">
+                                    </for>
+                                    <span>{$app_info.score|intval}分</span>
+                                </p>
+                            </div>
+                            <p>{$app_info.a_description|getShortTitle=###,40}</p>
+                        </div>
+                    </volist>
+                </div>
+            </volist>
+        </div>
+        <div class="moreClassify">
+            <a class="moreShow classBtn" href="javascript:void(0);">查看更多分类<span class="tip"></span></a>
+            <volist name="cateList" id="cateInfo">
+                <a class="classBtn" href="{$key|getUrlData='ac_id',###|getUrlAddress=###,'search','app'}">{$cateInfo}</a>
+            </volist>
+			<div class="clear"></div>
+        </div>
+    </div>
+    <div class="dynamic_rank c_right marT20">
+        <div class="dynamic">
+            <h3 class="app_title">
+                <a href="javascript:void(0);">
+                    <span>
+                        <label></label>
+                        最新动态
+                    </span>
+                </a>
+            </h3>
+            <ul class="dynamicList">
+                <li class="d_item">
+                    <a href="javascript:void(0);"><img width="60" height="60" border="0" alt="app" src="__MPUBLIC__/Tmp/dhead1.jpg"></a>
+                    <div class="d_detail">
+                        <p>
+                            <a class="userName" href="javascript:void(0);">小豆豆</a>
+                            <span>刚刚</span>
+                        </p>
+                        <p>推荐了
+                            <a class="d_recommend" href="javascript:void(0);">评测网</a>
+                        </p>
+                    </div>
+                </li>
+                <li class="d_item">
+                    <a href="javascript:void(0);"><img width="60" height="60" border="0" alt="app" src="__MPUBLIC__/Tmp/dhead2.jpg"></a>
+                    <div class="d_detail">
+                        <p>
+                            <a class="userName" href="javascript:void(0);">小豆豆</a>
+                            <span>刚刚</span>
+                        </p>
+                        <p>推荐了
+                            <a class="d_recommend" href="javascript:void(0);">评测网</a>
+                        </p>
+                    </div>
+                </li>
+                <li class="d_item">
+                    <a href="javascript:void(0);"><img width="60" height="60" border="0" alt="app" src="__MPUBLIC__/Tmp/dhead3.jpg"></a>
+                    <div class="d_detail">
+                        <p>
+                            <a class="userName" href="javascript:void(0);">小豆豆</a>
+                            <span>刚刚</span>
+                        </p>
+                        <p>推荐了
+                            <a class="d_recommend" href="javascript:void(0);">评测网</a>
+                        </p>
+                    </div>
+                </li>
+                <li class="d_item">
+                    <a href="javascript:void(0);"><img width="60" height="60" border="0" alt="app" src="__MPUBLIC__/Tmp/dhead4.jpg"></a>
+                    <div class="d_detail">
+                        <p>
+                            <a class="userName" href="javascript:void(0);">小豆豆</a>
+                            <span>刚刚</span>
+                        </p>
+                        <p>推荐了
+                            <a class="d_recommend" href="javascript:void(0);">评测网</a>
+                        </p>
+                    </div>
+                </li>
+                <li class="d_item">
+                    <a href="javascript:void(0);"><img width="60" height="60" border="0" alt="app" src="__MPUBLIC__/Tmp/dhead1.jpg"></a>
+                    <div class="d_detail">
+                        <p>
+                            <a class="userName" href="javascript:void(0);">小豆豆</a>
+                            <span>刚刚</span>
+                        </p>
+                        <p>推荐了
+                            <a class="d_recommend" href="javascript:void(0);">评测网</a>
+                        </p>
+                    </div>
+                </li>
+            </ul>
+            <include file="Adv:rightAdv4"/>
+        </div>
+        <div class="rank marT20">
+            <h3 class="app_title">
+                <a href="javascript:void(0);">
+                    <span>
+                        <label></label>
+                        推荐排行
+                    </span>
+                </a>
+            </h3>
+            <ul>
+                <volist name="rank" id="rank_info">
+                    <li class="rank_item">
+                        <span <if condition="$key lt 3">class="firstThree"</if>>{$key+1}</span>
+                        <div class="rankShow">
+                            {$rank_info.a_title|getShortTitle=###,8}
+                            <span>1563人推荐</span>
+                        </div>
+                        <div class="rankDetail">
+                            <a href="{$rank_info|getUrlAddress=###,'detail','app'}"><img width="60" height="60" border="0" alt="{$rank_info.a_title}" title="{$rank_info.a_title}" src="{$rank_info.a_logo}"></a>
+                            <div>
+                                <a class="classBtn" href="javascript:void(0);">免费下载</a>
+                                <p>{$rank_info.ac_title}</p>
+                                <p>1563人推荐</p>
+                            </div>
+                        </div>
+                    </li>
+                </volist>
+            </ul>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <include file="Adv:footerAdv3"/>
+    <div class="lgp_cover">
+        <div class="lgp_box">
+            <div class="lgp_head">
+                <label class="lgp_boxTitle"></label>
+                <span class="lgp_closed"></span>
+            </div>
+            <div class="lgp_detail">
+                <form action="#" method="post">
+                    <div class="remomend_app">
+                        <a href="javascript:void(0);">
+                            <img src="__MPUBLIC__/Tmp/appHead.png" width="60" height="60" border="0" alt="user" />
+                            小样0123
+                        </a>
+                        <div class="appName">
+                            <label>应用名称</label>
+                            <input type="text" name="name" />
+                        </div>
+                        <div class="explain">
+                            <label>推荐说明</label>
+                            <textarea name="explain"></textarea>
+                        </div>
+                        <input class="app_submit" type="button" value="提 交" name="submit" />
+                    </div>
+                <form>
+            </div>
+        </div>
+    </div>
+<include file="Public:footer"/>

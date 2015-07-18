@@ -1,0 +1,20 @@
+        <div class="headlines">
+            <div class="titleDiv"><h2 class="title size320"><span>头条推荐</span></h2></div>
+            <volist name="recommend" id="recommend_info">
+                <div class="item">
+                    <a href="{$recommend_info|getUrlAddress=###, 'detail', 'article'}">
+                        <img width="80" height="80" src="{$recommend_info.art_cover}" alt="{$recommend_info.art_title}" title="{$recommend_info.art_title}">
+                    </a>
+                    <div class="item_detail ellipsis">
+                        <a href="{$recommend_info|getUrlAddress=###, 'detail', 'article'}">{$recommend_info.art_title|getShortTitle=###,15}</a>
+                        <p>
+                            <span class="item_count">{$recommend_info.art_hits|intval}</span>
+                            人气 / 
+                            <span class="item_count">{$recommend_info.art_comment_count|intval}</span>
+                            评论
+                        </p>
+                        <p class="date">{$recommend_info.art_designated_published|date='Y-m-d',###}</p>
+                    </div>
+                </div>
+            </volist>
+        </div>

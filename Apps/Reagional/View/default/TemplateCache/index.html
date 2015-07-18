@@ -1,0 +1,72 @@
+<include file="Public:header"/>
+<include file="Public:left"/>
+<include file="Public:right"/>
+<load href="__MPUBLIC__/Css/list.css"/>
+<eq name="everyModelCss" value="1">
+<load href="__MPUBLIC__/Css/{$Think.controller_name|strtolower}.css"/>
+</eq>
+<script type="text/javascript">
+function mode(mode){
+   var mode = mode || 'on';
+    $('.list_list input').each(function(){
+        switch(mode){
+            case 'on':
+                this.checked = true;
+                break;
+            case 'off':
+                this.checked = false;
+                break;
+            case 'toggle':
+                this.checked = !this.checked;
+                break;
+        }
+    });
+};
+
+function check(){
+
+    if ($('.cache_select input:checked').length == 0) {
+        alert('请选择');
+        return false;
+    }
+}
+
+$(function(){
+
+    $(".checkall").click(function(){
+        mode('on');
+    });
+
+    $(".checkoff").click(function(){
+        mode('off')
+    });
+
+    $(".uncheck").click(function(){
+        mode('toggle')
+    });
+});
+</script>
+<style>
+.tools{
+    height:0px;
+}
+</style>
+<div class="tools">
+</div>
+<div class="clear"></div>
+<div id="list" class="margin_t10">
+    <form enctype="multipart/form-data" action="/Reagional/TemplateCache/edit/" method="post">
+        <ul class="list_list">
+            <li>
+                <span class="row_left">前台模板缓存</span>
+                <span class="row_right"><input type="checkbox" value="Reagional" name="type[]"/></span>
+            </li>
+            <li>
+                <span class="row_right">
+                <button type="submit" value="" class="save btn">清除</button>
+                </span>
+            </li>
+        </ul>
+    </form>
+</div>
+<include file="Public:footer"/>

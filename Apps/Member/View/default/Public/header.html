@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <load href="__PUBLIC__/Js/jquery.js,__MPUBLIC__/Js/common.js"/>
+    <load href="__PUBLIC__/Css/base.css,__MPUBLIC__/Css/common.css"/>
+    <title>{$sInfo.s_title}</title>
+    <script type="text/javascript">
+        var ROOT = '__ROOT__';
+        var APP = '__APP__';
+        var MODULE = '__MODULE__';
+        var ACTION = '__ACTION__';
+        var SELF = '__SELF__';
+        var CONTROLLER = '__CONTROLLER__';
+        var MPUBLIC = '__MPUBLIC__';
+        var PUBLIC = '__PUBLIC__';
+    </script>
+</head>
+<body>
+<div id="dkt_header">
+    <div class="logo_search">
+        <div class="wrap">
+            <a class="logo" href="javascript:void(0);">
+                <img src="{$sInfo.s_logo}" width="216" height="195" border="0" alt="logo" />
+            </a>
+            <div class="fastKeys">
+                <a href="javascript:void(0);">登录</a>
+                <a href="javascript:void(0);">注册</a>
+                <a href="javascript:void(0);">网站网址</a>
+            </div>
+            <!-- <div class="searchBox">
+                <input type="text" value="">
+                <label class="search"><span></span></label>
+            </div> -->
+        </div>
+    </div>
+    <div class="hNav">
+        <div class="wrap">
+            <ul>
+                <li >
+                    <label></label>
+                    <a href="/index.php/school/Index/index/s_id/{$sInfo.s_id}">学校首页</a>
+                </li>
+                <li>
+                    <label></label>
+                    <a href="/index.php/school/Index/intr/s_id/{$sInfo.s_id}">学校概况<span></span></a>
+                    <ul class="subNav">
+                        <li>
+                            <a href="/index.php/school/Index/intr/s_id/{$sInfo.s_id}">学校介绍</a>
+                        </li>
+                        <li>
+                            <a href="/index.php/school/Index/style/s_id/{$sInfo.s_id}">学校风采</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">集体领导</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">名师风采</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">联系我们</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <label></label>
+                    <a href="/index.php/school/News/index/s_id/{$sInfo.s_id}">资讯中心<span></span></a>
+                </li>
+                <li>
+                    <label></label>
+                    <a href="/index.php/school/Resource/index/s_id/{$sInfo.s_id}">校内资源<span></span></a>
+                </li>
+                <li>
+                    <label></label>
+                    <a href="javascript:void(0);">教学研究<span></span></a>
+                </li>
+                <li>
+                    <label></label>
+                    <a href="javascript:void(0);">学生园地<span></span></a>
+                    <label class="rightLine"></label>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

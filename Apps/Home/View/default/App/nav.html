@@ -1,0 +1,7 @@
+    <!--内容导航开始-->
+    <ul class="mainNav">
+        <li><a <if condition="ACTION_NAME eq 'index'">href="javascript:void(0);" class="on"<else/>href="{$info|getUrlAddress=###, 'index', 'app'}"</if>>应用首页</a></li>
+        <volist name="cateList" id="cate_info">
+            <li><a href="{$cate_info|getUrlAddress=###, 'search', 'app'}" <if condition="$cate_info['ac_id'] eq $ac_id">class="on"</if>>{$cate_info.ac_title}</a></li>
+        </volist>
+    </ul>

@@ -1,0 +1,162 @@
+.rightContent{
+    height:1100px;
+    font-family:"宋体";
+}
+.total{
+    height:60px;
+    border-bottom:#d0d1d2 solid 1px;
+}
+.total li{
+    display:inline-block;
+    margin:5px 0px 0px -5px;
+    height:50px;
+    width:233px;
+    border-left:#d0d1d2 solid 1px;
+}
+.total li:first-child{
+    border:none;
+}
+.total li a,.total li a label{
+    display:block;
+}
+.total li a{
+    width:150px;
+    height:30px;
+    margin-top:10px;
+}
+.total li a > label,.total li a > span,.total li a > img{
+    float:left;
+}
+.total li a > label{
+    width:14px;
+    height:14px;
+    margin-right:5px;
+    background:url(../Images/pics.png) no-repeat -77px 0px;
+}
+.total li a > span{
+    color:#6a7980;
+    line-height:18px;
+    margin-right:10px;
+}
+.total .resourceTotal a > label{
+    width:12px;
+    background:url(../Images/pics.png) no-repeat -91px 0px;
+}
+.total .resourceTotal a > span{
+    color:#6c97a7;
+}
+.total .appTotal a > label{
+    width:12px;
+    background:url(../Images/pics.png) no-repeat -103px 0px;
+}
+.total .appTotal a > span{
+    color:#779148;
+}
+.total .classTotal a > label{
+    width:12px;
+    background:url(../Images/pics.png) no-repeat -115px 0px;
+}
+.total .classTotal a > span{
+    color:#7d88b6;
+}
+.cartogram{
+    width:443px;
+    height:310px;
+    border:#d1d1d1 solid 1px;
+    float:left;
+    margin:15px 0px 0px 20px;
+}
+.cartogram .category{
+    line-height:39px;
+    margin-bottom:15px;
+}
+.pieChart .school_title label{
+    width:20px;
+    height:20px;
+    background:url(../Images/pic1.png) no-repeat;
+}
+.chart{
+    height:258px;
+    text-align:center;
+}
+.pieChart .chart{
+    width:288px;
+    float:left;
+}
+.pieChart .express{
+    width:154px;
+    border-left:#d1d1d1 solid 1px;
+    height:258px;
+    float:left;
+}
+.express p{
+    line-height:20px;
+    color:#333;
+    margin:15px 0px 0px 20px;
+}
+.express p span{
+    display:block;
+    float:left;
+}
+.express p > span{
+    width:20px;
+    height:20px;
+    margin-right:10px;
+    border:#8ce0e2 solid 1px;
+}
+.express p > span span{
+    width:14px;
+    height:14px;
+    background:#8ce0e2;
+    margin:3px;
+}
+.express .ex_2 > span{
+    border-color:#80c2f2;
+}
+.express .ex_2 > span span{
+    background:#80c2f2;
+}
+.express .ex_3 > span{
+    border-color:#ab95d5;
+}
+.express .ex_3 > span span{
+    background:#ab95d5;
+}
+.express .ex_4 > span{
+    border-color:#f7ab6f;
+}
+.express .ex_4 > span span{
+    background:#f7ab6f;
+}
+.columnChart{
+    position:relative;
+}
+.columnChart .school_title label{
+    width:24px;
+    height:24px;
+    margin-top:5px;
+    background:url(../Images/pic6.png) no-repeat;
+}
+.columnChart .chart{
+    width:443px;
+}
+.columnChart .express{
+    width:154px;
+    border-left:#e8e8e8 solid 1px;
+    border-bottom:#e8e8e8 solid 1px;
+    padding:1px 0px 15px 0px;
+    position:absolute;
+    top:40px;
+    right:0px;
+    background:rgba(255,255,255,0.5);
+}
+.columnInfor{
+    float:right;
+}
+.columnInfor a{
+    color:#333;
+    margin-right:15px;
+}
+.columnInfor a:hover{
+    color:#0181e3;
+}

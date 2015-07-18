@@ -1,0 +1,86 @@
+.userImport{
+    color:#333;
+    font-family:"Microsoft YaHei";
+    height:600px;
+}
+.ready,.data,.upload{
+    margin:20px;
+}
+.promt{
+    font-size:14px;
+    line-height:22px;
+}
+.promt span{
+    display:block;
+    float:left;
+    width:20px;
+    height:20px;
+    border:#0181e3 solid 1px;
+    border-radius:20px;
+    text-align:center;
+    margin-right:15px;
+    line-height:20px;
+}
+.promt span,.detail a{
+    color:#0181e3;
+}
+.detail{
+    padding-left:37px;
+    margin-top:5px;
+}
+.upload form{
+    margin:10px 0px 0px 37px;
+    position:relative;
+}
+.textBox{
+    width:188px;
+    height:28px;
+    border:#ccc solid 1px;
+    padding-left:10px;
+    color:#333;
+}
+.file{
+    height:25px;
+    filter:alpha(opacity:0);
+    opacity:0;
+    width:270px;
+    position:absolute;
+    top:2px;
+    left:0px;
+}
+.uploadBtn{
+    width:67px;
+    height:25px;
+    border:#006ec3 solid 1px;
+    background:#0181e3;
+    color:#fff;
+    border-radius:3px;
+    margin-right:6px;
+    font-family:"Microsoft YaHei";
+}
+.message{
+    color:#646464;
+    font-family:"宋体";
+}
+.notice{
+    color:#ebc356;
+    font-family:"宋体";
+    position:absolute;
+    left:415px;
+    top:9px;
+}
+/*确定与取消*/
+.btns{
+    margin:30px 0px 0px 0px;
+}
+.btns a{
+    display:inline-block;
+    width:78px;
+    line-height:28px;
+    border:#0181e3 solid 1px;
+    text-align:center;
+    font-size:14px;
+    color:#fff;
+    background:#0181e3;
+    margin-right:15px;
+}

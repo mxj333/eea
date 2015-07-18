@@ -1,0 +1,69 @@
+<include file="Public:header"/>
+<include file="Public:left"/>
+<eq name="everyModelJs" value="1">
+<load href="__MPUBLIC__/Js/model/{$Think.controller_name|strtolower}.js"/>
+</eq>
+<style>
+.fl{float:left;}
+select{height:25px;}
+.userDb{color:blue;}
+.querybox{margin:8px;line-height:25px;}
+.databaseBox{margin-bottom:5px;}
+.tableSqlBox{height:200px;}
+.tables{width:150px;height:200px;margin-right:10px;}
+.sql{width:480px;height:150px;overflow:auto;line-height:155%;margin-right:10px;border:1px solid #ccc;}
+.lists{margin-top:5px;}
+.tableAction{width:65px;}
+.tableAction span, .lists{border: 1px solid #c6c7c9;border-radius: 5px;cursor: pointer;display: block;float: left;font-size: 12px;height:26px;line-height: 26px;margin-right: 10px;text-align: center;width: 66px;}
+.tableAction span.on, .lists:hover{background:#00a0e8;color:#fff;}
+</style>
+<div class="tools margin_t5">
+    <a class="add" attr="createDatabase">建库</a>
+    <a class="shows" attr="database">查库</a>
+    <a class="dels" attr="database">删库</a>
+    <!--a class="del">导入</a>
+    <a class="del">导出</a>
+    <a class="del">清空</a>
+    <a class="del">高级</a>
+    <a class="del">历史</a-->
+</div>
+<div class="clear"></div>
+<div id="list" class="margin_t5">
+    <ul class="list_header">
+        <li><span class="title">当前数据库<u class="useDb">{$Think.session.useDb}</u></span></li>
+    </ul>
+    <div class="querybox">
+        <div class="databaseBox">
+            在数据库
+            <select class="databases">
+                <volist name="dbs" id="db">
+                    <neq name="db.Database" value="information_schema">
+                        <option value="{$db.Database}" <eq name="db.Database" value="$selectDb">selected</eq>>{$db.Database}</option>
+                    </neq>
+                </volist>
+            </select>
+            中执行SQL语句（<span style="color:orange">请慎用</span>）
+        </div>
+        <div class="tableSqlBox">
+            <div class="fl">
+                <select class="tables" size="12"></select>
+            </div>
+            <div class="fl" style="width:480px;">
+                <textarea class="fl sql"></textarea>
+                <span class="lists">执行</span>
+            </div>
+            <div class="fl tableAction">
+                <!--span class="searchTable">查询</span>
+                <span>结构</span>
+                <span>优化</span>
+                <span>检查</span>
+                <span>分析</span>
+                <span>修复</span>
+                <span>状态</span-->
+            </div>
+        </div>
+    </div>
+    <div class="dataBox">
+    </div>
+</div>
+<include file="Public:footer"/>

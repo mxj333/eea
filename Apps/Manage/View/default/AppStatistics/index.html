@@ -1,0 +1,80 @@
+<include file="Public:header"/>
+<include file="Public:left"/>
+<script type="text/javascript">
+    var chart_width = "{$width}";
+</script>
+<eq name="everyModelCss" value="1">
+<load href="__MPUBLIC__/Css/statistics.css"/>
+</eq>
+<eq name="everyModelJs" value="1">
+<load href="__MPUBLIC__/Js/model/appstatistics.js"/>
+</eq>
+<div id="list" class="margin_t5">
+        <ul class="list_header">
+            <li>
+                <span class="title">
+                    应用统计
+                </span>
+            </li>
+        </ul>
+        <div class="search">
+            <form method="post" action="/Manage/AppStatistics/index">
+                <div>
+                    <label>类型</label>
+                    <span>
+                        <select name="ac_id">
+                            <option value="">全部</option>
+                            <volist name="ac_list" id="ac_title">
+                                <option value="{$key}" <if condition="$ac_id eq $key">selected</if>>{$ac_title}</option>
+                            </volist>
+                        </select>
+                    </span>
+                </div>
+                <div>
+                    <label>时间</label>
+                    <span>
+                        <input type="text" onclick="WdatePicker();" name="starttime" value="{$starttime}">
+                    </span>
+                    <label class="date_line">--</label>
+                    <span>
+                        <input type="text" onclick="WdatePicker();" name="endtime" value="{$endtime}">
+                    </span>
+                </div>
+                <div>
+                    <label>Y轴</label>
+                    <span>
+                        <select name="check_y">
+                            <option value="0">总个数</option>
+                            <option value="1" <if condition="$check_y eq 1">selected</if>>访问量</option>
+                        </select>
+                    </span>
+                    <label>X轴</label>
+                    <span>
+                        <select name="check_x">
+                            <option value="0">类型</option>
+                            <option value="1" <if condition="$check_x eq 1">selected</if>>时间</option>
+                            <option value="2" <if condition="$check_x eq 2">selected</if>>区域类型</option>
+                        </select>
+                    </span>
+                    <label class="hide time_cascade">类型</label>
+                    <span class="hide time_cascade">
+                        <select name="check_time_type">
+                            <option value="0">自动</option>
+                            <option value="year" <if condition="$check_time_type eq 'year'">selected</if>>年</option>
+                            <option value="month" <if condition="$check_time_type eq 'month'">selected</if>>月</option>
+                            <option value="day" <if condition="$check_time_type eq 'day'">selected</if>>日</option>
+                        </select>
+                    </span>
+                </div>
+                <div>
+                    <input type="submit" class="btn" name="check" value="查询" />
+                    <a class="export btn" href="javascript:;">导出</a>
+                </div>
+            </form>
+        </div>
+        <ul class="list_list">
+            <li class="w460">
+                <div id="my_chart"></div>
+            </li>
+        </ul>
+<include file="Public:footer"/>

@@ -1,0 +1,160 @@
+.products{
+    width:780px;
+}
+.appPic,.appInfor,.app_down span,.downBtn a,.qrCode > img{
+    float:left;
+}
+.appPic{
+    margin:10px 60px 0px 0px;
+}
+.appInfor{
+    margin-top:10px;
+    width:540px;
+    color:#333;
+}
+.appInfor .app_name{
+    font-size:30px;
+}
+.app_comment{
+    height:30px;
+    margin:20px 0px 30px 0px;
+}
+.app_comment span{
+    font-size:20px;
+    float:left;
+}
+.appInfor span label{
+    display:block;
+    width:25px;
+    height:27px;
+    margin-right:10px;
+    float:left;
+    background:url(../Images/app_1.png) no-repeat;
+}
+.app_comment .comment{
+    margin:0px 50px;
+}
+.app_comment .comment label{
+    background:url(../Images/app_2.png) no-repeat;
+}
+.app_star img{
+    float:left;
+    margin-top:3px;
+}
+.app_down{
+    clear:both;
+    line-height:40px;
+}
+.downBtn a{
+    display:inline-block;
+    width:120px;
+    line-height:40px;
+    border:#e57700 solid 1px;
+    color:#fff;
+    font-size:16px;
+    border-radius:4px;
+    text-align:center;
+    background:url(../Images/appbg.png) repeat-x;
+    margin-right:15px;
+}
+.qrCode{
+    margin-left:25px;
+    position:relative;
+}
+.qrCode > img{
+    margin-right:10px;
+}
+.bgCode{
+    position:absolute;
+    display:none;
+    left:-95px;
+    top:60px;
+    width:220px;
+    height:220px;
+    border:#ccc solid 1px;
+    background:#fff;
+    text-align:center;
+}
+.bgCode span{
+    display:block;
+    position:absolute;
+    top:-18px;
+    left:95px;
+    width:40px;
+    height:18px;
+    background:url(../Images/code_tip.png) no-repeat;
+}
+.bgCode img{
+    margin-top:20px;
+}
+.app_down .share{
+    float:right;
+    margin-right:15px;
+}
+.app_down .share label{
+    width:14px;
+    height:18px;
+    margin:12px 5px 0px 0px;
+    background:url(../Images/share.png) no-repeat;
+}
+.education{
+    height:233px;
+}
+.introduction{
+    font-family:"宋体";
+}
+.contentNav li.on{
+    border-top:2px solid #ff8400;
+}
+.introduction .report{
+    float:right;
+    margin-right:15px;
+    color:#ff8400;
+    cursor:pointer;
+}
+.introduction > p{
+    color:#646464;
+    margin-top:10px;
+}
+.introduction .cue{
+    display:inline-block;
+    width:50px;
+}
+.introduction > p > span{
+    display:inline-block;
+    width:100px;
+    margin-right:100px;
+}
+.abstract{
+    border-bottom:#ccc solid 1px;
+}
+.appPics .btn span{
+    display:block;
+    width:10px;
+    height:15px;
+    margin-top:90px;
+}
+.appPics .btn .prevBtn{
+    background:url(../Images/app_4.png) no-repeat;
+    float:left;
+}
+.appPics .btn .nextBtn{
+    background:url(../Images/app_3.png) no-repeat;
+    float:right;
+}
+.appPicList li{
+    margin:0px -1px 0px 5px;
+    width:180px;
+    height:180px;
+}
+.evaluation .downBtn{
+    float:right;
+}
+.evaluation .downBtn a{
+    width:80px;
+    line-height:28px;
+    margin:5px 10px 0px 0px;
+    color:#fff;
+    font-size:14px;
+    padding:0px;
+}

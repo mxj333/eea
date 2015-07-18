@@ -1,0 +1,10 @@
+    <div class="wrap marT20">
+        <div class="survey_menu">
+            <ul>
+                <li>学校概况</li>
+                <li><a <if condition="strtolower(ACTION_NAME) eq 'index'">class="on" href="javascript:void(0);"<else/>href="{$info|getUrlAddress=###, 'index', 'survey'}"</if>>学校简介</a></li>
+                <li><a <if condition="strtolower(ACTION_NAME) eq 'leader'">class="on" href="javascript:void(0);"<else/>href="{$info|getUrlAddress=###, 'leader', 'survey'}"</if>>学校领导</a></li>
+                <li><a <if condition="strtolower(ACTION_NAME) eq 'organization'">class="on" href="javascript:void(0);"<else/>href="{$info|getUrlAddress=###, 'organization', 'survey'}"</if>>组织机构</a></li>
+                <li><a <if condition="strtolower(ACTION_NAME) eq 'shows'">class="on" href="javascript:void(0);"<else/>href="{$info|getUrlAddress=###, 'shows', 'survey'}"</if>>校园展示</a></li>
+            </ul>
+        </div>

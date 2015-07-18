@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <load href="__PUBLIC__/Js/jquery.js"/>
+    <load href="__MPUBLIC__/Css/public.css,__MPUBLIC__/Css/login.css"/>
+    <title>学校{$Think.config.web_title}</title>
+</head>
+<body>
+    <div class="top">
+    </div>
+    <div class="content">
+        <div class="show">
+            <img src="/Uploads/Config/web_logo.png" />
+        </div>
+        <div class="login">
+            <form id="login" method="post">
+                学校{$Think.config.web_title}
+                <div>
+                    账号：<input type="text" name="me_account"/>
+                </div>
+                <div>
+                    密码：<input type="password" name="me_password" onkeydown="keydown(event)"/>
+                </div>
+                <eq name="verifyed" value="1">
+                    <div>
+                        验证：<input type="text" name="me_verify" onkeydown="keydown(event)"/>
+                        <img id="verifyImg" src="__URL__/verify/" onclick="fleshVerify()" alt="点击刷新验证码">
+                    </div>
+                </eq>
+                <input class="submit" type="button" value="登录"/>
+            </form>
+        </div>
+    </div>
+    <div class="footer">
+
+    </div>
+    <script>
+        //重载验证码
+        function fleshVerify(){
+            $("#verifyImg").attr('src', "__URL__/verify/"+ Math.random());
+        }
+
+        $(function(){
+            $('input[name=me_account]').focus();
+
+            //表单验证
+            $('.submit').click(function(){
+
+                var account = $('input[name=me_account]').val();
+                var password = $('input[name=me_password]').val();
+                if ($('input[name=me_verify]')) {
+                    var verify = $('input[name=me_verify]').val();
+                }
+
+                // TO DO 验证
+                $.post('__URL__/checkLogin', $("#login").serialize(), function(json) {
+                    if (json.status == 1) {
+                        location.href = "__MODULE__";
+                    }
+                }, 'json')
+            });
+        })
+
+        // 判断回车
+        function keydown(e){
+            var e = e || event;
+            if (e.keyCode==13) {
+                $('.submit').click();
+            }
+        }
+
+    </script>
+</body>
+</html>

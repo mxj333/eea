@@ -1,0 +1,27 @@
+<include file="Public:header"/>
+<include file="Public:left"/>
+<include file="Article:cate"/>
+<script src="/Public/Js/date/WdatePicker.js" language="javascript"></script>
+<style>
+.article {
+    margin-left:10px;
+    float:left;
+}
+.article #list {
+    width:590px;
+}
+</style>
+<div class="article">
+    {$indexTpl}
+</div>
+<script>
+function add() {
+    if ($('.captionHighLight').size() == 1 && $('.captionHighLight').next().size() == 0) {
+        location.href = CONTROLLER + '/add/ca_id/' + $('input[name=ca_id]').val();
+    } else {
+        showMessage('请在最底层栏目下添加文章');
+    }
+}
+
+</script>
+<include file="Public:footer"/>

@@ -1,0 +1,45 @@
+<include file="Public:header"/>
+<include file="Public:left"/>
+<load href="__MPUBLIC__/Css/add.css"/>
+<eq name="everyModelCss" value="1">
+<load href="__MPUBLIC__/Css/{$Think.controller_name|strtolower}User.css"/>
+</eq>
+<eq name="everyModelJs" value="1">
+<load href="__MPUBLIC__/Js/model/{$Think.controller_name|strtolower}User.js"/>
+</eq>
+<div id="list" class="margin_t10">
+    <ul class="list_header">
+        <li><span class="title">班级学生设置</span><span class="return">返回</span></li>
+    </ul>
+    <form enctype="multipart/form-data" action="/Schoolback/Class/user/" method="post">
+        <ul class="list_list">
+            <li style="height:auto;">
+                <div class="row_left">学校名称：</div>
+                <div class="row_right">
+                    <span attr="{$vo.s_id}">{$vo.s_title}</span>
+                </div>
+            </li>
+            <li style="height:auto;">
+                <div class="row_left">班级名称：</div>
+                <div class="row_right">
+                    <span>{$vo.c_title}</span>
+                </div>
+            </li>
+            <li class="w460">
+                <div class="row_left">学生设置：</div>
+                <span class="row_right">
+                    <a href="javascript:void(0)" attr="{$vo.c_id}" class="studentAdd"><span></span>新增</a>
+                </span>
+            </li>
+            <li class="w460">
+                <div class="row_left"></div>
+                <div class="row_right student">
+                    <volist name="student_list" id="student_name">
+                        <span attr="{$key}">{$student_name}<span class="delecte"></span></span>
+                    </volist>
+                </div>
+            </li>
+        </ul>
+    </form>
+</div>
+<include file="Public:footer"/>

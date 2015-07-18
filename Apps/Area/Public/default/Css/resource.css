@@ -1,0 +1,226 @@
+#dkt_header .headTop{
+    border-top-color:#820f28;
+}
+#dkt_header ul > li > a > span{
+    background-image:url(../Images/tip1.png);
+}
+#dkt_header .headTop ul > li > a.on,#dkt_header .headTop ul > li > a:hover{
+    color:#820f28;
+}
+.logo_search{
+    margin:25px auto 20px auto;
+}
+.logo span{
+    background-image:url(../Images/hat.png);
+    width:52px;
+}
+.search{
+    background:#820f28;
+}
+.adAbstract{
+    background:#f4e7cd;
+    text-align:center;
+}
+.adAbstract a{
+    font-size:20px;
+    color:#333;
+    line-height:55px;
+}
+.adAbstract p{
+    width:620px;
+    text-align:left;
+    color:#646464;
+    line-height:20px;
+}
+.carouselText{
+    position:absolute;
+    bottom:10px;
+    right:20px;
+}
+.carouselText span{
+    display:inline-block;
+    border:#ccc solid 1px;
+    width:20px;
+    line-height:20px;
+    margin-right:5px;
+    text-align:center;
+    background:#fff;
+    cursor:pointer;
+}
+.carouselText span.on{
+    color:#fff;
+    background:#820f28;
+}
+.ad_item{
+    font-family:"宋体";
+}
+.ad_item a{
+    color:#333;
+    font-size:16px;
+    display:inline-block;
+    width:315px;
+}
+.ad_item a:first-child{
+    margin-right:20px;
+}
+.ad_item a span{
+    display:block;
+    float:left;
+    width:6px;
+    height:6px;
+    border-radius:6px;
+    background:#ccc;
+    margin:5px 10px 0px 0px;
+}
+.itemShow div a{
+    display: block;
+    font-size:16px;
+    font-weight:normal;
+    height:20px;
+}
+.item > a{
+    margin-top:5px;
+    height:18px;
+}
+.c_right,.item{
+    font-family:"Microsoft YaHei";
+}
+.contentNav li.on{
+    border-top:2px solid #820f28;
+}
+.contentNav li{
+    border-right:#ccc solid 1px;
+    float:left;
+}
+.contentNav li a {
+    padding:0px 13px;
+}
+.contents li a:hover{
+    color:#820f28;
+}
+.re_item{
+    height:180px;
+}
+.re_item > a,.re_item div{
+    float:left;
+    margin-right:20px;
+}
+.re_item div{
+    margin-right:0px;
+    width:460px;
+}
+.re_item div a{
+    font-size:20px;
+    font-weight:bold;
+    line-height:40px;
+    color:#333;
+}
+.re_item div p{
+    line-height:20px;
+    margin:6px 0px 25px 0px;
+    color:#646464;
+}
+.re_item div > span{
+    float:left;
+    margin-right:50px;
+}
+.itemDown span{
+    margin-right:40px;
+}
+.hotNewList li{
+    padding-bottom:20px;
+    border-bottom:#f4e7cd solid 1px;
+}
+.hotNewList li a{
+    color:#646464;
+    line-height:20px;
+}
+.hotNewList li a h4{
+    color:#333;
+    display:block;
+    font-size:20px;
+    font-weight:normal;
+    height:28px;
+    line-height:30px;
+    margin:10px 0px;
+    overflow:hidden;
+    width:320px;
+}
+.rankItem{
+    margin-top:15px;
+}
+.rankItem .itemShow{
+    width:316px;
+    height:111px;
+    border:#c3b497 solid 1px;
+    background:#f4e7cd;
+    display:none;
+    overflow:hidden;
+}
+.rankItem .rankNum{
+    font-size:14px;
+    font-style:italic;
+    float:left;
+    margin:0px 22px 0px 12px;
+}
+.rankItem .firstRank{
+    display:inline-block;
+    width:30px;
+    height:19px;
+    color:#fff;
+    padding-left:2px;
+    margin-right:5px;
+    background:url(../Images/rank.png) no-repeat;
+}
+.rankItem .itemShow .rankNum{
+    margin-top:48px;
+}
+.rankItem .itemShow > a,.rankItem .itemShow div{
+    margin-top:15px;
+}
+.rankItem .itemShow div{
+    width:180px;
+    margin-right:0px;
+    color:#333;
+}
+.rankItem .itemShow div a{
+    color:#333;
+    width:184px;
+}
+.rankItem .itemShow div p{
+    margin-top:2px;
+}
+.resources{
+    margin-bottom:10px;
+    overflow:hidden;
+}
+.push_resource{
+    height:270px;
+    overflow:hidden;
+    width:50000px;
+    position:relative;
+}
+.push_resource .re_title{
+    width:660px;
+    margin-left:0px;
+}
+.push_resource .item{
+    position:absolute;
+    width:330px;
+    position:absolute;
+}
+.contents{
+    height:460px;
+}
+.contents li{
+    width:90px;
+}
+.testPapers .item{
+    margin-bottom:20px;
+}
+.rank{
+    height:460px;
+}
+.qualityCourse > a{
+    display:block;
+}

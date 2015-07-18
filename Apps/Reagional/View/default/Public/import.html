@@ -1,0 +1,36 @@
+<include file="Public:header"/>
+<include file="Public:left"/>
+<include file="Public:right"/>
+<load href="__MPUBLIC__/Css/import.css"/>
+<load href="__MPUBLIC__/Js/import.js"/>
+<eq name="everyModelCss" value="1">
+    <load href="__MPUBLIC__/Css/{$Think.controller_name|strtolower}.css"/>
+</eq>
+<eq name="everyModelJs" value="1">
+    <load href="__MPUBLIC__/Js/model/{$Think.controller_name|strtolower}.js"/>
+</eq>
+<div class="userImport management">
+    <div class="ready">
+        <p class="promt"><span>1</span>准备</p>
+        <p class="detail">点击下载{$template_name}：<a href="{$template_url}">{$template_name}</a></p>
+    </div>
+    <div class="data">
+        <p class="promt"><span>2</span>录入数据</p>
+        <p class="detail">如有疑问请参照：<a href="{$example_url}">{$example_name}</a></p>
+    </div>
+    <div class="upload">
+        <p class="promt"><span>3</span>上传</p>
+        <p class="detail">每次最大上传{:C('IMPORT_EXCEL_MAX_NUMBER')}行</p>
+        <form action="/{$Think.module_name}/{$Think.controller_name}/add" method="post" enctype="multipart/form-data">
+            <input class="textBox" type="text" />
+            <button class="uploadBtn" type="button">上传</button>
+            <span class="message">未上传文件...</span>
+            <input class="file" type="file" name="file" />
+            <span class="notice">注意：只允许上传xls文件.</span>
+            <div class="btns">
+                <a href="javascript:void(0);" type="button">确定</a>
+            </div>
+        </form>
+    </div>
+</div>
+<include file="Public:footer"/>

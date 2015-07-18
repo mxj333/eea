@@ -1,0 +1,176 @@
+<include file="Public:header"/>
+<eq name="everyModelCss" value="1">
+    <load href="__MPUBLIC__/Css/{$Think.controller_name|strtolower}Detail.css"/>
+</eq>
+<eq name="everyModelJs" value="1">
+    <load href="__MPUBLIC__/Js/model/{$Think.controller_name|strtolower}Detail.js"/>
+</eq>
+<load href="__PUBLIC__/Js/carouselAd.js"/>
+    <div class="wrap marT20">
+        <div class="newsDetail c_left">
+            <div class="location">
+                <label></label>
+                <a href="{$info|getUrlAddress=###, 'index', 'index'}">首页</a>/
+                <a href="javascript:void(0);">新闻</a>/
+                <a href="{$info|getUrlAddress=###, 'search', 'article'}">列表</a>/
+                <a href="javascript:void(0);">正文</a>
+            </div>
+            <div class="detail marT20">
+                <div class="d_title">
+                    <h1>{$vo['article']['art_title']|getShortTitle=###,30}</h1>
+                    <div>
+                        <span>{$vo['article']['art_designated_published']|date='Y年m月d日',###}</span>
+                        <span class="count">
+                            <a href="javascript:void(0);">收藏本文</a>
+                            &nbsp;&nbsp;评论：<span>{$vo['article']['art_comment_count']|intval}</span>次
+                        </span>
+                        <span class="share">
+                            <span>分享：</span>
+                            <a href="javascript:void(0);">个人中心</a>
+                        </span>
+                    </div>
+                </div>
+                <div class="video">
+                    <!-- 视频播放1 -->
+                    <include file="Article:mp4"/>
+
+                    <!-- 视频播放2 -->
+                    <include file="Article:media"/>
+
+                    <!-- 视频播放3 -->
+                    <include file="Article:real"/>
+                </div>
+            </div>
+            <div class="d_total">
+                <span class="d_praise">
+                    <span></span>赞（0）
+                </span>
+                <span class="line"></span>
+                <span class="d_comment">
+                    <span></span>评论（{$vo['article']['art_comment_count']|intval}）
+                </span>
+            </div>
+            <div class="commentArea">
+                <form action="#" method="post">
+                    <div class="inputArea marT20">
+                        <div class="inputBox">
+                            <label><a href="javascript:void(0);"><img src="__MPUBLIC__/Tmp/rate_head3.jpg" width="60" height="60" border="0" alt="" /></a></label>
+                            <textarea></textarea>
+                        </div>
+                        <div class="inputBtn">
+                            <span>文明上网理性发言</span>
+                            <label class="mySubmit"><input type="button" value="发表" /></label>
+                            <label class="myForward"><input type="button" value="" /><span></span></label>
+                            <label class="myPraise"><input type="button" value="" /><span></span></label>
+                            <label class="myCollect on"><input type="button" value="" /><span></span></label>
+                            <label class="myStep"><input type="button" value="" /><span></span></label>
+                        </div>
+                    </div>
+                    <div class="commentLists">
+                        <div class="comment_cate">
+                            <a class="on" href="javascript:void(0);">热门</a>
+                            <a href="javascript:void(0);">时间</a>
+                        </div>
+                        <ul class="comment_list ">
+                            <li>
+                                <a href="javascript:void(0);">
+                                    <img src="__MPUBLIC__/Tmp/re_rate1.jpg" width="60" height="60" border="0" alt="" />
+                                </a>
+                                <div class="comment_detail">
+                                    <a href="javascript:void(0);">希望在先</a>
+                                    <span>4个小时前</span>
+                                    <p>此地，部队面临着许多现实困难。部队领导连提了三</p>
+                                    <p>
+                                        <span><label></label>(0)</span>
+                                        <span><label></label>回复(0)</span>
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);">
+                                    <img src="__MPUBLIC__/Tmp/re_rate2.jpg" width="60" height="60" border="0" alt="" />
+                                </a>
+                                <div class="comment_detail">
+                                    <a href="javascript:void(0);">希望在先</a>
+                                    <span>4个小时前</span>
+                                    <p>此地，部队面临着许多现实困难。部队领导连提了三</p>
+                                    <p>
+                                        <span><label></label>(0)</span>
+                                        <span><label></label>回复(0)</span>
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);">
+                                    <img src="__MPUBLIC__/Tmp/rate_head2.jpg" width="60" height="60" border="0" alt="" />
+                                </a>
+                                <div class="comment_detail">
+                                    <a href="javascript:void(0);">希望在先</a>
+                                    <span>4个小时前</span>
+                                    <p>此地，部队面临着许多现实困难。部队领导连提了三</p>
+                                    <p>
+                                        <span><label></label>(0)</span>
+                                        <span><label></label>回复(0)</span>
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="others c_right">
+            <div class="PicNews item">
+                <h3 class="c_title">
+                    <span>图说</span>
+                    <label>Pictures</label>
+                </h3>
+                <div class="picShow"></div>
+                <volist name="picList" id="pic_info">
+                    <div class="picItem">
+                        <a href="{$pic_info|getUrlAddress=###, 'detail', 'article'}">
+                            <img src="{$pic_info.art_cover}" width="80" height="80" border="0" alt="{$pic_info.art_title}" title="{$pic_info.art_title}" />
+                        </a>
+                        <div><a class="" href="{$pic_info|getUrlAddress=###, 'detail', 'article'}">{$pic_info.art_title|getShortTitle=###,25}</a></div>
+                    </div>
+                </volist>
+            </div>
+            <div class="visualAngle item">
+                <h3 class="c_title">
+                    <span>视角</span>
+                    <label>Video</label>
+                </h3>
+                <volist name="videoList" id="video_info">
+                    <div class="visualItem">
+                        <a href="{$video_info|getUrlAddress=###, 'detail', 'article'}">
+                            <img src="{$video_info.art_cover}" width="80" height="80" border="0" alt="{$video_info.art_title}" title="{$video_info.art_title}" />
+                        </a>
+                        <div class="item_r">
+                            <a href="{$video_info|getUrlAddress=###, 'detail', 'article'}">{$video_info.art_title|getShortTitle=###,10}</a>
+                            <p>{$video_info.art_summary|getShortTitle=###,32}</p>
+                        </div>
+                    </div>
+                </volist>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+<script type="text/javascript">
+    
+    // 图说
+    $(".picShow").carouselAd({
+        'width' : '263px',
+        'height' : '185px',
+        'adWidth':'180px',
+        'adHeight' : '180px',
+        'carouselType' : '1',
+        'isAdAbstract' : true,
+        'adAbstractH' : '30px',
+        'adAbstractW' : '180px',
+        'isTextNum' :false,
+        'isHaveBtn' : true,
+        'isCarousel' : false,
+        'data' : {$picShows}
+    });
+</script>
+<include file="Public:footer"/>

@@ -1,0 +1,52 @@
+<include file="Public:header"/>
+<include file="Public:left"/>
+<style>
+.databases{float:left;}
+</style>
+<div id="list" class="margin_t10">
+    <ul class="list_header">
+        <li><span class="title">复制数据表</span><span class="return">返回</span></li>
+    </ul>
+    <form enctype="multipart/form-data" action="/{$Think.MODULE_NAME}/{$Think.CONTROLLER_NAME}/add" method="post">
+        <ul class="list_list">
+            <li>
+                <div class="row_left">复制到：</div>
+                <div class="row_right">
+                    <select class="databases" name="dbName">
+                        <volist name="dbs" id="db">
+                            <neq name="db.Database" value="information_schema">
+                                <option value="{$db.Database}" <eq name="db.Database" value="$selectDb">selected</eq>>{$db.Database}</option>
+                            </neq>
+                        </volist>
+                    </select>
+                    <input style="height:25px;margin-top:5px;" type="text" value="{$tableName}" name="tableName">
+                </div>
+            </li>
+            <li>
+                <div class="row_left">复制选项：</div>
+                <div class="row_right">
+                    <span><input type="radio" name="option" value="0" checked>只结构</span></span><input type="radio" name="option" value="1">结构和数据</span>
+                </div>
+            </li>
+            <li>
+                <span class="row_right">
+                    <input type="hidden" name="attr" value="table">
+                    <input type="hidden" name="action" value="copy">
+                    <input type="hidden" name="sourceTable" value="{$tableName}">
+                    <button type="submit" value="" class="save btn">保存</button>
+                </span>
+            </li>
+        </ul>
+    </form>
+</div>
+<script type="text/javascript">
+<!--
+    $(function() {
+        $('.return').click(function() {
+            location.href = CONTROLLER + '/shows/attr/database';
+        })
+
+    })
+//-->
+</script>
+<include file="Public:footer"/>

@@ -1,0 +1,6 @@
+    <ul class="hMainNav wrap">
+        <li><a href="{$cate_info|getUrlAddress=###,'index','article'}" <if condition="ACTION_NAME eq 'index'">class="on"</if>>资讯首页</a></li>
+        <volist name="category" id="cate_info">
+            <li><a attr="{$cate_info['ca_id']}" <if condition="$cate_info['ca_id'] eq $ca_id">class="on"</if> href="{$cate_info|getUrlAddress=###,'search','article'}">{$cate_info.ca_title}</a></li>
+        </volist>
+    </ul>

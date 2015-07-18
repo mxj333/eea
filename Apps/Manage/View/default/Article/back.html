@@ -1,0 +1,81 @@
+            <li class="w460">
+                <div class="row_left">关键字：</div>
+                <div class="row_right"><input type="text" value="{$article.art_keywords}" name="art_keywords" class="fl">(多个以,隔开)</div>
+            </li>
+            <li class="w460">
+                <div class="row_left">文章封面图：</div>
+                <div class="row_right">
+                    <neq name="article.art_cover" value="">
+                        <img src="{$article.art_cover}" width="60" height="60"/>
+                    </neq>
+                    <input type="file" name="art_cover" class="fl">
+                </div>
+            </li>
+            <li class="w460">
+                <div class="row_left">排序：</div>
+                <div class="row_right"><input type="text" value="{$article.art_sort}" name="art_sort" class="fl"></div>
+            </li>
+            <li class="">
+                <div class="row_left">推荐位：</div>
+                <div class="row_right">
+                    <select name="art_position">
+                        <volist name="articlePosition" id="pos">
+                            <option value="{$key}" <eq name="article.art_position" value="$key">selected</eq>>{$pos}</option>
+                        </volist>
+                    </select>
+                </div>
+            </li>
+            <li class="w460">
+                <div class="row_left"><font color="red">*</font>指定发布时间：</div>
+                <div class="row_right"><input type="text" value="{$article.art_designated_published|toDate='Y-m-d'}" name="art_designated_published" onclick="WdatePicker({dateFmt:'yyyy-MM-dd'});"></div>
+            </li>
+            <li class="">
+                <div class="row_left">是否允许评论：</div>
+                <div class="row_right">
+                    <select name="art_is_allow_comment">
+                        <option value="1" <eq name="article.art_is_allow_comment" value="1">selected</eq>>是</option>
+                        <option value="9" <eq name="article.art_is_allow_comment" value="9">selected</eq>>否</option>
+                    </select>
+                </div>
+            </li>
+            <volist name="attribute" id="at">
+                <li <eq name="at.at_type" value="1">class="w460"</eq>>
+                    <div class="row_left">{$at.at_title}：</div>
+                    <div class="row_right">
+                        <eq name="at.at_type" value="1">
+                            <input type="text" value="{$at.art_value}" name="{$at.at_name}" class="fl">
+                        </eq>
+                        <eq name="at.at_type" value="2">
+                            <php>$atv = explode(',', $at['at_value']);</php>
+                            <volist name="atv" id="em" key="ke">
+                            <span class="item"><input type="checkbox" value="{$ke}" <in name="ke" value="$at.art_value">checked</in> name="{$at.at_name}[]">{$em}</span>
+                            </volist>
+                        </eq>
+                        <eq name="at.at_type" value="9">
+                            <php>$atv = explode(',', $at['at_value']);</php>
+                            <select name="{$at.at_name}">
+                            <volist name="atv" id="tm" key="ke">
+                                <option value="{$ke}" <eq name="ke" value="$at.art_value">selected</eq>>{$tm}</option>
+                            </volist>
+                            </select>
+                        </eq>
+                    </div>
+                </li>
+            </volist>
+            <li>
+                <div class="row_right lh50">
+                    <input type="hidden" value="{$m_id}" name="m_id">
+                    <input type="hidden" value="{$ca_id}" name="ca_id">
+                    <input type="hidden" value="{$article.art_id}" name="art_id">
+                    <if condition="$article['art_status'] neq 9">
+                        <button type="submit" value="" class="save btn">保存</button>
+                    <else/>
+                        <a class="save btn recycleBtn" href="javascript:resume({$article.art_id})">恢复</a>
+                        <a class="save btn recycleBtn" href="javascript:del({$article.art_id})">删除</a>
+                    </if>
+                </div>
+            </li>
+        </ul>
+    </form>
+</div>
+<include file="Public:footer"/>

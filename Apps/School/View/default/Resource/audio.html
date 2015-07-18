@@ -1,0 +1,38 @@
+<!--音频-->
+<load href="/Public/Js/flv/swfobject.js" />
+<div>
+    <div>
+        <style>
+            #r_flv {
+                overflow: hidden;
+                width: 658px;
+                height: 478px;
+            }
+        </style>
+        <!-- 音频播放 -->
+        <if condition="($vo['rf_ext'] eq 'wma')">
+            <embed src="{$vo['res_path']}" type="application/x-mplayer2" width="728" height="523" autostart="true" loop="true" />
+        <else/>
+            <div id="r_flv" style="display:block;"></div>
+            <script type="text/javascript">
+            <!--
+                var path = "{$vo['res_path']}";
+                var s5 = new SWFObject("/Public/Js/flv/flv.swf","playlist","728","523","7");
+                s5.addParam("allowfullscreen", "true");
+                s5.addParam("margin", "0");
+                s5.addVariable("autostart", "false");
+                s5.addVariable("image", "/Public/Js/flv/flash5.jpg");
+                s5.addVariable("file", path);
+                s5.addVariable("width", "728");
+                s5.addVariable("height", "523");
+                s5.addVariable("displaywidth", "728");
+                s5.addVariable("displayheight", "523");
+                s5.addVariable("showeq", "true");
+                s5.addVariable("overstretch", "true");
+                s5.addVariable("logo", "/Public/Js/flv/logo.jpg");
+                s5.write("r_flv");
+            //-->
+            </script>
+        </if>
+    </div>
+</div>

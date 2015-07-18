@@ -1,0 +1,126 @@
+<include file="Public:header"/>
+<load href="__MPUBLIC__/Css/{$Think.controller_name|strtolower}Common.css"/>
+<eq name="everyModelCss" value="1">
+    <load href="__MPUBLIC__/Css/{$Think.controller_name|strtolower}.css"/>
+</eq>
+<eq name="everyModelJs" value="1">
+    <load href="__MPUBLIC__/Js/model/{$Think.controller_name|strtolower}.js"/>
+</eq>
+    <!--内容导航开始-->
+    <include file="Article:nav"/>
+    <div class="recommend_importNews">
+        <div class="recommend">
+            <include file="Article:adv"/>
+            <div class="news">
+                <div class="borderB">
+                    <volist name="recommendNew" id="rec_new_info">
+                        <if condition="$key eq 5">
+                            </div>
+                            <div class="marT15">
+                        </if>
+                        <if condition="$key % 5 eq 0">
+                            <a href="{$rec_new_info|getUrlAddress=###, 'detail', 'article'}" class="first">{$rec_new_info.art_title|getShortTitle=###, 20}</a>
+                        <else/>
+                            <a href="{$rec_new_info|getUrlAddress=###, 'detail', 'article'}">
+                                <if condition="$rec_new_info['m_id'] eq 1">
+                                    <img src="__MPUBLIC__/Images/infor_4.png">
+                                <elseif condition="$rec_new_info['m_id'] eq 3"/>
+                                    <img src="__MPUBLIC__/Images/infor_2.png">
+                                <else/>
+                                    <img src="__MPUBLIC__/Images/infor_1.png">
+                                </if>
+                            {$rec_new_info.art_title|getShortTitle=###, 20}</a>
+                        </if>
+                    </volist>
+                </div>
+            </div>
+        </div>
+        <div class="importNews">
+            <div class="titleDiv"><h2 class="title size320"><span>要闻</span><a href="javascript:void(0);">更多>></a></h2></div>
+            <div class="items marT20">
+                <volist name="recommendHot" id="rec_hot_info">
+                    <div class="item <if condition='$key neq 0'>marT20</if>">
+                        <a href="{$rec_hot_info|getUrlAddress=###, 'detail', 'article'}">
+                            <img width="80" height="80" src="{$rec_hot_info.art_cover}" alt="{$rec_hot_info.art_title}" title="{$rec_hot_info.art_title}"/>
+                        </a>
+                        <div>
+                            <a href="{$rec_hot_info|getUrlAddress=###, 'detail', 'article'}">{$rec_hot_info.art_title|getShortTitle=###, 14}</a>
+                            <p>{$rec_hot_info.art_summary|getShortTitle=###, 28}</p>
+                        </div>
+                    </div>
+                </volist>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="hotNews">
+        <div class="titleDiv"><h2 class="title size1000"><span>热闻</span></h2></div>
+        <volist name="videoHot" id="video_info">
+            <div class="hn_items">
+                <div class="hn_item">
+                    <a href="{$video_info|getUrlAddress=###, 'detail', 'article'}"><img width="180" height="180" src="{$video_info.art_cover_b}" alt="{$video_info.art_title}" title="{$video_info.art_title}" /></a>
+                    <a href="{$video_info|getUrlAddress=###, 'detail', 'article'}" class="ellipsis">{$video_info.art_title|getShortTitle=###, 13}</a>
+                    <p><span>{$video_info.art_hits|intval}</span>人气 / <span>{$video_info.art_comment_count|intval}</span>评论</p>
+                </div>
+            </div>
+        </volist>
+        <div class="clear"></div>
+    </div>
+    <div class="latestNews">
+        <div class="titleDiv"><h2 class="title size660"><span>最新新闻</span></h2></div>
+        <ul>
+            <volist name="newList" id="cateList">
+                <li class="borderB">
+                    <div class="ad">
+                        <volist name="cateList" id="art_info" key="art_key" offset="0" length='1'>
+                            <a href="{$art_info|getUrlAddress=###, 'detail', 'article'}">
+                                <img width="180" height="180" src="{$art_info['art_cover_b']}" alt="{$art_info['art_title']}" title="{$art_info['art_title']}"/>
+                            </a>
+                            <div class="adAbstract">
+                                {$art_info['art_title']|getShortTitle=###,15}
+                            </div>
+                        </volist>
+                    </div>
+                    <div class="news">
+                        <div>
+                            <span class="boxTip"></span>
+                            <volist name="cateList" id="art_info" key="art_key" offset="1">
+                                <if condition="$art_key neq 1 and $art_key % 2 eq 1">
+                                    </div>
+                                    <div>
+                                        <span class="boxTip"></span>
+                                </if>
+                                <a href="{$art_info|getUrlAddress=###, 'detail', 'article'}">{$art_info['art_title']|getShortTitle=###,15}</a>
+                            </volist>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </li>
+            </volist>
+        </ul>
+    </div>
+    <div class="guess">
+        <div class="titleDiv"><h2 class="title size320"><span>猜你喜欢</span></h2></div>
+        <div class="guessNews">
+            <volist name="guessList" id="guess_info">
+                <div class="new">
+                    <span class="boxTip"></span>
+                    <a href="{$guess_info|getUrlAddress=###, 'detail', 'article'}">{$guess_info['art_title']|getShortTitle=###,20}</a>
+                </div>
+            </volist>
+        </div>
+    </div>
+    <div class="rankingList">
+        <div class="titleDiv"><h2 class="title size320"><span>评论排行榜</span></h2></div>
+        <div class="popularity">
+            <volist name="rankList" id="rank_info">
+                <div class="new">
+                    <span class="boxTip"></span>
+                    <a href="{$rank_info|getUrlAddress=###, 'detail', 'article'}">{$rank_info['art_title']|getShortTitle=###,20}</a>
+                </div>
+            </volist>
+        </div>
+        <div class="review" style="display:none;"></div>
+    </div>
+    <div class="clear"></div>
+<include file="Public:footer"/>

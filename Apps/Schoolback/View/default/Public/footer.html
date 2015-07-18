@@ -1,0 +1,14 @@
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="searchCover"></div>
+    <div class="loading_cover"></div><div class="loading_Win"><img src="/Public/Images/loading.gif" /></div>
+</body>
+<script type="text/javascript">
+    $('.chart img').each(function(){
+        var pHeight = $(this).parent().height();
+        var tHeight = $(this).height();
+        $(this).css({'margin-top':parseInt(pHeight - tHeight)/2});
+    });
+</script>
+</html>

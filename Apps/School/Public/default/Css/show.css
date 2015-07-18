@@ -1,0 +1,43 @@
+#dkt_content{
+    font-family:"宋体";
+}
+.location{
+    border:none;
+    margin-top:0px;
+    width:1000px;
+    height:45px;
+}
+.leftMenu{
+    width:200px;
+    height:398px;
+    margin-left:0px;
+    border:none;
+    background:#1b629b;
+    border-top:#eaac03 solid 2px;
+}
+.leftMenu li{
+    height:36px;
+    border-bottom:#4981af solid 1px;
+}
+.leftMenu li:first-child{
+    margin-top:1px;
+}
+.leftMenu li a{
+    color:#fff;
+}
+.leftMenu li a:hover{
+    background:#135080;
+    width:132px;
+}
+.newsDetail{
+    width:760px;
+    float:left;
+}
+.detailTitle h1{
+    margin-top:0px;
+}
+.txt p{
+    width:760px;
+    margin-top:40px;
+    color:#333;
+}

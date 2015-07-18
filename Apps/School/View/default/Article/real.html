@@ -1,0 +1,4 @@
+<!-- 视频播放3 -->
+<if condition="($vo['pic'][0]['f_ext'] eq 'rmvb')OR($vo['pic'][0]['f_ext'] eq 'mkv')OR($vo['pic'][0]['f_ext'] eq 'mov')OR($vo['pic'][0]['f_ext'] eq 'vob')OR($vo['pic'][0]['f_ext'] eq 'ts')OR($vo['pic'][0]['f_ext'] eq 'wma')">
+    <a href="{$vo['pic'][0]['fileoriginalpath']}">{$vo["article"]["art_title"]}下载</a>
+</if>

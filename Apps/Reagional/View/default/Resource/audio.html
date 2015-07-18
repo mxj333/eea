@@ -1,0 +1,26 @@
+<!--音频-->
+<load href="/Public/Js/flv/swfobject.js" />
+<div>
+    <label>资源预览：</label>
+    <div>
+        <!-- 音频播放 -->
+        <if condition="($vo['rf_ext'] eq 'wma')">
+            <embed src="{$vo['res_path']}" type="application/x-mplayer2" width="550" height="400" autostart="true" loop="true" />
+        <else/>
+            <div id="r_flv"></div>
+            <script type="text/javascript">
+            <!--
+                var path = "{$vo['res_path']}";
+                var s5 = new SWFObject("/Public/Js/flv/flv.swf","playlist","698","508","7");
+                s5.addParam("allowfullscreen", "true");
+                s5.addVariable("autostart", "false");
+                s5.addVariable("image", "/Public/Js/flv/flash5.jpg");
+                s5.addVariable("file", path);
+                s5.addVariable("width", "698");
+                s5.addVariable("height", "508");
+                s5.write("r_flv");
+            //-->
+            </script>
+        </if>
+    </div>
+</div>

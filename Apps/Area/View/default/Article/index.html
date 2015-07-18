@@ -1,0 +1,146 @@
+<include file="Public:headerTop"/>
+<include file="Public:headerNav"/>
+<include file="Adv:headerAdv2"/>
+<include file="Public:headerSearch"/>
+<include file="Article:headerNav"/>
+<include file="Public:headerBottom"/>
+<eq name="everyModelCss" value="1">
+    <load href="__MPUBLIC__/Css/{$Think.controller_name|strtolower}.css"/>
+</eq>
+<eq name="everyModelJs" value="1">
+    <load href="__MPUBLIC__/Js/model/{$Think.controller_name|strtolower}.js"/>
+</eq>
+    <div class="news marT20">
+        <div class="recommend_news c_left">
+            <div class="carouselAd"></div>
+            <div class="news_item">
+                <a href="{$recommend[0]|getUrlAddress=###,'detail','article'}">{$recommend[0]['art_title']|getShortTitle=###,16}</a>
+                <p>{$recommend[0]['art_summary']|getShortTitle=###,44}</p>
+            </div>
+            <div class="news_itemTwo">
+                <volist name="recommend" id="rec_info">
+                    <if condition="in_array($key, array(1, 2))">
+                        <p>
+                            <a href="{$rec_info|getUrlAddress=###,'search','article'}">{$rec_info.ca_title|getShortTitle=###,4}</a>
+                            <span></span>
+                            <a href="{$rec_info|getUrlAddress=###,'detail','article'}">{$rec_info.art_title|getShortTitle=###,20}</a>
+                        </p>
+                    </if>
+                </volist>
+            </div>
+            <div class="news_item">
+                <a href="{$recommend[3]|getUrlAddress=###,'detail','article'}">{$recommend[3]['art_title']|getShortTitle=###,16}</a>
+                <p>{$recommend[3]['art_summary']|getShortTitle=###,44}</p>
+            </div>
+        </div>
+        <div class="focusNews c_right">
+            <h3 class="re_title">
+                <a href="javascript:void(0);">
+                    <span>
+                        <label></label>
+                        焦点新闻
+                    </span>
+                </a>
+            </h3>
+            <volist name="focus" id="foc_info">
+                <div class="focus">
+                    <a href="{$foc_info|getUrlAddress=###,'detail','article'}" class="news_title">{$foc_info.art_title|getShortTitle=###,17}</a>
+                    <div class="news_itemThree">
+                        <a href="{$foc_info|getUrlAddress=###,'detail','article'}">
+                            <img width="80" border="0" height="80" alt="focus news" src="{$foc_info.art_cover}" alt="{$foc_info.art_title}" title="{$foc_info.art_title}">
+                        </a>
+                        <div>
+                            <a href="javascript:void(0);">特别报道</a>
+                            <p>
+                                {$foc_info.art_summary|getShortTitle=###,34}
+                                <a href="{$foc_info|getUrlAddress=###,'detail','article'}">[详细]</a>
+                            </p>
+                            <p>浏览：{$foc_info.art_hits|intval}次</p>
+                        </div>
+                    </div>
+                </div>
+            </volist>
+        </div>
+    </div>
+    <include file="Adv:middleAdv"/>
+    <div class="otherNews">
+        <volist name="artList['list']" id="art_info">
+            <div class="w320">
+                <h3 class="re_title">
+                    <a href="javascript:void(0);">
+                        <span>
+                            <label></label>
+                            {$artList['type'][$key]|getShortTitle=###,4}
+                        </span>
+                    </a>
+                </h3>
+                <div class="news_itemThree marT20">
+                    <a href="{$art_info[0]|getUrlAddress=###,'detail','article'}">
+                        <img width="80" border="0" height="80" alt="{$art_info[0]['art_title']}" title="{$art_info[0]['art_title']}" src="{$art_info[0]['art_cover']}">
+                    </a>
+                    <div>
+                        <a href="{$art_info[0]|getUrlAddress=###,'detail','article'}" class="news_title">{$art_info[0]['art_title']|getShortTitle=###,12}</a>
+                        <p>
+                            {$art_info[0]['art_summary']|getShortTitle=###,34}
+                            <a href="{$art_info[0]|getUrlAddress=###,'detail','article'}">[详细]</a>
+                        </p>
+                    </div>
+                </div>
+                <ul class="news_list">
+                    <volist name="art_info" id="article_info">
+                        <if condition="$key neq 0">
+                            <li>
+                                <a href="{$article_info|getUrlAddress=###,'detail','article'}">{$article_info.art_title|getShortTitle=###,22}</a>
+                            </li>
+                        </if>
+                    </volist>
+                </ul>
+            </div>
+        </volist>
+    </div>
+    <div class="newsRank_school c_right">
+        <div class="newsRank">
+            <h3 class="re_title">
+                <a href="javascript:void(0);">
+                    <span>
+                        <label></label>
+                        新闻排行
+                    </span>
+                </a>
+            </h3>
+            <volist name="rank" id="rank_info">
+                <a href="{$rank_info|getUrlAddress=###,'detail','article'}">
+                    <span>{$key+1}</span>
+                    {$rank_info.art_title|getShortTitle=###,19}
+                </a>
+            </volist>
+        </div>
+        <include file="Adv:rightAdv"/>
+        <div class="school">
+            <h3 class="re_title">
+                <a href="javascript:void(0);">
+                    <span>
+                        <label></label>
+                        学校查询
+                    </span>
+                </a>
+            </h3>
+            <div class="searchCourse">
+                <span></span>
+                <input type="text" value="搜学校">
+            </div>
+            <volist name="school" id="s_info" mod="2">
+                <eq name="mod" value="1">
+                        <span class=""></span>
+                        <a href="{$s_info|getUrlAddress=###,'index','index','school',$s_info['s_id']}">{$s_info.s_title}</a>
+                    </p>
+                <else/>
+                    <p class="school_item">
+                        <a href="{$s_info|getUrlAddress=###,'index','index','school',$s_info['s_id']}">{$s_info.s_title}</a>
+                </eq>
+            </volist>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <include file="Adv:footerAdv"/>
+<include file="Public:footer"/>

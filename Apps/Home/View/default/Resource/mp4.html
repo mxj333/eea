@@ -1,0 +1,83 @@
+
+<!-- mp4视频播放 -->
+<if condition="($vo['rf_transform_status'] eq 1) OR ($vo['rf_ext'] eq '3gp')OR($vo['rf_ext'] eq 'mp4')OR($vo['rf_ext'] eq 'flv')OR($vo['rf_ext'] eq 'f4v')">
+    <!-- 视频播放1 -->
+    <div>
+        <div class="r_play">
+            <div id="video" style="position:relative;z-index: 100;width:658px;height:478px;float: left;margin-bottom:10px;"><div id="a1"></div></div>
+        </div>
+    </div>
+
+    <load href="/Public/Js/ckplayer6.7/ckplayer.js"/>
+    <script>
+        var flashvars={
+            f:'{$vo["res_path"]}', //视频地址
+            c:'0',
+            e:'2',//视频结束后的动作，0是调用js函数，1是循环播放，2是暂停播放，3是调用视频推荐列表的插件，4是清除视频流并调用js功能和1差不多
+            p:'1',//视频默认0是暂停，1是播放
+            g:'0',//视频直接g秒开始播放
+            loaded:'loadedHandler'
+        };
+        var video=['{$vo["res_path"]}->video/mp4'];
+        CKobject.embed('/Public/Js/ckplayer6.7/ckplayer.swf','a1','ckplayer_a1','658','478',false,flashvars,video);
+
+        var watchtime;
+        var wattime=-1;
+        var watt=false;//默认没有计时
+        var ptime=0;
+        function aboutstr(str,f) {
+            //查看str字符里是否有f
+            var about=false;
+            var strarray=new Array();
+            var farray=new Array();
+            farray=f.split(",");
+            if(str) {
+                for(var i=0;i<farray.length;i++){
+                    strarray=str.split(farray[i]);
+                    if(strarray.length>1){
+                        about=true;
+                        break;
+                    }
+                }
+            }
+            return about;
+        }
+
+        // 实时的监听播放器里各状态的值
+        function ckplayer_status(str){
+
+            if(str=='103' || str=='101'){
+                if(watt){
+                    watt=false;
+                    window.clearInterval(watchtime);
+                }
+            }
+            // 获取当前播放时间
+            if(aboutstr(str,'nowtime:')){
+                ptime = parseInt(str.replace('nowtime:',''));
+                var twoStep  = ptime.toFixed(2);
+                var millisecond = parseFloat(twoStep)*1000;
+                var newTime = new Date(millisecond);
+                var hours = parseFloat(newTime.getHours() - 8);
+                var minutes = parseFloat(newTime.getMinutes());
+                var second = parseFloat(newTime.getSeconds());
+                if (hours < 10) {
+                    hours = '0' + parseFloat(newTime.getHours() - 8);
+                }
+                if (minutes < 10) {
+                    minutes = '0' + newTime.getMinutes();
+                }
+                if (second < 10) {
+                    second = '0' + newTime.getSeconds();
+                }
+                var formatTime = hours + ":" + minutes + ':' + second;
+                document.getElementById('currentTime').innerHTML = formatTime;
+            }
+        }
+
+        // 暂停视频并获取当前播放时间点
+        function getTime(){
+            swfobject.getObjectById('ckplayer_a1').ckplayer_pause();
+        }
+    </script>
+</if>

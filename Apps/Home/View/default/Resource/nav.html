@@ -1,0 +1,7 @@
+    <!--内容导航开始-->
+    <ul class="mainNav">
+        <li><a <if condition="ACTION_NAME eq 'index'">href="javascript:void(0);" class="on"<else/>href="{$info|getUrlAddress=###, 'index', 'resource'}"</if>>资源首页</a></li>
+        <volist name="resourceCategory" id="res_cate">
+            <li><a href="{$res_cate|getUrlAddress=###, 'search', 'resource'}">{$res_cate.rc_title}</a></li>
+        </volist>
+    </ul>

@@ -1,0 +1,376 @@
+<include file="Public:header"/>
+<eq name="everyModelCss" value="1">
+    <load href="__MPUBLIC__/Css/{$Think.controller_name|strtolower}.css"/>
+</eq>
+<eq name="everyModelJs" value="1">
+    <load href="__MPUBLIC__/Js/model/{$Think.controller_name|strtolower}.js"/>
+</eq>
+<load href="__PUBLIC__/Js/carouselAd.js"/>
+    <!--内容导航开始-->
+    <include file="Index:nav"/>
+    <!--广告和登录开始-->
+    <div class="adLogin">
+        <div class="carouselAd ad"></div>
+        <if condition="session('me_nickname')">
+            <!--登录成功-->
+            <div class="loginSuccess">
+                <div class="tipBox">
+                    <div class="dynamic" style="display:none;">
+                        <span class="tip_t">动态</span>
+                        <p>
+                            刚刚<a href="javascript:void(0);"> 李丽丽</a>转发了<a href="javascript:void(0);">胡晓丽的今天天气很好</a>
+                        </p>
+                        <p>
+                            3分钟前<a href="javascript:void(0);"> 李丽丽</a>评论了<a href="javascript:void(0);">胡晓丽的今天天气很好</a>
+                        </p>
+                        <p>
+                            刚刚<a href="javascript:void(0);"> 李丽丽</a>转发了<a href="javascript:void(0);">胡晓丽的今天天气很好</a>
+                        </p>
+                        <p>
+                            3分钟前<a href="javascript:void(0);"> 李丽丽</a>评论了<a href="javascript:void(0);">胡晓丽的今天天气很好</a>
+                        </p>
+                        <p>
+                            刚刚<a href="javascript:void(0);"> 李丽丽</a>转发了<a href="javascript:void(0);">胡晓丽的今天天气很好</a>
+                        </p>
+                        <p>
+                            3分钟前<a href="javascript:void(0);"> 李丽丽</a>评论了<a href="javascript:void(0);">胡晓丽的今天天气很好</a>
+                        </p>
+                        <p>
+                            刚刚<a href="javascript:void(0);"> 李丽丽</a>转发了<a href="javascript:void(0);">胡晓丽的今天天气很好</a>
+                        </p>
+                    </div>
+                    <div class="infor" style="display:none;">
+                        <span class="tip_t">消息</span>
+                        <div class="no_infor">
+                            <div></div>
+                            暂时没有消息
+                        </div>
+                    </div>
+                    <div class="sign">
+                        <span class="tip_t">签到</span>
+                        <span class="sign_tip"></span>
+                        <a class="sign_btn" href="javascript:void(0);"></a>
+                        <span class="sign_reward"><label></label>每日签到赢取智慧奖励</span>
+                    </div>
+                </div>
+                <div class="loginMenu">
+                    <span class="lo_dynamic menu_item">
+                        <label></label>
+                        <a href="javascript:void(0);">
+                            <span></span>
+                            动态
+                        </a>
+                    </span>
+                    <span class="lo_infor menu_item">
+                        <label></label>
+                        <a href="javascript:void(0);">
+                            <span></span>
+                            消息
+                        </a>
+                    </span>
+                    <span class="lo_sign menu_item on">
+                        <label></label>
+                        <a href="javascript:void(0);">
+                            <span></span>
+                            签到
+                        </a>
+                    </span>
+                    <span class="lo_resource menu_item">
+                        <label></label>
+                        <a href="javascript:void(0);">
+                            <span></span>
+                            资源
+                        </a>
+                    </span>
+                    <span class="lo_album menu_item">
+                        <label></label>
+                        <a href="javascript:void(0);">
+                            <span></span>
+                            相册
+                        </a>
+                    </span>
+                </div>
+            </div>
+        <else/>
+            <div class="login">
+                <form action="javascript:void(0);" method="post">
+                    <div class="userName fromStyle">
+                        <span></span>
+                        <input type="text" />
+                    </div>
+                    <div class="password fromStyle">
+                        <span></span>
+                        <input type="password" />
+                    </div>
+                    <div class="aboutPw">
+                        <input type="checkBox" style="display:none;"/>
+                        <label><span class="checkBoxStyle"></span>记住密码</label>
+                        <a href="javascript:void(0);">忘记密码</a>
+                    </div>
+                    <div class="regLog">
+                        <input type="submit" class="marR10" value="登录">
+                        <a href="{$info|getUrlAddress=###, 'index', 'register'}" class="register">注册</a>
+                    </div>
+                    <div class="thirdLogin">
+                        <p>您还可以使用第三方登录 :</p>
+                    </div>
+                </form>
+            </div>
+        </if>
+    </div>
+    <!--资源和通知开始-->
+    <div class="resourceNotice">
+        <div class="resource">
+            <div class="titleDiv"><h2 class="title size660 color_ee6">资源</h2></div>
+            <ul class="subNav">
+                <li><a href="javascript:void(0);" class="on">学科</a></li>
+            </ul>
+            <table class="subjects">
+                <tr>
+                    <th>小学</th>
+                    <td><a href="javascript:void(0);">语文</a></td>
+                    <td><a href="javascript:void(0);">数学</a></td>
+                    <td><a href="javascript:void(0);">英语</a></td>
+                    <td><a href="javascript:void(0);">信息科技</a></td>
+                    <td><a href="javascript:void(0);">美术</a></td>
+                </tr>
+                <tr>
+                    <th>初中</th>
+                    <td><a href="javascript:void(0);">语文</a></td>
+                    <td><a href="javascript:void(0);">数学</a></td>
+                    <td><a href="javascript:void(0);">英语</a></td>
+                    <td><a href="javascript:void(0);">生物</a></td>
+                    <td><a href="javascript:void(0);">化学</a></td>
+                    <td><a href="javascript:void(0);">地理</a></td>
+                    <td><a href="javascript:void(0);">历史</a></td>
+                </tr>
+                <tr>
+                    <th>高中</th>
+                    <td><a href="javascript:void(0);">语文</a></td>
+                    <td><a href="javascript:void(0);">数学</a></td>
+                    <td><a href="javascript:void(0);">英语</a></td>
+                    <td><a href="javascript:void(0);">信息科技</a></td>
+                    <td><a href="javascript:void(0);">美术</a></td>
+                    <td><a href="javascript:void(0);">数学</a></td>
+                    <td><a href="javascript:void(0);">英语</a></td>
+                    <td><a href="javascript:void(0);">信息科技</a></td>
+                    <td><a href="javascript:void(0);">美术</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="notice">
+            <div class="titleDiv"><h2 class="title size320 color_ee6">通知<a href="javascript:void(0);">更多</a></h2></div>
+            <volist name="notices" id="no_info">
+                <a href="{$no_info|getUrlAddress=###, 'detail', 'notices'}" class="ellipsis">{$no_info.no_title|getShortTitle=###,22}</a>
+            </volist>
+        </div>
+    </div>
+    <!--推荐资源和动态开始-->
+    <div class="recommendDynamic">
+        <div class="recommend">
+            <div class="titleDiv"><h2 class="title size660 color_ee6">推荐资源</h2></div>
+            <ul class="subNav">
+                <li attr="1"><a href="javascript:void(0);" class="on">最新资源</a></li>
+                <li attr="2"><a href="javascript:void(0);">最热资源</a></li>
+            </ul>
+            <div class="items resourceNew">
+                <volist name="resource_new[3]['list']" id="res_new">
+                    <div class="item <if condition='$key % 2 eq 0'>marR20</if>">
+                        <a href="{$res_new|getUrlAddress=###, 'detail', 'resource'}">
+                            <img width="80" height="80" src="{$res_new.res_image}" alt="{$res_new.res_title}" title="{$res_new.res_title}"/>
+                            <span>{$res_new.res_title|getShortTitle=###, 15}</span>
+                        </a>
+                        <p>
+                            <span>好评:</span>
+                            <for start="0" end="$res_new['score']">
+                                <img src="__MPUBLIC__/Images/star1.png">
+                            </for>
+                            <for start="0" end="5-$res_new['score']">
+                                <img src="__MPUBLIC__/Images/star2.png">
+                            </for>
+                        </p>
+                        <p>{$res_new|date='Y-m-d'}</p>
+                    </div>
+                </volist>
+            </div>
+            <div class="items resourceHot hide">
+                <volist name="resource_hot[3]['list']" id="res_hot">
+                    <div class="item <if condition='$key % 2 eq 0'>marR20</if>">
+                        <a href="{$res_hot|getUrlAddress=###, 'detail', 'resource'}">
+                            <img width="80" height="80" src="{$res_hot.res_image}" alt="{$res_hot.res_title}" title="{$res_hot.res_title}"/>
+                            <span>{$res_hot.res_title|getShortTitle=###, 15}</span>
+                        </a>
+                        <p>
+                            <span>好评:</span>
+                            <for start="0" end="$res_hot['score']">
+                                <img src="__MPUBLIC__/Images/star1.png">
+                            </for>
+                            <for start="0" end="5-$res_hot['score']">
+                                <img src="__MPUBLIC__/Images/star2.png">
+                            </for>
+                        </p>
+                        <p>{$res_hot|date='Y-m-d'}</p>
+                    </div>
+                </volist>
+            </div>
+        </div>
+        <div class="dynamic">
+            <div class="titleDiv"><h2 class="title size320 color_ee6">通知<a href="javascript:void(0);">更多</a></h2></div>
+            <a href="javascript:void(0);" class="ellipsis"><span>30秒前</span>李老师在学问系统中回答了小明的问题</a>
+            <a href="javascript:void(0);" class="ellipsis"><span>10分钟前</span>李老师在学问系统中回答了小明的问题</a>
+            <a href="javascript:void(0);" class="ellipsis"><span>30秒前</span>李老师在学问系统中回答了小明的问题</a>
+            <a href="javascript:void(0);" class="ellipsis"><span>12个小时前</span>李老师在学问系统中回答了小明的问题关于奥数竞赛的问题</a>
+            <a href="javascript:void(0);" class="ellipsis"><span>30秒前</span>李老师在学问系统中回答了小明的问题</a>
+            <a href="javascript:void(0);" class="ellipsis"><span>30秒前</span>李老师在学问系统中回答了小明的问题</a>
+            <a href="javascript:void(0);" class="ellipsis"><span>10分钟前</span>李老师在学问系统中回答了小明的问题</a>
+            <a href="javascript:void(0);" class="ellipsis"><span>30秒前</span>李老师在学问系统中回答了小明的问题</a>
+            <a href="javascript:void(0);" class="ellipsis"><span>12个小时前</span>李老师在学问系统中回答了小明的问题关于奥数竞赛的问题</a>
+            <a href="javascript:void(0);" class="ellipsis"><span>30秒前</span>李老师在学问系统中回答了小明的问题</a>
+            <a href="javascript:void(0);" class="ellipsis"><span>10分钟前</span>李老师在学问系统中回答了小明的问题</a>
+            <a href="javascript:void(0);" class="ellipsis"><span>30秒前</span>李老师在学问系统中回答了小明的问题</a>
+            <a href="javascript:void(0);" class="ellipsis"><span>12个小时前</span>李老师在学问系统中回答了小明的问题关于奥数竞赛的问题</a>
+        </div>
+    </div>
+    <!--统计开始-->
+    <div class="count">
+        <div class="titleDiv"><h2 class="title size1000 color_ee6">资源统计</h2></div>
+        <ul class="subNav">
+            <li><a href="javascript:void(0);" class="on">上传排行</a></li>
+        </ul>
+        <img class="areaPic" src="__MPUBLIC__/Tmp/map.png" alt="areaPic"/>
+        <table class="rankList" cellspacing="0">
+            <caption>各省资源上传排行榜</caption>
+            <tr>
+                <th>排名</th>
+                <th>省</th>
+                <th class="resourceCount">资源数</th>
+            </tr>
+            <volist name="resourceStatistics" id="res_sta">
+                <tr>
+                    <td><span></span></td>
+                    <td>{$key|substr=###, 7}</td>
+                    <td class="resourceCount color_e6">{$res_sta}</th>
+                </tr>
+            </volist>
+        </table>
+    </div>
+    <!--统计结束-->
+    <div class="educations">
+        <!--应用超市开始-->
+        <div class="appStore">
+            <div class="titleDiv"><h2 class="title size660 color_ee6">应用超市</h2></div>
+            <ul class="subNav">
+                <volist name="appCategory" id="app_type">
+                    <li><a href="javascript:void(0);">{$app_type.ac_title}</a></li>
+                </volist>
+            </ul>
+            <div>
+                <volist name="appList[3]['list']" id="app_info" key="app_key">
+                    <a href="{$app_info|getUrlAddress=###, 'detail', 'app'}" class="app <if condition='$app_key % 7 neq 0'>marR40</if>">
+                        <img width="60" height="60" src="{$app_info.a_logo}" alt="{$app_info.a_title}" title="{$app_info.a_title}"/>
+                        <span>{$app_info.a_title|getShortTitle=###, 4}</span>
+                    </a>
+                </volist>
+            </div>
+        </div>
+        <!--资讯开始-->
+        <div class="news">
+            <div class="titleDiv"><h2 class="title size660 color_ee6">教育资讯</h2></div>
+            <ul class="subNav">
+                <volist name="category" id="cate_info">
+                    <if condition="$cate_info['ca_title'] neq '首页'">
+                        <li><a href="javascript:void(0);">{$cate_info.ca_title}</a></li>
+                    </if>
+                </volist>
+            </ul>
+            <div class="items">
+                <div class="moreNew">
+                    <img src="{$articleList[3]['list'][0]['art_cover_b']}" width="180" height="180" alt="{$articleList[3]['list'][0]['art_title']}" title="{$articleList[3]['list'][0]['art_title']}"/>
+                    <div class="moreInfor">
+                        <volist name="articleList[3]['list']" id="art_info">
+                            <if condition="$key gt 0 and $key lt 8">
+                                <a href="{$art_info|getUrlAddress=###, 'detail', 'index'}">
+                                    <if condition="$art_info['m_id'] eq 1">
+                                        <img src="__MPUBLIC__/Images/infor_4.png">
+                                    <elseif condition="$art_info['m_id'] eq 3"/>
+                                        <img src="__MPUBLIC__/Images/infor_2.png">
+                                    <else/>
+                                        <img src="__MPUBLIC__/Images/infor_1.png">
+                                    </if>
+                                {$art_info.art_title|getShortTitle=###, 25}<span>{$art_info.art_designated_published|date='Y-m-d'}</span></a>
+                            </if>
+                        </volist>
+                    </div>
+                </div>
+                <volist name="articleList[3]['list']" id="art_info">
+                    <if condition="$key gt 7">
+                        <div class="item <if condition='$key % 2 eq 0'>marR30</if>">
+                            <a href="{$art_info|getUrlAddress=###, 'detail', 'index'}">
+                                <img src="{$art_info.art_cover}" width="80" height="80" alt="{$art_info.art_title}" title="{$art_info.art_title}"/>
+                                <span>{$art_info.art_title|getShortTitle=###, 15}</span>
+                            </a>
+                            <p>{$art_info.art_summary|getShortTitle=###, 35}</p>
+                        </div>
+                    </if>
+                </volist>
+            </div>
+        </div>
+        <!--资讯结束-->
+        <!--学校展示开始-->
+        <div class="schoolShow">
+            <div class="titleDiv"><h2 class="title size320 color_ee6">学校展示</h2></div>
+            <div class="groups1">
+                <volist name="schoolList[1]['list'][1]" id="s_info">
+                    <if condition="$key lt 6">
+                        <a href="{$s_info|getUrlAddress=###, 'index', 'index', 'school', $s_info['s_id']}" class="school <if condition='$key % 3 neq 2'>marR17</if>">
+                            <img width="60" height="60" src="{$s_info.s_logo}" alt="{$s_info.s_title}" title="{$s_info.s_title}"/>
+                            <span>{$s_info.s_title|getShortTitle=###, 16}</span>
+                        </a>
+                    </if>
+                </volist>
+            </div>
+            <div class="groups2">
+                <volist name="schoolList[1]['list'][1]" id="s_info">
+                    <if condition="$key gt 5">
+                        <a href="{$s_info|getUrlAddress=###, 'index', 'index', 'school', $s_info['s_id']}" <if condition="$key % 2 eq 0">class="marR10"</if>>
+                            {$s_info.s_title|getShortTitle=###, 10}
+                        </a>
+                    </if>
+                </volist>
+            </div>
+        </div>
+        <!--学校展示结束-->
+        <!--空间开始-->
+        <div class="space marT15">
+            <div class="titleDiv"><h2 class="title size320 color_ee6">空间</h2></div>
+            <ul class="subNav">
+                <li><a href="javascript:void(0);">访问量</a></li>
+            </ul>
+            <div class="spaces">
+                <volist name="memberList[3]['list']" id="me_info">
+                    <a href="{$me_info|getUrlAddress=###, 'index', 'index', 'member', $me_info['me_id']}" class="spaceItem <if condition='$key % 3 neq 2'>marR50</if>">
+                        <img width="60" height="60" src="{$me_info.me_avatar}" alt="{$me_info.me_nickname}" title="{$me_info.me_nickname}"/>
+                        <span>{$me_info.me_nickname|getShortTitle=###, 5}</span>
+                    </a>
+                </volist>
+            </div>
+        </div>
+        <!--空间结束-->
+    </div>
+    <include file="Public:login"/>
+<script type="text/javascript">
+    $(function(){
+        $('.carouselAd').carouselAd({
+            'width' : "{$advertList[33]['pos_info']['ap_width']}px",
+            'height' : "{$advertList[33]['pos_info']['ap_height']}px",
+            'adHeight' : "{$advertList[33]['pos_info']['ap_height']}px",
+            'carouselType' : '1',
+            'isAdAbstract' : true,
+            'adAbstractH' : '40px',
+            'isTextNum' :false,
+            'adAbstractW' : "{$advertList[33]['pos_info']['ap_width']}px",
+            'data' : {$advertList[33]['list']|json_encode}
+        });
+    });
+</script>
+<include file="Public:footer"/>

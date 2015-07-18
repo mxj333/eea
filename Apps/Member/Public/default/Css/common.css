@@ -1,0 +1,333 @@
+body{
+    background:url(../Images/bg.jpg) repeat;
+    font-family:"宋体";
+}
+.c_left{
+    width:660px;
+    float:left;
+    margin-right:20px;
+}
+.c_right{
+    width:320px;
+    float:left;
+}
+#dkt_header{
+    height:310px;
+    background:url(../Images/ucenter_bg.jpg) no-repeat;
+}
+.wrap{
+    width:1000px;
+}
+.headTop{
+    line-height:36px;
+    height:36px;
+    background:rgba(87,21,70,0.5);
+}
+.headTop a{
+    color:#fff;
+}
+.fastKeys{
+    float:left;
+    line-height:36px;
+}
+.fastKeys a{
+    margin:0px 15px 0px 0px;
+}
+.headerNav{
+    float:right;
+}
+.headerNav > li{
+    display:inline-block;
+    margin-left:15px;
+    position:relative;
+}
+.htip span{
+    background:url(../Images/tip.png) no-repeat;
+    display:inline-block;
+    height:8px;
+    margin-left:-3px;
+    width:10px;
+}
+.skin,.skin span,.userInfor .user{
+    display:block;
+}
+.skin{
+    width:86px;
+    float:right;
+    margin-left:20px;
+    border-left:rgba(255,255,255,0.1) solid 1px;
+    border-right:rgba(255,255,255,0.1) solid 1px;
+}
+.skin span{
+    float:left;
+    width:18px;
+    height:14px;
+    margin:11px 5px 0px 19px;
+    background:url(../Images/skin.png) no-repeat;
+}
+.userInfor{
+    font-family:"Microsoft YaHei";
+    font-size:14px;
+    height:160px;
+    margin-top:50px;
+    text-align:center;
+}
+.userInfor a{
+    color:#323232;
+}
+.userInfor .user{
+    width:80px;
+    height:107px;
+    text-align:center;
+}
+.userComments{
+    margin-top:20px;
+}
+.userComments li{
+    display:inline-block;
+    width:68px;
+}
+.userComments li a{
+    text-shadow:-1px -1px 0px rgba(255, 255, 255, 0.5);
+}
+.userComments li .line{
+    width:1px;
+    height:30px;
+    float:left;
+    margin-top:7px;
+    background:#676767;
+    box-shadow:-1px -1px 0px rgba(255, 255, 255, 0.5);
+    width:2px \9;
+    background:url(../Images/line.png) no-repeat \9;
+}
+.hNav{
+    height:48px;
+    margin-top:16px;
+    background:url(../Images/hNav_bg.png) repeat-x;
+}
+.hNav .nNavList li{
+    display:inline-block;
+    font-family:"Microsoft YaHei";
+    text-align:center;
+    width:100px;
+    line-height:48px;
+}
+.hNav .nNavList li a{
+    color:#fff;
+    font-size:14px;
+}
+.hNav .nNavList li.on{
+    background:rgba(255,255,255,0.5);
+}
+.managerNav{
+    height:43px;
+    border-bottom:#ccc solid 1px;
+}
+.managerNav a{
+    display:block;
+    width:118px;
+    border-right:#ccc solid 1px;
+    text-align:center;
+    line-height:43px;
+    font-size:14px;
+    color:#646464;
+    float:left;
+}
+.managerNav a:hover,.managerNav a.on{
+    color:#288ee6;
+    height:43px;
+    border-bottom:#fff solid 1px;
+}
+#dkt_footer{
+    height:159px;
+    background:#f8f8f8;
+    margin-top:20px;
+}
+/*右侧公用*/
+.user_see{
+    max-height:522px;
+    border:#ccc solid 1px;
+    background:#fff;
+    margin:20px 0px;
+}
+.user_see > div{
+    height:39px;
+    margin-bottom:10px;
+}
+.user_see > div > a{
+    display:block;
+    float:left;
+    width:159px;
+    line-height:39px;
+    text-align:center;
+    color:#646464;
+    font-size:14px;
+    font-weight:bold;
+    background:#eee;
+}
+.user_see > div > a.on{
+    background:#fff;
+    color:#228ee6;
+    border-top:#228ee6 solid 1px;
+    margin-top:-1px;
+}
+.user_see ul li{
+    height:79px;
+    width:277px;
+    border-top:#ccc dashed 1px;
+}
+.user_see ul li:first-child{
+    border-top:none;
+}
+.seeList li > a,.seeList li > div{
+    float:left;
+    margin-top:10px;
+}
+.seeList li > div{
+    margin:13px 0px 0px 10px;
+    color:#646464;
+}
+.seeList li > div a{
+    color:#333;
+    display:block;
+    margin-bottom:20px;
+}
+.visits{
+    width:277px;
+}
+.user_see .visits{
+    line-height:43px;
+    border-top:#ccc solid 1px;
+    color:#000;
+    margin-bottom:0px;
+}
+.visits span label{
+    margin-left:10px;
+}
+.resource{
+    height:362px;
+    margin-top:0px;
+}
+.resource .re_list li{
+    height:60px;
+}
+.resource .re_list li > a{
+    color:#333;
+    margin-bottom:8px;
+}
+.resource .re_list li p a{
+    float:right;
+    display:block;
+    width:37px;
+    line-height:18px;
+    text-align:center;
+    color:#f2f2f2;
+    background:#228ee6;
+    border-radius:6px;
+}
+.pageBtn{
+    text-align:center;
+    margin-top:40px;
+}
+.pageBtn a{
+    display:inline-block;
+    height:35px;
+    padding:0px 14px;
+    line-height:37px;
+    border:#ccc solid 1px;
+    border-radius:4px;
+    background:#fafafa;
+    color:#646464;
+    font-size:14px;
+}
+.pageBtn a.on{
+    background:#278cde;
+    color:#fff;
+    border:#278cde solid 1px;
+}
+/*好友推荐*/
+.friendRecommend{
+    width:318px;
+}
+.friendRecommend > p{
+    color:#228ee6;
+    font-size:14px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+.recommend_list .recommend_item{
+    height:60px;
+    margin-bottom:20px;
+}
+.recommend_list .recommend_item > *{
+    float:left;
+}
+.recommend_item .recommend_detail{
+    margin-left:5px;
+    color:#646464;
+    width:232px;
+}
+.recommend_item .recommend_detail{
+    margin-left:5px;
+    color:#646464;
+}
+.recommend_item .recommend_detail div:first-child{
+    margin:5px 0px 22px 0px;
+}
+.recommend_item .friend_name{
+    font-size:14px;
+    color:#646464;
+}
+.func{
+    float:right;
+    line-height:18px;
+}
+.func span{
+    color:#323232;
+    font-size:14px;
+}
+.addFriend{
+    display:inline-block;
+    width:52px;
+    border-radius:5px;
+    text-align:center;
+    background:#228ee6;
+    color:#fff;
+    margin:0px 10px 0px 15px;
+}
+.addFriend span{
+    display:inline-block;
+    width:12px;
+    height:13px;
+    vertical-align:sub;
+    margin-right:5px;
+    background:url(../Images/skydrice.png) no-repeat 0px -98px;
+}
+.cancelFriend{
+    color:#226ee6;
+    margin:0px 10px 0px 5px;
+}
+.messageBoard{
+    border:#ccc solid 1px;
+    background:#fff;
+    font-family:"Microsoft YaHei";
+}
+.messageMenu{
+    margin:30px 0px 20px 0px;
+    padding:0px 20px;
+}
+.messageMenu .menu{
+    border-left:1px solid #ccc;
+    font-size:14px;
+    line-height:12px;
+    margin-right:10px;
+    padding-left:15px;
+    color:#323232;
+    display:inline-block;
+}
+.messageMenu .menu.on{
+    color:#228ee6;
+}
+.messageMenu .menu:first-child{
+    border-left:none;
+}

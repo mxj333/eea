@@ -1,0 +1,51 @@
+<include file="Public:header"/>
+<load href="__MPUBLIC__/Css/show.css"/>
+<div id="dkt_content" class="wrap">
+    <div class="ad">
+        <a href="javascript:void(0);"><img src="../../Public/Tmp/news_ad.jpg" width="1000" height="200" border="0" alt="advertisement" /></a>
+    </div>
+    <div class="location">
+        <a href="javascript:void(0);">首页</a>
+        >
+        <a href="javascript:void(0);">资讯中心</a>
+        >
+        <a href="javascript:void(0);">要闻速递</a>
+        >
+        <a href="javascript:void(0);">资讯详情</a>
+    </div>
+    <ul class="leftMenu">
+        <li>
+            <a href="javascript:void(0);">通知公告</a>
+        </li>
+        <li>
+            <a href="javascript:void(0);">要闻速递</a>
+        </li>
+        <li>
+            <a href="javascript:void(0);">校内新闻</a>
+        </li>
+        <li>
+            <a href="javascript:void(0);">行业新闻</a>
+        </li>
+    </ul>
+    <div class="newsDetail">
+        <div class="detailTitle">
+            <h1>{$article.article.art_title}</h1>
+            <div class="detailInfor">
+                <a href="javascript:void(0);">行政部发布</a>
+                <span>时间：{$article.article.art_created| date="Y-m-d",###}</span>
+                <span class="myShare">
+                    我要分享
+                    <label></label>
+                </span>
+            </div>
+        </div>
+        <div class="txt">
+            {$article.article.art_content}
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<script type="text/javascript">
+    $(".newsDetail .txt p:has(img)").css({"text-align":"center"});
+</script>
+<include file="Public:footer"/>

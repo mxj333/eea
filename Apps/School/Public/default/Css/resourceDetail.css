@@ -1,0 +1,106 @@
+.txtTitle{
+    text-align:center;
+}
+.txtTitle h1{
+    color:#333;
+    font-size:24px;
+    font-weight:normal;
+}
+.txtTitle > div{
+    margin-top:8px;
+}
+.evaluate{
+    color:#646464;
+    margin-right:3px;
+    display:inline-block;
+}
+.evaluate img{
+    margin-right:2px;
+    float:left;
+}
+.count,.share{
+    color:#333;
+}
+.count span{
+    color:#228ee6;
+}
+.share{
+    margin-left:15px;
+}
+.share a{
+    vertical-align:middle;
+}
+.txt{
+    border:#ccc solid 1px;
+    width:658px;
+    height:478px;
+    margin-top:15px;
+}
+.rateTitle{
+    height:26px;
+}
+.rateTitle .star{
+    width:165px;
+    float:left;
+    font-size:14px;
+    color:#333;
+    font-weight:bold;
+}
+.star ul{
+    margin:-15px 0px 0px 65px;
+}
+.download{
+    width:135px;
+    float:right;
+    margin-right:10px;
+    line-height:30px;
+}
+.download a{
+    display:block;
+    width:60px;
+    height:26px;
+    float:right;
+    background:#228ee6;
+    font-size:14px;
+    color:#fff;
+    border-radius:4px;
+    line-height:26px;
+    text-align:center;
+    font-weight:bold;
+}
+.resourceInfor{
+    height:245px;
+    width:285px;
+    margin-left:0px;
+}
+.resourceInfor p{
+    color:#646464;
+    margin-top:10px;
+    line-height:20px;
+}
+.resourceInfor p span{
+    color:#333;
+}
+.resItem{
+    height:335px;
+}
+.resItem > a{
+    font-size:14px;
+    color:#646464;
+    line-height:17px;
+    margin-bottom:14px;
+    display:block;
+    width:290px;
+    height:17px;
+    overflow:hidden;
+}
+.resItem > a:hover{
+    color:#323232;
+}
+.resItem .c_title{
+    margin-bottom:15px;
+}
+.resItem > a img{
+    float:left;
+    margin-right:10px;
+}

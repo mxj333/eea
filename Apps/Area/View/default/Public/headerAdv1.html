@@ -1,0 +1,6 @@
+    <ul class="hMainNav wrap">
+        <li><a <if condition="strtolower(ACTION_NAME) eq 'index'">class="on"</if> href="{$empty_array|getUrlAddress=###,'index','resource'}">资源首页</a></li>
+        <li><a <if condition="strtolower(ACTION_NAME) neq 'index'">class="on"</if> href="{$empty_array|getUrlAddress=###,'search','resource'}">教学材料</a></li>
+        <li><a href="javascript:void(0);">试卷资源</a></li>
+        <li><a href="javascript:void(0);">微课资源</a></li>
+    </ul>

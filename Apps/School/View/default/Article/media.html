@@ -1,0 +1,18 @@
+
+<!-- 视频播放2 -->
+<if condition="($vo['pic'][0]['f_ext'] eq 'avi')OR($vo['pic'][0]['f_ext'] eq 'wmv')OR($vo['pic'][0]['f_ext'] eq 'asf')OR($vo['pic'][0]['f_ext'] eq 'mpg')">
+    <object id="video" width="778" height="474" border="0" classid="clsid:CFCDAA03-8BE4-11cf-B84B-0020AFBBCCFA">
+    <param name="ShowDisplay" value="0">
+    <param name="ShowControls" value="1">
+    <param name="AutoStart" value="1">
+    <param name="AutoRewind" value="0">
+    <param name="PlayCount" value="0">
+    <param name="Appearance" value="">
+    <param name="BorderStyle" value="">
+    <param name="MovieWindowHeight" value="478">
+    <param name="MovieWindowWidth" value="658">
+    <param name="FileName" value="{$vo['pic'][0]['fileoriginalpath']}">
+    <embed width="778" height="474" border="0" showdisplay="0" showcontrols="1" autostart="1" autorewind="0" playcount="0" moviewindowheight="478" moviewindowwidth="658" filename="{$vo['pic'][0]['fileoriginalpath']}" src="{$vo['pic'][0]['fileoriginalpath']}">
+    </embed>
+    </object>
+</if>

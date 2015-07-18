@@ -1,0 +1,51 @@
+.search div {
+    min-height: 35px;
+    width: 100%;
+    margin-top:10px;
+}
+.search div > span{
+    margin-right:10px;
+}
+.search div label {
+    float:left;
+    line-height:30px;
+    margin: 0px 5px;
+    text-align: center;
+    width: 40px;
+}
+.search div label.date_line{
+    width:20px;
+    margin:0px 10px 0px 0px;
+}
+.search div span input[type="radio"] {
+    width:20px;
+    margin-right: 20px;
+}
+.search .hide {
+    display:none;
+}
+.search input[type="submit"] {
+    float: left;
+    height: 28px;
+    line-height: 20px;
+    text-indent: 5px;
+    width: 66px;
+    margin-left: 10px;
+    background:#00a0e8;
+    border-radius:5px;
+}
+.search .export {
+    margin-left: 10px;
+}
+.publisher span {
+    border: 1px solid #0181e3;
+    height: 20px;
+    line-height: 20px;
+    margin: 4px 1px 0;
+    padding: 2px 5px;
+}
+.list_list li{
+    overflow-x:auto;
+    margin:10px 0px 0px 10px;
+    border-bottom:none;
+}

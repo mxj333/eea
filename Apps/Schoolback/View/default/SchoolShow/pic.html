@@ -1,0 +1,177 @@
+<include file="Public:header"/>
+<include file="Public:left"/>
+<load href="__MPUBLIC__/Css/add.css"/>
+<script src="/Public/Js/date/WdatePicker.js" language="javascript"></script>
+<div id="list" class="margin_t10">
+    <ul class="list_header">
+        <li><span attr="{$p}" class="return">返回</span></li>
+    </ul>
+    <form enctype="multipart/form-data" action="/Schoolback/SchoolShow/insert/" method="post">
+        <ul class="list_list">
+            <load href="__PUBLIC__/Js/sortable.js"/>
+            <li class="w460">
+    <style>
+        em{
+            font-style:normal;
+            float:left;
+        }
+        .row_right .action{
+            margin:5px 0px;
+            height: 26px;
+            line-height: 26px;
+        }
+        .row_right .lists, .row_right .item div{
+            clear:both;
+            margin-bottom:10px;
+        }
+        .row_right .action span{
+            display: inline-block;
+            height: 26px;
+            line-height: 26px;
+            text-align: center;
+            width: 66px;
+            background: none repeat scroll 0 0 #00a0e8;
+            border: 1px solid #58a9d4;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 14px;
+        }
+        .row_right .action em{
+            margin-left:10px;
+            color:#ccc;
+            float:none;
+        }
+        .row_right .lists .item {
+            margin:5px 0px;
+            border:1px solid #d5d5d5;
+            height:240px;
+            position:relative;
+        }
+        .row_right .item span.xh{
+            height:200px;
+            border-right:1px solid #d5d5d5;
+            padding-right:10px;
+        }
+        .row_right .item span textarea {
+            vertical-align:sub;
+            height:120px;
+            margin-right:5px;
+            width:544px;
+            float:left;
+        }
+        .row_right .item span.del{
+            position:absolute;
+            top:10px;
+            right:10px;
+        }
+    </style>
+    <script type="text/javascript">
+    <!--
+        $(function() {
+
+            $('.row_right .action').click(function() {
+                itemAdd(1);
+            })
+
+            itemAdd();
+
+            $('.row_right .del').live('click', function() {
+                var num = $('.row_right .lists .item').size();
+
+                if (num < 2) {
+                    showMessage('至少需要1张图片', 1);
+                    return false;
+                }
+                var obj = $(this).parent();
+                var id = $(this).parents('.item').attr('attr');
+                if (id) {
+                    $.post(MODULE+"/{$Think.CONTROLLER_NAME}/delFile", 'id='+id, function(json) {
+                        if (json.status) {
+                            itemRemove(obj);
+                        }
+                    }, 'json');
+                } else {
+                    itemRemove(obj);
+                }
+            })
+        })
+
+        function itemAdd(flag) {
+            var num = $('.row_right .lists .item').size();
+            var max = {$Think.config.article_pic_max_num};
+            if (flag == 1 || $('.row_right .lists .item').size() == 0) {
+                num = num + 1;
+                if (num > max) {
+                    showMessage('最多可添加50张图片', 1);
+                    return false;
+                }
+                var str = '<div class="item"><span class="xh">'+ num +'</span><span><div><em>名称：</em><input type="text" name="title[]"></div><div><em>描述：</em><textarea name="remark[]"></textarea><input type="hidden" name="sort[]" class="sf_sort" value="'+ num +'"></div><div><em>图片：</em><input type="file" name="pic[' + (num-1) + ']"></div></span><span class="del"><img width="20" height="20" border="0" alt="正常" src="/Public/Images/del.gif"></span></div>';
+
+                $('.row_right .lists').append(str);
+            }
+
+            $('.action em').html('现有' + num + '个,还可添加' + (max - num) + '个');
+            sort();
+        }
+
+        function itemRemove(obj) {
+            obj.fadeOut('slow', function() {
+                $(this).remove();
+                initLists();
+            });
+        }
+
+        function sort() {
+            $('.lists').sortable().bind('sortupdate', function() {
+                initLists();
+            });
+        }
+
+        function initLists() {
+            $('.lists .item').each(function(i) {
+                $(this).find('.xh').html(i+1);
+                $(this).find('.sf_sort').val(i+1);
+                $(this).find('input[type=file]').attr('name', 'pic[' + i + ']');
+            })
+        }
+    //-->
+    </script>
+    <div class="row_left">图片列表：</div>
+    <div class="row_right">
+        <div class="action">
+            <span>添加图片</span><em></em>
+        </div>
+        <div class="lists">
+            <volist name="pic" id="vo">
+                <div class="item" attr="{$vo.sf_id}">
+                    <span class="xh">{$key+1}</span>
+                    <span>
+                        <div>
+                            <em>名称：</em><input type="text" name="title[]" value="{$vo.sf_title}">
+                        </div>
+                        <div>
+                            <em>描述：</em>
+                            <textarea name="remark[]" style="width:290px;">{$vo.sf_remark}</textarea>
+                            <img src="{$Think.config.uploads_root_path|substr=1}{$Think.config.school_file_path}{$vo.sf_savepath}/{$vo.sf_id}_s.{$vo.sf_ext}" height="120" width="200"/>
+                            <input type="hidden" name="sort[]" class="sf_sort" value="{$vo.sf_sort}"/>
+                            <input type="hidden" name="id[]" value="{$vo.sf_id}"/>
+                        </div>
+                    </span>
+                    <span class="del">
+                        <img width="20" height="20" border="0" alt="正常" src="/Public/Images/del.gif">
+                    </span>
+                </div>
+            </volist>
+        </div>
+    </div>
+</li>
+<li>
+                <div class="row_right">
+                    <input type="hidden" value="{$s_id}" name="s_id">
+                    <button type="submit" value="" class="save btn">保存</button>
+                </div>
+            </li>
+        </ul>
+    </form>
+</div>
+<include file="Public:footer"/>

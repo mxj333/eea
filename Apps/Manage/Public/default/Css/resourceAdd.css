@@ -1,0 +1,111 @@
+.coverBtn{
+    padding:5px;
+    background:#0181e3;
+    color:#fff;
+}
+.cover{
+    background:rgba(0,0,0,0.3);
+    left:0;
+    position:fixed;
+    top:0;
+    z-index:10;
+}
+.box,.cover{
+    display:none;
+}
+.boxBottom,.boxMiddle{
+    border-top:#ccc solid 1px;
+}
+.boxBottom .saveBtn{
+    display:block;
+    width:80px;
+    line-height:30px;
+    color:#fff;
+    background:#0181e3;
+    text-align:center;
+    margin:12px auto;
+}
+.wordStyle span{
+    display:inline-block;
+    width:80px;
+    line-height:30px;
+    background:#eee;
+    text-align:center;
+    color:#333;
+    cursor:pointer;
+    margin:10px 6px 0px 8px;
+    white-space:nowrap;
+    overflow:hidden;
+}
+.pageBtn a{
+    color:#333;
+    display:inline-block;
+    margin:10px;
+}
+.close{
+    float:right;
+    cursor:pointer;
+    margin:5px 5px 0px 0px;
+}
+.subColumn{
+    width:80px;
+    height:30px;
+    position:absolute;
+    top:0px;
+    left:0px;
+    background:#0181e3;
+}
+.select_tag_res span{
+    padding:2px 5px;
+    line-height:20px;
+    height:20px;
+    border:#0181e3 solid 1px;
+    margin:4px 1px 0px 1px;
+}
+.boxSearch{
+    margin:15px 0px 0px 10px;
+}
+.boxSearch select{
+    width:80px;
+    height:26px;
+}
+li.w460 .row_right label{
+   display:block;
+}
+li.w460 .row_right input[name="rf_title"],li.w460 .row_right input[name="rf_progress_bar"],li.w460 .row_right input[name="keywords_title"],li.w460 .row_right input[name="knowledge_title"],li.w460 .row_right input[name="directory_title"]{
+    border:none;
+    background:#fff;
+    float:none;
+}
+li.w460 .row_right input[name="rf_progress_bar"]{
+    font-weight:bold;
+}
+#container a {
+    background: #0181e3 none repeat scroll 0 0;
+    color: #fff;
+    padding: 5px;
+}
+.pass, .nopass, .delete, .resume{
+    margin:10px 20px 0px 0px;
+    display:inline-block;
+    width:70px;
+    height:30px;
+    text-align:center;
+}
+#list{
+    margin-bottom:20px;
+}
+fieldset{
+    border:#ccc solid 1px;
+    width:770px;
+    margin-left:10px;
+    border-bottom:none;
+}
+fieldset legend{
+    margin-left:20px;
+    font-size:14px;
+    color:#0181e3;
+}
+.list_list .row_right{
+    width:670px;
+}

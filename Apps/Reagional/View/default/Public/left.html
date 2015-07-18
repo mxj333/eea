@@ -1,0 +1,20 @@
+<ul class="leftNav">
+    <volist name="groups" id="group">
+        <if condition="$group['name']">
+            <li class="{$group.name}">
+                <a attr="{$group.list.0.pe_name}" href="javascript:void(0);" <eq name="key" value="$bannerOn">class="on"</eq>>
+                    <span class="navPic{$key}"></span>{$group.title}
+                </a>
+            </li>
+        </if>
+    </volist>
+</ul>
+<div class="right content">
+<script>
+    $(function() {
+        $('.leftNav li:gt(0)').addClass('marT15');
+        $('.leftNav a, .subNav a').click(function() {
+            location.href = '__MODULE__/' + $(this).attr('attr');
+        })
+    })
+</script>

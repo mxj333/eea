@@ -1,0 +1,186 @@
+<include file="Public:header"/>
+<include file="Public:left"/>
+<eq name="everyModelCss" value="1">
+<load href="__MPUBLIC__/Css/appAdd.css"/>
+</eq>
+<eq name="everyModelJs" value="1">
+<load href="__MPUBLIC__/Js/model/appAdd.js"/>
+</eq>
+<div id="list" class="margin_t5">
+        <ul class="list_header">
+            <li>
+                <span class="title"><if condition="ACTION_NAME eq 'add'">新增<else/>编辑</if></span>
+                <span class="return" attr="0">返回</span>
+            </li>
+        </ul>
+        <form enctype="multipart/form-data" action="/Manage/App/{$Think.ACTION_NAME}/" method="post">
+            <ul class="list_list"><li class="w460">
+                    <div class="row_left"><font color="red">*</font>标题：</div>
+                    <div class="row_right"><input type="text" value="{$vo.a_title}" name="a_title" class=""></div>
+                </li><li class="w460">
+                    <div class="row_left">应用图标：</div>
+                    <div class="row_right">
+                        <if condition="$vo['a_logo']">
+                            <div>
+                                <img width="80" height="80" src="{$vo.a_logo}">
+                            </div>
+                        </if>
+                        <input type="file" name="a_logo" class="">
+                    </div>
+                </li><li class="w460">
+                    <div class="row_left">二维码：</div>
+                    <div class="row_right">
+                        <if condition="$vo['a_code_logo']">
+                            <div>
+                                <img width="80" height="80" src="{$vo.a_code_logo}">
+                            </div>
+                        </if>
+                        <input type="file" name="a_code_logo" class="">
+                    </div>
+                </li><li class="w460">
+                    <div class="row_left">Android手机端：</div>
+                    <div class="row_right">
+                        <input type="file" name="apk_phone" class="">
+                        <if condition="$vo['apk_phone']">
+                            <a href="{$vo.apk_phone}">下载</a>
+                        </if>
+                    </div>
+                </li><li class="w460">
+                    <div class="row_left">Android平板端：</div>
+                    <div class="row_right">
+                        <input type="file" name="apk_plat" class="">
+                        <if condition="$vo['apk_plat']">
+                            <a href="{$vo.apk_plat}">下载</a>
+                        </if>
+                    </div>
+                </li><li class="w460">
+                    <div class="row_left">IOS手机端：</div>
+                    <div class="row_right">
+                        <input type="file" name="ipa_phone" class="">
+                        <if condition="$vo['ipa_phone']">
+                            <a href="{$vo.ipa_phone}">下载</a>
+                        </if>
+                    </div>
+                </li><li class="w460">
+                    <div class="row_left">IOS平板端：</div>
+                    <div class="row_right">
+                        <input type="file" name="ipa_plat" class="">
+                        <if condition="$vo['ipa_plat']">
+                            <a href="{$vo.ipa_plat}">下载</a>
+                        </if>
+                    </div>
+                </li><li class="w460">
+                    <div class="row_left">电脑端：</div>
+                    <div class="row_right">
+                        <input type="file" name="computer" class="">
+                        <if condition="$vo['computer']">
+                            <a href="{$vo.computer}">下载</a>
+                        </if>
+                    </div>
+                </li><li class="w460">
+                    <div class="row_left"><font color="red">*</font>链接地址：</div>
+                    <div class="row_right"><input type="text" value="{$vo.a_link}" name="a_link" class=""></div>
+                </li><li class="w460">
+                    <div class="row_left"><font color="red">*</font>测试链接：</div>
+                    <div class="row_right"><input type="text" value="{$vo.a_test_link}" name="a_test_link" class=""></div>
+                </li><li class="h80">
+                    <div class="row_left">应用简介：</div>
+                    <div class="row_right"><textarea cols="35" rows="5" name="a_description" class="">{$vo.a_description}</textarea></div>
+                </li><li class="">
+                    <div class="row_left">区域类型：</div>
+                    <div class="row_right">
+                        <select name="aty_id" class="">
+                            <option value="0">请选择</option>
+                            <volist name="appType" id="aty_title">
+                                <option value="{$key}" <if condition="$vo['aty_id'] eq $key">selected="selected"</if>>{$aty_title}</option>
+                            </volist>
+                        </select>
+                    </div>
+                </li><li class="">
+                    <div class="row_left">应用类型：</div>
+                    <div class="row_right">
+                        <select name="ac_id" class="">
+                            <volist name="appCategory" id="ac_title">
+                                <option value="{$key}" <if condition="$vo['ac_id'] eq $key">selected="selected"</if>>{$ac_title}</option>
+                            </volist>
+                        </select>
+                    </div>
+                </li><li class="">
+                    <div class="row_left">字段权限：</div>
+                    <div class="row_right">
+                        <select name="id_id" class="">
+                            <volist name="identityList" id="id_title">
+                                <option value="{$key}" <if condition="$vo['id_id'] eq $key">selected="selected"</if>>{$id_title}</option>
+                            </volist>
+                        </select>
+                    </div>
+                </li><li class="">
+                    <div class="row_left">虚拟币：</div>
+                    <div class="row_right">
+                        <select name="a_is_support_virtual_money" class="">
+                            <option value="9" <if condition="$vo['a_is_support_virtual_money'] neq 1">selected="selected"</if>>禁用</option>
+                            <option value="1" <if condition="$vo['a_is_support_virtual_money'] eq 1">selected="selected"</if>>启用</option>
+                        </select>
+                    </div>
+                </li><li class="w460">
+                    <div class="row_left">平台虚拟币比值：</div>
+                    <div class="row_right"><input type="text" value="{$vo.a_platform_virtual_money}" name="a_platform_virtual_money" class=""></div>
+                </li><li class="w460">
+                    <div class="row_left">应用虚拟币比值：</div>
+                    <div class="row_right"><input type="text" value="{$vo.a_app_virtual_money}" name="a_app_virtual_money" class=""></div>
+                </li><li class="">
+                    <div class="row_left">状态：</div>
+                    <div class="row_right">
+                        <select name="a_status" class="">
+                            <option value="1" <if condition="$vo['a_status'] neq 9">selected="selected"</if>>启用</option>
+                            <option value="9" <if condition="$vo['a_status'] eq 9">selected="selected"</if>>禁用</option>
+                        </select>
+                    </div>
+                </li><li class="w460">
+                    <div class="row_left"><font color="red">*</font>有效期：</div>
+                    <div class="row_right"><input type="text" value="{$vo.a_valided}" onclick="WdatePicker({dateFmt:'yyyy-MM-dd',minDate:'#{%y}-{%M}-#{%d+1}'});" name="a_valided" class=""></div>
+                </li><li class="w460">
+                    <div class="row_left"><font color="red">*</font>上线时间：</div>
+                    <div class="row_right"><input type="text" value="{$vo.a_online_time}" onclick="WdatePicker({dateFmt:'yyyy-MM-dd',minDate:'#{%y}-{%M}-#{%d}'});" name="a_online_time" class=""></div>
+                </li><li class="">
+                    <div class="row_left">是否允许评论：</div>
+                    <div class="row_right">
+                        <select name="a_is_allow_comment" class="">
+                            <option value="1" <if condition="$vo['a_is_allow_comment'] neq 9">selected="selected"</if>>启用</option>
+                            <option value="9" <if condition="$vo['a_is_allow_comment'] eq 9">selected="selected"</if>>禁用</option>
+                        </select>
+                    </div>
+                </li><li class="">
+                    <div class="row_left">推荐：</div>
+                    <div class="row_right">
+                        <select name="a_is_recommend" class="">
+                            <option value="1" <if condition="$vo['a_is_recommend'] neq 9">selected="selected"</if>>推荐</option>
+                            <option value="9" <if condition="$vo['a_is_recommend'] eq 9">selected="selected"</if>>不推荐</option>
+                        </select>
+                    </div>
+                </li><li class="w460">
+                    <div class="row_left">排序：</div>
+                    <div class="row_right"><input type="text" <if condition="$vo['a_sort']">value="{$vo.a_sort}"<else/>value="255"</if> name="a_sort" class=""></div>
+                </li><li class="w460">
+                    <div class="row_left">智慧豆：</div>
+                    <div class="row_right"><input type="text" <if condition="$vo['a_download_points']">value="{$vo.a_download_points}"<else/>value="0"</if> name="a_download_points" class=""></div>
+                </li><li class="w460">
+                    <div class="row_left">版本：</div>
+                    <div class="row_right"><input type="text" <if condition="$vo['a_version']">value="{$vo.a_version}"<else/>value="1.0"</if> name="a_version" class=""></div>
+                </li><li class="w460">
+                    <div class="row_left">开发者姓名：</div>
+                    <div class="row_right"><input type="text" value="{$vo.a_author}" name="a_author" class=""></div>
+                </li><li class="w460">
+                    <div class="row_left">语言：</div>
+                    <div class="row_right"><input type="text" <if condition="$vo['a_language']">value="{$vo.a_language}"<else/>value="中文"</if> name="a_language" class=""></div>
+                </li>
+                <include file="App:pic"/>
+                <li>
+                    <div class="row_right">
+                    <input type="hidden" value="{$vo.a_id}" name="a_id">
+                    <button type="submit" value="" class="save btn">保存</button></div>
+                </li>
+            </ul>
+        </form>
+    </div>
+<include file="Public:footer"/>

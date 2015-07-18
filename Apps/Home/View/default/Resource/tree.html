@@ -1,0 +1,75 @@
+<div class="directory">
+    <div id="showTree"></div>
+</div>
+<load href="__PUBLIC__/Js/tree/tree.js,__PUBLIC__/Js/tree/tree.css"/>
+<style>
+    #showTree{
+        min-height:490px;
+        width:500px;
+        color:#820f28;
+    }
+    .outLine > div:first-child{
+        line-height:29px;
+    }
+    .outLine > div{
+        border-top:1px solid #ccc;
+        color:#278cde;
+        font-weight:bold;
+        padding-left:10px;
+    }
+</style>
+<script type="text/javascript">
+<!--
+    function getNodeAtt(pNode,pAtt){
+        try {
+            return pNode.attributes.getNamedItem(pAtt).nodeValue;
+        } catch(e) {
+        }
+    }
+
+    var myTree = new JTree("showTree", HOME_MODULE.toLowerCase() + "/resource/getDirectory");
+    myTree.setPicPath("__PUBLIC__/Js/tree/img/");
+    myTree.onclick = function() {}
+    myTree.ondblclick=function(){}
+    myTree.CAPTIONATT="caption";
+    myTree.create();
+    $(function() {
+
+        var url = "/resource/getDirectory";
+
+        $('.outLine span,.tree_location span').live("click",function() {
+            
+            postData($(this),url,$(this).attr("attr"));
+        })
+    });
+    //发送及请求数据
+    function postData(obj,url,id){
+        var selectCate = obj;
+        var selectCate_text = obj.text();
+        var selectCate_id = id;
+        $.post(HOME_MODULE.toLowerCase() + url ,{id:id},function(data){
+            if(data.documentElement.childNodes[1] != undefined ){
+
+                $(".outLine").remove();
+                var myTree = new JTree("showTree", data);
+                myTree.setPicPath("__PUBLIC__/Js/tree/img/");
+                myTree.onclick = function(){}
+                myTree.ondblclick=function(){}
+                myTree.CAPTIONATT="caption";
+                myTree.create();
+
+                if(selectCate.parent().hasClass("tree_location")){
+                    selectCate.nextAll("span").remove();
+                }else if(selectCate.parents(".outLine").hasClass("outLine")){
+                    $(".tree_location").append("<span attr='"+ selectCate_id +"' title='"+ selectCate_text +"'> >> "+ selectCate_text +"</span>");
+                }else{
+                    $(".tree_location span").remove();
+                    $(".tree_location").append("<span attr='"+ selectCate_id +"' title='"+ selectCate_text +"'> >> "+ selectCate_text +"</span>");
+                }
+            }
+            $(".tree_location label").attr("attr",selectCate_id);
+            getList(1);
+        });
+    }
+//-->
+</script>

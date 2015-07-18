@@ -1,0 +1,49 @@
+<include file="Public:header"/>
+<include file="Public:left"/>
+<div id="list" class="margin_t5">
+        <ul class="list_header">
+            <li>
+                <span class="title">
+                    知识点导入
+                </span>
+            </li>
+        </ul>
+        <form enctype="multipart/form-data" action="/Manage/KnowledgePointsImport/insert/" method="post">
+            <ul class="list_list">
+                <li class="w460">
+                    <div class="row_left">第一步：</div>
+                    <div class="row_right">
+                        <div>获取EXCEL文件模板，并填写内容</div>
+                        <div>
+                            <a href="/Uploads/KnowledgePoints/import/knowledgePointsExample.xls" ><font color="red">知识点示例模板</font></a>
+                            <a href="/Uploads/KnowledgePoints/import/knowledgePointsTemplate.xls"><font color="red">知识点文件模板</font></a>
+                        </div>
+                    </div>
+                </li>
+                <li class="w460">
+                    <div class="row_left">注意事项：</div>
+                    <div class="row_right">
+                        <div>请将目录信息填写至知识点文件模板表中</div>
+                        <div>如不清楚如何填写，请点击下载查看知识点示例模板</div>
+                    </div>
+                </li>
+                <li class="w460">
+                    <div class="row_left">第二步：</div>
+                    <div class="row_right">
+                        <div>导入填写好的文件</div>
+                        <div>注：只允许xls文件上传，不支持高版本xlsx</div>
+                        <div>
+                            <span>数据导入来源：</span>
+                            <input type="file" name="file">
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="row_right">
+                        <button type="submit" class="save btn">保存</button>
+                    </div>
+                </li>
+            </ul>
+        </form>
+    </div>
+<include file="Public:footer"/>

@@ -1,0 +1,391 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <load href="__PUBLIC__/Js/jquery.js,__MPUBLIC__/Js/common.js"/>
+    <load href="__PUBLIC__/Css/base.css,__MPUBLIC__/Css/common.css"/>
+    <title>学校</title>
+    <script type="text/javascript">
+        var ROOT = '__ROOT__';
+        var APP = '__APP__';
+        var MODULE = '__MODULE__';
+        var ACTION = '__ACTION__';
+        var SELF = '__SELF__';
+        var CONTROLLER = '__CONTROLLER__';
+        var MPUBLIC = '__MPUBLIC__';
+        var PUBLIC = '__PUBLIC__';
+    </script>
+</head>
+<body>
+<div id="dkt_header">
+    <div class="logo_search">
+        <div class="wrap">
+            <a class="logo" href="javascript:void(0);">
+                <img src="__MPUBLIC__/Images/logo.png" width="216" height="195" border="0" alt="logo" />
+            </a>
+            <div class="fastKeys">
+                <a href="javascript:void(0);">登录</a>
+                <a href="javascript:void(0);">注册</a>
+                <a href="javascript:void(0);">网站网址</a>
+            </div>
+            <div class="searchBox">
+                <input type="text" value="">
+                <label class="search"><span></span></label>
+            </div>
+        </div>
+    </div>
+    <div class="hNav">
+        <div class="wrap">
+            <ul>
+                <li >
+                    <label></label>
+                    <a href="javascript:void(0);">学校首页</a>
+                </li>
+                <li>
+                    <label></label>
+                    <a href="javascript:void(0);">学校概况<span></span></a>
+                    <ul class="subNav">
+                        <li>
+                            <a href="javascript:void(0);">学校介绍</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">学校风采</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">集体领导</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">名师风采</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">联系我们</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <label></label>
+                    <a href="javascript:void(0);">资讯中心<span></span></a>
+                </li>
+                <li>
+                    <label></label>
+                    <a href="javascript:void(0);">校内资源<span></span></a>
+                </li>
+                <li>
+                    <label></label>
+                    <a href="javascript:void(0);">教学研究<span></span></a>
+                </li>
+                <li>
+                    <label></label>
+                    <a href="javascript:void(0);">学生园地<span></span></a>
+                    <label class="rightLine"></label>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="dkt_content">
+    <eq name="everyModelCss" value="1">
+        <load href="__MPUBLIC__/Css/{$Think.controller_name|strtolower}.css"/>
+    </eq>
+    <eq name="everyModelJs" value="1">
+        <load href="__MPUBLIC__/Js/model/{$Think.controller_name|strtolower}.js"/>
+    </eq>
+    <div class="ad">
+        <div class="carouselAd"></div>
+    </div>
+    <div class="content wrap marT20">
+        <div class="c_left">
+            <div class="newsExpress borderB">
+                <h3 class="c_title">
+                    <span>要闻速递</span>
+                    <a href="javascript:void(0);">more</a>
+                </h3>
+                <div class="news marT10">
+                    <a class="picNews" href="javascript:void(0);">
+                        <img src="__MPUBLIC__/Tmp/school_ad.jpg" alt="a" width="180" height="180" border="0" />
+                        <p>学霸放弃就业坚持创业</p>
+                    </a>
+                    <div class="textNews">
+                        <a href="javascript:void(0);">2015高校自主招生网上咨询周活动3
+                        <span>【2014-03-12】</span></a>
+                        <p>各试点高校将在线回答考生提问</p>
+                    </div>
+                    <div class="textNews marT20">
+                        <a href="javascript:void(0);">叶嘉莹：愿做古典诗词"摆渡人"
+                        <span>【2014-03-12】</span></a>
+                        <p>叶嘉莹：愿做古典诗词"摆渡人"</p>
+                    </div>
+                    <div class="textNews marT20">
+                        <a href="javascript:void(0);">清华大学今年首推男子足球招生测试
+                        <span>【2014-03-12】</span></a>
+                        <p>清华大学今年首推男子足球招生测试</p>
+                    </div>
+                </div>
+            </div>
+            <div class="newResource borderB marT20">
+                <h3 class="c_title">
+                    <span>最新资源</span>
+                    <a href="javascript:void(0);">more</a>
+                </h3>
+                <div class="marT15">
+                    <a href="javascript:void(0);">
+                        <img src="__MPUBLIC__/Tmp/infor_1.png" alt="resource" />
+                        赵州桥
+                    </a>
+                    <a href="javascript:void(0);">
+                        <img src="__MPUBLIC__/Tmp/infor_2.png" alt="resource" />
+                        第一单元　十万个为什么
+                    </a>
+                    <a href="javascript:void(0);">
+                        <img src="__MPUBLIC__/Tmp/infor_2.png" alt="resource" />
+                        第二单元　“五官兄弟”
+                    </a>
+                    <a href="javascript:void(0);">
+                        <img src="__MPUBLIC__/Tmp/infor_1.png" alt="resource" />
+                        第三单元　秋天，一幅美丽的图画
+                    </a>
+                    <a href="javascript:void(0);">
+                        <img src="__MPUBLIC__/Tmp/infor_2.png" alt="resource" />
+                        第四单元　有趣的动物
+                    </a>
+                </div>
+                <div class="marT15">
+                    <a href="javascript:void(0);">
+                        <img src="__MPUBLIC__/Tmp/infor_1.png" alt="resource" />
+                        比较
+                    </a>
+                    <a href="javascript:void(0);">
+                        <img src="__MPUBLIC__/Tmp/infor_2.png" alt="resource" />
+                        加与减（-）
+                    </a>
+                    <a href="javascript:void(0);">
+                        <img src="__MPUBLIC__/Tmp/infor_2.png" alt="resource" />
+                        整理与复习
+                    </a>
+                    <a href="javascript:void(0);">
+                        <img src="__MPUBLIC__/Tmp/infor_1.png" alt="resource" />
+                        分类
+                    </a>
+                    <a href="javascript:void(0);">
+                        <img src="__MPUBLIC__/Tmp/infor_2.png" alt="resource" />
+                        位置与顺序
+                    </a>
+                </div>
+                <a href="javascript:void(0);">语文</a>
+                <a href="javascript:void(0);">数学</a>
+                <a href="javascript:void(0);">英语</a>
+                <a href="javascript:void(0);">科学</a>
+                <a href="javascript:void(0);">思想品德</a>
+                <a href="javascript:void(0);">音乐</a>
+                <a href="javascript:void(0);">语文</a>
+                <a href="javascript:void(0);">数学</a>
+                <a href="javascript:void(0);">英语</a>
+                <a href="javascript:void(0);">科学</a>
+                <a href="javascript:void(0);">思想品德</a>
+                <a href="javascript:void(0);">音乐</a>
+            </div>
+            <div class="teacherSpace borderB marT20">
+                <h3 class="c_title">
+                    <span>教师空间</span>
+                    <a href="javascript:void(0);">more</a>
+                </h3>
+                <div class="space">
+                    <span></span>
+                    <a href="javascript:void(0);"><img src="__MPUBLIC__/Tmp/teacherSpace.jpg" width="60" height="60" border="0" /></a>
+                    <a href="javascript:void(0);">
+                        <p>姓名：王子龙</p>
+                        <p>学科：小学数学</p>
+                        <p>访问量：180940次</p>
+                    </a>
+                </div>
+                <div class="space">
+                    <span class="rank2"></span>
+                    <a href="javascript:void(0);"><img src="__MPUBLIC__/Tmp/teacherSpace.jpg" width="60" height="60" border="0" /></a>
+                    <a href="javascript:void(0);">
+                        <p>姓名：王子龙</p>
+                        <p>学科：小学数学</p>
+                        <p>访问量：180940次</p>
+                    </a>
+                </div>
+                <div class="space">
+                    <span class="rank3"></span>
+                    <a href="javascript:void(0);"><img src="__MPUBLIC__/Tmp/teacherSpace.jpg" width="60" height="60" border="0" /></a>
+                    <a href="javascript:void(0);">
+                        <p>姓名：王子龙</p>
+                        <p>学科：小学数学</p>
+                        <p>访问量：180940次</p>
+                    </a>
+                </div>
+                <div class="space">
+                    <a href="javascript:void(0);"><img src="__MPUBLIC__/Tmp/teacherSpace.jpg" width="60" height="60" border="0" /></a>
+                    <a href="javascript:void(0);">
+                        <p>姓名：王子龙</p>
+                        <p>学科：小学数学</p>
+                        <p>访问量：180940次</p>
+                    </a>
+                </div>
+                <div class="space">
+                    <a href="javascript:void(0);"><img src="__MPUBLIC__/Tmp/teacherSpace.jpg" width="60" height="60" border="0" /></a>
+                    <a href="javascript:void(0);">
+                        <p>姓名：王子龙</p>
+                        <p>学科：小学数学</p>
+                        <p>访问量：180940次</p>
+                    </a>
+                </div>
+                <div class="space">
+                    <a href="javascript:void(0);"><img src="__MPUBLIC__/Tmp/teacherSpace.jpg" width="60" height="60" border="0" /></a>
+                    <a href="javascript:void(0);">
+                        <p>姓名：王子龙</p>
+                        <p>学科：小学数学</p>
+                        <p>访问量：180940次</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="c_right">
+            <div class="notice borderB">
+                <h3 class="c_title">
+                    <span>公告</span>
+                    <a href="javascript:void(0);">more</a>
+                </h3>
+                <a href="javascript:void(0);"><label></label>教育装备管理信息系统应用培<span>【2014-04-04】</span></a>
+                <a href="javascript:void(0);"><label></label>教育部公布2015年五大工作要点<span>【2014-04-04】</span></a>
+                <a href="javascript:void(0);"><label></label>打造“智慧校园”共享优质...<span>【2014-04-04】</span></a>
+                <a href="javascript:void(0);"><label></label>2015年度教育技术工作会议<span>【2014-04-04】</span></a>
+                <a href="javascript:void(0);"><label></label>启创卓越“云化电教室”推...<span>【2014-04-04】</span></a>
+                <a href="javascript:void(0);"><label></label>教学点资源全覆盖教师培训<span>【2014-04-04】</span></a>
+            </div>
+            <div class="excellentClass borderB marT20">
+                <h3 class="c_title">
+                    <span>优秀班级</span>
+                    <a href="javascript:void(0);">more</a>
+                </h3>
+                <div class="class firstThree">
+                    <a href="javascript:void(0);"><img src="__MPUBLIC__/Tmp/excellentClass5.png" width="60" height="60" border="0" /></a>
+                    <a class="excellent" href="javascript:void(0);">
+                        <span>NO.1<label>HOT</label></span>
+                        <span>三年一班</span>
+                    </a>
+                    <a class="classSpace" href="javascript:void(0);">> 班级空间</a>
+                </div>
+                <div class="class firstThree">
+                    <a href="javascript:void(0);"><img src="__MPUBLIC__/Tmp/shcool_class1.png" width="60" height="60" border="0" /></a>
+                    <a class="excellent" href="javascript:void(0);">
+                        <span>NO.2<label>HOT</label></span>
+                        <span>四年一班</span>
+                    </a>
+                    <a class="classSpace" href="javascript:void(0);">> 班级空间</a>
+                </div>
+                <div class="class firstThree">
+                    <a href="javascript:void(0);"><img src="__MPUBLIC__/Tmp/excellentClass2.png" width="60" height="60" border="0" /></a>
+                    <a class="excellent" href="javascript:void(0);">
+                        <span>NO.3<label>HOT</label></span>
+                        <span>二年一班</span>
+                    </a>
+                    <a class="classSpace" href="javascript:void(0);">> 班级空间</a>
+                </div>
+                <div class="class">
+                    <a href="javascript:void(0);"><img src="__MPUBLIC__/Tmp/excellentClass3.png" width="60" height="60" border="0" /></a>
+                    <a class="excellent" href="javascript:void(0);">
+                        <span>NO.4</span>
+                        <span>六年二班</span>
+                    </a>
+                    <a class="classSpace" href="javascript:void(0);">> 班级空间</a>
+                </div>
+                <div class="class">
+                    <a href="javascript:void(0);"><img src="__MPUBLIC__/Tmp/school_class.png" width="60" height="60" border="0" /></a>
+                    <a class="excellent" href="javascript:void(0);">
+                        <span>NO.5</span>
+                        <span>六年一班</span>
+                    </a>
+                    <a class="classSpace" href="javascript:void(0);">> 班级空间</a>
+                </div>
+                <div class="class">
+                    <a href="javascript:void(0);"><img src="__MPUBLIC__/Tmp/school_class.png" width="60" height="60" border="0" /></a>
+                    <a class="excellent" href="javascript:void(0);">
+                        <span>NO.6</span>
+                        <span>六年一班</span>
+                    </a>
+                    <a class="classSpace" href="javascript:void(0);">> 班级空间</a>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="excellentStudent wrap marT20">
+        <h3 class="c_title">
+            <span>优秀学生</span>
+            <a href="javascript:void(0);">more</a>
+        </h3>
+        <a class="student" href="javascript:void(0);">
+            <img src="__MPUBLIC__/Tmp/student.jpg" width="180" height="180" border="0" alt="student"/>
+            <p>姓名：陈鹏宇</p>
+            <p>年级:三年一班</p>
+            <span class="excellentPic"></span>
+        </a>
+        <a class="student" href="javascript:void(0);">
+            <img src="__MPUBLIC__/Tmp/student.jpg" width="180" height="180" border="0" alt="student"/>
+            <p>姓名：陈鹏宇</p>
+            <p>年级:三年一班</p>
+            <span class="excellentPic"></span>
+        </a>
+        <a class="student" href="javascript:void(0);">
+            <img src="__MPUBLIC__/Tmp/student.jpg" width="180" height="180" border="0" alt="student"/>
+            <p>姓名：陈鹏宇</p>
+            <p>年级:三年一班</p>
+            <span class="excellentPic"></span>
+        </a>
+        <a class="student" href="javascript:void(0);">
+            <img src="__MPUBLIC__/Tmp/student.jpg" width="180" height="180" border="0" alt="student"/>
+            <p>姓名：陈鹏宇</p>
+            <p>年级:三年一班</p>
+            <span class="excellentPic"></span>
+        </a>
+        <a class="student" href="javascript:void(0);">
+            <img src="__MPUBLIC__/Tmp/student.jpg" width="180" height="180" border="0" alt="student"/>
+            <p>姓名：陈鹏宇</p>
+            <p>年级:三年一班</p>
+            <span class="excellentPic"></span>
+        </a>
+    </div>
+</div>
+<div class="clear"></div>
+<div id="dkt_footer">
+    <div class="partner">
+        <span>合作单位:</span>
+        <a href="javascript:void(0);">百度</a>
+        <a href="javascript:void(0);">中国教育网站</a>
+        <a href="javascript:void(0);">百度</a>
+        <a href="javascript:void(0);">中国教育网站</a>
+        <a href="javascript:void(0);">百度</a>
+        <a href="javascript:void(0);">中国教育网站</a>
+        <a href="javascript:void(0);">百度</a>
+        <a href="javascript:void(0);">中国教育网站</a>
+    </div>
+    <div class="aboutSite">
+        <a href="javascript:void(0);">关于本站</a>
+        <a href="javascript:void(0);">常见问题</a>
+        <a href="javascript:void(0);">意见反馈</a>
+    </div>
+    <div class="copyright">
+        <p>Copyright © 2007-2011 北京金商祺移动互联 All Rights Reserved</p>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="/public/Js/jquery.js"></script>
+<script type="text/javascript" src="__MPUBLIC__/Js/common.js"></script>
+<script type="text/javascript" src="__MPUBLIC__/Js/carouselAd.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $(".student").last().css({"margin-right":"0px"});
+        $('.carouselAd').carouselAd({
+            'width' : '1216px',
+            'height' : '450px',
+            'adWidth' : '1000px',
+            'adHeight' : '450px',
+            'isHaveBtn' : true,
+            'data' : [{'url' : 'http://www.baidu.com', 'src' : '__MPUBLIC__/Tmp/school_ad1.jpg', 'alt' : '百度'},{'url' : 'http://www.baidu.com', 'src' : '__MPUBLIC__/Tmp/school_ad3.jpg', 'alt' : '百度'},{'url' : 'http://www.baidu.com', 'src' : '__MPUBLIC__/Tmp/school_ad4.jpg', 'alt' : '百度'}]
+        });
+    });
+</script>
+</html>

@@ -1,0 +1,121 @@
+<include file="Public:header"/>
+<include file="Public:left"/>
+<load href="__MPUBLIC__/Css/add.css"/>
+<script type="text/javascript">
+$(function() {
+    $('.group').click(function() {
+        if ($(this).hasClass('on')) {
+            $(this).removeClass('on');
+            $(this).next().find('.node').removeClass('on');
+            $(this).next().find('.action').removeClass('on');
+        } else {
+            $(this).addClass('on');
+            $(this).next().find('.node').addClass('on');
+            $(this).next().find('.action').addClass('on');
+        }
+    })
+
+    $('.node').click(function() {
+        if ($(this).hasClass('on')) {
+            $(this).removeClass('on');
+            if ($(this).parents('li').find('.node.on').size() < 1) {
+                $(this).parents('li').find('.group').removeClass('on');
+            }
+            $(this).parent().find('.action').removeClass('on');
+        } else {
+            $(this).addClass('on');
+            $(this).parents('li').find('.group').addClass('on');
+            $(this).parent().find('.action').addClass('on');
+        }
+    })
+
+    $('.action').click(function() {
+        if ($(this).hasClass('on')) {
+            $(this).removeClass('on');
+            if ($(this).parent().find('.action.on').size() < 1) {
+                $(this).parent().find('.node').removeClass('on');
+            }
+            if ($(this).parents('li').find('.node.on').size() < 1) {
+                $(this).parents('li').find('.group').removeClass('on');
+            }
+        } else {
+            $(this).addClass('on');
+            $(this).parents('li').find('.group').addClass('on');
+            $(this).parent().find('.node').addClass('on');
+        }
+    })
+
+    var choose = {$choose};
+    for (var i in choose ) {
+        $('.node[node='+i+']').parent().find('.action').each(function() {
+            if ($(this).attr('act') & choose[i]) {
+                $(this).click();
+            }
+        })
+    }
+})
+
+function check() {
+    var val = '';
+    $('.group.on').each(function() {
+        $(this).next().find('.node.on').each(function() {
+            var num = 0;
+            $(this).parent().find('.action.on').each(function() {
+                num = num + parseInt($(this).attr('act'));
+            })
+            val += ',' + $(this).attr('node') + '-' + num;
+        })
+    })
+    $('input[name=pe_action]').val(val.slice(1));
+    return true;
+}
+</script>
+<div id="list" class="margin_t10">
+    <ul class="list_header">
+        <li><span class="title">授权</span><span class="return">返回</span></li>
+    </ul>
+    <form action="/Schoolback/RoleGroup/authorization/" method="post" onSubmit="return check();">
+        <ul class="list_list">
+            <volist name="shows" id="group">
+            <li>
+                <span class="row_left group" group="{$key}">{$group.title}</span>
+                <span class="row_right border_l">
+                    <volist name="group.list" id="node">
+                        <div class="<eq name='key' value='0'>border_none</eq>">
+                            <span class="node" node="{$node.pe_id}">{$node.pe_title}</span>
+                            <br>
+                            <volist name="action" id="act">
+                                <if condition="intval($act['value']) & intval($node['pe_action'])"> 
+                                    <span class="action" act="{$act.value}">{$act.title}</span>
+                                </if>
+                            </volist>
+                        </div>
+                    </volist>
+                </span>
+            </li>
+            </volist>
+        </ul>
+        <ul class="list_list">
+            <li>
+                <span class="row_right">
+                <input type="hidden" name="rg_id" value="{$rg_id}">
+                <input type="hidden" name="pe_action">
+                <button type="submit" value="" class="save btn">保存</button>
+                </span>
+            </li>
+        </ul>
+    </form>
+</div>
+<style>
+.list_list li{height:auto;border-bottom: 1px solid #d5d5d5;overflow: hidden;}
+.list_list .row_right{height:auto;text-align:left;}
+.list_list .row_right div{float:left;width:100%;border-top: 1px solid #d5d5d5;}
+.list_list .row_right div.border_none{border-top:none;}
+.action{margin:0px 3px;}
+.group.on, .node.on, .action.on{color:#1144ff;}
+.border_l{border-left: 1px solid #d5d5d5;}
+.row_left{text-align: center;}
+.row_right{margin-top: 0px;}
+.list_list span{cursor: pointer;float: left;height: 35px;line-height: 35px;}
+</style>
+<include file="Public:footer"/>

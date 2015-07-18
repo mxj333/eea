@@ -1,0 +1,446 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <load href="__PUBLIC__/Js/jquery.js"/>
+    <load href="__PUBLIC__/Css/base.css,__MPUBLIC__/Css/common.css"/>
+    <title>个人空间</title>
+    <script type="text/javascript">
+        var ROOT = '__ROOT__';
+        var APP = '__APP__';
+        var MODULE = '__MODULE__';
+        var ACTION = '__ACTION__';
+        var SELF = '__SELF__';
+        var CONTROLLER = '__CONTROLLER__';
+        var MPUBLIC = '__MPUBLIC__';
+        var PUBLIC = '__PUBLIC__';
+    </script>
+</head>
+</body>
+<div id="dkt_header">
+    <div class="headTop">
+        <div class="wrap">
+            <div class="fastKeys">
+                <a class="htip" href="/">
+                    平台首页
+                </a>
+                <a class="htip" href="javascript:void(0);">
+                    客户端下载
+                    <span></span>
+                </a>
+            </div>
+            <a href="javascript:void(0);" class="skin">
+                <span></span>换肤
+            </a>
+            <ul class="headerNav">
+                <li>
+                    <a class="htip" href="javascript:void(0);">
+                    李小冉
+                    <span></span>
+                    </a>
+                </li>
+                <li>
+                    <a class="htip on" href="javascript:void(0);">
+                    微课
+                    <span></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">网站导航</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="userInfor wrap">
+        <a class="user" href="javascript:void(0);">
+            <img src="__MPUBLIC__/Images/head_default.png" width="80" height="80" border="0" alt="head picture" />
+            Mr.zheng
+        </a>
+        <ul class="userComments">
+            <li>
+                <a href="javascript:void(0);">
+                    0<br />收藏
+                </a>
+            </li>
+            <li>
+                <div class="line"></div>
+                <a href="javascript:void(0);">
+                    11<br />转发
+                </a>
+            </li>
+            <li>
+                <div class="line"></div>
+                <a href="javascript:void(0);">
+                    12<br />评论
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="hNav">
+        <ul class="nNavList wrap">
+            <li>
+                <a href="javascript:void(0);">主页</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">说说</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">日志</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">相册</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">好友</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">留言板</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">网盘</a>
+            </li>
+            <li class="on">
+                <a href="javascript:void(0);">应用</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">更多</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div id="dkt_content" class="wrap">
+    <eq name="everyModelCss" value="1">
+        <load href="__MPUBLIC__/Css/{$Think.controller_name|strtolower}.css"/>
+    </eq>
+    <eq name="everyModelJs" value="1">
+        <load href="__MPUBLIC__/Js/model/{$Think.controller_name|strtolower}.js"/>
+    </eq>
+    <div class="apps c_left marT20">
+        <div class="appMenu">
+            <a class="menu" href="javascript:void(0);"><span>教育</span></a>
+            <a class="menu" href="javascript:void(0);"><span class="on">学习</span></a>
+            <a class="menu" href="javascript:void(0);"><span>其他</span></a>
+            <a class="addGroup" href="javascript:void(0);">添加分组</a>
+        </div>
+        <div class="appList">
+            <div class="app">
+                <img src="__MPUBLIC__/Tmp/d_app.png" width="60" height="60" border="0" alt="app" />
+                <p class="app_name">作业帮</p>
+                <p class="app_parise">
+                    <label>好评：</label>
+                    <img src="__MPUBLIC__/Images/star1.png">
+                    <img src="__MPUBLIC__/Images/star1.png">
+                    <img src="__MPUBLIC__/Images/star1.png">
+                    <img src="__MPUBLIC__/Images/star1.png">
+                    <img src="__MPUBLIC__/Images/star2.png">
+                </p>
+                <p class="app_detail">
+                    <span>作业不会写，拍照十秒出答案完全免费哦</span>
+                    <a class="enter" href="javascript:void(0);">进入</a>
+                    <a class="remove" href="javascript:void(0);">删除</a>
+                </p>
+            </div>
+            <div class="app">
+                <img src="__MPUBLIC__/Tmp/d_app.png" width="60" height="60" border="0" alt="app" />
+                <p class="app_name">作业帮</p>
+                <p class="app_parise">
+                    <label>好评：</label>
+                    <img src="__MPUBLIC__/Images/star1.png">
+                    <img src="__MPUBLIC__/Images/star1.png">
+                    <img src="__MPUBLIC__/Images/star1.png">
+                    <img src="__MPUBLIC__/Images/star1.png">
+                    <img src="__MPUBLIC__/Images/star2.png">
+                </p>
+                <p class="app_detail">
+                    <span>作业不会写，拍照十秒出答案完全免费哦</span>
+                    <a class="enter" href="javascript:void(0);">进入</a>
+                    <a class="remove" href="javascript:void(0);">删除</a>
+                </p>
+            </div>
+            <div class="app">
+                <img src="__MPUBLIC__/Tmp/d_app.png" width="60" height="60" border="0" alt="app" />
+                <p class="app_name">作业帮</p>
+                <p class="app_parise">
+                    <label>好评：</label>
+                    <img src="__MPUBLIC__/Images/star1.png">
+                    <img src="__MPUBLIC__/Images/star1.png">
+                    <img src="__MPUBLIC__/Images/star1.png">
+                    <img src="__MPUBLIC__/Images/star1.png">
+                    <img src="__MPUBLIC__/Images/star2.png">
+                </p>
+                <p class="app_detail">
+                    <span>作业不会写，拍照十秒出答案完全免费哦</span>
+                    <a class="enter" href="javascript:void(0);">进入</a>
+                    <a class="remove" href="javascript:void(0);">删除</a>
+                </p>
+            </div>
+            <div class="app">
+                <img src="__MPUBLIC__/Tmp/d_app.png" width="60" height="60" border="0" alt="app" />
+                <p class="app_name">作业帮</p>
+                <p class="app_parise">
+                    <label>好评：</label>
+                    <img src="__MPUBLIC__/Images/star1.png">
+                    <img src="__MPUBLIC__/Images/star1.png">
+                    <img src="__MPUBLIC__/Images/star1.png">
+                    <img src="__MPUBLIC__/Images/star1.png">
+                    <img src="__MPUBLIC__/Images/star2.png">
+                </p>
+                <p class="app_detail">
+                    <span>作业不会写，拍照十秒出答案完全免费哦</span>
+                    <a class="enter" href="javascript:void(0);">进入</a>
+                    <a class="remove" href="javascript:void(0);">删除</a>
+                </p>
+            </div>
+            <div class="app">
+                <img src="__MPUBLIC__/Tmp/d_app.png" width="60" height="60" border="0" alt="app" />
+                <p class="app_name">作业帮</p>
+                <p class="app_parise">
+                    <label>好评：</label>
+                    <img src="__MPUBLIC__/Images/star1.png">
+                    <img src="__MPUBLIC__/Images/star1.png">
+                    <img src="__MPUBLIC__/Images/star1.png">
+                    <img src="__MPUBLIC__/Images/star1.png">
+                    <img src="__MPUBLIC__/Images/star2.png">
+                </p>
+                <p class="app_detail">
+                    <span>作业不会写，拍照十秒出答案完全免费哦</span>
+                    <a class="enter" href="javascript:void(0);">进入</a>
+                    <a class="remove" href="javascript:void(0);">删除</a>
+                </p>
+            </div>
+            <div class="app">
+                <img src="__MPUBLIC__/Tmp/d_app.png" width="60" height="60" border="0" alt="app" />
+                <p class="app_name">作业帮</p>
+                <p class="app_parise">
+                    <label>好评：</label>
+                    <img src="__MPUBLIC__/Images/star1.png">
+                    <img src="__MPUBLIC__/Images/star1.png">
+                    <img src="__MPUBLIC__/Images/star1.png">
+                    <img src="__MPUBLIC__/Images/star1.png">
+                    <img src="__MPUBLIC__/Images/star2.png">
+                </p>
+                <p class="app_detail">
+                    <span>作业不会写，拍照十秒出答案完全免费哦</span>
+                    <a class="enter" href="javascript:void(0);">进入</a>
+                    <a class="remove" href="javascript:void(0);">删除</a>
+                </p>
+            </div>
+            <div class="app">
+                <img src="__MPUBLIC__/Tmp/d_app.png" width="60" height="60" border="0" alt="app" />
+                <p class="app_name">作业帮</p>
+                <p class="app_parise">
+                    <label>好评：</label>
+                    <img src="__MPUBLIC__/Images/star1.png">
+                    <img src="__MPUBLIC__/Images/star1.png">
+                    <img src="__MPUBLIC__/Images/star1.png">
+                    <img src="__MPUBLIC__/Images/star1.png">
+                    <img src="__MPUBLIC__/Images/star2.png">
+                </p>
+                <p class="app_detail">
+                    <span>作业不会写，拍照十秒出答案完全免费哦</span>
+                    <a class="enter" href="javascript:void(0);">进入</a>
+                    <a class="remove" href="javascript:void(0);">删除</a>
+                </p>
+            </div>
+            <div class="app">
+                <img src="__MPUBLIC__/Tmp/d_app.png" width="60" height="60" border="0" alt="app" />
+                <p class="app_name">作业帮</p>
+                <p class="app_parise">
+                    <label>好评：</label>
+                    <img src="__MPUBLIC__/Images/star1.png">
+                    <img src="__MPUBLIC__/Images/star1.png">
+                    <img src="__MPUBLIC__/Images/star1.png">
+                    <img src="__MPUBLIC__/Images/star1.png">
+                    <img src="__MPUBLIC__/Images/star2.png">
+                </p>
+                <p class="app_detail">
+                    <span>作业不会写，拍照十秒出答案完全免费哦</span>
+                    <a class="enter" href="javascript:void(0);">进入</a>
+                    <a class="remove" href="javascript:void(0);">删除</a>
+                </p>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="pageBtn">
+            <a href="javascript:void(0);">下一页</a>
+            <a class="on" href="javascript:void(0);">1</a>
+            <a href="javascript:void(0);">2</a>
+            <a href="javascript:void(0);">3</a>
+            <a href="javascript:void(0);">4</a>
+            <a href="javascript:void(0);">5</a>
+            <a href="javascript:void(0);">下一页</a>
+            <a href="javascript:void(0);">下5页</a>
+        </div>
+    </div>
+    <div class="other c_right marT20">
+        <div class="resource user_see">
+            <div>
+                <a class="on" href="javascript:void(0);">推荐应用</a>
+                <a href="javascript:void(0);">热门应用</a>
+            </div>
+            <ul class="re_list seeList">
+                <li>
+                    <a href="javascript:void(0);">
+                        <img src="__MPUBLIC__/Tmp/app_default.png" width="60" height="60" border="0" alt="app" />
+                    </a>
+                    <div >
+                        <a href="javascript:void(0);">新概念英语2014</a>
+                        <p>
+                            <img src="__MPUBLIC__/Images/star1.png">
+                            <img src="__MPUBLIC__/Images/star1.png">
+                            <img src="__MPUBLIC__/Images/star1.png">
+                            <img src="__MPUBLIC__/Images/star1.png">
+                            <img src="__MPUBLIC__/Images/star2.png">
+                        </p>
+                    </div>
+                    <a class="collection" href="javascript:void(0);">收藏</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">
+                        <img src="__MPUBLIC__/Tmp/app_default.png" width="60" height="60" border="0" alt="app" />
+                    </a>
+                    <div >
+                        <a href="javascript:void(0);">新概念英语2014</a>
+                        <p>
+                            <img src="__MPUBLIC__/Images/star1.png">
+                            <img src="__MPUBLIC__/Images/star1.png">
+                            <img src="__MPUBLIC__/Images/star1.png">
+                            <img src="__MPUBLIC__/Images/star1.png">
+                            <img src="__MPUBLIC__/Images/star2.png">
+                        </p>
+                    </div>
+                    <a class="collection" href="javascript:void(0);">收藏</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">
+                        <img src="__MPUBLIC__/Tmp/app_default.png" width="60" height="60" border="0" alt="app" />
+                    </a>
+                    <div >
+                        <a href="javascript:void(0);">新概念英语2014</a>
+                        <p>
+                            <img src="__MPUBLIC__/Images/star1.png">
+                            <img src="__MPUBLIC__/Images/star1.png">
+                            <img src="__MPUBLIC__/Images/star1.png">
+                            <img src="__MPUBLIC__/Images/star1.png">
+                            <img src="__MPUBLIC__/Images/star2.png">
+                        </p>
+                    </div>
+                    <a class="collection" href="javascript:void(0);">收藏</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">
+                        <img src="__MPUBLIC__/Tmp/app_default.png" width="60" height="60" border="0" alt="app" />
+                    </a>
+                    <div >
+                        <a href="javascript:void(0);">新概念英语2014</a>
+                        <p>
+                            <img src="__MPUBLIC__/Images/star1.png">
+                            <img src="__MPUBLIC__/Images/star1.png">
+                            <img src="__MPUBLIC__/Images/star1.png">
+                            <img src="__MPUBLIC__/Images/star1.png">
+                            <img src="__MPUBLIC__/Images/star2.png">
+                        </p>
+                    </div>
+                    <a class="collection" href="javascript:void(0);">收藏</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">
+                        <img src="__MPUBLIC__/Tmp/app_default.png" width="60" height="60" border="0" alt="app" />
+                    </a>
+                    <div >
+                        <a href="javascript:void(0);">新概念英语2014</a>
+                        <p>
+                            <img src="__MPUBLIC__/Images/star1.png">
+                            <img src="__MPUBLIC__/Images/star1.png">
+                            <img src="__MPUBLIC__/Images/star1.png">
+                            <img src="__MPUBLIC__/Images/star1.png">
+                            <img src="__MPUBLIC__/Images/star2.png">
+                        </p>
+                    </div>
+                    <a class="collection" href="javascript:void(0);">收藏</a>
+                </li>
+            </ul>
+        </div>
+        <div class="user_see">
+            <div>
+                <a href="javascript:void(0);">谁看过我</a>
+                <a class="on" href="javascript:void(0);">我看过谁</a>
+            </div>
+            <ul class="seeList">
+                <li>
+                    <a href="javascript:void(0);">
+                        <img src="__MPUBLIC__/Tmp/user_pic1.jpg" width="60" height="60" border="0" alt="user" />
+                    </a>
+                    <div>
+                        <a href="javascript:void(0);">朱迎雪</a>
+                        <p>17:50</p>
+                    </div>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">
+                        <img src="__MPUBLIC__/Tmp/user_pic2.jpg" width="60" height="60" border="0" alt="user" />
+                    </a>
+                    <div>
+                        <a href="javascript:void(0);">秦丽娇</a>
+                        <p>2014年12月30日</p>
+                    </div>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">
+                        <img src="__MPUBLIC__/Tmp/user_pic3.jpg" width="60" height="60" border="0" alt="user" />
+                    </a>
+                    <div>
+                        <a href="javascript:void(0);">宋朝阳</a>
+                        <p>2014年12月25日 </p>
+                    </div>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">
+                        <img src="__MPUBLIC__/Tmp/user_pic4.jpg" width="60" height="60" border="0" alt="user" />
+                    </a>
+                    <div>
+                        <a href="javascript:void(0);">赵一博</a>
+                        <p>2014年12月25日 </p>
+                    </div>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">
+                        <img src="__MPUBLIC__/Tmp/user_pic5.jpg" width="60" height="60" border="0" alt="user" />
+                    </a>
+                    <div>
+                        <a href="javascript:void(0);">秦伟</a>
+                        <p>2014年12月25日 </p>
+                    </div>
+                </li>
+            </ul>
+            <div class="visits">
+                <span>今日浏览<label>0</label></span>
+                <span>总浏览<label>153</label></span>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<div id="dkt_footer">
+    <div class="partner">
+        <span>合作单位:</span>
+        <a href="javascript:void(0);">百度</a>
+        <a href="javascript:void(0);">中国教育网站</a>
+        <a href="javascript:void(0);">百度</a>
+        <a href="javascript:void(0);">中国教育网站</a>
+        <a href="javascript:void(0);">百度</a>
+        <a href="javascript:void(0);">中国教育网站</a>
+        <a href="javascript:void(0);">百度</a>
+        <a href="javascript:void(0);">中国教育网站</a>
+    </div>
+    <div class="aboutSite">
+        <a href="javascript:void(0);">关于本站</a>
+        <a href="javascript:void(0);">常见问题</a>
+        <a href="javascript:void(0);">意见反馈</a>
+    </div>
+    <div class="copyright">
+        <p>Copyright © 2007-2011 北京金商祺移动互联 All Rights Reserved</p>
+    </div>
+</div>
+</body>
+</html>

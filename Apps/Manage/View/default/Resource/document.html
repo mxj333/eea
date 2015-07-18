@@ -1,0 +1,36 @@
+<!--文本-->
+<load href="/Public/Js/flexPlugin/js/flexpaper.js, /Public/Js/flexPlugin/js/flexpaper_handlers.js" />
+<div>
+    <label>资源预览：</label>
+    <div class="fl">
+        <div id="documentViewer" class="flexpaper_viewer" style="width:650px;height:500px;margin-bottom:15px;"></div>
+        <script type="text/javascript">
+            $('#documentViewer').FlexPaperViewer(
+                { config : {
+                    SWFFile :'{$vo["res_path"]}',
+                    Scale : 0.6,
+                    ZoomTransition : 'easeOut',
+                    ZoomTime : 0.5,
+                    ZoomInterval : 0.2,
+                    FitPageOnLoad : true,
+                    FitWidthOnLoad : true,
+                    FullScreenAsMaxWindow : false,
+                    ProgressiveLoading : false,
+                    MinZoomSize : 0.2,
+                    MaxZoomSize : 5,
+                    SearchMatchAll : false,
+                    InitViewMode : 'Portrait',
+                    RenderingOrder : 'flash,html',
+                    StartAtPage : '',
+                    ViewModeToolsVisible : true,
+                    ZoomToolsVisible : true,
+                    NavToolsVisible : true,
+                    CursorToolsVisible : true,
+                    SearchToolsVisible : true,
+                    WMode : 'window',
+                    localeChain: 'en_US'
+                }}
+            );
+        </script>
+    </div>
+</div>

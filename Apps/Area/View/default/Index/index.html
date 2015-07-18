@@ -1,0 +1,283 @@
+<include file="Public:headerTop"/>
+<include file="Public:headerSearch"/>
+<include file="Public:headerBottom"/>
+<eq name="everyModelCss" value="1">
+    <load href="__MPUBLIC__/Css/{$Think.controller_name|strtolower}.css"/>
+</eq>
+<eq name="everyModelJs" value="1">
+    <load href="__MPUBLIC__/Js/model/{$Think.controller_name|strtolower}.js"/>
+</eq>
+    <include file="Index:contentdNav"/>
+    <include file="Adv:mainAdv1"/>
+    <div class="resources c_left">
+        <div class="contents">
+            <ul class="contentNav">
+                <volist name="resourceList[1]['type']" id="type_info">
+                    <li attr="{$key}"><a href="javascript:void(0);">{$type_info|getShortTitle=###,4}</a></li>
+                </volist>
+            </ul>
+            <volist name="resourceList[1]['list']" id="type_list" key="type_key">
+                <div class="hide item res_type_{$type_key}">
+                    <volist name="type_list" id="type_info" key="res_type_key" mod="6">
+                        <eq name="mod" value="0">
+                            <if condition="$key neq 0">
+                                </div>
+                                <div class="hide item res_type_{$type_key} marL10">
+                            </if>
+                            <div class="itemShow">
+                                <a href="{$type_info|getUrlAddress=###, 'detail','resource'}"><img src="{$type_info.res_image}" alt="{$type_info.res_title}" title="{$type_info.res_title}" width="80" height="80" border="0"></a>
+                                <div>
+                                    <a href="{$type_info|getUrlAddress=###, 'detail','resource'}">{$type_info.res_title|getShortTitle=###,14}</a>
+                                    <p>
+                                        好评:
+                                        <if condition="$type_info['res_score_num']">
+                                            {$type_info.res_score_num}/{$type_info.res_score_count}
+                                        </if>
+                                    </p>
+                                    <p class="date">{$type_info.res_created|date="Y-m-d",###}</p>
+                                </div>
+                            </div>
+                        <else/>
+                            <a href="{$type_info|getUrlAddress=###, 'detail','resource'}">{$type_info.res_title|getShortTitle=###,22}</a>
+                        </eq>
+                    </volist>
+                </div>
+            </volist>
+            <div class="clear"></div>
+        </div>
+        <div class="contents marT20">
+            <ul class="courseNav">
+                <volist name="resourceList[2]['type']" id="type_info">
+                    <li attr="{$key}"><a href="javascript:void(0);">{$type_info|getShortTitle=###,5}</a></li>
+                </volist>
+            </ul>
+            <foreach name="resourceList[2]['list']" item="course_list" key="type_key">
+                <div class="hide item res_course_{$type_key}">
+                    <volist name="course_list" id="course_info" key="res_course_key" mod="6">
+                        <eq name="mod" value="0">
+                            <if condition="$key neq 0">
+                                </div>
+                                <div class="hide item res_course_{$type_key} marL10">
+                            </if>
+                            <div class="itemShow">
+                                <a href="{$course_info|getUrlAddress=###, 'detail','resource'}"><img src="{$course_info.res_image}" alt="{$course_info.res_title}" title="{$course_info.res_title}" width="80" height="80" border="0"></a>
+                                <div>
+                                    <a href="{$course_info|getUrlAddress=###, 'detail','resource'}">{$course_info.res_title|getShortTitle=###,15}</a>
+                                    <p>
+                                        好评:
+                                        <if condition="$course_info['res_score_num']">
+                                            {$course_info.res_score_num}/{$course_info.res_score_count}
+                                        </if>
+                                    </p>
+                                    <p class="date">{$course_info.res_created|date="Y-m-d",###}</p>
+                                </div>
+                            </div>
+                        <else/>
+                            <a href="{$course_info|getUrlAddress=###, 'detail','resource'}">{$course_info.res_title|getShortTitle=###,22}</a>
+                        </eq>
+                    </volist>
+                </div>
+            </foreach>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="notices c_right">
+        <div class="notice">
+            <span></span>
+            <div class="outerLayer">
+                <div class="middleLayer">
+                    <div class="layer">
+                        通知:
+                        <volist name="noticeList" id="noticeInfo">
+                            <a class="ellipsis" href="{$noticeInfo.no_url}">{$noticeInfo.no_title|getShortTitle=###,20}</a>
+                        </volist>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dynamic wrapBorder">
+            <p>动态</p>
+        </div>
+        <div class="ads1 marT20">
+            <ul class='hide'>
+                <volist name="advertList[5]['list']" id="advertInfo">
+                    <li>
+                        <a href="{$advertInfo.adv_url}">
+                            <img src="{$advertInfo.adv_image}" alt="{$advertInfo.adv_title}" title="{$advertInfo.adv_title}" width="{$advertList[5]['pos_info']['ap_width']}" height="{$advertList[5]['pos_info']['ap_height']}" border="0">
+                        </a>
+                    </li>
+                </volist>
+            </ul>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div class="bigAd">
+        <volist name="advertList[2]['list']" id="advertInfo">
+            <a href="{$advertInfo.adv_url}">
+                <img src="{$advertInfo.adv_image}" alt="{$advertInfo.adv_title}" title="{$advertInfo.adv_title}" width="{$advertList[2]['pos_info']['ap_width']}" height="{$advertList[2]['pos_info']['ap_height']}" border="0">
+            </a>
+        </volist>
+    </div>
+    <div class="app_space c_left">
+        <div class="contents">
+            <ul class="contentNav app">
+                <volist name="appList[1]['type']" id="type_info">
+                    <li attr="{$key}"><a href="javascript:void(0);">{$type_info|getShortTitle=###,4}</a></li>
+                </volist>
+                <if condition="count($appList[1]['type']) egt 6">
+                    <li class="nav_more"><a href="javascript:void(0);">更多</a></li>
+                </if>
+            </ul>
+            <volist name="appList[1]['list']" id="type_list">
+                <div class="hide app_type_{$key}">
+                    <volist name="type_list" id="type_info" key="app_type_key">
+                        <a class="a_show" href="{$type_info.a_link}" target="_blank">
+                            <img src="{$type_info.a_logo}" title="{$type_info.a_title}" alt="{$type_info.a_title}" width="60" height="60" border="0">
+                            {$type_info.a_title|getShortTitle=###,4}
+                        </a>
+                    </volist>
+                    <div class="clear"></div>
+                </div>
+            </volist>
+        </div>
+        <div class="contents marT15">
+            <ul class="contentNav member">
+                <volist name="memberList[1]['type']" id="type_info">
+                    <li attr="{$key}"><a href="javascript:void(0);">{$type_info|getShortTitle=###,4}</a></li>
+                </volist>
+            </ul>
+            <volist name="memberList[1]['list']" id="type_list">
+                <div class="<if condition='$key neq 1'>hide</if> member_type_{$key}">
+                    <volist name="type_list" id="type_info">
+                        <a class="a_show" href="{$type_info|getUrlAddress=###, 'index','index','member',$type_info['me_id']}">
+                            <img src="{$type_info.me_avatar}" alt="{$type_info.me_nickname}" title="{$type_info.me_nickname}" width="60" height="60" border="0">
+                            {$type_info.me_nickname|getShortTitle=###,5}
+                        </a>
+                    </volist>
+                </div>
+            </volist>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="school c_right">
+        <div class="schoolShow wrapBorder">
+            <p>学校展示</p>
+            <volist name="schoolList[1]['list'][1]" id="type_info" key="app_type_key">
+                <a class="a_show" href="{$type_info|getUrlAddress=###, 'index','index','school',$type_info['s_id']}">
+                    <img src="{$type_info.s_logo}" alt="{$type_info.s_title}" title="{$type_info.s_title}" width="60" height="60" border="0">
+                    {$type_info.s_title|getShortTitle=###,12}
+                </a>
+            </volist>
+        </div>
+        <div class="ads2 marT20">
+            <ul class='hide'>
+                <volist name="advertList[6]['list']" id="advertInfo">
+                    <li>
+                        <a href="{$advertInfo.adv_url}">
+                            <img src="{$advertInfo.adv_image}" alt="{$advertInfo.adv_title}" title="{$advertInfo.adv_title}" width="{$advertList[6]['pos_info']['ap_width']}" height="{$advertList[6]['pos_info']['ap_height']}" border="0">
+                        </a>
+                    </li>
+                </volist>
+            </ul>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div class="bigAd">
+        <volist name="advertList[3]['list']" id="advertInfo">
+            <a href="{$advertInfo.adv_url}">
+                <img src="{$advertInfo.adv_image}" alt="{$advertInfo.adv_title}" title="{$advertInfo.adv_title}" width="{$advertList[3]['pos_info']['ap_width']}" height="{$advertList[3]['pos_info']['ap_height']}" border="0">
+            </a>
+        </volist>
+    </div>
+    <div class="information c_left">
+        <div class="contents">
+            <ul class="contentNav">
+                <volist name="articleList[1]['type']" id="type_info">
+                    <li attr="{$key}"><a href="javascript:void(0);">{$type_info|getShortTitle=###,4}</a></li>
+                </volist>
+            </ul>
+            <foreach name="articleList[1]['list']" item="type_list" key="type_key">
+                <div class="hide infor_item art_type_{$type_key}">
+                    <volist name="type_list" id="type_info" key="art_type_key" mod="5">
+                        <eq name="mod" value="0">
+                            <if condition="$key neq 0">
+                                </div>
+                                <div class="hide infor_item art_type_{$type_key}">
+                            </if>
+                            <a class="a_show" href="{$type_info|getUrlAddress=###, 'detail','article'}">
+                                <img src="{$type_info.art_cover}" alt="{$type_info.art_title}" title="{$type_info.art_title}" width="80" height="80" border="0">
+                                {$type_info.art_title|getShortTitle=###,6}
+                            </a>
+                        <else/>
+                            <a href="{$type_info|getUrlAddress=###, 'detail','article'}" title="{$type_info.art_title}"><span></span>{$type_info.art_title|getShortTitle=###,12}</a>
+                        </eq>
+                    </volist>
+                </div>
+            </foreach>
+        </div>
+    </div>
+    <div class="focusNews c_right contents">
+        <ul class="contentNav">
+            <volist name="articleList[2]['type']" id="type_info">
+                <li attr="{$key}"><a href="javascript:void(0);">{$type_info|getShortTitle=###,4}</a></li>
+            </volist>
+        </ul>
+        <volist name="articleList[2]['list'][1]" id="type_info" key="art_type_key">
+            <if condition="$key eq 0">
+                <div class="focus_show">
+                    <a class="a_show" href="{$type_info|getUrlAddress=###, 'detail','article'}"><img src="{$type_info.art_cover}" alt="{$type_info.art_title}" title="{$type_info.art_title}" width="80" height="80" border="0"></a>
+                    <div>
+                        <a href="{$type_info|getUrlAddress=###, 'detail','article'}">{$type_info.art_title|getShortTitle=###,14}</a>
+                        <p>{$type_info.art_summary|getShortTitle=###,36}</p>
+                    </div>
+                </div>
+            <else/>
+                <a href="{$type_info|getUrlAddress=###, 'detail','article'}" title="{$type_info.art_title}">{$type_info.art_title|getShortTitle=###,22}</a>
+            </if>
+        </volist>
+    </div>
+    <div class="clear"></div>
+    <div class="bigAd">
+        <volist name="advertList[4]['list']" id="advertInfo">
+            <a href="{$advertInfo.adv_url}">
+                <img src="{$advertInfo.adv_image}" alt="{$advertInfo.adv_title}" title="{$advertInfo.adv_title}" width="{$advertList[4]['pos_info']['ap_width']}" height="{$advertList[4]['pos_info']['ap_height']}" border="0">
+            </a>
+        </volist>
+    </div>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $.ajax({
+            type : 'POST',
+            url : AREA_MODULE.toLowerCase() + '/index/getAdvert',
+            data : {type:5},
+            dataType : 'json',
+            success : function(data) {
+                $('.ads1').carouselAd({
+                    'width' : '320px',
+                    'height' : '135px',
+                    'adWidth' : '320px',
+                    'adHeight' : '135px',
+                    'carouselType' : '1',
+                    'data' : data,
+                });
+            }
+        });
+        $.ajax({
+            type : 'POST',
+            url : AREA_MODULE.toLowerCase() + '/index/getAdvert',
+            data : {type:6},
+            dataType : 'json',
+            success : function(data) {
+                $('.ads2').carouselAd({
+                    'width' : '320px',
+                    'height' : '135px',
+                    'adWidth' : '320px',
+                    'adHeight' : '135px',
+                    'carouselType' : '1',
+                    'data' : data,
+                });
+            }
+        });
+    });
+    </script>
+<include file="Public:footer"/>

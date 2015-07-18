@@ -1,0 +1,57 @@
+<include file="Public:header"/>
+<include file="Public:left"/>
+<div id="list" class="margin_t10">
+    <eq name="everyModelJs" value="1">
+    <load href="__MPUBLIC__/Js/model/{$Think.controller_name|strtolower}Add.js"/>
+    </eq>
+    <ul class="list_header">
+        <li><span class="title">区域管理员新增</span><span class="return">返回</span></li>
+    </ul>
+    <form enctype="multipart/form-data" action="/Manage/AreaManager/{$Think.ACTION_NAME}" method="post">
+        <ul class="list_list">
+            <li class="w460">
+                <div class="row_left">区域类型</div>
+                <div class="row_right">
+                    <select name="aty_id">
+                        <volist name="aty_list" id="aty_title">
+                            <option value="{$key}" 
+                            <if condition="$vo['aty_id'] eq $key">
+                                selected="selected"
+                            </if>
+                            >{$aty_title}</option>
+                        </volist>
+                    </select>
+                </div>
+            </li>
+            <li class="w460">
+                <div class="row_left">区域</div>
+                <div class="row_right">
+                    <span class="region_cascade"></span>
+                </div>
+            </li>
+            <li class="w460">
+                <div class="row_left">用户</div>
+                <div class="row_right">
+                    <input type="text" class="search_user" name="me_nickname" value="{$vo.me_nickname}">
+                    <input type="hidden" name="me_id" value="{$vo.me_id}">
+                </div>
+            </li>
+            <li class="w460">
+                <div class="row_left">状态</div>
+                <div class="row_right">
+                    <select name="me_status">
+                        <option value="1" <if condition="$vo['me_status'] eq 1">selected="selected"</if> >启用</option>
+                        <option value="9" <if condition="$vo['me_status'] eq 9">selected="selected"</if> >禁用</option>
+                    </select>
+                </div>
+            </li>
+            <li>
+                <span class="row_right">
+                    <input type="hidden" name="am_id" value="{$vo.am_id}">
+                    <button type="submit" value="" class="save btn">保存</button>
+                </span>
+            </li>
+        </ul>
+    </form>
+</div>
+<include file="Public:footer"/>

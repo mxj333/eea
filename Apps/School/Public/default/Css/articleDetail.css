@@ -1,0 +1,83 @@
+.detail{
+    min-height:550px;
+    border-radius:10px;
+    border-bottom:#b9b9b9 solid 1px;
+    padding-bottom: 10px;
+}
+.d_title{
+    width:620px;
+}
+.d_title h1{
+    color:#333;
+    font-size:20px;
+    height:20px;
+    overflow:hidden;
+}
+.count,.share{
+    margin-left:20px;
+}
+.count span{
+    color:#228ee6;
+}
+.d_title > div{
+    margin-top:15px;
+    border-bottom:#ccc solid 1px;
+    padding-bottom:10px;
+}
+.count,.share,.d_title > div a{
+    color:#333;
+}
+.txt{
+    text-align:center;
+    padding-bottom:15px;
+    width:620px;
+}
+.txt img{
+    margin-top:15px;
+}
+.txt p{
+    margin-top:25px;
+    line-height:25px;
+    color:#333;
+    font-size:16px;
+    font-family:"宋体";
+    text-align:left;
+}
+.d_total{
+    height:37px;
+    padding:15px 0px;
+    line-height:37px;
+    background:#228ee6;
+    color:#f2f2f2;
+    font-size:18px;
+    border-radius:3px;
+    margin-top:15px;
+    text-align:center;
+}
+.d_total > span{
+    display:inline-block;
+    vertical-align:middle;
+}
+.d_total > .line{
+    height:37px;
+    border-right:#ccc solid 2px;
+    margin-right:9px;
+}
+.d_total > span span{
+    display:inline-block;
+    vertical-align:sub;
+    margin-right:3px;
+}
+.d_total > .d_praise span{
+    width:19px;
+    height:20px;
+    background:url(../Images/pics.png) no-repeat 0px -134px;
+}
+.d_total > .d_comment span{
+    width:20px;
+    height:21px;
+    background:url(../Images/pics.png) no-repeat -21px -134px;
+}
+.PicNews{
+    margin-top:0px;
+}

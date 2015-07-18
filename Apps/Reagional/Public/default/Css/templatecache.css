@@ -1,0 +1,21 @@
+.tools{
+    border-top:#ccc solid 1px;
+}
+.list_list li:first-child{
+    min-height:260px;
+}
+#list{
+    height:auto;
+    border-bottom:none;
+    padding-top:0px;
+    min-height:330px;
+}
+#list ul li{
+    height:28px;
+    padding:10px 20px;
+    width:869px;
+}
+.save{
+    margin:0px;
+    line-height:24px;
+}

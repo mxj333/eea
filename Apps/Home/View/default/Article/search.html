@@ -1,0 +1,85 @@
+<include file="Public:header"/>
+<load href="__MPUBLIC__/Css/{$Think.controller_name|strtolower}Common.css"/>
+<eq name="everyModelCss" value="1">
+    <load href="__MPUBLIC__/Css/{$Think.controller_name|strtolower}Search.css"/>
+</eq>
+<eq name="everyModelJs" value="1">
+    <load href="__MPUBLIC__/Js/model/{$Think.controller_name|strtolower}Search.js"/>
+</eq>
+    <!--内容导航开始-->
+    <include file="Article:nav"/>
+    <div class="newsList_lf">
+        <div class="recommend">
+            <include file="Article:adv2"/>
+            <div class="news">
+                <div class="borderB">
+                    <volist name="recommendNew" id="rec_new_info">
+                        <if condition="$key eq 5">
+                            </div>
+                            <div class="marT15">
+                        </if>
+                        <if condition="$key % 5 eq 0">
+                            <a href="{$rec_new_info|getUrlAddress=###, 'detail', 'article'}" class="first">{$rec_new_info.art_title|getShortTitle=###, 20}</a>
+                        <else/>
+                            <a href="{$rec_new_info|getUrlAddress=###, 'detail', 'article'}">
+                            {$rec_new_info.art_title|getShortTitle=###, 20}</a>
+                        </if>
+                    </volist>
+                </div>
+            </div>
+        </div>
+        <div class="allNews">
+            <div class="titleDiv"><h2 class="title size660"><span>全部新闻</span></h2></div>
+            <ul class="newsList">
+                <volist name="artList['list']" id="art_info">
+                    <li>
+                        <a class="caption" href="{$art_info|getUrlAddress=###, 'detail', 'article'}" title="{$art_info.art_title}">{$art_info.art_title|getShortTitle=###,30}</a>
+                        <a class="newsDetail" href="{$art_info|getUrlAddress=###, 'detail', 'article'}">
+                            <img src="{$art_info.art_cover}" width="80" height="80" border="0" alt="{$art_info.art_title}" title="{$art_info.art_title}" />
+                            <span>{$art_info.art_summary|getShortTitle=###,80}
+                            [详细]</span>
+                        </a>
+                        <p class="newsInfor">
+                            <span>{$art_info.art_designated_published|date='Y-m-d',###}</span>
+                            <span>{$art_info.art_keywords|getShortTitle=###,25|str_replace=',','<label></label>',###}</span>
+                            <span class="newsShare">评论（{$art_info.art_comment_count|intval}）<label></label>浏览（{$art_info.art_hits|intval}）</span>
+                        </p>
+                    </li>
+                </volist>
+            </ul>
+            <div class="pageBtn">
+                {$artList['page']}
+            </div>
+        </div>
+    </div>
+    <div class="newsList_rg">
+        <div class="guess">
+            <div class="titleDiv"><h2 class="title size320"><span>猜你喜欢</span></h2></div>
+            <div class="guessNews">
+                <volist name="guessList" id="guess_info">
+                    <div class="new">
+                        <span class="boxTip"></span>
+                        <a href="{$guess_info|getUrlAddress=###, 'detail', 'article'}">{$guess_info['art_title']|getShortTitle=###,20}</a>
+                    </div>
+                </volist>
+            </div>
+        </div>
+        <div class="rankingList">
+            <div class="titleDiv"><h2 class="title size320"><span>排行榜</span></h2></div>
+            <div class="popularity">
+                <volist name="rankList" id="rank_info">
+                    <div class="new">
+                        <span class="boxTip"></span>
+                        <a href="{$rank_info|getUrlAddress=###, 'detail', 'article'}">{$rank_info['art_title']|getShortTitle=###,20}</a>
+                    </div>
+                </volist>
+            </div>
+            <div class="review" style="display:none;"></div>
+        </div>
+        <div class="picture">
+            <div class="titleDiv"><h2 class="title size320"><span>图片</span></h2></div>
+            <include file="Article:adv3"/>
+        </div>
+    </div>
+    <div class="clear"></div>
+<include file="Public:footer"/>

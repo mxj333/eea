@@ -1,0 +1,40 @@
+.picList{
+    width:780px;
+    height:600px;
+    overflow:hidden;
+}
+.picList .DB_imgSet{
+    overflow:visible;
+}
+.picList .DB_imgSet .DB_prevBtn{
+    left:-50px;
+    width:15px;
+    height:25px;
+    background:url(../Images/pics.png) no-repeat 0px -66px;
+}
+.picList .DB_imgSet .DB_nextBtn{
+    right:-50px;
+    width:15px;
+    height:25px;
+    background:url(../Images/pics.png) no-repeat -14px -66px;
+}
+.picList .DB_imgSet .DB_hover{
+    width:42px;
+    height:112px;
+    padding:0px;
+    top:30%;
+}
+.picList .DB_imgSet .DB_prevBtn.DB_hover{
+    background:url(../Images/pics.png) no-repeat -102px 0px;
+}
+.picList .DB_imgSet .DB_nextBtn.DB_hover{
+    background:url(../Images/pics.png) no-repeat -61px 0px;
+}
+.pic_abstract{
+    width:658px;
+    font-size:14px;
+    line-height:20px;
+    margin-top:10px;
+    height:40px;
+    overflow:hidden;
+}

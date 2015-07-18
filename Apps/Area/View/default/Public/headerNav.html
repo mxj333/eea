@@ -1,0 +1,10 @@
+    <ul class="hNav wrap">
+        <li><a <if condition="CONTROLLER_NAME eq 'Article' and ACTION_NAME eq 'Index'">href="javascript:void(0);"<else/>href="{$area_module|strtolower}/article"</if>>资讯中心</a></li>
+        <li><a <if condition="CONTROLLER_NAME eq 'Resource' and ACTION_NAME eq 'Index'">href="javascript:void(0);"<else/>href="{$area_module|strtolower}/resource"</if>>资源中心</a></li>
+        <li><a <if condition="CONTROLLER_NAME eq 'App' and ACTION_NAME eq 'Index'">href="javascript:void(0);"<else/>href="{$area_module|strtolower}/app"</if>>应用中心</a></li>
+        <li><a href="javascript:void(0);">名师名校</a></li>
+        <li><a href="javascript:void(0);">评比活动</a></li>
+        <li><a href="javascript:void(0);">备课中心</a></li>
+        <li><a href="javascript:void(0);">微课中心</a></li>
+        <li><a href="javascript:void(0);">评测中心</a></li>
+    </ul>

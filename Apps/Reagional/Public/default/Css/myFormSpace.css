@@ -1,0 +1,182 @@
+/*下拉菜单*/
+.selects{
+    margin-top:15px;
+    height:26px;
+}
+.label{
+    float:left;
+    line-height:26px;
+}
+.dropdownMenu{
+    width:138px;
+    height:24px;
+    margin:0px 7px 0px 3px;
+    border:#ccc solid 1px;
+    border-radius:3px;
+}
+.menuShow{
+    margin-top:0px;
+    border-right:none;
+}
+.menuShow span{
+    line-height:24px;
+    color:#333;
+    display:inline-block;
+    margin-left:9px;
+    font-family:"宋体";
+    width:107px;
+}
+.menuShow img{
+    margin-left:0px;
+}
+.menuSelect span {
+    color:#646464;
+    height:24px;
+    line-height:24px;
+    padding-left:10px;
+    width:127px;
+}
+/*文本表单*/
+.text,.bigText,.textarea{
+    font-family:"Microsoft YaHei";
+    width:241px;
+    height:30px;
+    float:left;
+    margin-top:15px;
+    color:#333;
+}
+.text input,.bigText input,.textarea textarea{
+    width:193px;
+    height:28px;
+    border:#ccc solid 1px;
+    padding-left:5px;
+    color:#333;
+}
+.bigText,.textarea{
+    width:495px;
+    margin-top:10px;
+}
+.bigText input,.textarea textarea{
+    width:393px;
+}
+/*多行文本框*/
+.textarea{
+    width:790px;
+    height:300px;
+}
+.textarea textarea{
+    resize:none;
+    height:298px;
+    width:698px;
+}
+/*单选*/
+.radios{
+    font-family:"Microsoft YaHei";
+    height:12px;
+    color:#333;
+    line-height:12px;
+}
+.radios input{
+    display:none;
+}
+.radios span{
+    display:block;
+    width:12px;
+    height:12px;
+    background:url(../Images/radios.png) no-repeat 0px 0px;
+    margin-right:5px;
+    float:left;
+}
+.radios label{
+    float:left;
+    margin-right:20px;
+}
+.radios span.on{
+    background:url(../Images/radios.png) no-repeat 0px -12px;
+}
+/*预览文件上传*/
+.head{
+    margin-top:20px;
+    height:60px;
+    position:relative;
+}
+.head img{
+    display:block;
+    float:left;
+    width:58px;
+    height:58px;
+    border:#ccc solid 1px;
+    margin:0px 10px 0px 4px;
+}
+.head .file{
+    height:25px;
+    filter:alpha(opacity:0);
+    opacity:0;
+    width:150px;
+    position:absolute;
+    bottom:0px;
+    left:154px;
+}
+.head .upload,.uploadTwo{
+    width:67px;
+    height:25px;
+    border:#006ec3 solid 1px;
+    background:#0181e3;
+    color:#fff;
+    border-radius:3px;
+    margin:35px 6px 0px 0px;
+    font-family:"Microsoft YaHei";
+}
+.head .message{
+    color:#646464;
+    font-family:"宋体";
+}
+/*文件上传*/
+.form{
+    position:relative;
+}
+.uploadOne{
+    background:#0181e3;
+    border:1px solid #006ec3;
+    color:#fff;
+    font-size:14px;
+    font-family:"Microsoft YaHei";
+    height:30px;
+    width:90px;
+    margin:10px 0px 10px 85px;
+}
+.file{
+    bottom:10px;
+    height:30px;
+    left:85px;
+    opacity:0;
+    position:absolute;
+    width:90px;
+}
+.uploadTwo{
+    width:80px;
+    height:25px;
+    margin:0px;
+}
+/*带搜索按钮的文本框*/
+.inSearch{
+    border:1px solid #ccc;
+    float:left;
+    height:28px;
+    width:198px;
+}
+.inSearch input {
+    border:none;
+    height:28px;
+    padding-left:5px;
+    width:169px;
+}
+.inSearch .searchBtn{
+    background:url("../Images/searchBtn.png") no-repeat;
+    cursor:pointer;
+    display:block;
+    float:right;
+    height:15px;
+    margin:6px 8px 0 0;
+    width:16px;
+}

@@ -1,0 +1,137 @@
+.searchList{
+    border:#ccc solid 1px;
+    font-size:14px;
+}
+.searchList li{
+    line-height:33px;
+}
+.searchList li:first-child{
+    margin-top:12px;
+}
+.searchList li > div{
+    margin-left:70px;
+    width:900px;
+}
+.cue{
+    display:inline-block;
+    width:70px;
+    text-align:right;
+    color:#646464;
+    float:left;
+}
+.searchList li a{
+    color:#646464;
+    margin-left:12px;
+}
+.searchList li a.on,.searchList li a:hover{
+    color:#323232;
+    font-weight:bold;
+}
+.searchList .conditions,.sort{
+    line-height:40px;
+    height:40px;
+}
+.searchList .conditions > label{
+    width:97px;
+}
+.searchList .conditions > span,.sort > span{
+    display:block;
+    float:left;
+    line-height:20px;
+    padding:0px 5px 0px 6px;
+    border:#ccc solid 1px;
+    border-radius:3px;
+    margin:10px 0px 0px 10px;
+    color:#646464;
+}
+.searchList .conditions > span label,.sort > span label{
+    display:inline-block;
+    width:9px;
+    height:9px;
+    margin-left:5px;
+    cursor:pointer;
+    background:url(../Images/closed.png) no-repeat;
+}
+.sort > span{
+    cursor:pointer;
+}
+.sort .cue{
+    color:#323232;
+    float:left;
+    margin-right:10px;
+}
+.sort .uploadTime label{
+    width:7px;
+    height:10px;
+    background:url(../Images/tip5.png) no-repeat 0px 0px;
+}
+.resourcelist{
+    border:#ccc solid 1px;
+    border-top:none;
+    width:658px;
+    min-height:763px;
+}
+.re_item{
+    height:93px;
+    padding:15px 0px 0px 15px;
+    border-top:#ccc solid 1px;
+    cursor:pointer;
+}
+.re_item div{
+    margin:3px 0px 0px 20px;
+    width:390px;
+    height:70px;
+    float:left;
+    overflow:hidden;
+}
+.re_item div a{
+    font-size:14px;
+    font-weight:bold;
+    color:#333;
+}
+.re_item div p{
+    margin-top:12px;
+}
+.re_item div p span{
+    color:#7d7af2;
+}
+.re_item > p{
+    float:right;
+    margin:0px 20px 0px 0px;
+    color:#333;
+    font-size:14px;
+    font-family:"Microsoft YaHei";
+}
+.re_item > p img{
+    margin:2px 5px 0px 0px;
+    float:left;
+}
+.hover{
+    box-shadow:0px 0px 12px 0px #d8d8d8;
+}
+.resItem{
+    height:335px;
+}
+.resItem > a{
+    font-size:14px;
+    color:#646464;
+    line-height:17px;
+    margin-bottom:14px;
+    display:block;
+    width:290px;
+    height:17px;
+    overflow:hidden;
+}
+.resItem > a:hover{
+    color:#323232;
+}
+.resItem .c_title{
+    margin-bottom:15px;
+}
+.resItem > a img{
+    float:left;
+    margin-right:10px;
+}
+.pageNumber{
+    margin-top:20px;
+}

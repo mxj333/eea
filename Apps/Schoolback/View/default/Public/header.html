@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>{$Think.session.s_title}{$Think.config.web_title}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <load href="__PUBLIC__/Js/jquery.js,__PUBLIC__/Js/public.js,__PUBLIC__/Js/cover.js,__MPUBLIC__/Js/common.js"/>
+    <load href="__PUBLIC__/Css/base.css,__MPUBLIC__/Css/common.css"/>
+    <script type="text/javascript">
+    <!--
+        var ROOT = '__ROOT__';
+        var APP = '__APP__';
+        var MODULE = '__MODULE__';
+        var ACTION = '__ACTION__';
+        var SELF = '__SELF__';
+        var CONTROLLER = '__CONTROLLER__';
+        var MPUBLIC = '__MPUBLIC__';
+        var PUBLIC = '__PUBLIC__';
+    //-->
+        var region_title = "{$vo.re_title}";
+    </script>
+</head>
+<body>
+    <div id="dkt_header">
+        <div class="wrap">
+            <a class="indexName" href="javascript:void(0);">{$Think.session.s_title}—{$Think.config.web_title}</a>
+            <ul class="hNav">
+                <li class="on"><span class="leftWing"></span><a href="javascript:void(0);">学校首页</a><span class="rightWing"></span></li>
+                <li><span class="leftWing"></span><a href="/" target="_blank">平台首页</a><span class="rightWing"></span></li>
+                <li><span class="leftWing"></span><a href="/Area/" target="_blank">区域首页</a><span class="rightWing"></span></li>
+                <!-- <li><span class="leftWing"></span><a href="javascript:void(0);">个人中心</a><span class="rightWing"></span></li> -->
+            </ul>
+            <div class="userInfor">
+                <a href="javascript:void(0);">嗨！{$Think.session.sNickName}，{$time|helloTime}好</a>
+                <a href="__MODULE__/Public/logout">退出</a>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    <!--
+        $('#dkt_header .hNav li').mouseleave(function(){
+            $('#dkt_header .hNav li:first').addClass('on');
+            $('#dkt_header .hNav li:first').siblings().removeClass('on');
+        })
+        $('#dkt_header .hNav li').mouseover(function(){
+            $(this).addClass('on');
+            $(this).siblings().removeClass('on');
+        })
+    //-->
+    </script>
+    <div id="dkt_content">

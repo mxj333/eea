@@ -1,0 +1,41 @@
+<if condition="$vo['rf_transform_status'] neq 1">
+    <div>
+        <eq name="vo['rt_id']" value="2">
+            <!-- 视频播放1 -->
+            <include file="Resource:mp4"/>
+
+            <!-- 视频播放2 -->
+            <include file="Resource:media"/>
+
+            <!-- 视频播放3 -->
+            <include file="Resource:real"/>
+        <else />
+            <!--其他-->
+            <include file="Resource:other"/>
+        </eq>
+    </div>
+<else />
+    <eq name="vo['rt_id']" value="1">
+        <!-- 图片 -->
+        <include file="Resource:image" />
+    </eq>
+    <eq name="vo['rt_id']" value="2">
+        <!-- 视频播放 -->
+        <div>
+            <label>资源预览：</label>
+            <include file="Resource:mp4" />
+        </div>
+    </eq>
+    <eq name="vo['rt_id']" value="3">
+        <!-- 音频播放 -->
+        <include file="Resource:audio"/>
+    </eq>
+    <eq name="vo['rt_id']" value="4">
+        <!--文档-->
+        <include file="Resource:document"/>
+    </eq>
+    <eq name="vo['rt_id']" value="5">
+        <!--其他-->
+        <include file="Resource:other"/>
+    </eq>
+</if>

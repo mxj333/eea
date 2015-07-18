@@ -1,0 +1,48 @@
+<include file="Public:header"/>
+<include file="Public:left"/>
+<load href="__MPUBLIC__/Css/add.css"/>
+<script src="/Public/Js/date/WdatePicker.js" language="javascript"></script>
+<div id="list" class="margin_t10">
+    <ul class="list_header">
+        <li><span attr="{$p}" class="return">返回</span></li>
+    </ul>
+    <script type="text/javascript">
+    <!--
+        function returnList() {
+            location.href = CONTROLLER+'/index/ca_id/' + $('input[name=ca_id]').val();
+        }
+    //-->
+    </script>
+    <form enctype="multipart/form-data" action="/Schoolback/Article/insert/" method="post">
+        <ul class="list_list">
+            <li class="w460">
+                <div class="row_left"><font color="red">*</font>标题：</div>
+                <div class="row_right"><input type="text" value="{$article.art_title}" name="art_title" class="fl"></div>
+            </li>
+            <li class="w460">
+                <div class="row_left">短标题：</div>
+                <div class="row_right"><input type="text" value="{$article.art_short_title}" name="art_short_title" class="fl"></div>
+            </li>
+            <li>
+                <div class="row_left">摘要：</div>
+                <div class="row_right"><textarea cols="35" rows="5" name="art_summary">{$article.art_summary}</textarea></div>
+            </li>
+            <style>
+                #container {
+                    line-height:20px;
+                }
+            </style>
+            <li class="w460">
+                <div class="row_left">内容：</div>
+                <div class="row_right"><textarea id="container">{$article.art_content}</textarea></div>
+                <js href="__PUBLIC__/Js/ueditor/ueditor.config.js" />
+                <js href="__PUBLIC__/Js/ueditor/ueditor.all.min.js" />
+                <script>
+                $(function(){
+                    var ue = UE.getEditor('container', {
+                        'serverUrl' :'{:U('__CONTROLLER__/ueditor')}',
+                        'textarea' : 'art_content',
+                    });
+                })
+                </script>
+            </li>

@@ -1,0 +1,184 @@
+<include file="Public:header"/>
+<eq name="everyModelCss" value="1">
+    <load href="__MPUBLIC__/Css/{$Think.controller_name|strtolower}.css"/>
+</eq>
+<eq name="everyModelJs" value="1">
+    <load href="__MPUBLIC__/Js/model/{$Think.controller_name|strtolower}.js"/>
+</eq>
+    <!--内容导航开始-->
+    <include file="Resource:nav"/>
+    <!--广告开始-->
+    <include file="Resource:adv"/>
+    <!--最热资源开始-->
+    <div class="hotResource">
+        <div class="titleDiv"><h2 class="title size1000"><span>热门资源</span></h2></div>
+        <volist name="hotList[3]['list']" id="hot_info">
+            <div class="resource <if condition='$key % 5 neq 4'>marR25</if>">
+                <a href="{$hot_info|getUrlAddress=###, 'detail', 'resource'}">
+                    <img width="180" height="180" src="{$hot_info.res_image}" alt="{$hot_info.res_title}" title="{$hot_info.res_title}"/>
+                    <span class="ellipsis">{$hot_info.res_title|getShortTitle=###, 13}</span>
+                </a>
+                <p>
+                    <label>好评：</label>
+                    <for start="0" end="$hot_info['score']">
+                        <img src="__MPUBLIC__/Images/star1.png">
+                    </for>
+                    <for start="0" end="5-$hot_info['score']">
+                        <img src="__MPUBLIC__/Images/star2.png">
+                    </for>
+                    <span>{$hot_info.score|intval}分</span>
+                </p>
+            </div>
+        </volist>
+    </div>
+    <!--小学资源开始-->
+    <div class="primaryResource">
+        <div class="titleDiv">
+            <h2 class="title size1000">
+                <span>小学资源</span>
+                <ul class="titleNav">
+                    <volist name="primaryList[2]['type']" id="pri_name">
+                        <li attr="{$key}"><a href="javascript:void(0);">{$pri_name}</a></li>
+                    </volist>
+                </ul>
+            </h2>
+        </div>
+        <volist name="primaryList[2]['list']" id="pri_list">
+            <div class="primary_{$key} hide">
+                <volist name="pri_list" id="pri_info" key="pri_key">
+                    <div class="resource marR25">
+                        <a href="{$pri_info|getUrlAddress=###, 'detail', 'resource'}">
+                            <img width="180" height="180" src="{$pri_info.res_image}" alt="{$pri_info.res_title}" title="{$pri_info.res_title}"/>
+                            <span class="ellipsis">{$pri_info.res_title|getShortTitle=###, 13}</span>
+                        </a>
+                        <p>
+                            <label>好评：</label>
+                            <for start="0" end="$pri_info['score']">
+                                <img src="__MPUBLIC__/Images/star1.png">
+                            </for>
+                            <for start="0" end="5-$pri_info['score']">
+                                <img src="__MPUBLIC__/Images/star2.png">
+                            </for>
+                            <span>{$pri_info.score|intval}分</span>
+                        </p>
+                    </div>
+                </volist>
+            </div>
+        </volist>
+        <volist name="primaryListNew[2]['list']" id="pri_new_list">
+            <div class="newResource primary_{$key} hide">
+                <div class="titleDiv"><h2 class="title size387">最新资源</h2></div>
+                <volist name="pri_new_list" id="pri_new_info" key="pri_key">
+                    <div class="item <if condition='$pri_key % 2 eq 0'>marR40</if>">
+                        <a href="{$pri_new_info|getUrlAddress=###, 'detail', 'resource'}">
+                            <img width="80" height="80" src="{$pri_new_info.res_image}" alt="{$pri_new_info.res_title}" title="{$pri_new_info.res_title}"/>
+                            <span>{$pri_new_info.res_title|getShortTitle=###, 6}</span>
+                        </a>
+                        <p class="ellipsis">{$pri_new_info.res_summary|getShortTitle=###, 12}</p>
+                        <p class="read">{$pri_new_info.res_hits|intval}人阅读</p>
+                    </div>
+                </volist>
+            </div>
+        </volist>
+    </div>
+    <!--初中资源开始-->
+    <div class="middleResource">
+        <div class="titleDiv">
+            <h2 class="title size1000">
+                <span>初中资源</span>
+                <ul class="titleNav">
+                    <volist name="juniorList[2]['type']" id="jun_name">
+                        <li attr="{$key}"><a href="javascript:void(0);">{$jun_name}</a></li>
+                    </volist>
+                </ul>
+            </h2>
+        </div>
+        <volist name="juniorList[2]['list']" id="jun_list">
+            <div class="junior_{$key} hide">
+                <volist name="jun_list" id="jun_info" key="jun_key">
+                    <div class="resource marR25">
+                        <a href="{$jun_info|getUrlAddress=###, 'detail', 'resource'}">
+                            <img width="180" height="180" src="{$jun_info.res_image}" alt="{$jun_info.res_title}" title="{$jun_info.res_title}"/>
+                            <span class="ellipsis">{$jun_info.res_title|getShortTitle=###, 13}</span>
+                        </a>
+                        <p>
+                            <label>好评：</label>
+                            <for start="0" end="$jun_info['score']">
+                                <img src="__MPUBLIC__/Images/star1.png">
+                            </for>
+                            <for start="0" end="5-$jun_info['score']">
+                                <img src="__MPUBLIC__/Images/star2.png">
+                            </for>
+                            <span>{$jun_info.score|intval}分</span>
+                        </p>
+                    </div>
+                </volist>
+            </div>
+        </volist>
+        <volist name="juniorListNew[2]['list']" id="jun_new_list">
+            <div class="newResource junior_{$key} hide">
+                <div class="titleDiv"><h2 class="title size387">最新资源</h2></div>
+                <volist name="jun_new_list" id="jun_new_info" key="jun_key">
+                    <div class="item <if condition='$jun_key % 2 eq 0'>marR40</if>">
+                        <a href="{$jun_new_info|getUrlAddress=###, 'detail', 'resource'}">
+                            <img width="80" height="80" src="{$jun_new_info.res_image}" alt="{$jun_new_info.res_title}" title="{$jun_new_info.res_title}"/>
+                            <span>{$jun_new_info.res_title|getShortTitle=###, 6}</span>
+                        </a>
+                        <p class="ellipsis">{$jun_new_info.res_summary|getShortTitle=###, 12}</p>
+                        <p class="read">{$jun_new_info.res_hits|intval}人阅读</p>
+                    </div>
+                </volist>
+            </div>
+        </volist>
+    </div>
+    <!--高中资源开始-->
+    <div class="highResource">
+        <div class="titleDiv">
+            <h2 class="title size1000">
+                <span>高中资源</span>
+                <ul class="titleNav">
+                    <volist name="seniorList[2]['type']" id="sen_name">
+                        <li attr="{$key}"><a href="javascript:void(0);">{$sen_name}</a></li>
+                    </volist>
+                </ul>
+            </h2>
+        </div>
+        <volist name="seniorList[2]['list']" id="sen_list">
+            <div class="senior_{$key} hide">
+                <volist name="sen_list" id="sen_info" key="sen_key">
+                    <div class="resource marR25">
+                        <a href="{$sen_info|getUrlAddress=###, 'detail', 'resource'}">
+                            <img width="180" height="180" src="{$sen_info.res_image}" alt="{$sen_info.res_title}" title="{$sen_info.res_title}"/>
+                            <span class="ellipsis">{$sen_info.res_title|getShortTitle=###, 13}</span>
+                        </a>
+                        <p>
+                            <label>好评：</label>
+                            <for start="0" end="$sen_info['score']">
+                                <img src="__MPUBLIC__/Images/star1.png">
+                            </for>
+                            <for start="0" end="5-$sen_info['score']">
+                                <img src="__MPUBLIC__/Images/star2.png">
+                            </for>
+                            <span>{$sen_info.score|intval}分</span>
+                        </p>
+                    </div>
+                </volist>
+            </div>
+        </volist>
+        <volist name="seniorListNew[2]['list']" id="sen_new_list">
+            <div class="newResource senior_{$key} hide">
+                <div class="titleDiv"><h2 class="title size387">最新资源</h2></div>
+                <volist name="sen_new_list" id="sen_new_info" key="sen_key">
+                    <div class="item <if condition='$sen_key % 2 eq 0'>marR40</if>">
+                        <a href="{$sen_new_info|getUrlAddress=###, 'detail', 'resource'}">
+                            <img width="80" height="80" src="{$sen_new_info.res_image}" alt="{$sen_new_info.res_title}" title="{$sen_new_info.res_title}"/>
+                            <span>{$sen_new_info.res_title|getShortTitle=###, 6}</span>
+                        </a>
+                        <p class="ellipsis">{$sen_new_info.res_summary|getShortTitle=###, 12}</p>
+                        <p class="read">{$sen_new_info.res_hits|intval}人阅读</p>
+                    </div>
+                </volist>
+            </div>
+        </volist>
+    </div>
+<include file="Public:footer"/>

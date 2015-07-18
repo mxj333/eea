@@ -1,0 +1,296 @@
+.headerNav{
+    margin-left:98px;
+}
+.category a span{
+    background:url(../Images/user.png) no-repeat;
+    height:23px;
+}
+.category .back{
+    float:right;
+    color:#333;
+}
+.userNewAdd{
+    border:#eee solid 1px;
+}
+.text,.radios{
+    font-family:"Microsoft YaHei";
+    height:30px;
+    color:#333;
+    line-height:30px;
+}
+.text{
+    width:100%;
+    float:none;
+    font-size:14px;
+    margin:0px 0px 10px 0px;
+}
+.text input{
+    width:193px;
+    height:28px;
+    border:#ccc solid 1px;
+    padding-left:5px;
+    color:#333;
+    float:left;
+}
+.cue{
+    display:block;
+    float:left;
+    width:84px;
+    text-align:right;
+    font-size:14px;
+    color:#333;
+    line-height:30px;
+}
+.radios input{
+    display:none;
+}
+.radios span{
+    display:block;
+    width:12px;
+    height:12px;
+    background:url(../Images/radios.png) no-repeat 0px 0px;
+    margin:10px 5px 0px 10px;
+    float:left;
+}
+.radios label{
+    float:left;
+}
+.radios span.on{
+    background:url(../Images/radios.png) no-repeat 0px -12px;
+}
+.radios,.selectes,.head{
+    margin-bottom:10px;
+}
+.selectes{
+    height:26px;
+}
+.selectes label{
+    line-height:26px;
+}
+.dropdownMenu{
+    width:138px;
+    height:24px;
+    margin:0px 20px 0px 0px;
+    border:#ccc solid 1px;
+    border-radius:3px;
+}
+.menuShow{
+    margin-top:0px;
+    border-right:none;
+}
+.menuShow span{
+    line-height:24px;
+    color:#646464;
+    display:inline-block;
+    margin-left:9px;
+    font-family:"宋体";
+    width:107px;
+}
+.menuShow img{
+    margin-top:-17px;
+}
+.menuSelect span {
+    color:#646464;
+    height:24px;
+    line-height:24px;
+    padding-left:10px;
+    width:127px;
+}
+.head{
+    height:60px;
+    position:relative;
+}
+.head img{
+    display:block;
+    float:left;
+    width:58px;
+    height:58px;
+    border:#ccc solid 1px;
+    margin-right:10px;
+}
+.head .file{
+    height:25px;
+    filter:alpha(opacity:0);
+    opacity:0;
+    width:150px;
+    position:absolute;
+    bottom:0px;
+    left:154px;
+}
+.head .upload{
+    width:67px;
+    height:25px;
+    border:#006ec3 solid 1px;
+    background:#0181e3;
+    color:#fff;
+    border-radius:3px;
+    margin:35px 6px 0px 0px;
+    font-family:"Microsoft YaHei";
+}
+.head .message{
+    color:#646464;
+    font-family:"宋体";
+}
+.paper{
+    height:30px;
+    margin-bottom:5px;
+}
+.paper .type .dropdownMenu{
+    margin:0px;
+}
+.paper .number{
+    line-height:26px;
+}
+.textarea{
+    border:#ccc solid 1px;
+    width:595px;
+    height:100px;
+    resize:none;
+    margin-bottom:10px;
+    padding-left:5px;
+}
+.grounp{
+    float:left;
+    height:30px;
+    margin-bottom:10px;
+}
+.grounp button{
+    width:80px;
+    height:30px;
+    background:#eee;
+    color:#333;
+    margin:0px -5px 0px 10px;
+    border:none;
+}
+.grounp button.on{
+    background:#0181e3;
+    color:#fff;
+}
+.inArea{
+    clear:both;
+    margin-left:85px;
+}
+.inArea .dropdownMenu{
+    margin-right:10px;
+}
+.inArea .cue{
+    width:auto;
+    font-size:12px;
+    font-family:"宋体";
+}
+.inArea .text{
+    margin-left:4px;
+    width:256px;
+    float:left;
+}
+.funcBtn{
+    width:227px;
+    float:left;
+}
+.funcBtn button{
+    border:#ccc solid 1px;
+    height:30px;
+    width:67px;
+    background:#fff;
+    border-radius:3px;
+    margin-right:6px;
+    color:#333;
+    font-family:"Microsoft YaHei";
+}
+.funcBtn button span{
+    display:block;
+    float:left;
+    width:15px;
+    height:15px;
+    margin:2px 2px 0px 6px;
+}
+.funcBtn .add{
+    background:url(../Images/funcBtns.png) no-repeat 0px 0px;
+}
+.funcBtn .edit{
+    background:url(../Images/funcBtns.png) no-repeat -16px -1px;
+}
+.funcBtn .save{
+    background:url(../Images/funcBtns.png) no-repeat -74px 2px;
+}
+.btns{
+    margin:30px 0px 27px 85px;
+}
+.btn{
+    width:80px;
+    height:30px;
+    background:#0181e3;
+    margin-right:20px;
+    color:#fff;
+    font-size:14px;
+    border:none;
+    font-family:"Microsoft YaHei";
+}
+.content{
+    margin-bottom:80px;
+}
+.h60{
+    height:58px;
+}
+/*家长新增*/
+.inSearch{
+    width:118px;
+    height:28px;
+    border:#ccc solid 1px;
+    float:left;
+}
+.inSearch input{
+    border:none;
+    width:89px;
+    padding-left:5px;
+    height:28px;
+}
+.inSearch .searchBtn{
+    display:block;
+    float:right;
+    margin:6px 8px 0px 0px;
+    width:16px;
+    height:15px;
+    cursor:pointer;
+    background:url(../Images/searchBtn.png) no-repeat;
+}
+/**/
+.dropdown{
+    float:left;
+    margin-top:2px;
+}
+.dropdown .dropdownMenu{
+    margin-right:0px;
+}
+.cue2{
+    color: #333;
+    float: left;
+    line-height:28px;
+    margin-left:10px;
+    font-size:12px;
+}
+.smallText{
+    float:left;
+    width:253px;
+}
+.smallText input{
+    width:118px;
+}
+.parent .smallText{
+    width:201px;
+}
+.growRecord{
+    margin-top:10px;
+}
+.growRecord .score{
+    width:160px;
+}
+.growRecord .score input{
+    width:98px;
+}
+.growRecord .honorName input{
+    width:224px;
+}
+.growRecord .honorName{
+    width:310px;
+}

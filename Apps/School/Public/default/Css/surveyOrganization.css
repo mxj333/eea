@@ -1,0 +1,21 @@
+.school .survey_title{
+    margin-left:20px;
+}
+.organ_list{
+    width:780px;
+    border-top:#e6e6e6 solid 1px;
+}
+.organ_list tr td{
+    border-bottom:#e6e6e6 solid 1px;
+    color:#646464;
+    font-size:14px;
+    padding:10px 0px 10px 20px;
+    line-height:25px;
+}
+.organ_list tr td:first-child{
+    width:379px;
+    border-right:#e6e6e6 solid 1px;
+}
+.odd{
+    background:#f2f2f2;
+}

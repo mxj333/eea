@@ -1,0 +1,21 @@
+<include file="Public:header"/>
+<include file="Public:left"/>
+<script>
+    $(function() {
+        $('.list_header li .title').html($('.left div.on').html());
+    })
+</script>
+<div class="margin_t10" id="list">
+    <ul class="list_header">
+        <li><span class="title"></span></li>
+    </ul>
+    <ul class="list_list">
+        <volist name="info" id="vo">
+            <li>
+                <div class="row_left border_r">{$key}</div>
+                <div class="row_right">{$vo}</div>
+            </li>
+        </volist>
+    </ul>
+</div>
+<include file="Public:footer"/>

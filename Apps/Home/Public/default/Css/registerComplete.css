@@ -1,0 +1,119 @@
+#dkt_content{
+    width:1000px;
+    height:425px;
+}
+.logo_login{
+    margin-top:25px;
+    height:41px;
+}
+.appInfor{
+    margin-top:5px;
+    height:30px;
+    width:79px;
+    float:left;
+    line-height:30px;
+    color:#333;
+    font-size:20px;
+    text-align:center;
+    border-left:#ccc solid 1px;
+}
+.login{
+    width:114px;
+    font-family:"宋体";
+    color:#646464;
+    float:right;
+    line-height:41px;
+}
+.contentLeft{
+    width:660px;
+    float:left;
+    margin:20px 20px 0px 0px;
+}
+.prompts{
+    padding-left:20px;
+}
+.prompt{
+    width:210px;
+    float:left;
+    color:#ccc;
+    font-family:"宋体";
+    margin-right:3px;
+}
+.prompt span{
+    margin:2px 1px 0px 0px;
+    display:block;
+    float:right;
+}
+.registerSuccess{
+    clear:both;
+    width:417px;
+    height:93px;
+    margin-top:75px;
+}
+.registerSuccess div{
+    width:295px;
+    float:right;
+    font-size:14px;
+    color:#646464;
+    margin-top:10px;
+}
+.registerSuccess .congratulation{
+    font-size:18px;
+    color:#333;
+    width:150px;
+    float:left;
+    margin-top:0px;
+}
+.registerSuccess div a{
+    float:right;
+    color:#72aeec;
+    margin:2px 40px 0px 0px;
+}
+.registerSuccess div p{
+    clear:both;
+    margin-top:45px;
+}
+.jump{
+    width:500px;
+    border-top:#efefef solid 1px;
+    height:56px;
+    margin-top:60px;
+}
+.jump p{
+    color:#333;
+    font-family:"宋体";
+    margin:35px 20px 0px 80px;
+    width:276px;
+    float:left;
+}
+.jump a{
+    display:block;
+    float:left;
+    width:98px;
+    height:28px;
+    border:#228ee6 solid 1px;
+    color:#62a7eb;
+    margin-top:25px;
+    line-height:28px;
+    text-align:center;
+    border-radius:4px;
+    font-size:18px;
+}
+.contentRight{
+    width:320px;
+    margin-top:20px;
+    float:left;
+}
+.title{
+    font-size:14px;
+    font-family:"宋体";
+    padding-bottom:5px;
+    float:left;
+    color:#646464;
+    font-weight:normal;
+}
+.thirdLogin a{
+    display:block;
+    float:left;
+    margin:10px 20px 0px 0px;
+}

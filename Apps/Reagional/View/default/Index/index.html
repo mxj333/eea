@@ -1,0 +1,148 @@
+<include file="Public:header"/>
+<include file="Public:left"/>
+<include file="Public:right"/>
+<eq name="everyModelCss" value="1">
+    <load href="__MPUBLIC__/Css/{$Think.controller_name|strtolower}.css"/>
+</eq>
+<eq name="everyModelJs" value="1">
+    <load href="__MPUBLIC__/Js/model/{$Think.controller_name|strtolower}.js"/>
+</eq>
+<div class="adminIndex management">
+    <a href="javascript:void(0);" class="userCensus census">
+        <p>用户总数</p>
+        <p class="number"><span></span>{$total_num.member}</p>
+    </a>
+    <a href="javascript:void(0);" class="resourceCensus census">
+        <p>资源个数</p>
+        <p class="number"><span></span>{$total_num.resource}</p>
+    </a>
+    <a href="javascript:void(0);" class="appCensus census">
+        <p>应用个数</p>
+        <p class="number"><span></span>{$total_num.app}</p>
+    </a>
+    <a href="javascript:void(0);" class="schoolCensus census">
+        <p>学校总数</p>
+        <p class="number"><span></span>{$total_num.school}</p>
+    </a>
+    <div class="warn warn_func">
+        <p>未完成工作提醒</p>
+        <div>
+            <a href="javascript:void(0);"><span>待审资源</span>{$resource_pass_num}个</a>
+        </div>
+    </div>
+    <div class="func warn_func">
+        <p>常用功能</p>
+        <div>
+            <!--<volist name="groups" id="group">
+                <volist name="group.list" id="node">
+                    <a href="__MODULE__/{$node.pe_name}">{$node.pe_title}</a>
+                </volist>
+            </volist>-->
+            <a href="__MODULE__/School">学校管理</a>
+            <a href="__MODULE__/MemberImport">用户导入</a>
+            <a href="__MODULE__/MemberStatistics">用户统计</a>
+            <a href="__MODULE__/AreaManager">管理员管理</a>
+            <a href="__MODULE__/RoleGroup">角色管理</a>
+            <a href="__MODULE__/Resource">资源管理</a>
+            <a href="__MODULE__/ResourceReview">资源审核</a>
+            <a href="__MODULE__/ResourceImport">资源导入</a>
+            <a href="__MODULE__/App">应用管理</a>
+            <a href="__MODULE__/Article">资讯管理</a>
+            <a href="__MODULE__/Notice">公告管理</a>
+            <a href="__MODULE__/TemplateCache">缓存管理</a>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div class="newCensus marT20">
+        <p class="titleBox">用户新增统计</p>
+        <div class="dateTable fl">
+            <div class="date">
+                <label>年：</label>
+                <select name="memberAddRate">
+                    <for start="2010" end="2030" name="year_name" >
+                        <option value="{$year_name}" <if condition="date('Y') == $year_name">selected="selected"</if>>{$year_name}</option>
+                    </for>
+                </select>
+            </div>
+            <table class="dataTable" cellspacing="0px">
+                <tr class="tableHead">
+                    <th>月</th>
+                    <th>增长人数</th>
+                    <th>增长率</th>
+                </tr>
+                <tr><td>1</td><td></td><td></td></tr>
+                <tr><td>2</td><td></td><td></td></tr>
+                <tr><td>3</td><td></td><td></td></tr>
+                <tr><td>4</td><td></td><td></td></tr>
+                <tr><td>5</td><td></td><td></td></tr>
+                <tr><td>6</td><td></td><td></td></tr>
+                <tr><td>7</td><td></td><td></td></tr>
+                <tr><td>8</td><td></td><td></td></tr>
+                <tr><td>9</td><td></td><td></td></tr>
+                <tr><td>10</td><td></td><td></td></tr>
+                <tr><td>11</td><td></td><td></td></tr>
+                <tr><td>12</td><td></td><td></td></tr>
+            </table>
+        </div>
+        <div class="lineCensus fl">
+            <div id="memberadd_chart"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="resource marT20">
+        <p class="titleBox">区域资源情况</p>
+        <div class="map fl">
+            <img src="__MPUBLIC__/Tmp/r_map.png" useMap="#map" alt="map"/>
+            <map name="map">
+                <area alt="北京" href="" coords="354,140,380,153" shape="rect">
+            </map>
+        </div>
+        <table class="rankList fl" cellspacing="0">
+            <caption>上传资源排行</caption>
+            <tr>
+                <th class="w55">排名</th>
+                <th>地区</th>
+                <th>资源数</th>
+            </tr>
+            <tr>
+                <td class="w55"><span>1</span></td>
+                <td></td>
+                <td></th>
+            </tr>
+            <tr>
+                <td class="w55"><span>2</span></td>
+                <td></td>
+                <td></th>
+            </tr>
+            <tr>
+                <td class="w55"><span>3</span></td>
+                <td></td>
+                <td></th>
+            </tr>
+            <tr>
+                <td class="w55"><span class="bgColor">4</span></td>
+                <td></td>
+                <td></th>
+            </tr>
+            <tr>
+                <td class="w55"><span class="bgColor">5</span></td>
+                <td></td>
+                <td></th>
+            </tr>
+        </table>
+        <div class="clear"></div>
+    </div>
+    <div class="highOpinion marT20">
+        <p class="titleBox">应用好评统计</p>
+        <div class="loadBar">
+            <span>应用好评</span>
+            <div class="bar">
+                <span>0</span>
+            </div>
+        </div>
+        <div class="histogram">
+            <div id="appGood_chart"></div>
+        </div>
+    </div>
+</div>
+<include file="Public:footer"/>

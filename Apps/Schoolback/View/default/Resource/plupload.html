@@ -1,0 +1,116 @@
+<div class="table_box">
+    <div class="table_header">
+        <span style="width:35%;">文件名</span>
+        <span style="width:20%;">大小</span>
+        <span style="width:20%;">状态</span>
+        <span style="width:20%;">操作</span>
+    </div>
+    <div id="filelist">Your browser doesn't have Flash, Silverlight or HTML5 support.</div>
+    <div id="console"></div>
+    <div id="container">
+        <span>成功上传0个文件</span>
+        <a id="uploadfiles" class="upload" href="javascript:;">上传文件</a>
+        <a id="pickfiles" class="upload" href="javascript:;">选择文件</a>
+    </div>
+</div>
+<style>
+#console{
+    margin: 15px 20px;
+}
+.ellipsis_del{
+    cursor:pointer;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    // 批量上传 隐藏提交框
+    $('.list_list li:gt(0)').css({'display':'none'});
+    $('.fig').live('click',function(){
+        if(!$(this).hasClass('on')){
+            $(this).addClass('on').css('background-position','0px 0px');
+            $(this).parent().nextAll().slideDown('normal');
+            $(this).parent().nextAll().find(".res_author,.res_download_points").parents("li").css({'display':'none'});
+        }else{
+            $(this).removeClass('on').css('background-position','-29px 0px');
+            $(this).parent().nextAll().slideUp('normal');
+        }
+    });
+});
+
+// Custom example logic
+var uploader = new plupload.Uploader({
+	runtimes : 'html5,flash,silverlight,html4',
+	browse_button : 'pickfiles', // you can pass in id...
+	container: document.getElementById('container'), // ... or DOM Element itself
+	url : CONTROLLER + '/upload/',
+	flash_swf_url : '/Public/Js/plupload/Moxie.swf',
+	silverlight_xap_url : '/Public/Js/plupload/Moxie.xap',
+	max_file_size: '10240mb',
+    chunk_size: '512kb',
+    unique_names : true,
+
+	init: {
+		PostInit: function() {
+			document.getElementById('filelist').innerHTML = '';
+
+			document.getElementById('uploadfiles').onclick = function() {
+				uploader.start();
+				return false;
+			};
+		},
+
+		FilesAdded: function(up, files) {
+            if(uploader.files.length>5){ // 最多上传5张图
+                showMessage('每次最多上传5个文件');
+                uploader.files.splice(5, 65534);
+            }
+            var haveLength = $('#filelist').children().length;
+            var createdLength = 5-haveLength;
+			for (var i in files) {
+                if (i < createdLength) {
+				    document.getElementById('filelist').innerHTML += '<div id="' + files[i].id + '"><span class="ellipsis" style="width:35%;">' + files[i].name + '</span><span style="width:20%;">' + plupload.formatSize(files[i].size) + '</span><span style="width:20%;"><div class="progress"><span class="bar"></span><label>0%</label></div></span><span style="width:20%;"><label class="ellipsis_del" attr="'+files[i].id+'"></label></span></div>';
+                }
+			}
+		},
+
+		UploadProgress: function(up, file) {
+			//document.getElementById(file.id).getElementsByClassName('bar')[0].width = file.percent + "%";
+            $("#" + file.id + "").find(".progress .bar").css("width",file.percent + "%")&&$("#" + file.id + "").find(".progress label").text(file.percent + "%");
+		},
+
+        //文件上传完成后动作，每上传完一个文件均会执行
+        FileUploaded: function(up, file, info) {
+            var res = JSON.parse(info.response);
+            if (res.result) {
+                var cloneUl = $('.cloneTemp ul').clone(true);
+                cloneUl.attr('num', file.id);
+                $('button[type=submit]').before(cloneUl);
+                cloneUl.find($('.rf_id')).val(res.id);
+                cloneUl.find($('.rt_id')).val(res.rt_id);
+                cloneUl.find($('.res_transform_status')).val(res.transform_status);
+                $('#container span').html('成功上传'+($('.res_title').length - 1)+'个文件');
+            }
+        },
+
+		Error: function(up, err) {
+			document.getElementById('console').innerHTML += "\nError #" + err.code + ": " + err.message;
+		}
+	}
+});
+
+uploader.init();
+
+// 删除
+$('.ellipsis_del').live('click',function(){
+    $(this).parent().parent().remove();
+    $('ul.list_list[num=' + $(this).attr('attr') + ']').remove();
+    var toremove = '';
+    var id = $(this).attr("attr");
+    for(var i in uploader.files){
+        if (uploader.files[i].id == id) {
+            toremove = i;
+        }
+    }
+    uploader.files.splice(toremove, 1);
+});
+</script>

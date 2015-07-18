@@ -1,0 +1,127 @@
+<include file="Public:header"/>
+<eq name="everyModelCss" value="1">
+    <load href="__MPUBLIC__/Css/{$Think.controller_name|strtolower}Search.css"/>
+</eq>
+<eq name="everyModelJs" value="1">
+    <load href="__MPUBLIC__/Js/model/{$Think.controller_name|strtolower}Search.js"/>
+</eq>
+    <div class="selectBox">
+        <div class="location">
+            您的位置：
+            <a href="{$info|getUrlAddress=###, 'index', 'index'}">首页</a>
+            >>
+            <a href="{$info|getUrlAddress=###, 'index', 'resource'}">资源</a>
+            >> 资源列表
+        </div>
+        <ul class="listSort">
+            <li>
+                <label>学制：</label>
+                <div class="cont">
+                    <p>
+                        <a href="javascript:void(0);">全部</a>
+                        <volist name="tag[4]" id="schoolType">
+                            <a href="javascript:void(0);" attr="{$key}">{$schoolType}</a>
+                        </volist>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <label>年级：</label>
+                <div class="cont">
+                    <p>
+                        <a href="javascript:void(0);">全部</a>
+                        <volist name="tag[7]" id="grade">
+                            <a href="javascript:void(0);" attr="{$key}">{$grade}</a>
+                        </volist>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <label>学科：</label>
+                <div class="cont">
+                    <p>
+                        <a href="javascript:void(0);">全部</a>
+                        <volist name="tag[5]" id="subject">
+                            <a href="javascript:void(0);" attr="{$key}">{$subject}</a>
+                        </volist>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <label>学期：</label>
+                <div class="cont">
+                    <p>
+                        <a href="javascript:void(0);">全部</a>
+                        <volist name="tag[8]" id="semester">
+                            <a href="javascript:void(0);" attr="{$key}">{$semester}</a>
+                        </volist>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <label>版本：</label>
+                <div class="cont">
+                    <p class="more"><span></span>更多</p>
+                    <p>
+                        <a href="javascript:void(0);">全部</a>
+                        <volist name="tag[6]" id="version">
+                            <a href="javascript:void(0);" attr="{$key}">{$version}</a>
+                        </volist>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="directoryResource">
+        <div class="directorys">
+            <include file="Resource:tree"/>
+        </div>
+        <div class="resources">
+            <div class="nav_sequence">
+                <div class="nav">
+                    <a href="javascript:void(0);" class="on">全部资源</a>
+                    <a href="javascript:void(0);" attr="1">教案</a>
+                    <a href="javascript:void(0);" attr="2">课件</a>
+                    <a href="javascript:void(0);" attr="3">练习</a>
+                    <a href="javascript:void(0);" attr="4">例题</a>
+                    <a href="javascript:void(0);" attr="5">视频</a>
+                    <a href="javascript:void(0);" attr="6">图片</a>
+                    <a href="javascript:void(0);" attr="7">文字</a>
+                </div>
+                <div class="sequence">
+                    <a href="javascript:void(0);">上传时间<span></span></a>
+                    <a href="javascript:void(0);">下载量<span></span></a>
+                    <a href="javascript:void(0);">评价<span class="on"></span></a>
+                    <a href="javascript:void(0);">最新<span></span></a>
+                </div>
+            </div>
+            <div class="items">
+                <ul>
+                    <volist name="resourceList[3]['list']" id="res_info">
+                        <li class="item">
+                            <a href="{$res_info|getUrlAddress=###, 'detail', 'resource'}" class="fl"><img src="{$res_info.res_image}" width="80" height="80" /></a>
+                            <div>
+                                <a href="{$res_info|getUrlAddress=###, 'detail', 'resource'}">{$res_info.res_title|getShortTitle=###, 19}</a>
+                                <p><span>{$res_info.rc_title}</span>/{$res_info['school_type']}/{$res_info['grade']}/{$res_info['subject']}
+                                <p>智慧豆：<span>{$res_info.res_download_points|intval}</span>个&nbsp;&nbsp;浏览：<span>{$res_info.res_hits|intval}</span>次&nbsp;&nbsp;下载：<span>{$res_info.res_downloads|intval}</span>次&nbsp;&nbsp;评论：<span>{$res_info.res_comment_count|intval}</span>次</p>
+                            </div>
+                            <p>
+                                <for start="0" end="$res_info['score']">
+                                    <img src="__MPUBLIC__/Images/star1.png">
+                                </for>
+                                <for start="0" end="5-$res_info['score']">
+                                    <img src="__MPUBLIC__/Images/star2.png">
+                                </for>
+                                <span>{$res_info.score|intval}分</span>
+                            </p>
+                        </li>
+                    </volist>
+                </ul>
+                <div class="pageNumber">
+                    {$resourceList[3]['page']}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+<include file="Public:footer"/>

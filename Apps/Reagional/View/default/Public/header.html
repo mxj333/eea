@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>{$currentRegionTitle}管理平台</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <load href="__PUBLIC__/Js/jquery.js,__PUBLIC__/Js/public.js,__PUBLIC__/Js/validateForm.js,__PUBLIC__/Js/cover.js,__MPUBLIC__/Js/public.js"/>
+    <load href="__PUBLIC__/Css/base.css,__MPUBLIC__/Css/public.css"/>
+    <script type="text/javascript">
+    <!--
+        var ROOT = '__ROOT__';
+        var APP = '__APP__';
+        var MODULE = '__MODULE__';
+        var ACTION = '__ACTION__';
+        var SELF = '__SELF__';
+        var CONTROLLER = '__CONTROLLER__';
+        var MPUBLIC = '__MPUBLIC__';
+        var PUBLIC = '__PUBLIC__';
+    //-->
+        var region_title = "{$vo.re_title}";
+    </script>
+</head>
+<body>
+    <!--页面头部开始 -->
+    <div id="dkt_header">
+        <div class="size1000">
+            <a class="headerTitle" href="javascript:void(0);">{$currentRegionTitle}管理平台</a>
+            <ul class="headerNav">
+                <li><a class="on" href="javascript:void(0);">区域首页</a></li>
+                <li><a href="/" target="_black">平台首页</a></li>
+                <li><a href="javascript:void(0);">个人中心</a></li>
+            </ul>
+            <div class="fastKeys">
+                <a class="userName" href="javascript:void(0);">嗨！{$Think.session.meNickName}，{$time|helloTime}好</a>
+                <a href="__MODULE__/Public/logout">[退出]</a>
+            </div>
+        </div>
+    </div>
+    <div id="dkt_content">

@@ -1,0 +1,21 @@
+.school .survey_title{
+    margin-left:20px;
+}
+.leaderList{
+    width:780px;
+    border-top:#e6e6e6 solid 1px;
+}
+.leaderList tr td{
+    border-bottom:#e6e6e6 solid 1px;
+    color:#646464;
+    font-size:14px;
+    padding:10px 0px 10px 20px;
+    line-height:25px;
+}
+.w100{
+    width:100px;
+}
+.w_b258{
+    width:238px;
+    border-right:#e6e6e6 solid 1px;
+}

@@ -1,0 +1,425 @@
+<include file="Public:header"/>
+<eq name="everyModelCss" value="1">
+    <load href="__MPUBLIC__/Css/{$Think.controller_name|strtolower}.css"/>
+</eq>
+<eq name="everyModelJs" value="1">
+    <load href="__MPUBLIC__/Js/model/{$Think.controller_name|strtolower}.js"/>
+</eq>
+<load href="__MPUBLIC__/Css/resource.css"/>
+<div id="dkt_content" class="wrap">
+    <include file="Adv:ResAdv"/>
+    <div class="location">
+        <a href="javascript:void(0);">首页</a>
+        >
+        <a href="javascript:void(0);">资讯中心</a>
+        >
+        <a href="javascript:void(0);">要闻速递</a>
+    </div>
+    <div class="catalog">
+        <div class="classify">
+            <a class="on" href="javascript:void(0);">教材</a>
+            <a href="javascript:void(0);">知识点</a>
+        </div>
+        <ul>
+            <li>
+                <span>语文</span>
+            </li>
+            <li>
+                <span>数学</span>
+            </li>
+            <li>
+                <span>英语</span>
+            </li>
+            <li>
+                <span>物理</span>
+            </li>
+            <li>
+                <span>地理</span>
+            </li>
+            <li>
+                <span>生物</span>
+            </li>
+            <li>
+                <span>化学</span>
+            </li>
+            <li>
+                <span>历史</span>
+            </li>
+            <li>
+                <span>政治</span>
+            </li>
+        </ul>
+    </div>
+    <div class="schoolResource">
+        <div class="filter">
+            <p>条件筛选</p>
+            <ul class="conditions">
+                <li>
+                    <label>使用类别：</label>
+                    <span>
+                        <a class="on" href="javascript:void(0);">不限</a>
+                        <volist name="resourceCategory" id="rescate" key="resk">
+                            <a href="#{$resk}">{$rescate}</a>
+                        </volist>
+                    </span>
+                </li>
+                <li>
+                    <label>地区：</label>
+                    <span>
+                        <a class="on" href="javascript:void(0);">不限</a>
+                        <a href="javascript:void(0);">北京</a>
+                        <a href="javascript:void(0);">河北</a>
+                        <a href="javascript:void(0);">河南</a>
+                        <a href="javascript:void(0);">山西</a>
+                        <a href="javascript:void(0);">山东</a>
+                        <a href="javascript:void(0);">陕西</a>
+                        <a href="javascript:void(0);">湖南</a>
+                        <a href="javascript:void(0);">天津</a>
+                        <a href="javascript:void(0);">上海</a>
+                        <a href="javascript:void(0);">浙江</a>
+                        <a href="javascript:void(0);">江西</a>
+                        <a href="javascript:void(0);">甘肃</a>
+                        <a href="javascript:void(0);">重庆</a>
+                        <a href="javascript:void(0);">浙江</a>
+                        <a href="javascript:void(0);">江西</a>
+                        <a href="javascript:void(0);">甘肃</a>
+                        <a href="javascript:void(0);">重庆</a>
+                    </span>
+                    <span class="more">更多</span>
+                </li>
+                <li>
+                    <label>时间：</label>
+                    <span>
+                        <a class="on" href="javascript:void(0);">不限</a>
+                        <a href="javascript:void(0);">2015</a>
+                        <a href="javascript:void(0);">2014</a>
+                        <a href="javascript:void(0);">2013</a>
+                        <a href="javascript:void(0);">2012</a>
+                        <a href="javascript:void(0);">2011</a>
+                        <a href="javascript:void(0);">2010</a>
+                        <a href="javascript:void(0);">2009</a>
+                        <a href="javascript:void(0);">2008</a>
+                        <a href="javascript:void(0);">2007</a>
+                        <a href="javascript:void(0);">2006</a>
+                        <a href="javascript:void(0);">2005</a>
+                        <a href="javascript:void(0);">2004</a>
+                        <a href="javascript:void(0);">2003</a>
+                        <a href="javascript:void(0);">2002</a>
+                        <a href="javascript:void(0);">2001</a>
+                        <a href="javascript:void(0);">2000</a>
+                    </span>
+                    <span class="more">更多</span>
+                </li>
+                <li>
+                    <label>知识点：</label>
+                    <span>
+                        <a class="on" href="javascript:void(0);">不限</a>
+                        <a href="javascript:void(0);">三角形</a>
+                        <a href="javascript:void(0);">四边形</a>
+                        <a href="javascript:void(0);">平行四边形</a>
+                        <a href="javascript:void(0);">三角函数</a>
+                    </span>
+                    <span class="more">更多</span>
+                </li>
+            </ul>
+        </div>
+        <div class="resourceList">
+            <div class="sort">
+                <span class="sortTitle">资源列表</span>
+                <span class="sortRule">
+                    <span class="default">默认</span>
+                    <span>上传时间<label class="on"></label></span>
+                    <span>评分<label></label></span>
+                    <span>下载<label></label></span>
+                    <span>评论数<label></label></span>
+                    <span>智慧币数量<label></label></span>
+                </span>
+                <span class="searchBox">
+                    <input type="text" value="">
+                    <label class="search"><span></span></label>
+                </span>
+            </div>
+            <ul class="resource">
+                <li>
+                    <span class="re_detail">
+                        <a href="javascript:void(0);"><img src="../../Public/Tmp/resource_list.jpg" width="80" height="80" alt="resource" /></a>
+                        <span>
+                            <a href="javascript:void(0);">小学语文一年级上册《汉语拼音3_b_p_m_f》教学...</a>
+                            <p>简介：研究生入学考试初试的结束意味着复试已经悄然被提上日程。和初试不同，复试...</p>
+                            <span>智慧豆：5个</span>
+                            <span>上传时间：2015-02-02</span>
+                            <span>下载量：35</span>
+                        </span>
+                    </span>
+                    <span class="re_infor">
+                        <p>156523人阅读</p>
+                        <p class="star">
+                            <img src="../../Public/Images/Front/regionalplatform/star1.png">
+                            <img src="../../Public/Images/Front/regionalplatform/star1.png">
+                            <img src="../../Public/Images/Front/regionalplatform/star1.png">
+                            <img src="../../Public/Images/Front/regionalplatform/star1.png">
+                            <img src="../../Public/Images/Front/regionalplatform/star2.png">
+                            <span>4.0分</span>
+                        </p>
+                        <p>(2564人评价)</p>
+                    </span>
+                </li>
+                <li>
+                    <span class="re_detail">
+                        <a href="javascript:void(0);"><img src="../../Public/Tmp/resource_list.jpg" width="80" height="80" alt="resource" /></a>
+                        <span>
+                            <a href="javascript:void(0);">小学语文一年级上册《汉语拼音3_b_p_m_f》教学...</a>
+                            <p>简介：研究生入学考试初试的结束意味着复试已经悄然被提上日程。和初试不同，复试...</p>
+                            <span>智慧豆：5个</span>
+                            <span>上传时间：2015-02-02</span>
+                            <span>下载量：35</span>
+                        </span>
+                    </span>
+                    <span class="re_infor">
+                        <p>156523人阅读</p>
+                        <p class="star">
+                            <img src="../../Public/Images/Front/regionalplatform/star1.png">
+                            <img src="../../Public/Images/Front/regionalplatform/star1.png">
+                            <img src="../../Public/Images/Front/regionalplatform/star1.png">
+                            <img src="../../Public/Images/Front/regionalplatform/star1.png">
+                            <img src="../../Public/Images/Front/regionalplatform/star2.png">
+                            <span>4.0分</span>
+                        </p>
+                        <p>(2564人评价)</p>
+                    </span>
+                </li>
+                <li>
+                    <span class="re_detail">
+                        <a href="javascript:void(0);"><img src="../../Public/Tmp/resource_list.jpg" width="80" height="80" alt="resource" /></a>
+                        <span>
+                            <a href="javascript:void(0);">小学语文一年级上册《汉语拼音3_b_p_m_f》教学...</a>
+                            <p>简介：研究生入学考试初试的结束意味着复试已经悄然被提上日程。和初试不同，复试...</p>
+                            <span>智慧豆：5个</span>
+                            <span>上传时间：2015-02-02</span>
+                            <span>下载量：35</span>
+                        </span>
+                    </span>
+                    <span class="re_infor">
+                        <p>156523人阅读</p>
+                        <p class="star">
+                            <img src="../../Public/Images/Front/regionalplatform/star1.png">
+                            <img src="../../Public/Images/Front/regionalplatform/star1.png">
+                            <img src="../../Public/Images/Front/regionalplatform/star1.png">
+                            <img src="../../Public/Images/Front/regionalplatform/star1.png">
+                            <img src="../../Public/Images/Front/regionalplatform/star2.png">
+                            <span>4.0分</span>
+                        </p>
+                        <p>(2564人评价)</p>
+                    </span>
+                </li>
+                <li>
+                    <span class="re_detail">
+                        <a href="javascript:void(0);"><img src="../../Public/Tmp/resource_list.jpg" width="80" height="80" alt="resource" /></a>
+                        <span>
+                            <a href="javascript:void(0);">小学语文一年级上册《汉语拼音3_b_p_m_f》教学...</a>
+                            <p>简介：研究生入学考试初试的结束意味着复试已经悄然被提上日程。和初试不同，复试...</p>
+                            <span>智慧豆：5个</span>
+                            <span>上传时间：2015-02-02</span>
+                            <span>下载量：35</span>
+                        </span>
+                    </span>
+                    <span class="re_infor">
+                        <p>156523人阅读</p>
+                        <p class="star">
+                            <img src="../../Public/Images/Front/regionalplatform/star1.png">
+                            <img src="../../Public/Images/Front/regionalplatform/star1.png">
+                            <img src="../../Public/Images/Front/regionalplatform/star1.png">
+                            <img src="../../Public/Images/Front/regionalplatform/star1.png">
+                            <img src="../../Public/Images/Front/regionalplatform/star2.png">
+                            <span>4.0分</span>
+                        </p>
+                        <p>(2564人评价)</p>
+                    </span>
+                </li>
+                <li>
+                    <span class="re_detail">
+                        <a href="javascript:void(0);"><img src="../../Public/Tmp/resource_list.jpg" width="80" height="80" alt="resource" /></a>
+                        <span>
+                            <a href="javascript:void(0);">小学语文一年级上册《汉语拼音3_b_p_m_f》教学...</a>
+                            <p>简介：研究生入学考试初试的结束意味着复试已经悄然被提上日程。和初试不同，复试...</p>
+                            <span>智慧豆：5个</span>
+                            <span>上传时间：2015-02-02</span>
+                            <span>下载量：35</span>
+                        </span>
+                    </span>
+                    <span class="re_infor">
+                        <p>156523人阅读</p>
+                        <p class="star">
+                            <img src="../../Public/Images/Front/regionalplatform/star1.png">
+                            <img src="../../Public/Images/Front/regionalplatform/star1.png">
+                            <img src="../../Public/Images/Front/regionalplatform/star1.png">
+                            <img src="../../Public/Images/Front/regionalplatform/star1.png">
+                            <img src="../../Public/Images/Front/regionalplatform/star2.png">
+                            <span>4.0分</span>
+                        </p>
+                        <p>(2564人评价)</p>
+                    </span>
+                </li>
+                <li>
+                    <span class="re_detail">
+                        <a href="javascript:void(0);"><img src="../../Public/Tmp/resource_list.jpg" width="80" height="80" alt="resource" /></a>
+                        <span>
+                            <a href="javascript:void(0);">小学语文一年级上册《汉语拼音3_b_p_m_f》教学...</a>
+                            <p>简介：研究生入学考试初试的结束意味着复试已经悄然被提上日程。和初试不同，复试...</p>
+                            <span>智慧豆：5个</span>
+                            <span>上传时间：2015-02-02</span>
+                            <span>下载量：35</span>
+                        </span>
+                    </span>
+                    <span class="re_infor">
+                        <p>156523人阅读</p>
+                        <p class="star">
+                            <img src="../../Public/Images/Front/regionalplatform/star1.png">
+                            <img src="../../Public/Images/Front/regionalplatform/star1.png">
+                            <img src="../../Public/Images/Front/regionalplatform/star1.png">
+                            <img src="../../Public/Images/Front/regionalplatform/star1.png">
+                            <img src="../../Public/Images/Front/regionalplatform/star2.png">
+                            <span>4.0分</span>
+                        </p>
+                        <p>(2564人评价)</p>
+                    </span>
+                </li>
+                <li>
+                    <span class="re_detail">
+                        <a href="javascript:void(0);"><img src="../../Public/Tmp/resource_list.jpg" width="80" height="80" alt="resource" /></a>
+                        <span>
+                            <a href="javascript:void(0);">小学语文一年级上册《汉语拼音3_b_p_m_f》教学...</a>
+                            <p>简介：研究生入学考试初试的结束意味着复试已经悄然被提上日程。和初试不同，复试...</p>
+                            <span>智慧豆：5个</span>
+                            <span>上传时间：2015-02-02</span>
+                            <span>下载量：35</span>
+                        </span>
+                    </span>
+                    <span class="re_infor">
+                        <p>156523人阅读</p>
+                        <p class="star">
+                            <img src="../../Public/Images/Front/regionalplatform/star1.png">
+                            <img src="../../Public/Images/Front/regionalplatform/star1.png">
+                            <img src="../../Public/Images/Front/regionalplatform/star1.png">
+                            <img src="../../Public/Images/Front/regionalplatform/star1.png">
+                            <img src="../../Public/Images/Front/regionalplatform/star2.png">
+                            <span>4.0分</span>
+                        </p>
+                        <p>(2564人评价)</p>
+                    </span>
+                </li>
+                <li>
+                    <span class="re_detail">
+                        <a href="javascript:void(0);"><img src="../../Public/Tmp/resource_list.jpg" width="80" height="80" alt="resource" /></a>
+                        <span>
+                            <a href="javascript:void(0);">小学语文一年级上册《汉语拼音3_b_p_m_f》教学...</a>
+                            <p>简介：研究生入学考试初试的结束意味着复试已经悄然被提上日程。和初试不同，复试...</p>
+                            <span>智慧豆：5个</span>
+                            <span>上传时间：2015-02-02</span>
+                            <span>下载量：35</span>
+                        </span>
+                    </span>
+                    <span class="re_infor">
+                        <p>156523人阅读</p>
+                        <p class="star">
+                            <img src="../../Public/Images/Front/regionalplatform/star1.png">
+                            <img src="../../Public/Images/Front/regionalplatform/star1.png">
+                            <img src="../../Public/Images/Front/regionalplatform/star1.png">
+                            <img src="../../Public/Images/Front/regionalplatform/star1.png">
+                            <img src="../../Public/Images/Front/regionalplatform/star2.png">
+                            <span>4.0分</span>
+                        </p>
+                        <p>(2564人评价)</p>
+                    </span>
+                </li>
+                <li>
+                    <span class="re_detail">
+                        <a href="javascript:void(0);"><img src="../../Public/Tmp/resource_list.jpg" width="80" height="80" alt="resource" /></a>
+                        <span>
+                            <a href="javascript:void(0);">小学语文一年级上册《汉语拼音3_b_p_m_f》教学...</a>
+                            <p>简介：研究生入学考试初试的结束意味着复试已经悄然被提上日程。和初试不同，复试...</p>
+                            <span>智慧豆：5个</span>
+                            <span>上传时间：2015-02-02</span>
+                            <span>下载量：35</span>
+                        </span>
+                    </span>
+                    <span class="re_infor">
+                        <p>156523人阅读</p>
+                        <p class="star">
+                            <img src="../../Public/Images/Front/regionalplatform/star1.png">
+                            <img src="../../Public/Images/Front/regionalplatform/star1.png">
+                            <img src="../../Public/Images/Front/regionalplatform/star1.png">
+                            <img src="../../Public/Images/Front/regionalplatform/star1.png">
+                            <img src="../../Public/Images/Front/regionalplatform/star2.png">
+                            <span>4.0分</span>
+                        </p>
+                        <p>(2564人评价)</p>
+                    </span>
+                </li>
+                <li>
+                    <span class="re_detail">
+                        <a href="javascript:void(0);"><img src="../../Public/Tmp/resource_list.jpg" width="80" height="80" alt="resource" /></a>
+                        <span>
+                            <a href="javascript:void(0);">小学语文一年级上册《汉语拼音3_b_p_m_f》教学...</a>
+                            <p>简介：研究生入学考试初试的结束意味着复试已经悄然被提上日程。和初试不同，复试...</p>
+                            <span>智慧豆：5个</span>
+                            <span>上传时间：2015-02-02</span>
+                            <span>下载量：35</span>
+                        </span>
+                    </span>
+                    <span class="re_infor">
+                        <p>156523人阅读</p>
+                        <p class="star">
+                            <img src="../../Public/Images/Front/regionalplatform/star1.png">
+                            <img src="../../Public/Images/Front/regionalplatform/star1.png">
+                            <img src="../../Public/Images/Front/regionalplatform/star1.png">
+                            <img src="../../Public/Images/Front/regionalplatform/star1.png">
+                            <img src="../../Public/Images/Front/regionalplatform/star2.png">
+                            <span>4.0分</span>
+                        </p>
+                        <p>(2564人评价)</p>
+                    </span>
+                </li>
+            </ul>
+            <div class="pageBtn">
+                <a class="prevPage disabled" href="javascript:void(0);">上一页</a>
+                <a href="javascript:void(0);">1</a>
+                <a href="javascript:void(0);">2</a>
+                <a href="javascript:void(0);">3</a>
+                <a href="javascript:void(0);">4</a>
+                <a href="javascript:void(0);">5</a>
+                <span class="dot">...</span>
+                <a href="javascript:void(0);">15</a>
+                <a class="nextPage" href="javascript:void(0);">下一页</a>   
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<script type="text/javascript">
+    $(function(){
+        $(".conditions > li > span").each(function(){
+            var index = 0;
+            $(this).find("a").each(function(){
+                index++;
+                if(($(this).width()+20) * index >= 606){
+                    $(this).parent().find("a").eq(index).addClass("tip none");
+                }
+            });
+            
+        });
+        $(".more").toggle(
+            function(){
+                $(this).prev().find("a").removeClass("none");
+            },
+            function(){
+                $(this).prev().find("a").each(function(){
+                    if($(this).hasClass("tip")){
+                        $(this).addClass("none");
+                    }
+                });
+            }
+        );
+    });
+</script>
+<include file="Public:footer"/>

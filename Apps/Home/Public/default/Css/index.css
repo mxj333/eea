@@ -1,0 +1,610 @@
+.mainNav{
+    height:30px;
+    margin-top:29px;
+}
+.mainNav li{
+    margin-right:20px;
+    float:left;
+}
+.mainNav li a{
+    color:#333;
+    font-size:14px;
+    line-height:30px;
+    background:none;
+    text-align:left;
+}
+.mainNav li a span{
+    display:block;
+    width:30px;
+    height:30px;
+    float:left;
+    margin-right:10px;
+}
+.mainNav .navIcon1{
+    background:url(../Images/nav_icon.png) no-repeat 0px 0px;
+}
+.mainNav .navIcon2{
+    background:url(../Images/nav_icon.png) no-repeat -30px 0px;
+}
+.mainNav .navIcon3{
+    background:url(../Images/nav_icon.png) no-repeat -60px 0px;
+    width:28px;
+}
+.mainNav .navIcon4{
+    background:url(../Images/nav_icon.png) no-repeat -88px 0px;
+}
+.mainNav .navIcon5{
+    background:url(../Images/nav_icon.png) no-repeat -118px 0px;
+}
+.mainNav a.on,.mainNav a:hover{
+    color:#278cde;
+    background:none;
+}
+.adLogin{
+    height:300px;
+    margin-top:20px;
+}
+.ad{
+    overflow:hidden;
+    width:660px;
+    float:left;
+    margin-right:20px;
+    height:300px;
+}
+.adList{
+    width:11930px;
+}
+.adList li{
+    float:left;
+}
+.adInfor{
+    width:250px;
+    position:relative;
+    left:160px;
+    bottom:240px;
+    font-family:"宋体";
+    color:#fff;
+}
+.adInfor p{
+    margin-top:20px;
+    text-shadow:2px 2px 2px #b99f85;
+}
+.adInfor a{
+    font-size:14px;
+    display:block;
+    background:#278cde;
+    width:80px;
+    line-height:30px;
+    margin:25px 0px 0px 10px;
+    border-radius:3px;
+    text-align:center;
+    border:#fff solid 1px;
+    color:#fff;
+}
+.login{
+    background:#278cde;
+    width:320px;
+    height:300px;
+    float:left;
+}
+.fromStyle{
+    width:260px;
+    height:50px;
+    border-radius:4px;
+    background:#fff;
+    margin-bottom:10px;
+}
+.fromStyle input{
+    border:none;
+    border-left:#c3d0dc solid 1px;
+    width:215px;
+    height:22px;
+    float:right;
+    margin-top:15px;
+    padding-left:5px;
+}
+.fromStyle span{
+    display:block;
+    width:20px;
+    height:25px;
+    float:left;
+    margin:14px 0px 0px 10px;
+}
+.userName{
+    margin-top:25px;
+}
+.userName span{
+    background:url(/Public/Images/icons.png) no-repeat -18px 0px;
+}
+.password span{
+    background:url(/Public/Images/icons.png) no-repeat -38px 0px;
+}
+.aboutPw{
+    width:260px;
+    color:#fff;
+    font-family:"黑体";
+    margin-bottom:20px;
+}
+.aboutPw label span{
+    border:#6d8ea9 solid 1px;
+    margin:1px 2px 0px 0px;
+}
+.aboutPw a{
+    float:right;
+    color:#fff;
+}
+.regLog{
+    width:260px;
+    margin-bottom:20px;
+}
+.regLog input,.regLog a{
+    width:125px;
+    height:45px;
+    border-radius:4px;
+    font-size:24px;
+    color:#fff;
+}
+.regLog input{
+    border:none;
+    background:#f29a32;
+    font-weight:bold;
+}
+.regLog a{
+    display:block;
+    float:right;
+    line-height:45px;
+    text-align:center;
+    background:#38dd6b;
+}
+.thirdLogin{
+    width:260px;
+    border-top:#5da9e6 solid 1px;
+}
+.thirdLogin p{
+    width:260px;
+    height:38px;
+    border-top:#93c6ef dashed 1px;
+    margin-top:-1px;
+    color:#fff;
+    padding-top:17px;
+}
+/*登录成功*/
+.loginSuccess{
+    width:320px;
+    height:300px;
+    float:left;
+    font-family:"宋体";
+}
+.tipBox{
+    width:298px;
+    height:183px;
+    border:#ccc solid 1px;
+    padding:10px;
+}
+.tip_t{
+    font-size:14px;
+    color:#646464;
+    font-weight:bold;
+}
+.sign .sign_tip{
+    height:48px;
+    width:192px;
+    display:block;
+    margin:-14px 0px 14px 40px;
+    background:url(../Images/login.png) no-repeat -34px 0px;
+}
+.sign .sign_btn{
+    height:57px;
+    width:218px;
+    display:block;
+    margin-bottom:25px;
+    background:url(../Images/login.png) no-repeat 0px -49px;
+}
+.sign .sign_btn.on{
+    background:url(../Images/login.png) no-repeat -218px -49px;
+}
+.sign .sign_reward{
+    color:#646464;
+    margin-left:10px;
+}
+.sign .sign_reward label{
+    display:inline-block;
+    height:19px;
+    width:11px;
+    vertical-align:middle;
+    margin-right:10px;
+    background:url(../Images/login.png) no-repeat 0px -113px;
+}
+.infor .no_infor{
+    width:150px;
+    height:197px;
+    text-align:center;
+    color:#ccc;
+    font-size:14px;
+    margin-top:20px;
+}
+.infor .no_infor div{
+    height:95px;
+    width:64px;
+    background:url(../Images/login.png) no-repeat 0px -153px;
+}
+.dynamic p{
+    color:#646464;
+    margin-top:8px;
+}
+.dynamic p a{
+    color:#278cde;
+}
+.loginMenu{
+    height:83px;
+    margin-top:-1px;
+}
+.loginMenu span,.loginMenu a{
+    display:inline-block;
+}
+.menu_item{
+    height:83px;
+    width:41px;
+    text-align:center;
+    margin:0px 7px 0px 10px;
+}
+.menu_item.on label{
+    display:block;
+    width:15px;
+    height:12px;
+    background:url(../Images/login.png) no-repeat -223px -113px;
+}
+.menu_item a{
+    color:#333;
+    margin-top:10px;
+}
+.menu_item a span{
+    width:42px;
+    height:42px;
+    background:url(../Images/login.png) no-repeat -13px -113px;
+}
+.lo_infor a span{
+    background:url(../Images/login.png) no-repeat -55px -113px;
+}
+.lo_sign a span{
+    background:url(../Images/login.png) no-repeat -97px -113px;
+}
+.lo_resource a span{
+    background:url(../Images/login.png) no-repeat -139px -113px;
+}
+.lo_album a span{
+    background:url(../Images/login.png) no-repeat -181px -113px;
+}
+.titleDiv{
+    height:23px;
+}
+.title{
+    font-size:14px;
+    font-family:"宋体";
+    color:#646464;
+    border-bottom:#ccc solid 2px;
+}
+.title a{
+    margin-top:0px;
+}
+.color_ee6{
+    color:#228ee6;
+}
+.subNav{
+    height:30px;
+    margin-top:10px;
+}
+.subNav li{
+    float:left;
+    margin-left:12px;
+}
+.subNav li:first-child{
+    margin-left:0px;
+}
+.subNav li a{
+    background:#ececec;
+    display:block;
+    color:#333;
+    text-align:center;
+    line-height:30px;
+    font-size:14px;
+    padding:0px 15px;
+}
+.subNav li a.on{
+    background:#278cde;
+    color:#fff;
+}
+.resourceNotice{
+    height:165px;
+    margin-top:20px;
+}
+/*--------------------*/
+.resource,.recommend,.appStore,.news{
+    width:660px;
+    float:left;
+    margin-right:20px;
+}
+.appStore{
+    height:275px;
+}
+.notice,.dynamic,.schoolShow,.space{
+    width:320px;
+    float:left;
+    font-family:"宋体";
+}
+.subjects{
+    float:left;
+    width:560px;
+    text-align:left;
+    font-family:"宋体";
+    margin-top:10px;
+}
+.subjects th{
+    width:30px;
+    font-weight:bold;
+    color:#333;
+    font-size:14px;
+}
+.subjects tr{
+    height:30px;
+}
+.subjects td{
+    padding:0px 10px;
+    text-align:center;
+}
+.subjects a{
+    color:#15588e;
+}
+.subjects a:hover{
+    color:#228ee6;
+}
+.notice > a{
+    display:block;
+    font-size:14px;
+    margin-top:12px;
+    width:300px;
+    float:left;
+    color:#333;
+}
+.dynamic > a{
+    margin-top:12px;
+    display:block;
+    color:#333;
+}
+.dynamic span{
+    margin-right:20px;
+    color:#646464;
+}
+.notice a:hover,.dynamic a:hover{
+    color:#228ee6;
+}
+.recommendDynamic{
+    margin-top:20px;
+    height:356px;
+}
+.items{
+    margin-top:5px;
+}
+.item{
+    width:320px;
+    float:left;
+    height:80px;
+    margin-top:10px;
+    margin-bottom:10px;
+    font-family:"宋体";
+    font-size:14px;
+    color:#333;
+}
+.item a span{
+    display:block;
+    margin:-75px 0px 0px 90px;
+    font-weight:bold;
+    color:#333;
+}
+.item p{
+    margin:10px 0px 0px 90px;
+    line-height:20px;
+    color:#646464;
+}
+.item p span{
+    display:block;
+    width:35px;
+    float:left;
+    color:#333;
+    font-size:12px;
+}
+.item p img{
+    margin:2px 3px 0px 0px;
+}
+.moreNew{
+    height:180px;
+    margin-top:10px;
+}
+.moreInfor{
+    margin:-180px 0px 0px 200px;
+    width:455px;
+}
+.moreInfor a{
+    display:block;
+    font-size:14px;
+    font-family:"宋体";
+    line-height:26px;
+    color:#333;
+}
+.moreInfor a span{
+    float:right;
+    color:#646464;
+}
+.count{
+    margin-top:20px;
+    height:380px;
+}
+.areaPic{
+    clear:both;
+    float:left;
+    margin:23px 0px 0px 45px;
+}
+/*排行榜*/
+.rankList{
+    width:400px;
+    text-align:center;
+    float:right;
+    margin-top:20px;
+    margin:20px 70px 0px 0px;
+    color:#333;
+}
+.rankList caption{
+    font-size:18px;
+    text-align:left;
+    margin-bottom:10px;
+    font-family:"黑体";
+}
+.rankList tr{
+    height:40px;
+}
+.rankList td,.rankList th{
+    border-bottom:#ccc solid 1px;
+    font-family:"宋体";
+    font-size:14px;
+}
+.resourceCount{
+    padding-left:40px;
+}
+.rankList td span{
+    display:block;
+    color:#fff;
+    background:#ff4141;
+    width:20px;
+    height:20px;
+    border-radius:10px;
+    line-height:20px;
+}
+.rankList .circleColor1{
+    background:#ff4141;
+}
+.rankList .circleColor2{
+    background:#ffb141;
+}
+.rankList .circleColor3{
+    background:#84cf47;
+}
+.rankList .circleColor4{
+    background:#47cf97;
+}
+.rankList .circleColor5{
+    background:#3088eb;
+}
+.educations{
+    margin-top:20px;
+    height:729px;
+}
+.educations .pad0_9{
+    padding:0px 9px;
+}
+.educations .marR0{
+    margin-right:0px;
+}
+.app{
+    display:block;
+    float:left;
+    width:60px;
+    height:85px;
+    margin:10px 0px;
+}
+.app span{
+    display:block;
+    width:60px;
+    text-align:center;
+    margin-top:10px;
+    font-family:"宋体";
+    color:#333;
+}
+.appStore .marR40{
+    margin-right:40px;
+}
+.news .item{
+    margin:20px 0px 0px 0px;
+    width:315px;
+}
+.item p{
+    font-size:12px;
+}
+.news .marR30{
+    margin-right:30px;
+}
+.schoolShow{
+    margin-top:-273px;
+}
+.groups1{
+    height:225px;
+}
+.school,.spaceItem{
+    display:block;
+    width:95px;
+    float:left;
+    margin-top:20px;
+}
+.school span,.spaceItem span{
+    display:block;
+    width:96px;
+    font-family:"宋体";
+    margin-top:6px;
+    color:#333;
+    text-align:center;
+}
+.school img{
+    margin:0px 18px;
+}
+.spaces{
+    width:280px;
+}
+.spaceItem{
+    width:60px;
+}
+.spaceItem span{
+    width:60px;
+    text-align:center;
+}
+.schoolShow .marR17{
+    margin-right:17px;
+}
+.groups2{
+    margin-top:10px;
+    height:80px;
+}
+.groups2 a{
+    display:block;
+    float:left;
+    width:155px;
+    text-align:center;
+    background:#ececec;
+    color:#333;
+    line-height:30px;
+    font-size:14px;
+    margin-top:10px;
+}
+.others{
+    width:1000px;
+    margin-top:20px;
+    height:242px;
+}
+.prepareLesson,.reviews,.microLesson{
+    float:left;
+    width:320px;
+}
+.others .item a span{
+    margin:-80px 0px 0px 100px;
+}
+.others .item p{
+    margin:10px 0px 0px 100px;
+}
+.others > div > a{
+    display:block;
+    font-size:14px;
+    font-family:"宋体";
+    color:#333;
+    margin-top:10px;
+}
+.others > div > a:hover{
+    color:#228ee6;
+}

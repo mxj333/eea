@@ -1,0 +1,73 @@
+<include file="Public:header"/>
+<eq name="everyModelCss" value="1">
+    <load href="__MPUBLIC__/Css/{$Think.controller_name|strtolower}Search.css"/>
+</eq>
+<eq name="everyModelJs" value="1">
+    <load href="__MPUBLIC__/Js/model/{$Think.controller_name|strtolower}Search.js"/>
+</eq>
+    <div class="wrap">
+        <div class="noticeList c_left marT20">
+            <div class="location">
+                <label></label>
+                <a href="javascript:void(0);">首页</a>/
+                <a href="javascript:void(0);">公告</a>
+            </div>
+            <div class="list">
+                <ul>
+                    <volist name="noticeList['list']" id="no_info">
+                        <li>
+                            <a href="{$no_info|getUrlAddress=###, 'detail', 'notice'}">{$no_info.no_title|getShortTitle=###,30}</a>
+                            <span>{$no_info.no_starttime|date='Y-m-d',###}</span>
+                        </li>
+                    </volist>
+                </ul>
+                <div class="pageNumber">
+                    {$noticeList['page']}
+                </div>
+            </div>
+        </div>
+        <div class="news_resource c_right marT20">
+            <div class="news item">
+                <h3 class="c_title">
+                    <span>新闻</span>
+                    <label>News</label>
+                </h3>
+                <volist name="today" id="today_info">
+                    <div class="newsItem <if condition='$key eq 0'>picNews</if>">
+                        <a href="{$today_info|getUrlAddress=###, 'detail', 'article'}">{$today_info.art_title|getShortTitle=###,19}</a>
+                        <if condition='$key eq 0'>
+                            <a class="pic" href="{$today_info|getUrlAddress=###, 'detail', 'article'}"><img src="{$today_info.art_cover}" width="80" height="80" border="0" alt="{$today_info.art_title}" title="{$today_info.art_title}" /></a>
+                        </if>
+                        <p>
+                            {$art_info.art_summary|getShortTitle=###,45}
+                            <a href="{$today_info|getUrlAddress=###, 'detail', 'article'}">[详情]</a>
+                        </p>
+                    </div>
+                </volist>
+            </div>
+            <div class="resource item marT20 resItem">
+                <h3 class="c_title">
+                    <span>资源</span>
+                    <label>Resource</label>
+                </h3>
+                <volist name="newList[3]['list']" id="newInfo">
+                    <a href="{$newInfo|getUrlAddress=###, 'detail', 'resource'}">
+                        <img 
+                        <if condition="$newInfo['rt_id'] eq 1">
+                            src="__MPUBLIC__/Images/infor_1.png"
+                        <elseif condition="$newInfo['rt_id'] eq 2" />
+                            src="__MPUBLIC__/Images/infor_2.png"
+                        <elseif condition="$newInfo['rt_id'] eq 3" />
+                            src="__MPUBLIC__/Images/infor_3.png"
+                        <else/>
+                            src="__MPUBLIC__/Images/infor_4.png"
+                        </if>
+                        alt="{$newInfo.res_title}" title="{$newInfo.res_title}" />
+                        {$newInfo.res_title|getShortTitle=###,18}
+                    </a>
+                </volist>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+<include file="Public:footer"/>

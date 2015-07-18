@@ -1,0 +1,29 @@
+    <ul class="leftMenu">
+        <volist name="groups" id="group">
+            <li <eq name="key" value="$bannerOn">class="on"</eq>>
+                <span attr="{$group.list.0.pe_name}">
+                    <label class="tip{$key}"></label>
+                    {$group.title}
+                    <span></span>
+                </span>
+                <ul <eq name="key" value="$bannerOn">class="left_subMenu"<else/>class="left_subMenu hide"</eq>>
+                    <volist name="group['list']" key="gkey" id="subNav">
+                        <li>
+                            <a attr="{$subNav.pe_name}" href="javascript:void(0);" <eq name="CONTROLLER_NAME" value="$subNav.pe_name">class="on"</eq>>
+                                <label class="tip"></label>
+                                {$subNav.pe_title}
+                            </a>
+                        </li>
+                    </volist>
+                </ul>
+            </li>
+        </volist>
+    </ul>
+    <div class="rightContent">
+    <script>
+        $(function() {
+            $('.left_subMenu a').click(function() {
+                location.href = '__MODULE__/' + $(this).attr('attr');
+            })
+        })
+    </script>

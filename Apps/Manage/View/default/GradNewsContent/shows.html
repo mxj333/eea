@@ -1,0 +1,38 @@
+<include file="Public:header"/>
+<include file="Public:left"/>
+<eq name="everyModelJs" value="1">
+<load href="__MPUBLIC__/Js/model/{$Think.controller_name|strtolower}Add.js"/>
+</eq>
+<style>
+.show {
+    border:1px solid #ccc;
+    font-size:14px;
+    line-height:26px;
+}
+.show div{
+    margin:5px;
+}
+.show .title {
+    color:#f00;
+}
+</style>
+<div id="list" class="margin_t10">
+    <ul class="list_header">
+        <li><span attr="{$p}" class="return">返回</span></li>
+    </ul>
+    <div class="show">
+        <div>
+            <span class="title">标题:</span>
+            <span>{$newsContent.gnc_title}</span>
+        </div>
+        <div>
+            <span class="title">摘要:</span>
+            <span>{$newsContent.gnc_remark}</span>
+        </div>
+        <div>
+            <span class="title">内容:</span>
+            <span>{$newsContent.gnc_content}</span>
+        </div>
+    </div>
+</div>
+<include file="Public:footer"/>

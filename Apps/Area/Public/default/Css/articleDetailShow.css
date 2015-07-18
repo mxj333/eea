@@ -1,0 +1,145 @@
+.hMainNav{
+    background:#278cde;
+}
+#dkt_header .hMainNav a.on,#dkt_header .hMainNav a:hover{
+    background:#e6e6e6;
+    color:#278cde;
+}
+.text{
+    width:250px;
+}
+.detailTitle{
+    text-align:center;
+}
+.detailTitle h1{
+    color:#333;
+    font-size:20px;
+    font-weight:normal;
+}
+.detailTitle > div > a{
+    float:right;
+    margin-left:20px;
+    color:#278cde;
+}
+.count,.share{
+    font-family:"宋体";
+    color:#333;
+    margin-left:20px;
+}
+.count span{
+    color:#228ee6;
+}
+.share a{
+    vertical-align:middle;
+}
+.detail .detailTitle > div{
+    margin-top:15px;
+    border-bottom:#ccc solid 1px;
+    padding-bottom:10px;
+}
+.txt{
+    text-align:center;
+}
+.txt img{
+    margin-top:15px;
+}
+.txt p{
+    margin-top:25px;
+    line-height:20px;
+    color:#333;
+    font-size:16px;
+    font-family:"宋体";
+    text-align:left;
+}
+.com_detail{
+    width:590px;
+}
+.moreComment,.com_infor a{
+    color:#278cde;
+}
+.com_btn span,.com_btn a{
+    background:#d5ecff;
+}
+.com_btn .praise span{
+    width:17px;
+    background: url(../Images/news_tip.png) no-repeat 0px 0px;
+}
+.com_btn .com_comment span{
+    background: url(../Images/news_tip.png) no-repeat -17px 0px;
+}
+.re_title a span{
+    color:#278cde;
+    font-size:20px;
+    font-weight:normal;
+}
+.re_title a span label{
+    border-left:#278cde solid 3px;
+    margin-top:2px;
+}
+.news_itemThree > a,.news_itemThree > div{
+    float:left;
+}
+.news_itemThree{
+    height:80px;
+}
+.news_itemThree > div{
+    width:230px;
+    margin-left:10px;
+}
+.news_itemThree > div p{
+    line-height:20px;
+    color:#646464;
+}
+.news_itemThree > div p a{
+    color:#820f28;
+}
+.news_title{
+    color:#333;
+    font-size:18px;
+    font-family:"Microsoft YaHei";
+}
+.focus{
+    height:120px;
+}
+.focus > .news_itemThree > div > a{
+    color:#333;
+    font-size:14px;
+    margin-bottom:7px;
+    display:block;
+}
+.focus,.focus .news_itemThree{
+    margin-top:15px;
+}
+.newsRank > a{
+    display:block;
+    width:300px;
+    font-size:14px;
+    color:#333;
+    margin-top:10px;
+}
+.newsRank > a span{
+    font-size:20px;
+    color:#278cde;
+    font-family:"Microsoft YaHei";
+    margin-right:10px;
+}
+.newsAd{
+    display:block;
+    margin:30px 0px;
+}
+.searchCourse{
+    margin:20px 0px 25px 0px;
+}
+.school .school_item{
+    margin-bottom:20px;
+    height:14px;
+}
+.school .school_item a{
+    font-size:14px;
+    color:#333;
+    font-family:"宋体";
+}
+.school .school_item span{
+    height:14px;
+    margin:0px 20px;
+}

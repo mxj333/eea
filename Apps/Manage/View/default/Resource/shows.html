@@ -1,0 +1,112 @@
+<include file="Public:header"/>
+<include file="Public:left"/>
+<eq name="publicJs" value="1">
+<load href=""/>
+</eq>
+<eq name="everyModelJs" value="1">
+<load href="__MPUBLIC__/Js/model/{$Think.controller_name|strtolower}Shows.js"/>
+</eq>
+<div id="list" class="margin_t10">
+    <ul class="list_header">
+        <li><span class="title">{$res.al_title}</span><span class="return">返回</span></li>
+    </ul>
+    <form enctype="multipart/form-data" action="/Manage/AppLevel/shows/" method="post">
+        <ul class="list_list">
+            <li style="height:auto;">
+                <div class="row_left">资源上传</div>
+            </li>
+            <li class="w460">
+                <div class="row_left">名称</div>
+                <div class="row_right">
+                    <div class="filelist">
+                    </div>
+                    <a class="pickfilesabc" href="javascript:;">[选择文件]</a> 
+                    <a class="uploadfiles" href="javascript:;">[上传文件]</a>
+                    <div class="console">
+                    </div>
+                </div>
+            </li>
+            <li>
+                <span class="row_right">
+                    <input type="hidden" name="al_id" value="{$res.al_id}">
+                    <button type="submit" value="" class="save btn">保存</button>
+                </span>
+            </li>
+        </ul>
+    </form>
+</div>
+<script type="text/javascript">
+var uploader = new plupload.Uploader({
+    runtimes : 'html5,flash,silverlight,html4',
+    browse_button : document.getElementsByClassName('pickfilesabc')[0],
+    url : CONTROLLER + '/upload/',
+    flash_swf_url : '../js/Moxie.swf',
+    silverlight_xap_url : '../js/Moxie.xap',
+    
+    filters : {
+        max_file_size : '10gb',
+        mime_types: [
+            {title : "Image files", extensions : "jpg,gif,png"},
+            {title : "Zip files", extensions : "zip"},
+            {title : "Video files", extensions : "mp3,mp4,rmvb,avi,hlv,flv"},
+            {title : "Iso files", extensions : "iso"},
+            {title : "Exe files", extensions : "exe"}
+        ]
+    },
+
+    init: {
+        PostInit: function() {
+
+            document.getElementsByClassName('uploadfiles')[0].onclick = function() {
+                uploader.start();
+                return false;
+            };
+        },
+
+        FilesAdded: function(up, files) {
+            plupload.each(files, function(file) {
+                document.getElementsByClassName('filelist')[0].innerHTML += '<div id="' + file.id + '">' + file.name + ' (' + plupload.formatSize(file.size) + ') <b></b></div>';
+            });
+        },
+
+        UploadProgress: function(up, file) {
+            document.getElementById(file.id).getElementsByTagName('b')[0].innerHTML = '<span>' + file.percent + "%</span>";
+        },
+        
+        UploadFile: function(up, file){
+            up.settings.multipart_params = {targetDir: '/Uploads/tmp/'};//文件目标目录
+        },
+        
+        //文件上传完成后动作，每上传完一个文件均会执行
+        FileUploaded: function(up, file, info){
+            res_obj = (new Function("return"+ info.response))();
+            $('#upfiles').val(res_obj.cleanFileName+','+$('#upfiles').val());
+            $.ajax({
+                type: "POST",
+                url: "/test.php",
+                data: {
+                        filename: res_obj.cleanFileName,
+                        filestorepath: res_obj.cleanFilePath,
+                        filetype: file.type,
+                        filesize: file.size
+                    },
+                success:function(msg){
+                    console.log("ajax ok");
+                }
+            });
+            console.log(info.response);
+        },
+        /*
+        UploadComplete: function(up, files){
+            console.log(files);
+        },
+        */
+        Error: function(up, err) {
+            document.getElementsByClassName('console')[0].innerHTML += "Error #" + err.code + ": " + err.message + '<br/>';
+        }
+    }
+});
+
+uploader.init();
+</script>
+<include file="Public:footer"/>

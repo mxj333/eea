@@ -1,0 +1,154 @@
+/*功能按钮*/
+.funcBtn{
+    margin:10px 0px 10px 20px;
+}
+.funcBtn button{
+    border:#ccc solid 1px;
+    height:30px;
+    width:67px;
+    background:#fff;
+    border-radius:3px;
+    margin-right:10px;
+    color:#333;
+    font-family:"Microsoft YaHei";
+}
+.funcBtn button span{
+    display:block;
+    float:left;
+    width:15px;
+    height:15px;
+    margin:2px 2px 0px 6px;
+}
+.funcBtn .searchBtn{
+    background:url(../Images/searchBg.png) repeat-x;
+}
+.funcBtn .add span{
+    background:url(../Images/funcBtns.png) no-repeat 0px 0px;
+}
+.funcBtn .edit span{
+    background:url(../Images/funcBtns.png) no-repeat -16px -1px;
+}
+.funcBtn .del span{
+    background:url(../Images/funcBtns.png) no-repeat -43px 2px;
+}
+.funcBtn .remove span{
+    background:url(../Images/funcBtns.png) no-repeat -31px -1px;
+    width:12px;
+}
+.funcBtn .forbid span{
+    background:url(../Images/funcBtns.png) no-repeat -58px 0px;
+}
+.funcBtn .resume span{
+    background:url(../Images/funcBtns.png) no-repeat -74px 2px;
+}
+.funcBtn .searchbtn{
+    background:url(../Images/funcBtns.png) no-repeat -89px 0px;
+}
+/*搜索按钮*/
+.formSearch{
+    width:67px;
+    height:30px;
+    background-image:-moz-linear-gradient(top,#4ab1ff,#0181e3);/*ff*/
+    background:-o-linear-gradient(top, #4ab1ff 0%,#0181e3 100%);/*Opera*/
+    background-image:-webkit-gradient(linear, top, bottom, color-stop(0, #4ab1ff), color-stop(1,#0181e3)); /*Chrome*/
+    filter:progid:DXImageTransform.Microsoft.Gradient(startColorstr="#4ab1ff", endColorstr="#0181e3", GradientType="0"); /*IE*/
+    border:#006fc4 solid 1px;
+    border-radius:3px;
+    color:#fff;
+    margin:10px 0px 0px 65px;
+}
+.formSearch.on{
+    margin:13px 0px 0px 43px;
+}
+.searchPic{
+    display:block;
+    float:left;
+    height:15px;
+    margin:0px 1px 0 6px;
+    width:15px;
+    background:url(../Images/funcBtns.png) no-repeat -104px 0px;
+}
+.formSearchTwo{
+    width:80px;
+    height:30px;
+    background:#0181e3;
+    border:none;
+    color:#fff;
+    font-size:14px;
+    margin:10px 0px 0px 20px;
+}
+/*分页按钮*/
+.page{
+    text-align:right;
+    padding-right:20px;
+    position:absolute;
+    bottom:20px;
+    right:0px;
+}
+.page a{
+    padding:3px 6px;
+    margin:0px 5px 0px 8px;
+    color:#333;
+}
+.page .prevPage{
+    margin-right:10px;
+}
+.page .dot{
+    margin:0px 10px;
+}
+.page a:hover{
+    background:#228ee6;
+    color:#fff;
+}
+.page a.current{
+    background:#278cde;
+    color:#fff;
+}
+/*收缩—展开按钮*/
+.flex{
+    float:right;
+    width:39px;
+    line-height:20px;
+    margin:17px 20px 0px 0px;
+    cursor:pointer;
+    color:#646464;
+    background:url(../Images/under.png) no-repeat 100% 60%;
+}
+.flex.on{
+    color:#0181e3;
+    background-image:url(../Images/above.png);
+}
+/*确定与取消*/
+.btns{
+    margin:25px 0px 10px 55px;
+}
+.btns a{
+    display:inline-block;
+    width:78px;
+    line-height:28px;
+    border:#0181e3 solid 1px;
+    text-align:center;
+    font-size:14px;
+    color:#fff;
+    background:#0181e3;
+    margin-right:15px;
+}
+/*确认链接*/
+.confirm,.ensure{
+    width:50px;
+    height:27px;
+    border:none;
+    font-family:"宋体";
+    margin:-1px 0px 0px 12px;
+    background:#0181e3;
+    color:#fff;
+    float:left;
+}
+/*确定按钮*/
+.ensure{
+    width:80px;
+    height:30px;
+    font-size:14px;
+    margin:30px 0px 0px 70px;
+    font-family:"Microsoft YaHei";
+}

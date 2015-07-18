@@ -1,0 +1,53 @@
+<include file="Public:header"/>
+<load href="__MPUBLIC__/Css/{$Think.controller_name|strtolower}Common.css"/>
+<load href="__MPUBLIC__/Css/comment.css"/>
+<eq name="everyModelCss" value="1">
+    <load href="__MPUBLIC__/Css/{$Think.controller_name|strtolower}Detail.css"/>
+</eq>
+<eq name="everyModelJs" value="1">
+    <load href="__MPUBLIC__/Js/model/{$Think.controller_name|strtolower}Detail.js"/>
+</eq>
+    <include file="Article:location"/>
+    <div class="detailShow c_left marT20">
+        <div class="detail">
+            <div class="detailTitle">
+                <h1>{$vo['article']['art_title']|getShortTitle=###,30}</h1>
+                <div>
+                    <span>{$vo['article']['art_designated_published']|date='Y年m月d日',###}</span>
+                    <span class="count">
+                        收藏本文
+                        &nbsp;&nbsp;评论：<span>{$vo['article']['art_comment_count']|intval}</span>次
+                    </span>
+                    <span class="share">
+                        <span>分享：</span>
+                    </span>
+                </div>
+            </div>
+            <div class="video">
+                <!-- 视频播放1 -->
+                <include file="Article:mp4"/>
+
+                <!-- 视频播放2 -->
+                <include file="Article:media"/>
+
+                <!-- 视频播放3 -->
+                <include file="Article:real"/>
+            </div>
+        </div>
+        <include file="Article:comment"/>
+        <include file="Article:relation"/>
+        <div class="searchArea">
+            <div>
+                <input class="text" type="text" placeholder="让慢小孩快起来">
+                <label class="search">
+                    <span></span>
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="headlines_rank c_right marT20">
+        <include file="Article:recommend"/>
+        <include file="Article:rank"/>
+    </div>
+    <div class="clear"></div>
+<include file="Public:footer"/>

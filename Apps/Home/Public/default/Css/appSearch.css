@@ -1,0 +1,97 @@
+.app_sort{
+    height:20px;
+    line-height:20px;
+    margin:20px 0px;
+}
+.app_sort label{
+    font-size:20px;
+    color:#278cde;
+    font-family:"宋体";
+    margin-left:20px;
+}
+.app_sort .sort{
+    float:right;
+}
+.app_sort .sort > div,.app_sort .sort > div span{
+    float:left;
+    margin-left:14px;
+}
+.app_sort .sort a{
+    color:#646464;
+    font-size:14px;
+}
+.app_sort .sort > div span{
+    border-left:#ccc solid 1px;
+    display:block;
+    height:13px;
+    margin:5px 14px 0px 0px;
+}
+.app_sort .sort a:hover,.app_sort .sort a.on{
+    color:#288ee6;
+}
+.appList{
+    min-height:270px;
+    font-family:"宋体";
+}
+.appList .item_wrap{
+    height:145px;
+    width:260px;
+    float:left;
+    color:#333;
+    border-top:#ededed solid 1px;
+}
+.appList .item_app{
+    width:239px;
+    height:116px;
+    margin-top:14px;
+    padding-left:20px;
+    border-left:#ededed solid 1px;
+}
+.appList .item_app > img,.item_detail{
+    float:left;
+    padding-top:6px;
+}
+.item_detail{
+    width:169px;
+    margin:0px 0px 5px 10px;
+}
+.item_detail .appName{
+    font-size:14px;
+    font-weight:bold;
+    margin-top:3px;
+}
+.item_detail .appPraise{
+    height:15px;
+    margin:7px 0px 8px 0px;
+}
+.item_detail .appPraise *{
+    float:left;
+}
+.item_detail .appType span{
+    color:#278cde;
+    margin-left:10px;
+    padding-left:10px;
+    border-left:#ccc solid 1px;
+}
+.item_abstract{
+    clear:both;
+    line-height:20px;
+}
+.item_abstract a{
+    display:none;
+    width:90px;
+    line-height:30px;
+    border:#227dc7 solid 1px;
+    text-align:center;
+    border-radius:3px;
+    color:#278cde;
+    margin:10px 4px 0px 0px;
+}
+.item_abstract a.addApp{
+    border:#f29a32 solid 1px;
+    color:#f29a32;
+    margin-right:20px;
+}
+#dkt_footer{
+    margin-top:20px;
+}

@@ -1,0 +1,14 @@
+<div class="middle margin_t10">
+    <div class="left">
+        <volist name="groups[$bannerOn]['list']" id="left">
+            <div class='showContent <eq name="CONTROLLER_NAME" value="$left.n_name">on</eq>' attr="{$left.n_name}">{$left.n_title}</div>
+        </volist>
+    </div>
+    <script>
+        $(function() {
+            if ($('.left .on').attr('attr') == undefined) {
+                $('.left div:first').click();
+            }
+        })
+    </script>
+    <div class="right">

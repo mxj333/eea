@@ -1,0 +1,70 @@
+.appManagements{
+    height:auto;
+}
+.appManagements a{
+    color:#333;
+    font-family:"Microsoft YaHei";
+}
+.nav{
+    border-bottom:#eee solid 1px;
+    font-size:14px;
+}
+.nav li{
+    display:inline-block;
+}
+.nav li a{
+    display:block;
+    width:88px;
+    height:35px;
+    float:left;
+    margin-top:2px;
+    line-height:35px;
+    text-align:center;
+    margin-left:2px;
+}
+.nav li a.on{
+    background:#0181e3;
+    color:#fff;
+}
+.app{
+    display:block;
+    float:left;
+    width:92px;
+    height:83px;
+    margin:0px 3px 32px 25px;
+}
+.app img{
+    margin-left:16px;
+    position:relative;
+    z-index:-1;
+}
+.app span{
+    display:block;
+    font-family:"宋体";
+    text-align:center;
+    margin-top:10px;
+}
+.apps .on{
+    /*background:url(../Images/appChecked.png) no-repeat 80% 0%;*/
+}
+.funsBtn{
+    margin:10px 0px 30px 30px;
+}
+.funsBtn a{
+    display:block;
+    float:left;
+    padding:4px 19px 4px 18px;
+    border:#ccc solid 1px;
+    margin-left:10px;
+    border-radius:3px;
+    font-size:14px;
+}
+.funsBtn a:hover{
+    background:url(../Images/choice.png) repeat-x;
+}
+.noData{
+    font-size: 14px;
+    height: 45px;
+    text-align: center;
+    width: 100%;
+}

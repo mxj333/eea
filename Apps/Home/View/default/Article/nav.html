@@ -1,0 +1,9 @@
+    <!--内容导航开始-->
+    <ul class="mainNav">
+        <li><a <if condition="ACTION_NAME eq 'index'">href="javascript:void(0);" class="on"<else/>href="{$info|getUrlAddress=###, 'index', 'article'}"</if>>资讯首页</a></li>
+        <volist name="cateList" id="cate_info">
+            <if condition="$cate_info['ca_title'] neq '首页'">
+                <li><a href="{$cate_info|getUrlAddress=###, 'search', 'article'}" <if condition="$cate_info['ca_id'] eq $ca_id">class="on"</if>>{$cate_info.ca_title}</a></li>
+            </if>
+        </volist>
+    </ul>

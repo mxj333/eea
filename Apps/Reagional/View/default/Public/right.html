@@ -1,0 +1,10 @@
+<div class="category">
+    <a href="javascript:void(0);">{$bannerTitle}<span class="navPic{$bannerOn}"></span></a>
+    <ul class="subNav">
+        <volist name="groups[$bannerOn]['list']" id="rightTop">
+            <li>
+                <a attr="{$rightTop.pe_name}" href="javascript:void(0);" <eq name="CONTROLLER_NAME" value="$rightTop.pe_name">class="on"</eq>>{$rightTop.pe_title}</a>
+            </li>
+        </volist>
+    </ul>
+</div>

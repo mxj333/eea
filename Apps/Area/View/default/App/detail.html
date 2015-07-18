@@ -1,0 +1,318 @@
+<include file="Public:headerTop"/>
+<include file="Public:headerNav"/>
+<include file="Public:headerSearch"/>
+<include file="App:headerNav"/>
+<include file="Public:headerBottom"/>
+<load href="/Public/Css/rating_simple.css"/>
+<load href="__MPUBLIC__/Css/{$Think.controller_name|strtolower}Common.css"/>
+<load href="__MPUBLIC__/Css/cover.css"/>
+<load href="__MPUBLIC__/Js/model/cover.js"/>
+<eq name="everyModelCss" value="1">
+    <load href="__MPUBLIC__/Css/{$Think.controller_name|strtolower}Detail.css"/>
+</eq>
+<eq name="everyModelJs" value="1">
+    <load href="__MPUBLIC__/Js/model/{$Think.controller_name|strtolower}Detail.js"/>
+</eq>
+    <div class="products c_left marT20">
+        <div class="education">
+            <h3 class="app_title">
+                <a href="javascript:void(0);">
+                    <span>
+                        <label></label>
+                        {$vo.ac_title}
+                    </span>
+                </a>
+            </h3>
+            <img class="appPic" src="{$vo.a_logo_b}" width="180" height="180" border="0" alt="{$vo.a_title}" title="{$vo.a_title}" />
+            <div class="appInfor">
+                <p class="app_name">{$vo.a_title}</p>
+                <p class="app_comment">
+                    <span class="parise">
+                        <label></label>
+                        (5632)
+                    </span>
+                    <span  class="comment">
+                        <label></label>
+                        (5632)
+                    </span>
+                    <span class="app_star">
+                        <img src="__MPUBLIC__/Images/bigStar1.png" />
+                        <img src="__MPUBLIC__/Images/bigStar1.png" />
+                        <img src="__MPUBLIC__/Images/bigStar1.png" />
+                        <img src="__MPUBLIC__/Images/bigStar1.png" />
+                        <img src="__MPUBLIC__/Images/bigStar2.png" />
+                        &nbsp;&nbsp;(211)
+                    </span>
+                </p>
+                <p class="app_down">
+                    <span class="downBtn">
+                        <a href="javascript:void(0);">添加</a>
+                        <a href="javascript:void(0);">下载</a>
+                    </span>
+                    <span class="qrCode">
+                        <img src="{$vo.a_code_logo}" width="40" height="40" border="0" alt="二维码"/>
+                        二维码
+                        <span class="bgCode">
+                            <span></span>
+                            <img src="{$vo.a_code_logo}" width="160" height="160" border="0" alt="二维码"/>
+                            <br />手机扫一扫快速下载
+                        </span>
+                    </span>
+                    <span class="share">
+                        <label></label>
+                        分享
+                    </span>
+                </p>
+            </div>
+        </div>
+        <div class="introduction contents marT20">
+            <ul class="contentNav">
+                <li class="on"><a href="javascript:void(0);">产品介绍</a></li>
+                <li class="report">我要举报</li>
+            </ul>
+            <p>
+                <span>
+                    <label class="cue">价格：</label>
+                    <if condition="$vo['a_download_points']">{$vo.a_download_points}豆<else/>免费</if>
+                </span>
+                <span>
+                    <label class="cue">类别：</label>
+                    {$vo.aty_title|default='无'}
+                </span>
+            </p>
+            <p>
+                <span>
+                    <label class="cue">大小：</label>
+                    {$vo.com_size|default='0M'}
+                </span>
+                <span>
+                    <label class="cue">语文：</label>
+                    {$vo.a_language|default='中文'}
+                </span>
+            </p>
+            <p><label class="cue">版本：</label>{$vo.a_version|default='1.0'}</p>
+            <p><label class="cue">开发者：</label>{$vo.a_author|default='无'}</p>
+            <div class="abstract marT20">
+                <p class="abstractShow">{$vo.a_description}</p>
+                <p class="flex">展开<span></span></p>
+            </div>
+            <div class="appPics marT20">
+                <div class="btn">
+                    <span class="prevBtn"></span>
+                    <span class="nextBtn"></span>
+                </div>
+                <ul class="appPicList">
+                    <volist name="vo['pic']" id="pic_info">
+                        <li>
+                            <img src="{$Think.config.uploads_root_path|substr=1}{$Think.config.app_pic_path}{$pic_info.af_savepath}/{$pic_info.af_id}_b.{$pic_info.af_ext}" width="180" height="180" border="0" alt="{$pic_info.af_title}" title="{$pic_info.af_title}" />
+                        </li>
+                    </volist>
+                </ul>
+            </div>
+        </div>
+        <div class="evaluation marT20">
+            <ul class="contentNav contents">
+                <li class="on"><a href="javascript:void(0);">产品评价</a></li>
+                <li class="downBtn"><a href="javascript:void(0);">我要评价</a></li>
+            </ul>
+            <ul class="comentShow">
+                <li class="com_list marT20">
+                    <a href="javascript:void(0);"><img src="__MPUBLIC__/Tmp/space5.jpg" alt="head pic" width="60" height="60" border="0"/></a>
+                    <div class="com_detail">
+                        <p class="com_infor">
+                            <a href="javascript:void(0);">小样012364</a>
+                            <span class="star">
+                                <img src="__MPUBLIC__/Images/star1.png">
+                                <img src="__MPUBLIC__/Images/star1.png">
+                                <img src="__MPUBLIC__/Images/star1.png">
+                                <img src="__MPUBLIC__/Images/star1.png">
+                                <img src="__MPUBLIC__/Images/star2.png">
+                                <span>4.0分</span>
+                            </span>
+                            <span class="com_date">2014-02-02 16:20:23 发布</span>
+                        </p>
+                        <p>终于出iphone版了哟，甚好甚好！之前在Android上体验过啦。“只看楼主”这个功能很适合像我这种追“直播贴”的人哟~豆瓣控必备！</p>
+                        <div class="com_btn">
+                            <span class="praise">
+                                <span></span>
+                                （11）
+                            </span>
+                            <a href="javascript:void(0);" class="com_comment">
+                                <span></span>
+                                （18）
+                            </a>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </li>
+                <li class="com_list marT20">
+                    <a href="javascript:void(0);"><img src="__MPUBLIC__/Tmp/space5.jpg" alt="head pic" width="60" height="60" border="0"/></a>
+                    <div class="com_detail">
+                        <p class="com_infor">
+                            <a href="javascript:void(0);">小样012364</a>
+                            <span class="star">
+                                <img src="__MPUBLIC__/Images/star1.png">
+                                <img src="__MPUBLIC__/Images/star1.png">
+                                <img src="__MPUBLIC__/Images/star1.png">
+                                <img src="__MPUBLIC__/Images/star1.png">
+                                <img src="__MPUBLIC__/Images/star2.png">
+                                <span>4.0分</span>
+                            </span>
+                            <span class="com_date">2014-02-02 16:20:23 发布</span>
+                        </p>
+                        <p>终于出iphone版了哟，甚好甚好！之前在Android上体验过啦。“只看楼主”这个功能很适合像我这种追“直播贴”的人哟~豆瓣控必备！</p>
+                        <div class="com_btn">
+                            <span class="praise">
+                                <span></span>
+                                （11）
+                            </span>
+                            <a href="javascript:void(0);" class="com_comment">
+                                <span></span>
+                                （18）
+                            </a>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </li>
+            </ul>
+            <p class="flex moreComment">查看下10条评论<span></span></p>
+        </div>
+    </div>
+    <div class="dynamic_rank c_right marT20">
+        <div class="dynamic">
+            <h3 class="app_title">
+                <a href="javascript:void(0);">
+                    <span>
+                        <label></label>
+                        最新动态
+                    </span>
+                </a>
+            </h3>
+            <ul class="dynamicList">
+                <li class="d_item">
+                    <a href="javascript:void(0);"><img width="60" height="60" border="0" alt="app" src="__MPUBLIC__/Tmp/dhead1.jpg"></a>
+                    <div class="d_detail">
+                        <p>
+                            <a class="userName" href="javascript:void(0);">小豆豆</a>
+                            <span>刚刚</span>
+                        </p>
+                        <p>推荐了
+                            <a class="d_recommend" href="javascript:void(0);">评测网</a>
+                        </p>
+                    </div>
+                </li>
+                <li class="d_item">
+                    <a href="javascript:void(0);"><img width="60" height="60" border="0" alt="app" src="__MPUBLIC__/Tmp/dhead2.jpg"></a>
+                    <div class="d_detail">
+                        <p>
+                            <a class="userName" href="javascript:void(0);">小豆豆</a>
+                            <span>刚刚</span>
+                        </p>
+                        <p>推荐了
+                            <a class="d_recommend" href="javascript:void(0);">评测网</a>
+                        </p>
+                    </div>
+                </li>
+                <li class="d_item">
+                    <a href="javascript:void(0);"><img width="60" height="60" border="0" alt="app" src="__MPUBLIC__/Tmp/dhead3.jpg"></a>
+                    <div class="d_detail">
+                        <p>
+                            <a class="userName" href="javascript:void(0);">小豆豆</a>
+                            <span>刚刚</span>
+                        </p>
+                        <p>推荐了
+                            <a class="d_recommend" href="javascript:void(0);">评测网</a>
+                        </p>
+                    </div>
+                </li>
+                <li class="d_item">
+                    <a href="javascript:void(0);"><img width="60" height="60" border="0" alt="app" src="__MPUBLIC__/Tmp/dhead4.jpg"></a>
+                    <div class="d_detail">
+                        <p>
+                            <a class="userName" href="javascript:void(0);">小豆豆</a>
+                            <span>刚刚</span>
+                        </p>
+                        <p>推荐了
+                            <a class="d_recommend" href="javascript:void(0);">评测网</a>
+                        </p>
+                    </div>
+                </li>
+                <li class="d_item">
+                    <a href="javascript:void(0);"><img width="60" height="60" border="0" alt="app" src="__MPUBLIC__/Tmp/dhead1.jpg"></a>
+                    <div class="d_detail">
+                        <p>
+                            <a class="userName" href="javascript:void(0);">小豆豆</a>
+                            <span>刚刚</span>
+                        </p>
+                        <p>推荐了
+                            <a class="d_recommend" href="javascript:void(0);">评测网</a>
+                        </p>
+                    </div>
+                </li>
+            </ul>
+            <include file="Adv:rightAdv5"/>
+        </div>
+        <div class="rank marT20">
+            <h3 class="app_title">
+                <a href="javascript:void(0);">
+                    <span>
+                        <label></label>
+                        推荐排行
+                    </span>
+                </a>
+            </h3>
+            <ul>
+                <volist name="rank" id="rank_info">
+                    <li class="rank_item">
+                        <span <if condition="$key lt 3">class="firstThree"</if>>{$key+1}</span>
+                        <div class="rankShow">
+                            {$rank_info.a_title|getShortTitle=###,8}
+                            <span>1563人推荐</span>
+                        </div>
+                        <div class="rankDetail">
+                            <a href="{$rank_info|getUrlAddress=###,'detail','app'}"><img width="60" height="60" border="0" alt="{$rank_info.a_title}" title="{$rank_info.a_title}" src="{$rank_info.a_logo}"></a>
+                            <div>
+                                <a class="classBtn" href="javascript:void(0);">免费下载</a>
+                                <p>{$rank_info.ac_title}</p>
+                                <p>1563人推荐</p>
+                            </div>
+                        </div>
+                    </li>
+                </volist>
+            </ul>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <include file="Adv:footerAdv3"/>
+    <div class="lgp_cover">
+        <div class="lgp_box">
+            <div class="lgp_head">
+                <label class="lgp_boxTitle"></label>
+                <span class="lgp_closed"></span>
+            </div>
+            <div class="lgp_detail">
+                <form action="#" method="post">
+                    <div class="app_report">
+                        <input type="radio" name="report" value="tort" />
+                        <label>盗版或侵权</label>
+                        <br />
+                        <input type="radio" name="report" value="advertising" />
+                        <label>发布广告垃圾信息</label>
+                        <input class="app_submit" type="button" value="提 交" name="submit" />
+                    </div>
+                    <div class="app_evaluations">
+                        <a href="javascript:void(0);">
+                            <img src="__MPUBLIC__/Tmp/appHead.png" width="60" height="60" border="0" alt="user" />
+                            小样0123
+                        </a>
+                        <div class="app_evaluation">
+                            <input type="hidden" value="4" class="rating_simple"/>
+                            <textarea name="evaluation">我要评价</textarea>
+                            <input class="app_submit" type="button" value="确 认" name="submit" />
+                        </div>
+                    </div>
+                <form>
+            </div>
+        </div>
+    </div>
+<include file="Public:footer"/>

@@ -1,0 +1,44 @@
+<include file="Public:header2"/>
+<eq name="everyModelCss" value="1">
+    <load href="__MPUBLIC__/Css/{$Think.controller_name|strtolower}Complete.css"/>
+</eq>
+<eq name="everyModelJs" value="1">
+    <load href="__MPUBLIC__/Js/model/{$Think.controller_name|strtolower}.js"/>
+</eq>
+    <div class="contentLeft">
+        <div class="prompts">
+            <div class="prompt">
+                <img src="__MPUBLIC__/Images/prompt_on.gif" alt="promptPic" />
+                <span class="color_e6">填写</span>
+            </div>
+            <div class="prompt">
+                <img src="__MPUBLIC__/Images/prompt_on.gif" alt="promptPic" />
+                <span class="color_e6">注册</span>
+            </div>
+            <div class="prompt">
+                <img src="__MPUBLIC__/Images/prompt_on.gif" alt="promptPic" />
+                <span class="color_e6">完成</span>
+            </div>
+        </div>
+        <div class="registerSuccess">
+            <img src="__MPUBLIC__/Images/success.png" alt="registerSuccess">
+            <div>
+                <p class="congratulation">恭喜，注册成功</p>
+                <a href="{$me_info|getUrlAddress=###, 'index', 'index', 'member', $me_info['me_id']}">去个人中心看看</a>
+                <p>您的个人资料完成度为10%建议您完善个人资料</p>
+            </div>
+        </div>
+        <div class="jump">
+            <p><span class="color_e6">60s</span> 后自动跳转到你之前浏览的页面，你也可以点击</p>
+            <a href="/">立即跳转</a>
+        </div>
+    </div>
+    <div class="contentRight">
+        <div class="titleDiv"><h2 class="title size320">无需注册即可登录</h2></div>
+        <div class="thirdLogin">
+            <a href="javascript:void(0);"><img src="__MPUBLIC__/Tmp/qq.gif" alt="QQ" /></a>
+            <a href="javascript:void(0);"><img src="__MPUBLIC__/Tmp/weibo.gif" alt="weibo" /></a>
+            <a href="javascript:void(0);"><img src="__MPUBLIC__/Tmp/weixin.gif" alt="weixin" /></a>
+        </div>
+    </div>
+<include file="Public:footer"/>

@@ -1,0 +1,233 @@
+.dNav{
+    height:45px;
+}
+.bigAd{
+    height:80px;
+}
+.dNav a{
+    font-family:"宋体";
+    color:#333;
+}
+.dNav li{
+    display:inline-block;
+    margin-right:15px;
+    float:left;
+    width:280px;
+}
+.dNav li div{
+    margin-bottom:7px;
+    height:15px;
+}
+.dNav li a{
+    display:inline-block;
+    margin-right:10px;
+    width:55px;
+    height:15px;
+    overflow:hidden;
+}
+.dNav li div:first-child a{
+    margin-right:15px;
+}
+.dNav .line{
+    width:2px;
+    height:40px;
+    float:right;
+    background:url(../Images/line.png) no-repeat;
+}
+.dNav .dNavLast{
+    width:190px;
+}
+#dkt_content .dNav .dNavLast div a{
+    margin-right:5px;
+}
+li a:hover{
+    color:#278cde;
+}
+.contents{
+    height:288px;
+}
+.courseNav{
+    border:#ccc solid 1px;
+    border-left:none;
+    height:38px;
+}
+.courseNav li{
+    width:90px;
+    border-left:#ccc solid 1px;
+}
+.courseNav li a.on{
+    display:block;
+    width:90px;
+    background:#278cde;
+    color:#fff;
+    height:38px;
+}
+.notice{
+    width:320px;
+    height:100px;
+    position:relative;
+}
+.notice div{
+    border-right:#ccc solid 1px;
+    border-bottom:#ccc solid 1px;
+}
+.notice .outerLayer{
+    height:98px;
+    width:306px;
+    border:#ccc solid 1px;
+    margin-right:0px;
+}
+.notice .middleLayer{
+    height:96px;
+    width:304px;
+}
+.notice .layer{
+    height:79px;
+    width:276px;
+    padding:15px 0px 0px 25px;
+    font-size:14px;
+    font-weight:bold;
+}
+.notice .layer a{
+    display:block;
+    color:#333;
+    font-weight:normal;
+    margin-top:8px;
+}
+.notice span{
+    display:block;
+    width:26px;
+    height:100px;
+    background:url(../Images/notice.png) no-repeat;
+    position:absolute;
+    left:-1px;
+}
+.wrapBorder{
+    border:#ccc solid 1px;
+    border-top:#278cde solid 3px;
+}
+.wrapBorder p{
+    line-height:36px;
+    border-bottom:#ccc solid 1px;
+    font-size:16px;
+    color:#333;
+    font-family:"Microsoft YaHei";
+    padding-left:10px;
+}
+.dynamic{
+    height:316px;
+    margin-top:20px;
+}
+.dynamic a{
+    display:block;
+    color:#333;
+    margin:12px 0px 0px 10px;
+}
+.dynamic a span{
+    color:#646464;
+    display:inline-block;
+    padding-right:10px;
+}
+.dynamic a:hover,.app_space .a_show:hover,.infor_item a:hover,.focusNews > a:hover{
+    color:#278cde;
+    text-decoration:underline;
+}
+.app_space .a_show{
+    margin:20px 27px 8px 23px;
+}
+.app_space .contents{
+    height:258px;
+}
+.schoolShow{
+    height:390px;
+}
+.schoolShow .a_show{
+    margin:20px 20px 10px 14px;
+    width:72px;
+}
+.infor_item{
+    margin-top:20px;
+    width:330px;
+    float:left;
+}
+.infor_item .a_show{
+    width:80px;
+    font-size:12px;
+    margin:0px 20px 0px 0px;
+}
+.infor_item a{
+    display:block;
+    font-size:14px;
+    color:#333;
+    font-family:"宋体";
+    margin-bottom:10px;
+}
+.infor_item a span{
+    display:block;
+    float:left;
+    width:3px;
+    height:3px;
+    background:#67b6fb;
+    margin:5px 5px 0px 0px;
+}
+.focusNews{
+    font-family:"宋体";
+    color:#333;
+}
+.focusNews a{
+    color:#333;
+    font-size:14px;
+}
+.focus_show{
+    margin:20px 0px 20px 0px;
+    height:80px;
+}
+.focus_show .a_show{
+    width:80px;
+    height:80px;
+}
+.focus_show div{
+    width:216px;
+    float:left;
+    margin-left:20px;
+}
+.focus_show div a{
+    display:inline-block;
+    font-weight:bold;
+    height:18px;
+    overflow:hidden;
+    width:220px;
+}
+.focus_show div p{
+    margin-top:10px;
+    line-height:20px;
+}
+.focusNews > a{
+    height:16px;
+    margin-top:12px;
+    overflow:hidden;
+    width:320px;
+    display:block;
+}
+.information{
+    height:290px;
+}
+.carouselText{
+    position:absolute;
+    bottom:2px;
+    right:0px;
+}
+.carouselText span{
+    display:inline-block;
+    width:12px;
+    line-height:12px;
+    margin-right:3px;
+    text-align:center;
+    background:#278cde;
+    cursor:pointer;
+    color:#fff;
+}
+.carouselText span.on{
+    color:#fff;
+    background:#134661;
+}

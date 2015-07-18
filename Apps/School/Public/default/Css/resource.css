@@ -1,0 +1,210 @@
+#dkt_content{
+    font-family:"宋体";
+}
+.location{
+    border:none;
+    margin-top:0px;
+    width:1000px;
+    height:45px;
+}
+.catalog,.schoolResource{
+    width:198px;
+    border:#ccc solid 1px;
+    border-top:#1b629b solid 2px;
+    float:left;
+    margin-right:20px;
+}
+.catalog .classify{
+    height:27px;
+    margin:-1px 0px 0px 5px;
+}
+.catalog .classify a{
+    display:inline-block;
+    line-height:27px;
+    color:#333;
+    width:98px;
+    margin-left:-6px;
+    text-align:center;
+    border-left:#ccc solid 1px;
+    font-size:14px;
+}
+.catalog .classify a.on{
+    background:#1b629b;
+    color:#fff;
+    border-left:#1b629b solid 1px;
+}
+.catalog ul{
+    margin-bottom:40px;
+    border-bottom:#1b629b solid 1px;
+}
+.catalog ul li{
+    line-height:29px;
+    border-top:#1b629b solid 1px;
+    color:#1b629b;
+    font-size:14px;
+    padding-left:10px;
+    font-weight:bold;
+    cursor:pointer;
+}
+.schoolResource{
+    width:778px;
+    margin-right:0px;
+}
+.filter > p,.sortTitle{
+    font-size:14px;
+    font-weight:bold;
+    margin-left:10px;
+}
+.filter > p{
+    line-height:35px;
+    color:#1b629b;
+}
+.conditions{
+    width:720px;
+}
+.conditions li{
+    color:#333;
+    border-top:#f4e7cd solid 1px;
+    line-height:33px;
+}
+.conditions li > label{
+    width:75px;
+    display:inline-block;
+    text-align:right;
+    font-weight:bold;
+    float:left;
+}
+.conditions li > span{
+    display:inline-block;
+    width:606px;
+}
+.conditions li > span a{
+    margin-right:13px;
+    color:#333;
+}
+.conditions li > span a.on{
+    padding:5px 10px 3px 10px;
+    margin-right:3px;
+    background:#1b629b;
+    color:#fff;
+}
+.conditions li > .more{
+    width:37px;
+    line-height:16px;
+    border:#ccc solid 1px;
+    border-radius:3px;
+    float:right;
+    text-align:center;
+    margin-top:7px;
+    cursor:pointer;
+    background:#e3e3e3;
+    background: -webkit-linear-gradient(#f4f4f4,#d9d9d9);
+    background: -o-linear-gradient(#f4f4f4,#d9d9d9);
+    background: -moz-linear-gradient(#f4f4f4,#d9d9d9);
+    background: linear-gradient(#f4f4f4,#d9d9d9);
+    filter:progid:DXImageTransform.Microsoft.Gradient(#f4f4f4,#d9d9d9,GradientType="0");
+}
+.conditions li:first-child{
+    border:none;
+}
+.none{
+    display:none;
+}
+.resourceList{
+    margin-top:5px;
+    color:#333;
+}
+.sort{
+    line-height:40px;
+    background:#f7de9a;
+}
+.sortRule{
+    display:inline-block;
+    margin-left:28px;
+}
+.sortRule span{
+    padding:3px 6px 2px 8px;
+    border:#fff solid 1px;
+    border-radius:3px;
+    cursor:pointer;
+    margin:0px 2px 0px 3px;
+}
+.sortRule .default{
+    background:#fffdfa;
+}
+.sortRule span label{
+    display:inline-block;
+    width:7px;
+    height:8px;
+    margin-left:5px;
+    background:url(../../../Images/Front/School/sort_tip.png) no-repeat 0px 0px;
+}
+.sortRule span label.on{
+    background:url(../../../Images/Front/School/sort_tip.png) no-repeat -7px 0px;
+}
+.resourceList .searchBox{
+    margin:5px 10px 0px 0px;
+    width:190px;
+}
+.resourceList .searchBox input {
+    border:#ccc solid 1px;
+    width:148px;
+    height:28px;
+}
+.resource{
+    width:758px;
+}
+.resource li{
+    height:130px;
+    border-bottom:#ccc solid 1px;
+}
+.resource li > span{
+    display:inline-block;
+}
+.re_detail{
+    margin-top:30px;
+}
+.re_detail > span,.re_detail > a{
+    display:block;
+    float:left;
+}
+.re_detail > span{
+    margin-left:10px;
+    color:#646464;
+}
+.re_detail > span p{
+    margin:15px 0px;
+}
+.re_detail > span span{
+    margin-right:35px;
+}
+.re_detail > span a{
+    display:block;
+    font-size:14px;
+    color:#333;
+    font-weight:bold;
+}
+.re_infor{
+    float:right;
+    height:60px;
+    border-left:#ccc solid 1px;
+    padding:5px 0px 0px 10px;
+    margin:35px 30px 0px 0px;
+}
+.re_infor .star{
+    margin:10px 0px 5px 0px;
+    height:14px;
+    color:#333;
+    font-size:14px;
+    font-family:"Microsoft YaHei";
+}
+.re_infor .star img,.re_infor .star span{
+    float:left;
+}
+.re_infor .star span{
+    margin:-3px 0px 0px 10px;
+}
+.pageBtn{
+    margin:20px auto 25px auto;
+    text-align:center;
+}

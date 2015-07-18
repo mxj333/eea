@@ -1,0 +1,88 @@
+<include file="Public:header"/>
+<eq name="everyModelCss" value="1">
+    <load href="__MPUBLIC__/Css/{$Think.controller_name|strtolower}.css"/>
+</eq>
+<eq name="everyModelJs" value="1">
+    <load href="__MPUBLIC__/Js/model/{$Think.controller_name|strtolower}.js"/>
+</eq>
+    <!--内容导航开始-->
+    <include file="App:nav"/>
+    <div class="ad wrap">
+        <include file="App:adv"/>
+    </div>
+    <div class="appArea wrap">
+        <div class="recommendApp">
+            <div class="titleDiv"><h2 class="title size660"><span>推荐应用</span></h2></div>
+            <div class="apps borderB">
+                <volist name="recommend" id="rec_info">
+                    <div class="app <if condition='$key % 2 eq 0'>borderR</if>">
+                        <div class="appTitle <if condition='$key % 2 eq 1'>padL40</if>">
+                            <a href="{$rec_info|getUrlAddress=###,'detail','app'}">
+                                <img width="60" height="60" src="{$rec_info.a_logo}" alt="{$rec_info.a_title}" title="{$rec_info.a_title}"/>
+                                <span>{$rec_info.a_title|getShortTitle=###,9}</span>
+                            </a>
+                            <p>
+                                <span>好评度:</span>
+                                <for start="0" end="$rec_info['score']">
+                                    <img src="__MPUBLIC__/Images/star1.png">
+                                </for>
+                                <for start="0" end="5-$rec_info['score']">
+                                    <img src="__MPUBLIC__/Images/star2.png">
+                                </for>
+                            </p>
+                            <p>{$rec_info.ac_title}<span class="free">{$rec_info.a_download_points|intval}豆</span></p>
+                        </div>
+                        <div class="appAbstract <if condition='$key % 2 eq 1'>padL40</if>">
+                            <p>
+                                {$rec_info.a_description|getShortTitle=###,73}
+                            </p>
+                        </div>
+                        <div class="appButton <if condition='$key % 2 eq 1'>padL40</if>">
+                            <a href="{$rec_info|getUrlAddress=###,'detail','app'}" class="enter">进入应用</a>
+                            <a href="javascript:void(0);" class="add">添加应用</a>
+                        </div>
+                    </div>
+                </volist>
+            </div>
+        </div>
+        <div class="newApps">
+            <div class="titleDiv"><h2 class="title size320"><span>最新应用</span></h2></div>
+            <volist name="new" id="new_info">
+                <div class="newApp">
+                    <div class="circleColor{$key+1}">{$key+1}</div>
+                    <a href="{$new_info|getUrlAddress=###,'detail','app'}">
+                        <img width="60" height="60" src="{$new_info.a_logo}" alt="{$new_info.a_title}" title="{$new_info.a_title}" />
+                        <span>{$new_info.a_title|getShortTitle=###,15}</span>
+                    </a>
+                    <p>{$new_info.a_description|getShortTitle=###,17}</p>
+                </div>
+            </volist>
+        </div>
+    </div>
+    <div class="downloadInfor">
+    
+    </div>
+    <div class="downloads">
+        <table cellspacing="0">
+            <tr>
+                <volist name="rank" id="rank_info">
+                    <if condition="$key neq 0 and $key % 5 eq 0">
+                        </tr>
+                        <tr>
+                    </if>
+                    <td>
+                        <a href="{$rank_info|getUrlAddress=###,'detail','app'}" class="item">
+                            <img width="60" height="60" src="{$rank_info.a_logo}" alt="{$rank_info.a_title}" title="{$rank_info.a_title}"/>
+                            <span>
+                                <span class="font14 color_333">{$rank_info.a_title|getShortTitle=###,6}</span>
+                                <span>{$rank_info.com_size|intval|byteFormat}</span>
+                                <span><span class="color_e6">{$rank_info.a_hits|intval}次</span> 访问</span>
+                            </span>
+                        </a>
+                    </td>
+                </volist>
+            </tr>
+        </table>
+    </div>
+    <include file="App:myRecommend"/>
+<include file="Public:footer"/>

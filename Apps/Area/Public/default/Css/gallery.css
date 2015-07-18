@@ -1,0 +1,30 @@
+#DB_gallery ul, #DB_gallery li{list-style:none;margin:0;padding:0}
+#DB_gallery img{border:none;vertical-align:middle;}
+
+#DB_gallery .DB_imgSet {position:relative;width:658px;height:448px;overflow:hidden;border:#ccc solid 1px;}
+#DB_gallery .DB_imgSet .DB_imgWin{height:100%}
+#DB_gallery .DB_imgSet .DB_page{position:absolute;bottom:0;font:11px tahoma bold;padding:5px;color:#ffffff}
+#DB_gallery .DB_imgSet .DB_page .DB_current{color:#ffff00}
+#DB_gallery .DB_imgSet .DB_page .DB_total{color:#ffcc00}
+#DB_gallery .DB_imgSet .DB_prevBtn{position:absolute;top:50%;margin:-45px 0px 0px 10px;cursor:pointer;left:0;}
+#DB_gallery .DB_imgSet .DB_nextBtn{position:absolute;top:50%;margin:-45px 10px 0px 0px;cursor:pointer;right:0;}
+
+#DB_gallery .DB_thumSet {position:relative;margin-top:10px;width:660px;overflow:hidden}
+#DB_gallery .DB_thumSet .DB_thumMove{position:relative;white-space:nowrap;font-size:0}
+#DB_gallery .DB_thumSet .DB_thumMove li{display:inline;margin-right:10px;border:#7a7a7a solid 1px;}
+#DB_gallery .DB_thumSet .DB_prevPageBtn{position:absolute;top:0;cursor:pointer;left:0;}
+#DB_gallery .DB_thumSet .DB_nextPageBtn{position:absolute;top:0;cursor:pointer;right:0;}
+#DB_gallery .DB_thumSet .DB_thumLine{position:absolute;width:78px;height:78px;border:1px solid #228ee6;left:0;top:0}
+
+.thumCover {
+    margin-left: -80px;
+    visibility: visible;
+}
+#DB_gallery .DB_imgSet .DB_hover{
+    width:20px;
+    height:271px;
+    background:rgba(0,0,0,0.3);
+    top:0px;
+    margin:0px;
+    padding:179px 10px;
+}

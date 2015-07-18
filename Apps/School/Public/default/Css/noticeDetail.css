@@ -1,0 +1,24 @@
+.notice_detail{
+    min-height:650px;
+}
+.detail .d_title{
+    text-align:center;
+    font-size:18px;
+    color:#323232;
+    margin:20px 0px;
+}
+.detail .infor{
+    text-align:right;
+    font-size:12px;
+    margin-top:0px;
+}
+.detail p{
+    color:#646464;
+    font-size:14px;
+    margin-top:25px;
+    text-indent:2em;
+    line-height:25px;
+}
+#dkt_footer{
+    margin-top:40px;
+}

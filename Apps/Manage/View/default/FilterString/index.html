@@ -1,0 +1,36 @@
+<include file="Public:header"/>
+<include file="Public:left"/>
+<script>
+    $(function() {
+        $('.list_header li .title').html($('.left div.on').html());
+    })
+</script>
+<div class="margin_t10" id="list">
+    <ul class="list_header">
+        <li><span class="title"></span></li>
+    </ul>
+    <form enctype="multipart/form-data" action="/Manage/FilterString/index/" method="post">
+        <ul class="list_list">
+            <li>
+                <div class="row_left">过滤方式</div>
+                <div class="row_right">
+                    <input type="radio" value="1" name="type" <if condition="$type eq 1">checked</if>><em>替换成“****”显示</em><br/>
+                    <input type="radio" value="2" name="type" <if condition="$type eq 2">checked</if>><em>直接去除不显示</em><br/>
+                    <input type="radio" value="3" name="type" <if condition="$type eq 3">checked</if>><em>不能提交，提示有非法字符</em>
+                </div>
+            </li>
+            <li>
+                <div class="row_left">敏感词</div>
+                <div class="row_right">
+                    <textarea cols="35" rows="5" name="content">{$content}</textarea><font color="red">温馨提示：敏感词之间用“,”隔开</font>
+                </div>
+            </li>
+            <li>
+                <div class="row_right">
+                    <button type="submit" value="" class="save btn">保存</button>
+                </div>
+            </li>
+        </ul>
+    </form>
+</div>
+<include file="Public:footer"/>

@@ -1,0 +1,50 @@
+    <ul class="dNav">
+        <if condition="$category['list']">
+            <li>
+                <div class="line"></div>
+                <div>
+                    <a href="{$empty_array|getUrlAddress=###, 'index','article'}">教育新闻</a>
+                    <volist name="category['list']" id="cate_info">
+                        <if condition="($key eq '3')"></div><div></if>
+                        <a href="{$cate_info|getUrlAddress=###, 'search','article'}">{$cate_info.ca_title}</a>
+                    </volist>
+                </div>
+            </li>
+        </if>
+        <if condition="$resourceCategory">
+            <li>
+                <div class="line"></div>
+                <div>
+                    <a href="{$empty_array|getUrlAddress=###, 'index','resource'}">教育资源</a>
+                    <volist name="resourceCategory" id="resCate">
+                        <if condition="($key eq '3')"></div><div></if>
+                        <a href="{$resCate|getUrlAddress=###, 'search','resource'}">{$resCate.rc_title}</a>
+                    </volist>
+                </div>
+            </li>
+        </if>
+        <if condition="$appCategory">
+            <li class="dNavLast">
+                <div class="line"></div>
+                <div>
+                    <a href="{$empty_array|getUrlAddress=###, 'index','app'}">教育应用</a>
+                    <volist name="appCategory" id="appCate">
+                        <if condition="($key eq '2')"></div><div></if>
+                        <a href="{$appCate|getUrlAddress=###, 'search','app'}">{$appCate.ac_title}</a>
+                    </volist>
+                </div>
+            </li>
+        </if>
+        <li class="dNavLast">
+            <div>
+                <a href="javascript:void(0);">备课中心</a>
+                <a href="javascript:void(0);">微课中心</a>
+                <a href="javascript:void(0);">评比活动</a>
+            </div>
+            <div>
+                <a href="javascript:void(0);">评测中心</a>
+                <a href="javascript:void(0);">名师名校</a>
+                <a href="javascript:void(0);">通知公告</a>
+            </div>
+        </li>
+    </ul>

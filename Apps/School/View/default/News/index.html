@@ -1,0 +1,73 @@
+<include file="Public:header"/>
+<load href="__MPUBLIC__/Css/news.css"/>
+<div id="dkt_content" class="wrap">
+    <include file="Adv:NewsAdv"/>
+    <div class="location">
+        <a href="javascript:void(0);">首页</a>
+        >
+        <a href="javascript:void(0);">资讯中心</a>
+        >
+        <a href="javascript:void(0);">要闻速递</a>
+    </div>
+    <div class="active_hotNews">
+        <div class="studentActive">
+            <div class="column">
+                <span>
+                    <a href="javascript:void(0);">学生活动</a>
+                </span>
+                <span class="angle"></span>
+            </div>
+            <div class="item">
+                <a href="javascript:viod(0);"><img src="../../Public/Tmp/active.jpg" width="80" height="80" alt="student active" border="0" /></a>
+                <div>
+                    <a href="javascript:void(0);">摄影活动</a>
+                    <p>[大摄天下]提供摄影活动,公司拥有专业化团队和高端影视设备,及其丰富</p>
+                </div>
+            </div>
+            <div class="item">
+                <a href="javascript:void(0);"><img src="../../Public/Tmp/active.jpg" width="80" height="80" alt="student active" border="0" /></a>
+                <div>
+                    <a href="javascript:void(0);">摄影活动</a>
+                    <p>[大摄天下]提供摄影活动,公司拥有专业化团队和高端影视设备,及其丰富</p>
+                </div>
+            </div>
+        </div>
+        <div class="HotNews marT20">
+            <div class="column">
+                <span>
+                    <a href="javascript:void(0);">热点资讯</a>
+                </span>
+                <span class="angle"></span>
+            </div>
+            <ul class="HotNewsList">
+                <volist name="articleHits['list']" id="hot" >
+                    <li>
+                        <span>{$i}</span>
+                        <a href="/index.php/school/News/show/s_id/{$sInfo.s_id}/art_id/{$hot.art_id}" target="_blank"">{$hot.art_title}</a>
+                    </li>
+                </volist>
+            </ul>
+        </div>
+    </div>
+    <div class="newsExpress">
+        <div class="news_title">
+            <a href="javascript:void(0);">要闻速递</a>
+        </div>
+        <ul class="newsList">
+            <volist name="article['list']" id="vo" > 
+            <li>
+                <a href="/index.php/school/News/show/s_id/{$sInfo.s_id}/art_id/{$vo.art_id}" target="_blank">{$vo.art_title}</a>
+                <span>【{$vo.art_created|date="Y-m-d",###}】</span>
+            </li>
+            </volist>
+        </ul>
+        <div class="pageBtn">
+            {$article['page']}
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+
+
+
+<include file="Public:footer"/>

@@ -1,0 +1,171 @@
+<include file="Public:header"/>
+<eq name="everyModelCss" value="1">
+    <load href="__MPUBLIC__/Css/{$Think.controller_name|strtolower}.css"/>
+</eq>
+<eq name="everyModelJs" value="1">
+    <load href="__MPUBLIC__/Js/model/{$Think.controller_name|strtolower}.js"/>
+</eq>
+<load href="__PUBLIC__/Js/carouselAd.js"/>
+    <div class="carouselAd"></div>
+    <div class="wrap">
+        <div class="resource_news c_left">
+            <div class="todayNews news">
+                <h3 class="c_title"><span>今日资讯</span></h3>
+                <div class="newsItem marT10">
+                    <volist name="articleTime[3]['list']" id="article_info">
+                        <if condition="$key eq 0">
+                            <a class="picNews" href="{$article_info|getUrlAddress=###, 'detail','article'}">
+                                <img src="{$article_info.art_cover_b}" alt="{$article_info.art_title}" title="{$article_info.art_title}" width="180" height="180" border="0" />
+                                <p>{$article_info.art_title|getShortTitle=###,14}</p>
+                            </a>
+                        <else/>
+                            <div class="textNews">
+                                <a href="{$article_info|getUrlAddress=###, 'detail','article'}">{$article_info.art_title|getShortTitle=###,20}</a>
+                                <p>{$article_info.art_summary|getShortTitle=###,32}</p>
+                            </div>
+                        </if>
+                    </volist>
+                </div>
+            </div>
+            <div class="schoolNews news marT10">
+                <h3 class="c_title">
+                    <span>校园资讯</span>
+                    <a href="{$info|getUrlAddress=###, 'search', 'article'}">更多>></a>
+                </h3>
+                <div class="newsItem marT10">
+                    <volist name="articleHot[3]['list']" id="article_info">
+                        <if condition="$key eq 0">
+                            <a class="picNews" href="{$article_info|getUrlAddress=###, 'detail','article'}">
+                                <img src="{$article_info.art_cover_b}" alt="{$article_info.art_title}" title="{$article_info.art_title}" width="180" height="180" border="0" />
+                                <p>{$article_info.art_title|getShortTitle=###,14}</p>
+                            </a>
+                        <else/>
+                            <div class="textNews">
+                                <a href="{$article_info|getUrlAddress=###, 'detail','article'}">{$article_info.art_title|getShortTitle=###,20}</a>
+                                <p>{$article_info.art_summary|getShortTitle=###,32}</p>
+                            </div>
+                        </if>
+                    </volist>
+                </div>
+            </div>
+            <div class="resource marT20">
+                <div class="new_resource resItem">
+                    <h3 class="c_title"><span>最新资源</span></h3>
+                    <volist name="resource_new[3]['list']" id="type_info">
+                        <a href="{$type_info|getUrlAddress=###, 'detail','resource'}">
+                            <img
+                            <if condition="$type_info['rt_id'] eq 1">
+                                src="__MPUBLIC__/Images/infor_1.png"
+                            <elseif condition="$type_info['rt_id'] eq 2" />
+                                src="__MPUBLIC__/Images/infor_2.png"
+                            <elseif condition="$type_info['rt_id'] eq 3" />
+                                src="__MPUBLIC__/Images/infor_3.png"
+                            <else/>
+                                src="__MPUBLIC__/Images/infor_4.png"
+                            </if>
+                            alt="{$type_info.res_title}" title="{$type_info.res_title}" />
+                            {$type_info.res_title|getShortTitle=###,18}
+                        </a>
+                    </volist>
+                </div>
+                <div class="hot_resource resItem marL20">
+                    <h3 class="c_title"><span>最热资源</span></h3>
+                    <volist name="resource_hot[3]['list']" id="type_info">
+                        <a href="{$type_info|getUrlAddress=###, 'detail','resource'}">
+                            <img 
+                            <if condition="$type_info['rt_id'] eq 1">
+                                src="__MPUBLIC__/Images/infor_1.png"
+                            <elseif condition="$type_info['rt_id'] eq 2" />
+                                src="__MPUBLIC__/Images/infor_2.png"
+                            <elseif condition="$type_info['rt_id'] eq 3" />
+                                src="__MPUBLIC__/Images/infor_3.png"
+                            <else/>
+                                src="__MPUBLIC__/Images/infor_4.png"
+                            </if>
+                            alt="{$type_info.res_title}" title="{$type_info.res_title}" />
+                            {$type_info.res_title|getShortTitle=###,18}
+                        </a>
+                    </volist>
+                </div>
+            </div>
+        </div>
+        <div class="notice_class c_right">
+            <div class="notice item">
+                <h3 class="c_title">
+                    <span>公告</span>
+                    <label>Notice</label>
+                </h3>
+                <volist name="notices" id="no_info">
+                    <a class="ellipsis" href="{$no_info|getUrlAddress=###, 'detail','notice'}">
+                        <label></label>
+                        {$no_info.no_title|getShortTitle=###,21}
+                    </a>
+                </volist>
+            </div>
+            <div class="classes marT20 item">
+                <h3 class="c_title">
+                    <span>班级</span>
+                    <label>Class</label>
+                </h3>
+                <volist name="classList" id="class_info">
+                    <div class="class <if condition='$key lt 3'>firstThree</if>">
+                        <a href="{$class_info|getUrlAddress=###, 'index', 'index', 'class', $class_info['c_id']}">
+                            <img src="{$class_info.ce_logo}" width="60" height="60" border="0" />
+                        </a>
+                        <a class="excellent" href="{$class_info|getUrlAddress=###, 'index', 'index', 'class', $class_info['c_id']}">
+                            <span>
+                                NO.{$key+1}
+                                <if condition="$key lt 3">
+                                    <label>HOT</label>
+                                </if>
+                            </span>
+                            <span>{$class_info.c_title|getShortTitle=###,10}</span>
+                        </a>
+                        <a class="classSpace" href="{$class_info|getUrlAddress=###, 'index', 'index', 'class', $class_info['c_id']}">> 班级空间</a>
+                    </div>
+                </volist>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div class="teach_space marT15">
+            <h3 class="c_title"><span>教师空间</span></h3>
+            <volist name="teacherList" id="teacher_info">
+                <div class="space">
+                    <if condition="$key lt 3">
+                        <span class="rank{$key+1}"></span>
+                    </if>
+                    <a class="marT25" href="{$teacher_info|getUrlAddress=###, 'index', 'index', 'member', $teacher_info['me_id']}"><img src="{$teacher_info.me_avatar}" width="60" height="60" border="0" /></a>
+                    <a class="marT15" href="{$teacher_info|getUrlAddress=###, 'index', 'index', 'member', $teacher_info['me_id']}">
+                        <p>姓名：{$teacher_info.me_nickname|getShortTitle=###,8}</p>
+                        <p>学科：{$teacher_info.subject_title|implode='、',###}</p>
+                        <p>资源：{$teacher_info.count|intval}个</p>
+                        <p>访问量：{$teacher_info.me_hits|intval}次</p>
+                    </a>
+                </div>
+            </volist>
+        </div>
+        <div class="students marT15">
+            <h3 class="c_title"><span>优秀学生</span></h3>
+            <volist name="studentList" id="student_info">
+                <a class="student" href="{$student_info|getUrlAddress=###, 'index', 'index', 'member', $student_info['me_id']}">
+                    <img src="{$student_info.me_avatar}" width="180" height="180" border="0" alt="{$student_info.me_nickname}" title="{$student_info.me_nickname}"/>
+                    <p>姓名：{$student_info.me_nickname|getShortTitle=###,10}</p>
+                    <p>年级：{$student_info.c_title|getShortTitle=###,10}</p>
+                    <span class="excellentPic"></span>
+                </a>
+            </volist>
+        </div>
+    </div>
+<script type="text/javascript">
+    $(function(){
+        $('.carouselAd').carouselAd({
+            'width' : "{$advertList[7]['pos_info']['ap_width']}px",
+            'height' : "{$advertList[7]['pos_info']['ap_height']}px",
+            'adHeight' : "{$advertList[7]['pos_info']['ap_height']}px",
+            'isHaveBtn' : true,
+            'carouselType' : '2',
+            'data' : {$advertList[7]['list']}
+        });
+    });
+</script>
+<include file="Public:footer"/>

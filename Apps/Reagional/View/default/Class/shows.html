@@ -1,0 +1,56 @@
+<include file="Public:header"/>
+<include file="Public:left"/>
+<load href="__MPUBLIC__/Css/add.css"/>
+<eq name="everyModelCss" value="1">
+<load href="__MPUBLIC__/Css/{$Think.controller_name|strtolower}Shows.css"/>
+</eq>
+<eq name="everyModelJs" value="1">
+<load href="__MPUBLIC__/Js/model/{$Think.controller_name|strtolower}Shows.js"/>
+</eq>
+<div id="list" class="margin_t10">
+    <ul class="list_header">
+        <li><span class="title">任课教师设置</span><span class="return">返回</span></li>
+    </ul>
+    <form enctype="multipart/form-data" action="/Reagional/Class/shows/" method="post">
+        <ul class="list_list">
+            <li style="height:auto;">
+                <div class="row_left">学校：</div>
+                <div class="row_right">
+                    <span attr="{$vo['s_id']}">{$vo['s_title']}</span>
+                </div>
+            </li>
+            <li style="height:auto;">
+                <div class="row_left">年级：</div>
+                <div class="row_right">
+                    <span>{$grade[$vo['c_grade']]}</span>
+                </div>
+            </li>
+            <li style="height:auto;">
+                <div class="row_left">班级名称：</div>
+                <div class="row_right">
+                    <span>{$vo.c_title}</span>
+                </div>
+            </li>
+            <li class="w460">
+                <div class="row_left">设置：</div>
+                <div class="row_right">
+                    <volist name="gsRelation" id="sub_id">
+                        <div class="setTeacher">
+                            <a href="javascript:void(0);"  value="{$sub_id}">{$subject[$sub_id]}</a>
+                            <a class="selectTeacher" href="javascript:void(0);"><if condition="$relation[$sub_id]['me_nickname']">{$relation[$sub_id]['me_nickname']}<else/>指定教师</if></a>
+                            <input type="hidden" name="relation[{$sub_id}]" <if condition="$relation[$sub_id]['me_nickname']">value="{$relation[$sub_id]['me_id']}"<else/>value=""</if>>
+                        </div>
+                    </volist>
+                </div>
+            </li>
+            <li>
+                <span class="row_right">
+                    <input type="hidden" name="s_id" value="{$vo.s_id}">
+                    <input type="hidden" name="c_id" value="{$vo.c_id}">
+                    <button type="submit" value="" class="save btn">保存</button>
+                </span>
+            </li>
+        </ul>
+    </form>
+</div>
+<include file="Public:footer"/>

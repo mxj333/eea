@@ -1,0 +1,74 @@
+.detail{
+    border-bottom:#ccc dashed 1px;
+}
+.detailTitle{
+    text-align:center;
+}
+.detailTitle h1{
+    color:#333;
+    font-size:20px;
+    font-weight:normal;
+}
+.detailTitle > div > a{
+    float:right;
+    margin-left:20px;
+    color:#278cde;
+}
+.count,.share{
+    font-family:"宋体";
+    color:#333;
+    margin-left:20px;
+}
+.count span{
+    color:#228ee6;
+}
+.share a{
+    vertical-align:middle;
+}
+.detail .detailTitle > div{
+    margin-top:15px;
+    border-bottom:#ccc solid 1px;
+    padding-bottom:10px;
+}
+.txt{
+    text-align:center;
+    font-family:"宋体";
+    color:#333;
+}
+.txt img{
+    margin:25px auto 5px auto;
+    display:block;
+}
+.txt p{
+    margin-top:15px;
+    line-height:20px;
+    font-size:14px;
+    text-align:left;
+    text-indent:2em;
+}
+.txt .keywords{
+    text-indent:0em;
+    color:#646464;
+    font-weight:bold;
+    margin:35px 10px 20px 0px;
+}
+.txt .keywords a{
+    color:#228ee6;
+    font-weight:normal;
+    margin-right:10px;
+}
+/* 图片 */
+.detailTitle p{
+    color:#646464;
+    font-family:"宋体";
+    margin-top:13px;
+}
+.picShow{
+    height:630px;
+}
+/* 视频 */
+.detailTitle h1{
+    color:#333;
+    font-size:20px;
+    font-weight:normal;
+}

@@ -1,0 +1,116 @@
+.ad{
+    margin-top:20px;
+    overflow:hidden;
+    height:300px;
+}
+.adList{
+    width: 11930px;
+}
+.adList li{
+    width:1000px;
+    height:300px;
+    float:left;
+}
+.title{
+    padding-bottom:0px;
+    font-size:20px;
+    font-weight:normal;
+}
+.title span{
+    padding:0px 0px 5px 0px;
+    float:left;
+}
+.titleNav{
+    height:30px;
+    float:left;
+    margin:3px 0px 0px 315px;
+}
+.titleNav li{
+    float:left;
+    height:30px;
+    margin-right:10px;
+}
+.titleNav li a{
+    color:#333;
+    display:block;
+    width:60px;
+    font-size:14px;
+    text-align:center;
+    line-height:30px;
+    margin-top:0px;
+}
+.titleNav a.on{
+    background:#228ee6;
+    color:#fff;
+}
+.hotResource,.primaryResource,.middleResource,.highResource{
+    margin-top:20px;
+    height:293px;
+}
+.resource{
+    margin-top:30px;
+    height:230px;
+    width:180px;
+    float:left;
+}
+.resource a span{
+    margin-top:8px;
+    display:block;
+    width:162px;
+    float:left;
+    font-family:"黑体";
+    font-size:14px;
+    color:#333;
+    height:24px;
+}
+.resource p{
+    margin-top:10px;
+    clear:both;
+    color:#646464;
+}
+.resource p *{
+    float:left;
+}
+.resource p span{
+    color:#333;
+    font-size:14px;
+    margin:-2px 0px 0px 10px;
+}
+.size387{
+    width:387px;
+}
+.newResource{
+    float:left;
+    width:385px;
+    margin-top:25px;
+}
+.newResource .title{
+    font-size:16px;
+    padding-bottom:5px;
+}
+.newResource .titleDiv{
+    height:28px;
+}
+.item{
+    width:165px;
+    float:left;
+    height:80px;
+    margin-top:20px;
+    color:#333;
+}
+.item a span{
+    display:block;
+    margin:-84px 0px 0px 90px;
+    color:#333;
+}
+.item p{
+    margin-left:90px;
+    line-height:25px;
+}
+.newResource .read{
+    margin-top:15px;
+    font-family:"黑体";
+}
+.middleResource .titleNav,.highResource .titleNav{
+    margin-left:115px;
+}

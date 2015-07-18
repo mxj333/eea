@@ -1,0 +1,71 @@
+<include file="Public:header"/>
+<eq name="everyModelCss" value="1">
+    <load href="__MPUBLIC__/Css/{$Think.controller_name|strtolower}.css"/>
+</eq>
+<eq name="everyModelJs" value="1">
+    <load href="__MPUBLIC__/Js/model/{$Think.controller_name|strtolower}.js"/>
+</eq>
+    <div class="studentPic">
+        <volist name="advertList[31]['list']" id="advertInfo">
+            <a href="{$advertInfo.adv_url}">
+                <img src="{$advertInfo.adv_image}" alt="{$advertInfo.adv_title}" width="{$advertList[31]['pos_info']['ap_width']}" height="{$advertList[31]['pos_info']['ap_height']}" border="0">
+            </a>
+        </volist>
+    </div>
+    <div class="cateNav_bg marT20">
+        <div class="cateNav wrap">
+            <a class="cateNav_item" href="javascript:void(0);">
+                <span class="excellent item_pic">
+                    <span></span>
+                </span>
+                <span class="item_txt">
+                    <span>优秀学生</span>
+                    <span>文化、娱乐、体育、户外的优秀学生</span>
+                </span>
+            </a>
+            <a class="cateNav_item" href="javascript:void(0);">
+                <span class="graceShow item_pic">
+                    <span></span>
+                </span>
+                <span class="item_txt">
+                    <span>文采展示</span>
+                    <span>最好的作文展示平台欢迎同学来学习借鉴</span>
+                </span>
+            </a>
+            <a class="cateNav_item" href="javascript:void(0);">
+                <span class="wonderful item_pic">
+                    <span></span>
+                </span>
+                <span class="item_txt">
+                    <span>精彩瞬间</span>
+                    <span>学校十五届我是小歌手活动圆满结束</span>
+                </span>
+            </a>
+        </div>
+    </div>
+    <div class="studentList s_wrap">
+        <volist name="studentList[1]['list']" id="exc_list" key="exc_key">
+            <span class="listItem">
+                <volist name="exc_list" id="exc_info" key="info_key">
+                    <if condition="$info_key eq 1">
+                        <span>
+                            <span>{$studentList[1]['type'][$exc_key]}</span>
+                            <span class="foAr"></span>
+                            <label></label>
+                        </span>
+                    </if>
+                    <a href="{$info|getUrlAddress=###, 'index', 'index', 'member', $exc_info['me_id']}">
+                        <img src="{$exc_info.se_logo}" width="180" height="180" border="0" alt="{$exc_info.me_nickname}" />
+                        <span>{$exc_info.c_title}&nbsp;&nbsp;{$exc_info.me_nickname}</span>
+                    </a>
+                </volist>
+            </span>
+        </volist>
+        <div class="clear"></div>
+    </div>
+<script type="text/javascript">
+$(function(){
+    $(".studentPic img").css("width",$(window).width());
+});
+</script>
+<include file="Public:footer"/>

@@ -1,0 +1,192 @@
+.c_wrap{
+    height:100%;
+    position:relative;
+}
+.c_hd{
+    box-shadow:1px 1px 1px rgba(103, 113, 125, 0);
+    height:80px;
+    left:0px;
+    overflow:hidden;
+    position:fixed;
+    top:0px;
+    width:100%;
+    z-index:3;
+    border-bottom:#d18d62 solid 3px;
+}
+.c_hd .mask{
+    background-color:#fff;
+    height:100%;
+    left:0px;
+    opacity:0.85;
+    position:absolute;
+    top:0px;
+    width:100%;
+}
+.c_box{
+    height:100%;
+    width:980px;
+    position:relative;
+}
+.logo{
+    margin-top:18px;
+}
+.logo_tip{
+    float:right;
+    margin-top:10px;
+}
+.sec_1{
+    background:rgba(0,0,0,0.5);
+    bottom:0px;
+    left:0px;
+    overflow:hidden;
+    position:fixed;
+    right:0px;
+    top:0px;
+    /*z-index:2;*/
+}
+.sec_1 .bg{
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+}
+.down{
+    position:absolute;
+    color:#fff;
+    left:456px;
+    top:35%;
+}
+.down .down_title{
+    font-family:"黑体";
+    font-size:30px;
+}
+.down .down_title label{
+    font-size:48px;
+}
+.down .down_func{
+    font-size:18px;
+    margin:20px 0px 45px 0px;
+}
+.down .down_func span{
+    display:inline-block;
+    border-left:#72777c solid 1px;
+    line-height:14px;
+    vertical-align:middle;
+    margin-right:6px;
+    padding-left:10px;
+}
+.down .down_func span:first-child{
+    padding-left:0px;
+    border:none;
+}
+.down .down_btn{
+    width:220px;
+}
+.down .down_btn a{
+    display:block;
+    color:#fff;
+    font-size:18px;
+    width:220px;
+    height:57px;
+    line-height:57px;
+    background:url(../Images/login.png) no-repeat -76px -159px;
+}
+.down .down_btn a.android{
+    background:url(../Images/login.png) no-repeat -76px -216px;
+    margin-top:10px;
+}
+.down .down_btn a span{
+    display:inline-block;
+    width:135px;
+    text-align:center;
+    margin-left:60px;
+}
+.sec_1 .mobile{
+    bottom:0px;
+    left:0px;
+    position:absolute;
+}
+.c_space{
+    width:100%;
+}
+.sec_2{
+    background:#fff;
+    height:594px;
+    overflow:hidden;
+    position:relative;
+}
+.sec_2 > .c_box > div,.sec_2 > .c_box > img{
+    position:absolute;
+}
+.sec_2 .behind{
+    left:-110px;
+    top:330px;
+}
+.sec_2 .iphone{
+    left:75px;
+    top:66px;
+}
+.sec_2 .middle{
+    left:425px;
+    top:95px;
+}
+.sec_2 .front{
+    left:-10px;
+    top:135px;
+}
+.sec_2 .sec2_txt{
+    width:478px;
+    font-family:"黑体";
+    top:100px;
+    left:528px;
+}
+.txt_title{
+    font-size:60px;
+    color:#333;
+    margin-bottom:20px;
+}
+.sec_2 .sec2_txt .txt_detail{
+    font-size:18px;
+    color:#646464;
+    line-height:30px;
+}
+.sec_3{
+    height:740px;
+    padding-top:60px;
+    background:#f5f5f5;
+    position:relative;
+    text-align:center;
+}
+.sec_3 .sec3_title{
+    font-size:48px;
+}
+.func_item{
+    width:390px;
+    float:left;
+    margin:70px 0px 0px 90px;
+}
+.func_item .item_title{
+    font-size:26px;
+    margin-top:20px;
+}
+.func_item .item_detail{
+    font-size:14px;
+    line-height:25px;
+    text-align:left;
+}
+.sec_4{
+    background:#fff;
+    position:relative;
+    height:194px;
+    padding:30px 0px;
+    text-align:center;
+    color:#555;
+}
+.sec_4 p{
+    margin-top:37px;
+}
+.sec_4 p a{
+    color:#555;
+    margin-right:15px;
+}

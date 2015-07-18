@@ -1,0 +1,169 @@
+.hMainNav{
+    background:#278cde;
+}
+#dkt_header .hMainNav a.on,#dkt_header .hMainNav a:hover{
+    background:#e6e6e6;
+    color:#278cde;
+}
+.text{
+    width:250px;
+}
+.carouselAd{
+    width:640px;
+    height:320px;
+    margin:0px;
+}
+.re_title a span{
+    color:#278cde;
+    font-size:20px;
+    font-weight:normal;
+}
+.re_title a span label{
+    border-left:#278cde solid 3px;
+    margin-top:2px;
+}
+.news .re_title,.news .re_title a span{
+    border-bottom:none;
+}
+.newsList{
+    width:660px;
+}
+.newsList li{
+    border-bottom:#e6e6e6 solid 1px;
+}
+.newsList li > div{
+    height:103px;
+    margin:20px 0px 10px 0px;
+}
+.newsList li > div > a,.newsList li > div > div{
+    float:left;
+}
+.newsList li > div > div{
+    width:566px;
+    margin-left:10px;
+}
+.newsList .news_title{
+    color:#323232;
+    display:block;
+    font-size:20px;
+    height:26px;
+    overflow:hidden;
+}
+.newsList li div div .news_title + p{
+    height:43px;
+	overflow:hidden;
+}
+.newsList div p{
+    line-height:20px;
+    color:#646464;
+    font-family:"宋体";
+    margin-top:10px;
+}
+.newsList p span{
+    color:#7f807e;
+    float:right;
+    margin-left:20px;
+}
+.newsList .pic_news{
+    height:243px;
+}
+.newsList .pic_news a{
+    float:none;
+    display:block;
+}
+.newsList .pic_news img{
+    display:inline-block;
+    height:180px;
+    margin:10px 30px 0 0;
+    width:180px;
+}
+.loading{
+    width:658px;
+    line-height:28px;
+    color:#323232;
+    font-size:14px;
+    text-align:center;
+    border:#ccc solid 1px;
+    margin-top:15px;
+}
+.news_itemThree > a,.news_itemThree > div{
+    float:left;
+}
+.news_itemThree{
+    height:80px;
+}
+.news_itemThree > div{
+    width:230px;
+    margin-left:10px;
+}
+.news_itemThree > div p{
+    line-height:20px;
+    color:#646464;
+}
+.news_itemThree > div p a{
+    color:#820f28;
+}
+.news_title{
+    color:#333;
+    font-size:18px;
+    font-family:"Microsoft YaHei";
+}
+.focus{
+    height:120px;
+}
+.focus > .news_itemThree > div > a{
+    color:#333;
+    font-size:14px;
+    margin-bottom:7px;
+    display:block;
+}
+.focus,.focus .news_itemThree{
+    margin-top:15px;
+}
+.newsRank > a{
+    color:#333;
+    display:block;
+    font-size:14px;
+    height:27px;
+    margin-top:10px;
+    overflow:hidden;
+    width:300px;
+}
+.newsRank > a span{
+    color:#278cde;
+    display:inline-block;
+    font-family:"Microsoft YaHei";
+    font-size:20px;
+    text-align:center;
+    width:25px;
+}
+.newsAd{
+    display:block;
+    margin:30px 0px;
+}
+.searchCourse{
+    margin:20px 0px 25px 0px;
+}
+.school{
+    margin-top:20px;
+}
+.school .school_item{
+    margin-bottom:20px;
+    height:14px;
+}
+.school .school_item a{
+    font-size:14px;
+    color:#333;
+    font-family:"宋体";
+}
+.school .school_item span{
+    height:14px;
+    margin:0px 20px;
+}
+.focusNews{
+	height:310px;
+}
+.newsRank{
+    height:405px;
+	margin-top:20px;
+}

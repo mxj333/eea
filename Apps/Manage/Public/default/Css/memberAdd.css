@@ -1,0 +1,34 @@
+.list_list{
+    padding-bottom:10px;
+}
+.list_list li{
+    width:770px;
+    margin-left:10px;
+    border:1px solid #d5d5d5;
+    border-top:none;
+}
+.list_list .row_right{
+    width:670px;
+}
+.list_list .cate{
+    margin:10px 0px 10px 0px;
+    border:none;
+    border-bottom:1px solid #ccc;
+    border-top:1px solid #ccc;
+    padding-left:20px;
+    color:#0181e3;
+    font-size:14px;
+}
+.list_list .defalut_dot{
+    height:25px;
+    left:0px;
+    margin-top:6px;
+    position:absolute;
+    top:0px;
+    cursor:pointer;
+}
+.list_list .defalut_dot span{
+    line-height:25px;
+    font-size:22px;
+    height:25px;
+}

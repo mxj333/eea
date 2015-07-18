@@ -1,0 +1,23 @@
+<div class="picList">
+    <div class="DB_imgSet">
+        <div class="DB_imgWin"><img alt="{$vo['pic'][0]['f_title']}" title="{$vo['pic'][0]['f_title']}" src="{$vo['pic'][0]['fileoriginalpath']}"></div>
+        <div class="DB_prevBtn"></div>
+        <div class="DB_nextBtn"></div>
+    </div>
+    <div class="DB_thumSet">
+        <ul class="DB_thumMove">
+            <volist name="vo['pic']" id="pic_list">
+                <li>
+                    <a href="{$pic_list.fileoriginalpath}">
+                        <img alt="{$pic_list.f_title}" width="80" height="80" title="{$pic_list.f_title}" src="{$pic_list.filepath}">
+                        <img class="thumCover" src="__MPUBLIC__/Images/cover.png"/>
+                    </a>
+                </li>
+            </volist>
+        </ul>
+        <div class="DB_thumLine"></div>
+        <div class="DB_prevPageBtn"><img src="__MPUBLIC__/Images/prev_page.png" alt="上一页"/></div>
+        <div class="DB_nextPageBtn"><img src="__MPUBLIC__/Images/next_page.png" alt="下一页"/></div>
+    </div>
+    <div class="pic_abstract">{$vo['pic'][0]['f_remark']}</div>
+</div>

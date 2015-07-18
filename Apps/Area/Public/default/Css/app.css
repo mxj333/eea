@@ -1,0 +1,90 @@
+.apps{
+    width:780px;
+}
+.apps h3{
+    font-family:"宋体";
+    font-size:14px;
+}
+.recommend_app{
+    background:#f0f0f0;
+    height:180px;
+}
+.recommend_app h3{
+    height:35px;
+    border-bottom:#ff8400 solid 1px;
+}
+.recommend_app h3 a,.recommend_app h3 .join{
+    display:block;
+    float:left;
+}
+.recommend_app h3 a{
+    color:#fff;
+    width:100px;
+    line-height:35px;
+    text-align:center;
+    background:#ff8400;
+}
+.recommend_app h3 .join{
+    width:66px;
+    height:35px;
+    background:url(../Images/recommend_app.png) no-repeat;
+}
+.recommend_app h3 .title_page{
+    font-family:"Microsoft YaHei";
+}
+.recommend_app .a_show{
+    margin:20px 20px 0px 30px;
+}
+.special > a{
+    margin-left:10px;
+}
+.app_item{
+    width:240px;
+    height:100px;
+    float:left;
+    margin:0px 0px 20px 30px;
+    font-family:"宋体";
+}
+.newApp{
+    height:405px;
+}
+.classify{
+    height:36px;
+}
+.classify span{
+    display:inline-block;
+    width:257px;
+    line-height:23px;
+    text-align:center;
+}
+.classBtn{
+    width:101px;
+}
+.appClassify .app_cate{
+	width:240px;
+	float:left;
+	margin-left:20px;
+	height:260px;
+}
+.appClassify .app_item{
+    margin:10px 0px 20px 0px;
+}
+.appClassify{
+    height:340px;
+}
+.moreClassify{
+    border-top:#ccc solid 1px;
+}
+.moreShow{
+    width:141px;
+    margin:15px auto;
+}
+.moreShow .tip{
+    background: url(../Images/tip9.png) no-repeat;
+    width:11px;
+}
+.moreClassify a[class="classBtn"]{
+    float:left;
+    width:100px;
+    margin:10px 20px 0px 10px;
+}

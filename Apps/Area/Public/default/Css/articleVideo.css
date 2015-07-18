@@ -1,0 +1,119 @@
+.hMainNav{
+    background:#278cde;
+}
+#dkt_header .hMainNav a.on,#dkt_header .hMainNav a:hover{
+    background:#e6e6e6;
+    color:#278cde;
+}
+.text{
+    width:250px;
+}
+.detailTitle h1{
+    color:#333;
+    font-size:20px;
+    font-weight:normal;
+}
+.detailTitle > div{
+    margin-top:5px;
+}
+.detailTitle > div > a{
+    float:right;
+    margin-left:20px;
+    color:#278cde;
+}
+.count,.share{
+    font-family:"宋体";
+    color:#333;
+    margin-left:20px;
+}
+.count span{
+    color:#228ee6;
+}
+.share a{
+    vertical-align:middle;
+}
+.video{
+    width:658px;
+    height:478px;
+    border:#ccc solid 1px;
+    margin-top:15px;
+}
+.re_title a span{
+    color:#278cde;
+    font-size:20px;
+    font-weight:normal;
+}
+.re_title a span label{
+    border-left:#278cde solid 3px;
+    margin-top:2px;
+}
+.news .re_title,.news .re_title a span{
+    border-bottom:none;
+}
+.video_item{
+    height:80px;
+    margin-top:20px;
+}
+.video_item > a,.video_item > div{
+    float:left;
+}
+.video_item > div{
+    width:230px;
+    color:#646464;
+    margin-left:10px;
+}
+.video_item > div a{
+    display:block;
+    font-size:14px;
+    font-weight:bold;
+    color:#323232;
+    margin-bottom:10px;
+}
+.hit .re_title{
+    border-bottom:0px;
+}
+.hit > a{
+    color:#333;
+    font-weight:bold;
+    font-family:"宋体";
+    font-size:14px;
+    text-align:center;
+    display:inline-block;
+    height:201px;
+    width:180px;
+    margin:15px 8px 0px;
+}
+.hit > a img{
+    margin-bottom:3px;
+}
+.com_detail{
+    width:590px;
+}
+.moreComment,.com_infor a{
+    color:#278cde;
+}
+.com_btn span,.com_btn a{
+    background:#d5ecff;
+}
+.com_btn .praise span{
+    width:17px;
+    background: url(../Images/news_tip.png) no-repeat 0px 0px;
+}
+.com_btn .com_comment span{
+    background: url(../Images/news_tip.png) no-repeat -17px 0px;
+}
+.newsRank > a{
+    display:block;
+    width:300px;
+    font-size:14px;
+    color:#333;
+    margin-top:10px;
+}
+.newsRank > a span{
+    color:#278cde;
+    display:inline-block;
+    font-family:"Microsoft YaHei";
+    font-size:20px;
+    text-align:center;
+    width:25px;
+}

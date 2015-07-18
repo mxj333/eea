@@ -1,0 +1,48 @@
+<include file="Public:headerTop"/>
+<include file="Public:headerNav"/>
+<include file="Public:headerSearch"/>
+<include file="App:headerNav"/>
+<include file="Public:headerBottom"/>
+<load href="__MPUBLIC__/Css/{$Think.controller_name|strtolower}Common.css"/>
+<eq name="everyModelCss" value="1">
+    <load href="__MPUBLIC__/Css/{$Think.controller_name|strtolower}Search.css"/>
+</eq>
+<eq name="everyModelJs" value="1">
+    <load href="__MPUBLIC__/Js/model/{$Think.controller_name|strtolower}Search.js"/>
+</eq>
+    <h3 class="app_title marT20">
+        <a href="javascript:void(0);">
+            <span attr="{$category.ac_id}">
+                <label></label>
+                {$category.ac_title}
+            </span>
+        </a>
+    </h3>
+    <volist name="alist['list']" id="ainfo">
+        <div class="app_item">
+            <a href="{$ainfo|getUrlData='type',$client_type,###|getUrlAddress=###,'detail','app'}"><img width="60" height="60" border="0" alt="{$ainfo.a_title}" title="{$ainfo.a_title}" src="{$ainfo.a_logo}"></a>
+            <div class="itemDetail">
+                <a href="{$ainfo|getUrlData='type',$client_type,###|getUrlAddress=###,'detail','app'}">{$ainfo.a_title|getShortTitle=###,8}</a>
+                <a class="my_recommend" href="javascript:void(0);">下载</a>
+                <p>1235人推荐</p>
+                <p class="star">
+                    <img src="__MPUBLIC__/Images/star1.png">
+                    <img src="__MPUBLIC__/Images/star1.png">
+                    <img src="__MPUBLIC__/Images/star1.png">
+                    <img src="__MPUBLIC__/Images/star1.png">
+                    <img src="__MPUBLIC__/Images/star1.png">
+                    <span>{$ainfo.score|intval}分</span>
+                </p>
+            </div>
+        </div>
+    </volist>
+    <div class="clear"></div>
+    <div class="pageBtn">
+        {$alist['page']}
+    </div>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $('.app_item:nth-child(4n+1)').css({'border-left':'none'}).children('a').css({'margin-left':'0px'});
+    });
+    </script>
+<include file="Public:footer"/>

@@ -1,0 +1,153 @@
+<include file="Public:header"/>
+<eq name="everyModelCss" value="1">
+    <load href="__MPUBLIC__/Css/{$Think.controller_name|strtolower}Search.css"/>
+</eq>
+<eq name="everyModelJs" value="1">
+    <load href="__MPUBLIC__/Js/model/{$Think.controller_name|strtolower}Search.js"/>
+</eq>
+<load href="__PUBLIC__/Js/carouselAd.js"/>
+    <div class="wrap marT20">
+        <div class="news c_left">
+            <div class="carouselAd"></div>
+            <ul class="newsNav marT20">
+                <volist name="cateList" id="cate_info">
+                    <li>
+                        <if condition="$key neq 0">
+                            <span></span>
+                        </if>
+                        <a <if condition="$cate_info['ca_id'] eq $cate_id">class="on"</if> href="{$cate_info|getUrlAddress=###, 'search', 'article'}" attr="{$cate_info.ca_id}">{$cate_info.ca_title|getShortTitle=###,4}</a>
+                    </li>
+                </volist>
+            </ul>
+            <div class="newsFocus marT20 item">
+                <h3 class="c_title">
+                    <span>聚焦</span>
+                    <label>Focus</label>
+                </h3>
+                <div class="f_content marT20">
+                    <a href="{$focus[0]|getUrlAddress=###, 'detail', 'article'}">
+                        <img src="{$focus[0]['art_cover_b']}" width="180" height="180" border="0" alt="{$focus[0]['art_title']}" title="{$focus[0]['art_title']}" />
+                    </a>
+                    <div class="content_r">
+                        <p>
+                            <volist name="focus" id="focus_info">
+                                <if condition="$key neq 0 and $key % 2 eq 0">
+                                    </p>
+                                    <p>
+                                        <span></span>
+                                </if>
+                                <if condition="$key neq 0">
+                                    <a href="{$focus_info|getUrlAddress=###, 'detail', 'article'}" title="{$focus_info.art_title}">{$focus_info.art_title}</a>
+                                </if>
+                            </volist>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="newsRates marT20 item">
+                <h3 class="c_title">
+                    <span>即时</span>
+                    <label>Rates</label>
+                </h3>
+                <ul class="newsRates_list">
+                    <volist name="artList" id="art_info">
+                        <li>
+                            <a href="{$art_info|getUrlAddress=###, 'detail', 'article'}">
+                                <img src="{$art_info.art_cover}" width="80" height="80" border="0" alt="{$art_info.art_title}" title="{$art_info.art_title}" />
+                            </a>
+                            <div class="list_r">
+                                <a href="{$art_info|getUrlAddress=###, 'detail', 'article'}">{$art_info.art_title|getShortTitle=###,25}</a>
+                                <p>{$art_info.art_summary|getShortTitle=###,82}</p>
+                            </div>
+                        </li>
+                    </volist>
+                </ul>
+                <div class="loading">下拉加载...</div>
+            </div>
+        </div>
+        <div class="others c_right">
+            <div class="todayNews marT20 item">
+                <h3 class="c_title">
+                    <span>今日</span>
+                    <label>Today</label>
+                </h3>
+                <volist name="today" id="today_info">
+                    <div class="newsItem <if condition='$key eq 0'>picNews</if>">
+                        <a href="{$today_info|getUrlAddress=###, 'detail', 'article'}">{$today_info.art_title|getShortTitle=###,19}</a>
+                        <if condition='$key eq 0'>
+                            <a class="pic" href="{$today_info|getUrlAddress=###, 'detail', 'article'}"><img src="{$today_info.art_cover}" width="80" height="80" border="0" alt="{$today_info.art_title}" title="{$today_info.art_title}" /></a>
+                        </if>
+                        <p>
+                            {$art_info.art_summary|getShortTitle=###,45}
+                            <a href="{$today_info|getUrlAddress=###, 'detail', 'article'}">[详情]</a>
+                        </p>
+                    </div>
+                </volist>
+            </div>
+            <div class="PicNews item">
+                <h3 class="c_title">
+                    <span>图说</span>
+                    <label>Pictures</label>
+                </h3>
+                <div class="picShow"></div>
+                <volist name="picList" id="pic_info">
+                    <div class="picItem">
+                        <a href="{$pic_info|getUrlAddress=###, 'detail', 'article'}">
+                            <img src="{$pic_info.art_cover}" width="80" height="80" border="0" alt="{$pic_info.art_title}" title="{$pic_info.art_title}" />
+                        </a>
+                        <div><a class="" href="{$pic_info|getUrlAddress=###, 'detail', 'article'}">{$pic_info.art_title|getShortTitle=###,25}</a></div>
+                    </div>
+                </volist>
+            </div>
+            <div class="visualAngle item">
+                <h3 class="c_title">
+                    <span>视角</span>
+                    <label>Video</label>
+                </h3>
+                <volist name="videoList" id="video_info">
+                    <div class="visualItem">
+                        <a href="{$video_info|getUrlAddress=###, 'detail', 'article'}">
+                            <img src="{$video_info.art_cover}" width="80" height="80" border="0" alt="{$video_info.art_title}" title="{$video_info.art_title}" />
+                        </a>
+                        <div class="item_r">
+                            <a href="{$video_info|getUrlAddress=###, 'detail', 'article'}">{$video_info.art_title|getShortTitle=###,10}</a>
+                            <p>{$video_info.art_summary|getShortTitle=###,32}</p>
+                        </div>
+                    </div>
+                </volist>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+<script type="text/javascript">
+    $(function(){
+        $('.carouselAd').carouselAd({
+            'width' : "{$advertList[32]['pos_info']['ap_width']}px",
+            'height' : "{$advertList[32]['pos_info']['ap_height']}px",
+            'adHeight' : "{$advertList[32]['pos_info']['ap_height']}px",
+            'carouselType' : '1',
+            'isAdAbstract' : true,
+            'adAbstractH' : '40px',
+            'isTextNum' :false,
+            'adAbstractW' : "{$advertList[32]['pos_info']['ap_width']}px",
+            'data' : {$advertList[32]['list']}
+        });
+    });
+
+    // 图说
+    $(".picShow").carouselAd({
+        'width' : '263px',
+        'height' : '185px',
+        'adWidth':'180px',
+        'adHeight' : '180px',
+        'carouselType' : '1',
+        'isAdAbstract' : true,
+        'adAbstractH' : '30px',
+        'adAbstractW' : '180px',
+        'isTextNum' :false,
+        'isHaveBtn' : true,
+        'isCarousel' : false,
+        'data' : {$picShows}
+    });
+</script>
+<include file="Public:footer"/>

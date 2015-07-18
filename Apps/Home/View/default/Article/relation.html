@@ -1,0 +1,6 @@
+        <div class="relatedArticle">
+            <h3>相关文章</h3>
+            <volist name="relationList" id="relation_info">
+                <a href="{$relation_info|getUrlAddress=###, 'detail', 'article'}"><span></span>{$relation_info.art_title|getShortTitle=###,20}</a>
+            </volist>
+        </div>

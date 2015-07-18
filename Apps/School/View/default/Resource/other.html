@@ -1,0 +1,12 @@
+<!--其他-->
+<div>
+    <label>资源下载：</label>
+    <div>
+        <div class="r_play">
+            <if condition="$vo['rf_transform_status'] neq 1">
+                <span style="color:#ff0000">未转码</span>
+            </if>
+            <div style="width:200px;margin-left:50px;"><a href="{$vo['res_path']}">资源下载：{$vo['res_title']}</a></div>
+        </div>
+    </div>
+</div>

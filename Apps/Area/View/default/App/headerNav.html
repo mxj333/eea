@@ -1,0 +1,8 @@
+    <ul class="hMainNav wrap">
+        <li><a href="{$cate_info|getUrlAddress=###,'index','app'}" <if condition="!$client_type">class="on"</if>>应用首页</a></li>
+        <li><a href="{$cate_info|getUrlData='type',2,###|getUrlAddress=###,'search','app'}" <if condition="$client_type eq 2">class="on"</if>>Iphone<span class="tip"></span></a></li>
+        <li><a href="{$cate_info|getUrlData='type',3,###|getUrlAddress=###,'search','app'}" <if condition="$client_type eq 3">class="on"</if>>Android<span class="tip"></span></a></li>
+        <li><a href="{$cate_info|getUrlData='type',4,###|getUrlAddress=###,'search','app'}" <if condition="$client_type eq 4">class="on"</if>>IphoneIpad<span class="tip"></span></a></li>
+        <li><a href="{$cate_info|getUrlData='type',5,###|getUrlAddress=###,'search','app'}" <if condition="$client_type eq 5">class="on"</if>>AndroidIpad<span class="tip"></span></a></li>
+        <li><a href="{$cate_info|getUrlData='type',1,###|getUrlAddress=###,'search','app'}" <if condition="$client_type eq 1">class="on"</if>>电脑<span class="tip"></span></a></li>
+    </ul>

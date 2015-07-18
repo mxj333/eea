@@ -1,0 +1,97 @@
+<include file="Public:header"/>
+<include file="Public:left"/>
+<div id="list" class="margin_t10">
+    <eq name="everyModelJs" value="1">
+    <load href="__MPUBLIC__/Js/model/{$Think.controller_name|strtolower}.js"/>
+    </eq>
+    <eq name="everyModelCss" value="1">
+    <load href="__MPUBLIC__/Css/{$Think.controller_name|strtolower}Shows.css"/>
+    </eq>
+    <style>
+    .hidden{display: none;}
+    </style>
+    <ul class="list_header">
+        <li><span class="title">{$info.p_title}</span><span class="return">返回</span></li>
+    </ul>
+    <form enctype="multipart/form-data" action="/Manage/Push/shows/" method="post">
+        <ul class="list_list">
+            <li style="height:auto;">
+                <div class="row_left">推送规则</div>
+                <span class="addRule">添加</span>
+            </li>
+            <li class="w460 hidden rule">
+                <span>
+                    <em>{:L('RULE_TYPE')}</em>
+                    <select class="ruleType" name="pr_type[]">
+                        <volist name="type" id="tinfo">
+                            <option value="{$key}">{$tinfo}</option>
+                        </volist>
+                    </select>
+                </span>
+                <span>
+                    <em>{:L('RULE_CONDITION')}</em>
+                    <select class="ruleCondition" name="pr_condition[]">
+                        <volist name="condition" id="cinfo">
+                            <option value="{$key}">{$cinfo}</option>
+                        </volist>
+                    </select>
+                </span>
+                <span>
+                    <em>{:L('RULE_VALUE')}</em>
+                    <input type="text" name="pr_value[]">
+                </span>
+                <span style="display:none">
+                    <em>{:L('RULE_VALUE')}</em>
+                    <input type="text" name="pr_value_second[]">
+                </span>
+                <span class="delRule">删除</span>
+                <input type="hidden" name="pr_id[]" value="">
+            </li>
+            <volist name="list" id="rule_info">
+                <li class="w460 rule">
+                    <span>
+                        <em>{:L('RULE_TYPE')}</em>
+                        <select class="ruleType" name="pr_type[]">
+                            <volist name="type" id="tinfo">
+                                <option value="{$key}" <if condition="$rule_info['pr_type'] eq $key"> selected="selected"</if>>{$tinfo}</option>
+                            </volist>
+                        </select>
+                    </span>
+                    <span>
+                        <em>{:L('RULE_CONDITION')}</em>
+                        <select name="pr_condition[]">
+                            <volist name="condition" id="cinfo">
+                                <option value="{$key}" <if condition="$rule_info['pr_condition'] eq $key"> selected="selected"</if>>{$cinfo}</option>
+                            </volist>
+                        </select>
+                    </span>
+                    <span>
+                        <em>{:L('RULE_VALUE')}</em>
+                        <if condition="$rule_info['pr_type'] eq 3">
+                            <input class="Wdate" type="text" onClick="WdatePicker()" onfocus="WdatePicker('{minDate:\'#{%y-1}-%M-%d\',maxDate:\'#{%y+1}-%M-%d\'}')" name="pr_value[]" <if condition="$rule_info['pr_value']"> value="{$rule_info.pr_value|date='Y-m-d',###}"</if>>
+                        <else/>
+                            <input type="text" name="pr_value[]" <if condition="$rule_info['pr_value']"> value="{$rule_info.pr_value}"</if>>
+                        </if>
+                    </span>
+                    <span <if condition="$rule_info['pr_condition'] neq 5 and $rule_info['pr_condition'] neq 6"> style="display:none"</if>>
+                        <em>{:L('RULE_VALUE')}</em>
+                        <if condition="$rule_info['pr_type'] eq 3">
+                            <input class="Wdate" type="text" onClick="WdatePicker()" onfocus="WdatePicker('{minDate:\'#{%y-1}-%M-%d\',maxDate:\'#{%y+1}-%M-%d\'}')" name="pr_value_second[]" <if condition="$rule_info['pr_value_second']"> value="{$rule_info.pr_value_second|date='Y-m-d',###}"</if>>
+                        <else/>
+                            <input type="text" name="pr_value_second[]" <if condition="$rule_info['pr_value_second']"> value="{$rule_info.pr_value_second}"</if>>
+                        </if>
+                    </span>
+                    <span class="delRule">删除</span>
+                    <input type="hidden" name="pr_id[]" <if condition="$rule_info['pr_id']"> value="{$rule_info.pr_id}"</if>>
+                </li>
+            </volist>
+            <li>
+                <span class="row_right">
+                    <input type="hidden" name="p_id" value="{$info.p_id}">
+                    <button type="submit" value="" class="save btn">保存</button>
+                </span>
+            </li>
+        </ul>
+    </form>
+</div>
+<include file="Public:footer"/>

@@ -1,0 +1,425 @@
+<include file="Public:headerTop"/>
+<include file="Public:headerNav"/>
+<include file="Adv:headerAdv"/>
+<include file="Public:headerSearch"/>
+<include file="Public:headerAdv1"/>
+<include file="Public:headerBottom"/>
+<eq name="everyModelCss" value="1">
+    <load href="__MPUBLIC__/Css/{$Think.controller_name|strtolower}.css"/>
+</eq>
+<eq name="everyModelJs" value="1">
+    <load href="__MPUBLIC__/Js/model/{$Think.controller_name|strtolower}.js"/>
+</eq>
+    <div class="resources c_left marT20">
+        <div class="Ad_resource">
+            <div class="carouselAd"></div>
+            <div class="ad_item marT20">
+                <volist name="lefttopList[1]['list'][5]" id="ltl_info">
+                    <a href="{$ltl_info|getUrlAddress=###,'detail','resource'}">
+                        <span></span>
+                        {$lefttopList[1]['type'][5]}：{$ltl_info.res_title|getShortTitle=###,10}
+                    </a>
+                </volist>
+            </div>
+            <div class="ad_item marT20">
+                <volist name="lefttopList[1]['list'][6]" id="ltl_info">
+                    <a href="{$ltl_info|getUrlAddress=###,'detail','resource'}">
+                        <span></span>
+                        {$lefttopList[1]['type'][6]}：{$ltl_info.res_title|getShortTitle=###,10}
+                    </a>
+                </volist>
+            </div>
+        </div>
+        <div class="push_resource marT20">
+            <h3 class="re_title">
+                <a href="javascript:void(0);">
+                    <span><label></label>推荐资源</span>
+                </a>
+                <span class="title_page"><label class="prevPage"></label><span class="page_cur">1</span>/<span class="page_total">5</span><label class="nextPage"></label></span>
+            </h3>
+            <div class="item">
+                <volist name="leftrecommentList[3]['list']" id="recomment_info">
+                    <if condition="($key % 6 eq 0) and ($key neq 0)">
+                        </div>
+                        <div class="item">
+                    </if>
+                    <if condition="($key % 6 eq 0)">
+                        <div class="itemShow">
+                            <a href="{$recomment_info|getUrlAddress=###,'detail','resource'}"><img src="{$recomment_info.res_image}" alt="{$recomment_info.res_title}" title="{$recomment_info.res_title}" width="80" height="80" border="0"></a>
+                            <div>
+                                <a href="{$recomment_info|getUrlAddress=###,'detail','resource'}">{$recomment_info.res_title|getShortTitle=###,10}</a>
+                                <p>评分:
+                                        <span class="itemScore">{$recomment_info['res_score_num']/$recomment_info['res_score_count']}分</span>
+                                </p>
+                                <p class="itemDown">下载：<span>{$recomment_info.res_downloads}</span>评论：<span></span></p>
+                            </div>
+                        </div>
+                    <else/>
+                        <a href="{$recomment_info|getUrlAddress=###,'detail','resource'}">{$recomment_info.res_title|getShortTitle=###,20}</a>
+                    </if>
+                </volist>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="primary_resource contents marT20">
+            <ul class="contentNav">
+                <li attr="pri" class="on"><a href="javascript:void(0);">小学资源</a></li>
+                <volist name="primaryList[2]['type']" id="type_info">
+                    <li attr="{$key}"><a href="javascript:void(0);">{$type_info}</a></li>
+                </volist>
+                <li class="nav_more"><a href="javascript:void(0);">更多</a></li>
+            </ul>
+            <volist name="sTypeList[4]['list'][15]" id="st_info">
+                <if condition="$key eq 0">
+                    <div class="re_item marT20 primary_pri">
+                        <a href="{$st_info|getUrlAddress=###,'detail','resource'}"><img src="{$st_info.res_image}" alt="{$st_info.res_title}" title="{$st_info.res_title}" width="180" height="180" border="0"></a>
+                        <div>
+                            <a href="javascript:void(0);">{$st_info.res_title|getShortTitle=###,15}</a>
+                            <p>{$st_info.res_summary|getShortTitle=###,84}</p>
+                            <span>评分:
+                                    <span class="itemScore">{$st_info['res_score_num']/$st_info['res_score_count']}分</span>
+                            </span>
+                            <span class="itemDown">下载：<span>{$st_info.res_downloads}</span>评论：<span></span></span>
+                        </div>
+                    </div>
+                <else/>
+                    <if condition="$key % 6 eq 1">
+                        <div class="item primary_pri <if condition='($key neq 1) && ($key % 12 eq 1)'>marL10</if>">
+                    </if>
+                    <if condition="($key % 6 eq 1)">
+                        <div class="itemShow">
+                            <a href="{$st_info|getUrlAddress=###,'detail','resource'}"><img src="{$st_info.res_image}" alt="{$st_info.res_title}" title="{$st_info.res_title}" width="80" height="80" border="0"></a>
+                            <div>
+                                <a href="{$st_info|getUrlAddress=###,'detail','resource'}">{$st_info.res_title|getShortTitle=###,10}</a>
+                                <p>评分:
+                                        <span class="itemScore">{$st_info['res_score_num']/$st_info['res_score_count']}分</span>
+                                </p>
+                                <p class="itemDown">下载：<span>{$st_info.res_downloads}</span>评论：<span></span></p>
+                            </div>
+                        </div>
+                    <else/>
+                        <a href="{$st_info|getUrlAddress=###,'detail','resource'}">{$st_info.res_title|getShortTitle=###,20}</a>
+                    </if>
+                    <if condition="(($key % 6 eq 0) and ($key neq 0)) or ($key eq (count($sTypeList[4]['list'][15])-1))">
+                        </div>
+                    </if>
+                </if>
+            </volist>
+            <foreach name="primaryList[2]['list']" item="pri_list" key="pl_key">
+                <volist name="pri_list" id="pri_info" key="pri_key">
+                    <if condition="$key eq 0">
+                        <div class="hide re_item marT20 primary_{$pl_key}">
+                            <a href="{$pri_info|getUrlAddress=###,'detail','resource'}"><img src="{$pri_info.res_image}" alt="{$pri_info.res_title}" title="{$pri_info.res_title}" width="180" height="180" border="0"></a>
+                            <div>
+                                <a href="javascript:void(0);">{$pri_info.res_title|getShortTitle=###,15}</a>
+                                <p>{$pri_info.res_summary|getShortTitle=###,84}</p>
+                                <span>评分:
+                                        <span class="itemScore">{$pri_info['res_score_num']/$pri_info['res_score_count']}分</span>
+                                </span>
+                                <span class="itemDown">下载：<span>{$pri_info.res_downloads}</span>评论：<span></span></span>
+                            </div>
+                        </div>
+                    <else/>
+                        <if condition="$key % 6 eq 1">
+                            <div class="hide item primary_{$pl_key} <if condition='($key neq 1) && ($key % 12 eq 1)'>marL10</if>">
+                        </if>
+                        <if condition="($key % 6 eq 1)">
+                            <div class="itemShow">
+                                <a href="{$pri_info|getUrlAddress=###,'detail','resource'}"><img src="{$pri_info.res_image}" alt="{$pri_info.res_title}" title="{$pri_info.res_title}" width="80" height="80" border="0"></a>
+                                <div>
+                                    <a href="{$pri_info|getUrlAddress=###,'detail','resource'}">{$pri_info.res_title|getShortTitle=###,10}</a>
+                                    <p>评分:
+                                            <span class="itemScore">{$pri_info['res_score_num']/$pri_info['res_score_count']}分</span>
+                                    </p>
+                                    <p class="itemDown">下载：<span>{$pri_info.res_downloads}</span>评论：<span></span></p>
+                                </div>
+                            </div>
+                        <else/>
+                            <a href="{$pri_info|getUrlAddress=###,'detail','resource'}">{$pri_info.res_title|getShortTitle=###,20}</a>
+                        </if>
+                        <if condition="(($key % 6 eq 0) and ($key neq 0)) or ($key eq (count($primaryList[2]['list'][$pl_key])-1))">
+                            </div>
+                        </if>
+                    </if>
+                </volist>
+            </foreach>
+            <div class="clear"></div>
+        </div>
+        <div class="junior_resource contents marT20">
+            <ul class="contentNav">
+                <li attr="jun" class="on"><a href="javascript:void(0);">初中资源</a></li>
+                <volist name="middleList[2]['type']" id="type_info">
+                    <li attr="{$key}"><a href="javascript:void(0);">{$type_info}</a></li>
+                </volist>
+                <li class="nav_more"><a href="javascript:void(0);">更多</a></li>
+            </ul>
+            <volist name="sTypeList[4]['list'][16]" id="st_info">
+                <if condition="$key eq 0">
+                    <div class="re_item marT20 middle_jun">
+                        <a href="{$st_info|getUrlAddress=###,'detail','resource'}"><img src="{$st_info.res_image}" alt="{$st_info.res_title}" title="{$st_info.res_title}" width="180" height="180" border="0"></a>
+                        <div>
+                            <a href="javascript:void(0);">{$st_info.res_title|getShortTitle=###,15}</a>
+                            <p>{$st_info.res_summary|getShortTitle=###,84}</p>
+                            <span>评分:
+                                    <span class="itemScore">{$st_info['res_score_num']/$st_info['res_score_count']}分</span>
+                            </span>
+                            <span class="itemDown">下载：<span>{$st_info.res_downloads}</span>评论：<span></span></span>
+                        </div>
+                    </div>
+                <else/>
+                    <if condition="$key % 6 eq 1">
+                        <div class="item middle_jun <if condition='($key neq 1) && ($key % 12 eq 1)'>marL10</if>">
+                    </if>
+                    <if condition="($key % 6 eq 1)">
+                        <div class="itemShow">
+                            <a href="{$st_info|getUrlAddress=###,'detail','resource'}"><img src="{$st_info.res_image}" alt="{$st_info.res_title}" title="{$st_info.res_title}" width="80" height="80" border="0"></a>
+                            <div>
+                                <a href="{$st_info|getUrlAddress=###,'detail','resource'}">{$st_info.res_title|getShortTitle=###,10}</a>
+                                <p>评分:
+                                        <span class="itemScore">{$st_info['res_score_num']/$st_info['res_score_count']}分</span>
+                                </p>
+                                <p class="itemDown">下载：<span>{$st_info.res_downloads}</span>评论：<span></span></p>
+                            </div>
+                        </div>
+                    <else/>
+                        <a href="{$st_info|getUrlAddress=###,'detail','resource'}">{$st_info.res_title|getShortTitle=###,20}</a>
+                    </if>
+                    <if condition="(($key % 6 eq 0) and ($key neq 0)) or ($key eq (count($sTypeList[4]['list'][16])-1))">
+                        </div>
+                    </if>
+                </if>
+            </volist>
+            <foreach name="middleList[2]['list']" item="jun_list" key="jl_key">
+                <volist name="jun_list" id="jun_info" key="jun_key">
+                    <if condition="$key eq 0">
+                        <div class="hide re_item marT20 middle_{$jl_key}">
+                            <a href="{$jun_info|getUrlAddress=###,'detail','resource'}"><img src="{$jun_info.res_image}" alt="{$jun_info.res_title}" title="{$jun_info.res_title}" width="180" height="180" border="0"></a>
+                            <div>
+                                <a href="javascript:void(0);">{$jun_info.res_title|getShortTitle=###,15}</a>
+                                <p>{$jun_info.res_summary|getShortTitle=###,84}</p>
+                                <span>评分:
+                                        <span class="itemScore">{$jun_info['res_score_num']/$jun_info['res_score_count']}分</span>
+                                </span>
+                                <span class="itemDown">下载：<span>{$jun_info.res_downloads}</span>评论：<span></span></span>
+                            </div>
+                        </div>
+                    <else/>
+                        <if condition="$key % 6 eq 1">
+                            <div class="hide item middle_{$jl_key} <if condition='($key neq 1) && ($key % 12 eq 1)'>marL10</if>">
+                        </if>
+                        <if condition="($key % 6 eq 1)">
+                            <div class="itemShow">
+                                <a href="{$jun_info|getUrlAddress=###,'detail','resource'}"><img src="{$jun_info.res_image}" alt="{$jun_info.res_title}" title="{$jun_info.res_title}" width="80" height="80" border="0"></a>
+                                <div>
+                                    <a href="{$jun_info|getUrlAddress=###,'detail','resource'}">{$jun_info.res_title|getShortTitle=###,10}</a>
+                                    <p>评分:
+                                            <span class="itemScore">{$jun_info['res_score_num']/$jun_info['res_score_count']}分</span>
+                                    </p>
+                                    <p class="itemDown">下载：<span>{$jun_info.res_downloads}</span>评论：<span></span></p>
+                                </div>
+                            </div>
+                        <else/>
+                            <a href="{$jun_info|getUrlAddress=###,'detail','resource'}">{$jun_info.res_title|getShortTitle=###,20}</a>
+                        </if>
+                        <if condition="(($key % 6 eq 0) and ($key neq 0)) or ($key eq (count($middleList[2]['list'][$jl_key])-1))">
+                            </div>
+                        </if>
+                    </if>
+                </volist>
+            </foreach>
+            <div class="clear"></div>
+        </div>
+        <div class="senior_resource contents marT20">
+            <ul class="contentNav">
+                <li attr="sen" class="on"><a href="javascript:void(0);">高中资源</a></li>
+                <volist name="highList[2]['type']" id="type_info">
+                    <li attr="{$key}"><a href="javascript:void(0);">{$type_info}</a></li>
+                </volist>
+                <li class="nav_more"><a href="javascript:void(0);">更多</a></li>
+            </ul>
+            <volist name="sTypeList[4]['list'][17]" id="st_info">
+                <if condition="$key eq 0">
+                    <div class="re_item marT20 high_sen">
+                        <a href="{$st_info|getUrlAddress=###,'detail','resource'}"><img src="{$st_info.res_image}" alt="{$st_info.res_title}" title="{$st_info.res_title}" width="180" height="180" border="0"></a>
+                        <div>
+                            <a href="javascript:void(0);">{$st_info.res_title|getShortTitle=###,15}</a>
+                            <p>{$st_info.res_summary|getShortTitle=###,84}</p>
+                            <span>评分:
+                                    <span class="itemScore">{$st_info['res_score_num']/$st_info['res_score_count']}分</span>
+                            </span>
+                            <span class="itemDown">下载：<span>{$st_info.res_downloads}</span>评论：<span></span></span>
+                        </div>
+                    </div>
+                <else/>
+                    <if condition="$key % 6 eq 1">
+                        <div class="item high_sen <if condition='($key neq 1) && ($key % 12 eq 1)'>marL10</if>">
+                    </if>
+                    <if condition="($key % 6 eq 1)">
+                        <div class="itemShow">
+                            <a href="{$st_info|getUrlAddress=###,'detail','resource'}"><img src="{$st_info.res_image}" alt="{$st_info.res_title}" title="{$st_info.res_title}" width="80" height="80" border="0"></a>
+                            <div>
+                                <a href="{$st_info|getUrlAddress=###,'detail','resource'}">{$st_info.res_title|getShortTitle=###,10}</a>
+                                <p>评分:
+                                        <span class="itemScore">{$st_info['res_score_num']/$st_info['res_score_count']}分</span>
+                                </p>
+                                <p class="itemDown">下载：<span>{$st_info.res_downloads}</span>评论：<span></span></p>
+                            </div>
+                        </div>
+                    <else/>
+                        <a href="{$st_info|getUrlAddress=###,'detail','resource'}">{$st_info.res_title|getShortTitle=###,20}</a>
+                    </if>
+                    <if condition="(($key % 6 eq 0) and ($key neq 0)) or ($key eq (count($sTypeList[4]['list'][17])-1))">
+                        </div>
+                    </if>
+                </if>
+            </volist>
+            <foreach name="highList[2]['list']" item="sen_list" key="sl_key">
+                <volist name="sen_list" id="sen_info" key="sen_key">
+                    <if condition="$key eq 0">
+                        <div class="hide re_item marT20 high_{$sl_key}">
+                            <a href="{$sen_info|getUrlAddress=###,'detail','resource'}"><img src="{$sen_info.res_image}" alt="{$sen_info.res_title}" title="{$sen_info.res_title}" width="180" height="180" border="0"></a>
+                            <div>
+                                <a href="javascript:void(0);">{$sen_info.res_title|getShortTitle=###,15}</a>
+                                <p>{$sen_info.res_summary|getShortTitle=###,84}</p>
+                                <span>评分:
+                                        <span class="itemScore">{$sen_info['res_score_num']/$sen_info['res_score_count']}分</span>
+                                </span>
+                                <span class="itemDown">下载：<span>{$sen_info.res_downloads}</span>评论：<span></span></span>
+                            </div>
+                        </div>
+                    <else/>
+                        <if condition="$key % 6 eq 1">
+                            <div class="hide item high_{$sl_key} <if condition='($key neq 1) && ($key % 12 eq 1)'>marL10</if>">
+                        </if>
+                        <if condition="($key % 6 eq 1)">
+                            <div class="itemShow">
+                                <a href="{$sen_info|getUrlAddress=###,'detail','resource'}"><img src="{$sen_info.res_image}" alt="{$sen_info.res_title}" title="{$sen_info.res_title}" width="80" height="80" border="0"></a>
+                                <div>
+                                    <a href="{$sen_info|getUrlAddress=###,'detail','resource'}">{$sen_info.res_title|getShortTitle=###,10}</a>
+                                    <p>评分:
+                                            <span class="itemScore">{$sen_info['res_score_num']/$sen_info['res_score_count']}分</span>
+                                    </p>
+                                    <p class="itemDown">下载：<span>{$sen_info.res_downloads}</span>评论：<span></span></p>
+                                </div>
+                            </div>
+                        <else/>
+                            <a href="{$sen_info|getUrlAddress=###,'detail','resource'}">{$sen_info.res_title|getShortTitle=###,20}</a>
+                        </if>
+                        <if condition="(($key % 6 eq 0) and ($key neq 0)) or ($key eq (count($highList[2]['list'][$sl_key])-1))">
+                            </div>
+                        </if>
+                    </if>
+                </volist>
+            </foreach>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="others c_right marT20">
+        <div class="hotNews">
+            <h3 class="re_title"><a href="javascript:void(0);"><span><label></label>一周热文</span></a></h3>
+            <ul class="hotNewList">
+                <volist name="hotList[3]['list']" id="hot_info">
+                    <li>
+                        <a href="{$hot_info|getUrlAddress=###,'detail','resource'}">
+                            <h4>{$hot_info.res_title|getShortTitle=###,30}</h4>
+                            {$hot_info.res_summary|getShortTitle=###,75}[详情]
+                        </a>
+                    </li>
+                </volist>
+            </ul>
+        </div>
+        <div class="newsAd marT20"></div>
+        <div class="rank marT20">
+            <h3 class="re_title"><a href="javascript:void(0);"><span><label></label>排行榜</span></a></h3>
+            <volist name="rankList[3]['list']" id="rank_info">
+                <div class="rankItem">
+                    <p><span class="<if condition='$key lt 3'>firstRank</if> rankNum">{$key+1}</span>{$rank_info.res_title|getShortTitle=###,20}</p>
+                    <div class="itemShow">
+                        <span class="rankNum">{$key+1}</span>
+                        <a href="{$hot_info|getUrlAddress=###,'detail','resource'}"><img src="{$rank_info.res_image}" alt="{$rank_info.res_title}" title="{$rank_info.res_title}" width="80" height="80" border="0"></a>
+                        <div>
+                            <a class="ellipsis" href="{$hot_info|getUrlAddress=###,'detail','resource'}">{$rank_info.res_title|getShortTitle=###,20}</a>
+                            <p><span>下载：{$rank_info.res_downloads}</span><span class="marL20">评论：</span></p>
+                            <p>评分：{$rank_info['res_score_num']/$rank_info['res_score_count']}分</p>
+                        </div>
+                    </div>
+                </div>
+            </volist>
+        </div>
+        <div class="qualityCourse marT20">
+            <h3 class="re_title"><a href="javascript:void(0);"><span><label></label>精品课程</span></a></h3>
+            <volist name="advertList[10]['list']" id="advertInfo">
+                <a class="marT20" href="{$advertInfo.adv_url}">
+                    <img src="{$advertInfo.adv_image}" alt="{$advertInfo.adv_title}" title="{$advertInfo.adv_title}" width="{$advertList[10]['pos_info']['ap_width']}" height="{$advertList[10]['pos_info']['ap_height']}" border="0">
+                </a>
+            </volist>
+            <div class="searchCourse">
+                <span></span>
+                <input type="text" value="搜课程" />
+            </div>
+        </div>
+        <div class="testPapers marT20">
+            <h3 class="re_title"><a href="javascript:void(0);"><span><label></label>试题试卷</span></a></h3>
+            <div class="item">
+                <volist name="paperList[1]['list'][4]" id="paper_info">
+                    <if condition="$key eq 0">
+                        <div class="itemShow">
+                            <a href="{$paper_info|getUrlAddress=###,'detail','resource'}"><img src="{$paper_info.res_image}" alt="{$paper_info.res_title}" title="{$paper_info.res_title}" width="80" height="80" border="0"></a>
+                            <div>
+                                <a href="{$paper_info|getUrlAddress=###,'detail','resource'}">{$paper_info.res_title|getShortTitle=###,13}</a>
+                                <p>{$paper_info.school_type}{$paper_info.subject}</p>
+                                <p>版本：{$paper_info.version}</p>
+                            </div>
+                        </div>
+                    <else/>
+                        <a href="{$paper_info|getUrlAddress=###,'detail','resource'}">{$paper_info.res_title|getShortTitle=###,20}</a>
+                    </if>
+                </volist>
+            </div>
+        </div>
+        <volist name="advertList[11]['list']" id="advertInfo">
+            <a href="{$advertInfo.adv_url}">
+                <img src="{$advertInfo.adv_image}" alt="{$advertInfo.adv_title}" title="{$advertInfo.adv_title}" width="{$advertList[11]['pos_info']['ap_width']}" height="{$advertList[11]['pos_info']['ap_height']}" border="0">
+            </a>
+        </volist>
+    </div>
+    <div class="clear"></div>
+    <div class="bigAd">
+        <volist name="advertList[12]['list']" id="advertInfo">
+            <a href="{$advertInfo.adv_url}">
+                <img src="{$advertInfo.adv_image}" alt="{$advertInfo.adv_title}" title="{$advertInfo.adv_title}" width="{$advertList[12]['pos_info']['ap_width']}" height="{$advertList[12]['pos_info']['ap_height']}" border="0">
+            </a>
+        </volist>
+    </div>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $.ajax({
+            type : 'POST',
+            url : AREA_MODULE.toLowerCase() + '/index/getAdvert',
+            data : {type:9},
+            dataType : 'json',
+            success : function(data) {
+                $('.newsAd').carouselAd({
+                    'width' : '320px',
+                    'height' : '135px',
+                    'adWidth' : '320px',
+                    'adHeight' : '135px',
+                    'carouselType' : '1',
+                    'data' : data,
+                });
+            }
+        });
+        
+        $('.carouselAd').carouselAd({
+            'width' : '660px',
+            'height' : '380px',
+            'adWidth' : '660px',
+            'adHeight' : '260px',
+            'adAbstractH' : '120px',
+            'isAdAbstract' : true,
+            'carouselType' : '1',
+            'data' : [{'adv_url':'javascript:void(0);','adv_image': MPUBLIC + '/Tmp/ad0615.jpg','alt':'资料','adv_title':'2013年七年级上册语文期末复习资料','adAbstract':'点击查看更多2013年七年级上册语文期末复习资料(新人教版、全)11精彩内容.点击查看更多2013年七年级上册语文期末复习资料(新人教版、全)11精彩内容.末复习资料(新人教版、全)11精彩内容...'},{'adv_url':'javascript:void(0);','adv_image': MPUBLIC + '/Tmp/ad0615_2.jpg','alt':'资料','adv_title':'2012全国高中语文模块课程 专题教学研讨会记事(1)','adAbstract':'2012年11月2日 - 标签：2012年 高中语文 专题模块 研讨会 北师大 分类：评价：没调-专家-同学 2012全国高中语文模块课程...'}],
+        });
+    });
+    </script>
+<include file="Public:footer"/>

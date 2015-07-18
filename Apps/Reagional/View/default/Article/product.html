@@ -1,0 +1,150 @@
+<include file="Article:prev"/>
+<load href="__PUBLIC__/Js/sortable.js"/>
+<li class="w460">
+    <style>
+        .row_right .action{
+            margin:5px 0px;
+            height: 26px;
+            line-height: 26px;
+        }
+        .row_right .lists, .row_right .item div{
+            clear:both;
+        }
+        .row_right .action span{
+            display: block;
+            height: 26px;
+            line-height: 26px;
+            text-align: center;
+            width: 66px;
+            background: none repeat scroll 0 0 #00a0e8;
+            border: 1px solid #58a9d4;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 14px;
+        }
+        .row_right .lists .item {
+            margin:5px 0px;
+            border:1px solid #d5d5d5;
+            height:200px;
+        }
+        .row_right .item span{
+            width:auto;
+            min-width:50px;
+            height:auto;
+            margin-right:10px;
+        }
+        .row_right .item span.xh{
+            height:200px;
+            border-right:1px solid #d5d5d5;
+        }
+        .row_right .item span textarea {
+            height:120px;
+        }
+        .row_right .item span.del{
+            float:right;
+        }
+        .row_right .item img {
+            float:left;
+            margin: 5px;
+        }
+    </style>
+    <script type="text/javascript">
+    <!--
+        $(function() {
+
+            $('.row_right .action').click(function() {
+                itemAdd(1);
+            })
+
+            itemAdd();
+
+            $('.row_right .del').live('click', function() {
+                var num = $('.row_right .lists .item').size();
+
+                if (num < 2) {
+                    showMessage('至少需要1张图片', 1);
+                    return false;
+                }
+                var obj = $(this).parent();
+                var id = $(this).parents('.item').attr('attr');
+                if (id) {
+                    $.post(MODULE+'/Article/delFile', 'id='+id, function(json) {
+                        if (json.status) {
+                            itemRemove(obj);
+                        }
+                    }, 'json');
+                } else {
+                    itemRemove(obj);
+                }
+            })
+        })
+
+        function itemAdd(flag) {
+            var num = $('.row_right .lists .item').size();
+            var max = {$Think.config.article_pic_max_num};
+            if (flag == 1 || $('.row_right .lists .item').size() == 0) {
+                num = num + 1;
+                if (num > max) {
+                    showMessage('最多可添加50张图片', 1);
+                    return false;
+                }
+                var str = '<div class="item"><span class="xh">'+ num +'</span><span><div><em>名称：</em><input type="text" name="title[]"></div><div><em>描述：</em><textarea name="remark[]"></textarea><input type="hidden" name="sort[]" class="f_sort" value="255"><input type="hidden" name="id[]"/></div><div><em>图片：</em><input type="file" name="pic[]"></div></span><span class="del"><img width="20" height="20" border="0" alt="正常" src="/Public/Images/del.gif"></span></div>';
+
+                $('.row_right .lists').append(str);
+            }
+
+            $('.action em').html('现有' + num + '个,还可添加' + (max - num) + '个');
+            sort();
+        }
+
+        function itemRemove(obj) {
+            obj.fadeOut('slow', function() {
+                $(this).remove();
+                initLists();
+            });
+        }
+
+        function sort() {
+            $('.lists').sortable().bind('sortupdate', function() {
+                initLists();
+            });
+        }
+
+        function initLists() {
+            $('.lists .item').each(function(i) {
+                $(this).find('.xh').html(i+1);
+                $(this).find('.f_sort').val(i+1);
+            })
+        }
+    //-->
+    </script>
+    <div class="row_left">图片列表：</div>
+    <div class="row_right">
+        <div class="action">
+            <span>添加图片</span><em></em>
+        </div>
+        <div class="lists">
+            <volist name="pic" id="vo">
+                <div class="item" attr="{$vo.f_id}">
+                    <span class="xh">{$key+1}</span>
+                    <span>
+                        <div>
+                            <em>名称：</em><input type="text" name="title[]" value="{$vo.f_title}">
+                        </div>
+                        <div>
+                            <em>描述：</em>
+                            <textarea name="remark[]" style="width:290px;">{$vo.f_remark}</textarea>
+                            <img src="{$Think.config.uploads_root_path|substr=1}{$Think.config.article_file_path}{$vo.f_savepath}/{$vo.f_id}_s.{$vo.f_ext}" height="120" width="200"/>
+                            <input type="hidden" name="sort[]" class="f_sort" value="{$vo.f_sort}"/>
+                            <input type="hidden" name="id[]" value="{$vo.f_id}"/>
+                        </div>
+                    </span>
+                    <span class="del">
+                        <img width="20" height="20" border="0" alt="正常" src="/Public/Images/del.gif">
+                    </span>
+                </div>
+            </volist>
+        </div>
+    </div>
+</li>
+<include file="Article:back"/>

@@ -1,0 +1,11 @@
+        <div class="hotRank marT20">
+            <div class="titleDiv"><h2 class="title size320"><span>热门排名</span></h2></div>
+            <div class="guessNews">
+                <volist name="rankList" id="rank_info">
+                    <div class="new">
+                        <span class="boxTip"></span>
+                        <a href="{$rank_info|getUrlAddress=###, 'detail', 'article'}" title="{$rank_info.art_title}">{$rank_info.art_title|getShortTitle=###,20}</a>
+                    </div>
+                </volist>
+            </div>
+        </div>

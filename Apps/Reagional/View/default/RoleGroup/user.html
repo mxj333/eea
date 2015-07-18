@@ -1,0 +1,40 @@
+<include file="Public:header"/>
+<include file="Public:left"/>
+<load href="__MPUBLIC__/Css/add.css"/>
+<eq name="everyModelCss" value="1">
+<load href="__MPUBLIC__/Css/{$Think.controller_name|strtolower}User.css"/>
+</eq>
+<eq name="everyModelJs" value="1">
+<load href="__MPUBLIC__/Js/model/{$Think.controller_name|strtolower}User.js"/>
+</eq>
+<div id="list" class="margin_t10">
+    <ul class="list_header">
+        <li><span class="title">用户列表</span><span class="return">返回</span></li>
+    </ul>
+    <form enctype="multipart/form-data" action="/Reagional/RoleGroup/user/" method="post">
+        <ul class="list_list">
+            <li style="height:auto;">
+                <div class="row_left">角色名称：</div>
+                <div class="row_right">
+                    <span attr="{$vo.rg_id}">{$vo.rg_title}</span>
+                </div>
+            </li>
+            <li class="w460">
+                <div class="row_left">角色用户：</div>
+                <span class="row_right">
+                    <a href="javascript:void(0)" class="memberAdd"><span></span>新增</a>
+                </span>
+            </li>
+            <li class="w460">
+                <div class="row_left"></div>
+                <div class="row_right student">
+                    <volist name="member_list" id="member_info">
+                        <span attr="{$member_info.me_id}">{$member_info.me_nickname}<span class="delecte"></span></span>
+                    </volist>
+                </div>
+            </li>
+            
+        </ul>
+    </form>
+</div>
+<include file="Public:footer"/>

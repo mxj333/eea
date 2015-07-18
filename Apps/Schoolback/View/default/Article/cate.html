@@ -1,0 +1,78 @@
+<div id="showTree"></div>
+<load href="__PUBLIC__/Js/tree/tree.js,__PUBLIC__/Js/tree/tree.css"/>
+<style>
+    #showTree {
+        background: none repeat scroll 0 0 #fff;
+        border: 1px solid #d5d5d5;
+        border-radius: 5px;
+        float: left;
+        min-height:590px;
+        padding-top:10px;
+        padding-left:10px;
+        width: 150px;
+        margin:10px 0px 0px 10px;
+    }
+</style>
+<script type="text/javascript">
+<!--
+    function getNodeAtt(pNode,pAtt){
+        try {
+            return pNode.attributes.getNamedItem(pAtt).nodeValue;
+        } catch(e) {
+        }
+    }
+
+    var myTree = new JTree("showTree", "__MODULE__/Category/shows/type/{$Think.CONTROLLER_NAME}");
+
+    myTree.setPicPath("__PUBLIC__/Js/tree/img/");
+    myTree.onclick = function() {}
+    myTree.ondblclick=function(){}
+    myTree.CAPTIONATT="caption";
+    myTree.create();
+    $(function() {
+        $('.outLine span').click(function() {
+            if ($(this).attr('attr') == 0) {
+                return false;
+            }
+            if ($(this).next().size()) {
+                if ($(this).prev().prev().attr('src') == '/Public/Js/tree/img/plus.gif') {
+                    $(this).prev().prev().attr('src', '/Public/Js/tree/img/minus.gif');
+                    $(this).next().show();
+                } else {
+                    $(this).prev().prev().attr('src', '/Public/Js/tree/img/plus.gif');
+                    $(this).next().hide();
+                }
+            }
+            $('input[name=ca_id]').val($(this).attr('attr'));
+            searchClick();
+        })
+
+        var id = $('input[name=ca_id]').val();
+
+        if (id) {
+            showCate(getCates(id));
+            $('span[attr='+id+']').click();
+        }
+    })
+
+    function getCates(id, res) {
+        res = res ? res : [];
+        res.unshift(id);
+        var parent = $('span[attr='+id+']').parent().parent();
+        if (parent.hasClass('outLine')) {
+            return res;
+        } else {
+            return getCates(parent.prev().attr('attr'), res);
+        }
+    }
+
+    function showCate(res) {
+        var id = res.shift();
+        if (id) {
+            $('span[attr='+id+']').prev().prev().attr('src', '/Public/Js/tree/img/minus.gif')
+            $('span[attr='+id+']').next().show();
+            showCate(res);
+        }
+    }
+//-->
+</script>

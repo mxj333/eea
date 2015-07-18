@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>{$Think.config.web_title}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <load href="__PUBLIC__/Js/jquery.js,__MPUBLIC__/Js/public.js,__MPUBLIC__/Js/cover.js"/>
+    <load href="__MPUBLIC__/Css/public.css"/>
+    <script type="text/javascript">
+    <!--
+        var ROOT = '__ROOT__';
+        var APP = '__APP__';
+        var MODULE = '__MODULE__';
+        var ACTION = '__ACTION__';
+        var SELF = '__SELF__';
+        var CONTROLLER = '__CONTROLLER__';
+        var MPUBLIC = '__MPUBLIC__';
+        var PUBLIC = '__PUBLIC__';
+    //-->
+        var region_title = "{$vo.re_title}";
+        if (region_title == "") {
+            region_title = "中国";
+        }
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <div class="header">
+            <div class="logo">
+                <a href="__MODULE__">管理系统</a>
+            </div>
+            <div class="logout">
+                嗨！{$Think.session.uNickName}，{$time|helloTime}好<a href="__MODULE__/Public/logout">[退出]</a>
+            </div>
+            <div class="groups">
+                <volist name="groups" id="group">
+                    <span attr="{$group.list.0.n_name}" <eq name="key" value="$bannerOn">class="on"</eq>>{$group.title}</span>
+                </volist>
+            </div>
+        </div>
+        <script>
+            $(function() {
+                $('.groups span, .left div').click(function() {
+                    location.href = '__MODULE__/' + $(this).attr('attr');
+                })
+            })
+        </script>

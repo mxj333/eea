@@ -1,0 +1,248 @@
+<include file="Public:header"/>
+<load href="__MPUBLIC__/Css/comment.css"/>
+<eq name="everyModelCss" value="1">
+    <load href="__MPUBLIC__/Css/{$Think.controller_name|strtolower}Detail.css"/>
+</eq>
+<eq name="everyModelJs" value="1">
+    <load href="__MPUBLIC__/Js/model/{$Think.controller_name|strtolower}Detail.js"/>
+</eq>
+    <div class="location">
+        您的位置：
+        <a href="{$info|getUrlAddress=###, 'index', 'index'}">首页</a>
+        >>
+        <a href="{$info|getUrlAddress=###, 'index', 'resource'}">资源</a>
+        >> 资源阅读
+    </div>
+    <div class="resourceArea">
+        <div class="aboutTxt">
+            <div class="txts">
+                <div class="txtTitle">
+                    <h1>{$vo.res_title}</h1>
+                    <div>
+                        <span class="evaluate">
+                            <for start="0" end="$vo['score']">
+                                <img src="__MPUBLIC__/Images/star1.png">
+                            </for>
+                            <for start="0" end="5-$vo['score']">
+                                <img src="__MPUBLIC__/Images/star2.png">
+                            </for>
+                            <span>{$vo['score']|intval}分</span>
+                            （{$vo.res_score_count|intval}人评价）
+                        </span>
+                        <span class="count">
+                            下载：<span>{$vo.res_downloads|intval}</span>次
+                            &nbsp;&nbsp;评论：<span>{$vo.res_comment_count|intval}</span>次
+                        </span>
+                        <span class="share">
+                            <span>分享：</span>
+                        </span>
+                        <a href="javascript:void(0);">赞一下</a>
+                        <a href="javascript:void(0);">收藏</a>
+                    </div>
+                </div>
+                <div class="txt">
+                    <if condition="$vo['rf_transform_status'] neq 1">
+                        <div>
+                            <eq name="vo['rt_id']" value="2">
+                                <!-- 视频播放1 -->
+                                <include file="Resource:mp4"/>
+
+                                <!-- 视频播放2 -->
+                                <include file="Resource:media"/>
+
+                                <!-- 视频播放3 -->
+                                <include file="Resource:real"/>
+                            <else />
+                                <!--其他-->
+                                <include file="Resource:other"/>
+                            </eq>
+                        </div>
+                    <else />
+                        <eq name="vo['rt_id']" value="1">
+                            <!-- 图片 -->
+                            <include file="Resource:image" />
+                        </eq>
+                        <eq name="vo['rt_id']" value="2">
+                            <!-- 视频播放 -->
+                            <div>
+                                <include file="Resource:mp4" />
+                            </div>
+                        </eq>
+                        <eq name="vo['rt_id']" value="3">
+                            <!-- 音频播放 -->
+                            <include file="Resource:audio"/>
+                        </eq>
+                        <eq name="vo['rt_id']" value="4">
+                            <!--文档-->
+                            <include file="Resource:document"/>
+                        </eq>
+                        <eq name="vo['rt_id']" value="5">
+                            <!--其他-->
+                            <include file="Resource:other"/>
+                        </eq>
+                    </if>
+                </div>
+            </div>
+            <div class="yourRate">
+                <div class="rateTitle">
+                    <div class="star">你的评价
+                        <input type="hidden" value="4" id="rating_simple"/>
+                    </div>
+                    <div class="download">{$vo.res_download_points|intval}个智慧豆<a href="{$vo|getUrlAddress=###, 'download','resource'}">下载</a></div>
+                </div>
+                <div class="rateInput">
+                    <form action="javascript:void(0);" method="post">
+                        <textarea maxlength="250" placeholder="把你的想法写下来吧..."></textarea>
+                        <label><span>0</span>/250</label>
+                        <input type="submit" value="发表评论" />
+                    </form>
+                </div>
+            </div>
+            <div class="userRates">
+                <h3>用户评价<span>（6）</span></h3>
+                <ul class="userRate">
+                    <li>
+                        <a href="javascript:void(0);">
+                            <img src="__MPUBLIC__/Tmp/space2.jpg" width="60" height="60" border="0" alt="rate" />
+                        </a>
+                        <div class="rate_detail">
+                            <p>
+                                <a href="javascript:void(0);">哈哈哈</a>
+                                <label>2014.12.06 18:36发表</label>
+                            </p>
+                            <p class="d_content">
+                                质量不错，做工虽不那么精细，但对得起价格，夹的稳固，性价比高。有些小的质量问题，客服也很有耐心的解决了。还会再来的！
+                            </p>
+                            <p class="d_func">
+                                <span class="replay_btn">回复（0）</span>
+                                <span>赞（0）</span>
+                            </p>
+                            <ul class="replayRate">
+                                <li>
+                                    <div>
+                                        <p>
+                                            <a href="javascript:void(0);">ho!jkkjjk456</a>
+                                            <label>回复</label>
+                                        </p>
+                                        <p class="re_content">
+                                            为什么建都北京？南京，武汉，长沙，洛阳，成都，哪个不比它好
+                                        </p>
+                                        <p class="d_func">
+                                            <span class="replay_btn">回复（0）</span>
+                                            <span>赞（0）</span>
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <p>
+                                            <a href="javascript:void(0);">ho!jkkjjk456</a>
+                                            <label>回复</label>
+                                        </p>
+                                        <p class="re_content">
+                                            为什么建都北京？南京，武汉，长沙，洛阳，成都，哪个不比它好
+                                        </p>
+                                        <p class="d_func">
+                                            <span class="replay_btn">回复（0）</span>
+                                            <span>赞（0）</span>
+                                        </p>
+                                    </div>
+                                    <ul class="replayRate">
+                                        <li>
+                                            <div>
+                                                <p>
+                                                    <a href="javascript:void(0);">ho!jkkjjk456</a>
+                                                    <label>回复</label>
+                                                </p>
+                                                <p class="re_content">
+                                                    为什么建都北京？南京，武汉，长沙，洛阳，成都，哪个不比它好
+                                                </p>
+                                                <p class="d_func">
+                                                    <span class="replay_btn">回复（0）</span>
+                                                    <span>赞（0）</span>
+                                                </p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">
+                            <img src="__MPUBLIC__/Tmp/space2.jpg" width="60" height="60" border="0" alt="rate" />
+                        </a>
+                        <div class="rate_detail">
+                            <p>
+                                <a href="javascript:void(0);">哈哈哈</a>
+                                <label>2014.12.06 18:36发表</label>
+                            </p>
+                            <p class="d_content">
+                                质量不错，做工虽不那么精细，但对得起价格，夹的稳固，性价比高。有些小的质量问题，客服也很有耐心的解决了。还会再来的！
+                            </p>
+                            <p class="d_func">
+                                <span class="replay_btn">回复（0）</span>
+                                <span>赞（0）</span>
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">
+                            <img src="__MPUBLIC__/Tmp/space2.jpg" width="60" height="60" border="0" alt="rate" />
+                        </a>
+                        <div class="rate_detail">
+                            <p>
+                                <a href="javascript:void(0);">哈哈哈</a>
+                                <label>2014.12.06 18:36发表</label>
+                            </p>
+                            <p class="d_content">
+                                质量不错，做工虽不那么精细，但对得起价格，夹的稳固，性价比高。有些小的质量问题，客服也很有耐心的解决了。还会再来的！
+                            </p>
+                            <p class="d_func">
+                                <span class="replay_btn">回复（0）</span>
+                                <span>赞（0）</span>
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="relatedInfor">
+            <div class="resourceInfor">
+                <div class="titleDiv"><h2 class="title size320"><span>资源信息</span></h2></div>
+                <p><span>贡 献 者：</span>{$vo.creator_nickname}</p>
+                <p><span>上传时间：</span>{$vo.res_created|date='Y-m-d',###}</p>
+                <p><span>资源类型：</span>{$res_type[$vo['rt_id']]['rt_title']}</p>
+                <p><span>大&nbsp;&nbsp;&nbsp;&nbsp;小：</span>{$vo.rf_size|byteFormat}</p>
+                <p><span>格&nbsp;&nbsp;&nbsp;&nbsp;式：</span>{$vo.rf_ext}</p>
+                <p><span>描&nbsp;&nbsp;&nbsp;&nbsp;述：</span>{$vo.res_summary|getShortTitle=###,55}</p>
+            </div>
+            <div class="relatedResource">
+                <div class="titleDiv"><h2 class="title size320"><span>相关资源</span></h2></div>
+                <volist name="relationList[3]['list']" id="relation_info">
+                    <div class="item <if condition='$key neq 0'>marT25</if>">
+                        <a href="{$relation_info|getUrlAddress=###, 'detail', 'resource'}">
+                            <img width="80" height="80" src="{$relation_info.res_image}"
+                            alt="{$relation_info.res_title}" title="{$relation_info.res_title}" />
+                        </a>
+                        <div>
+                            <a href="{$relation_info|getUrlAddress=###, 'detail', 'resource'}">{$relation_info.res_title|getShortTitle=###,12}</a>
+                            <p>
+                                <label>好评：</label>
+                                <for start="0" end="$relation_info['score']">
+                                    <img src="__MPUBLIC__/Images/star1.png">
+                                </for>
+                                <for start="0" end="5-$relation_info['score']">
+                                    <img src="__MPUBLIC__/Images/star2.png">
+                                </for>
+                                <span>{$relation_info['score']|intval}分</span>
+                            </p>
+                            <p>{$relation_info.res_created|date='Y-m-d',###}</p>
+                        </div>
+                    </div>
+                </volist>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+<include file="Public:footer"/>

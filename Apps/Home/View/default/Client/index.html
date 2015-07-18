@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <load href="__PUBLIC__/Js/jquery.js"/>
+    <load href="__PUBLIC__/Css/base.css,__MPUBLIC__/Css/common.css"/>
+    <title>{$Think.config.web_title}</title>
+    <script type="text/javascript">
+        var ROOT = '__ROOT__';
+        var APP = '__APP__';
+        var MODULE = '__MODULE__';
+        var ACTION = '__ACTION__';
+        var SELF = '__SELF__';
+        var CONTROLLER = '__CONTROLLER__';
+        var MPUBLIC = '__MPUBLIC__';
+        var PUBLIC = '__PUBLIC__';
+    </script>
+</head>
+<body>
+<eq name="everyModelCss" value="1">
+    <load href="__MPUBLIC__/Css/{$Think.controller_name|strtolower}.css"/>
+</eq>
+<eq name="everyModelJs" value="1">
+    <load href="__MPUBLIC__/Js/model/{$Think.controller_name|strtolower}.js"/>
+</eq>
+<div class="c_wrap">
+    <div class="c_hd">
+        <div class="mask"></div>
+        <div class="c_box">
+            <a href="javascript:void(0);" class="logo">
+                <span></span>
+                <label class="foYa font16 color_555">客户端下载</label>
+                <label class="foAr color_999">www.mink.com.cn</label>
+            </a>
+            <img class="logo_tip" src="__MPUBLIC__/Images/client2.png" width="181" height="62" border="0" alt="客户端" />
+        </div>
+    </div>
+    <div class="c_content">
+        <div class="sec_1">
+            <img class="bg" src="__MPUBLIC__/Images/client.jpg" border="0" alt="客户端" />
+            <div class="c_box">
+                <img class="mobile" src="__MPUBLIC__/Images/client3.png" border="0" alt="客户端" />
+                <div class="down">
+                    <p class="down_title">
+                        <label>大课堂，</label>精彩从这里开始
+                    </p>
+                    <p class="down_func">
+                        <span>资源管理</span>
+                        <span>热门资讯</span>
+                        <span>应用管理</span>
+                        <span>学习助手</span>
+                    </p>
+                    <p class="down_btn">
+                        <a href="javascript:void(0);"><span>iOS下载</span></a>
+                        <a class="android" href="javascript:void(0);"><span>Android下载</span></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="c_space"></div>
+        <div class="sec_2">
+            <div class="c_box">
+                <div class="sec2_txt">
+                    <p class="txt_title">大课堂</p>
+                    <p class="txt_detail">资源、应用、资讯、活动足不出户了解最新资讯 最优资源 最使用的教学学习应用，PC、移动端一样精彩</p>
+                </div>
+                <img class="behind" src="__MPUBLIC__/Images/behind.png" border="0" />
+                <img class="iphone" src="__MPUBLIC__/Images/clinet4.png" border="0" />
+                <img class="middle" src="__MPUBLIC__/Images/middle.png" border="0" />
+                <img class="front" src="__MPUBLIC__/Images/front.png" border="0" />
+            </div>
+            
+        </div>
+        <div class="sec_3">
+            <div class="c_box">
+                <p class="sec3_title txt_title">大课堂功能介绍</p>
+                <div class="func_item">
+                    <img src="__MPUBLIC__/Images/func1.png" width="90" height="90" border="0" />
+                    <p class="item_title txt_title">随时随地查看最新资讯</p>
+                    <p class="item_detail txt_title">通过你的喜欢、关注，标签的使用情况，推荐出更多你感兴趣的人与内容。</p>
+                </div>
+                <div class="func_item">
+                    <img src="__MPUBLIC__/Images/func2.png" width="90" height="90" border="0" />
+                    <p class="item_title txt_title">随时随地查看最新资讯</p>
+                    <p class="item_detail txt_title">通过你的喜欢、关注，标签的使用情况，推荐出更多你感兴趣的人与内容。</p>
+                </div>
+                <div class="func_item">
+                    <img src="__MPUBLIC__/Images/func3.png" width="90" height="90" border="0" />
+                    <p class="item_title txt_title">随时随地查看最新资讯</p>
+                    <p class="item_detail txt_title">通过你的喜欢、关注，标签的使用情况，推荐出更多你感兴趣的人与内容。</p>
+                </div>
+                <div class="func_item">
+                    <img src="__MPUBLIC__/Images/func4.png" width="90" height="90" border="0" />
+                    <p class="item_title txt_title">随时随地查看最新资讯</p>
+                    <p class="item_detail txt_title">通过你的喜欢、关注，标签的使用情况，推荐出更多你感兴趣的人与内容。</p>
+                </div>
+            </div>
+        </div>
+        <div class="sec_4">
+            <div class="c_box">
+                <img src="__MPUBLIC__/Tmp/qr.png" width="122" height="118" border="0" alt="qr" />
+                <p>
+                    <a href="javascript:void(0);">关于本站</a>
+                    <a href="javascript:void(0);">常见问题</a>
+                    <a href="javascript:void(0);">意见反馈</a>
+                    <span>Copyright © 2007-2011 北京金商祺移动互联 All Rights Reserved</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+

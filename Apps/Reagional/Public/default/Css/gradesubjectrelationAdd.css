@@ -1,0 +1,14 @@
+.row_right span {
+    border: 1px solid #0181e3;
+    color: #333;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 28px;
+    margin: 0 10px 10px 5px;
+    text-align: center;
+    width: 78px;
+}
+.row_right span.on {
+    background: #0181e3 none repeat scroll 0 0;
+    color: #fff;
+}

@@ -1,0 +1,223 @@
+#dkt_content{
+    font-family:"宋体";
+}
+.borderB{
+    border-bottom:#e6e6e6 solid 1px;
+}
+.ad{
+    height:450px;
+    background:#f8f8f8;
+}
+.c_title span,.c_title a{
+    color:#1b629b;
+}
+.c_title{
+    font-size:18px;
+}
+.c_title a{
+    font-size:14px;
+    float:right;
+    font-family:"Microsoft YaHei";
+}
+.news .picNews{
+    display:block;
+    float:left;
+    position:relative;
+    margin-right:20px;
+}
+.news .picNews p{
+    position:absolute;
+    width:180px;
+    line-height:30px;
+    background:rgba(0,0,0,0.5);
+    bottom:0px;
+    text-align:center;
+    color:#f2f2f2;
+}
+.textNews{
+    width:450px;
+    float:left;
+}
+.textNews > a{
+    color:#333;
+    font-size:18px;
+    font-weight:bold;
+}
+.textNews > a span{
+    color:#646464;
+    float:right;
+    margin-right:-9px;
+}
+.textNews > a:hover{
+    color:#1b629b;
+}
+.textNews p{
+    color:#646464;
+    margin-top:10px;
+}
+.newsExpress,.notice{
+    height:220px;
+}
+.newResource > div{
+    display:block;
+    float:left;
+    width:325px;
+}
+.newResource > div a{
+    font-size:14px;
+    color:#646464;
+    line-height:17px;
+    margin-bottom:15px;
+    display:block;
+}
+.newResource > div a img{
+    float:left;
+    margin-right:10px;
+}
+.newResource > a{
+    display:inline-block;
+    width:100px;
+    line-height:36px;
+    background:#e3eaf0;
+    text-align:center;
+    color:#333;
+    font-size:14px;
+    margin:10px 3px 0px 0px;
+}
+.newResource{
+    height:300px;
+}
+.teacherSpace{
+    height:220px;
+}
+.space,.space > span ,.space > a{
+    float:left;
+}
+.space{
+    width:205px;
+    height:60px;
+    position:relative;
+    margin:20px 10px 10px 0px;
+}
+.space > span{
+    display:block;
+    width:33px;
+    height:33px;
+    background:url(../Images/rank.png) no-repeat 0px 0px;
+    position:absolute;
+}
+.space > span.rank2{
+    background:url(../Images/rank.png) no-repeat -33px 0px;
+}
+.space > span.rank3{
+    background:url(../Images/rank.png) no-repeat -66px 0px;
+}
+.space > a{
+    color:#323232;
+    margin:10px 0px 0px 10px;
+}
+.space > a p{
+    margin-bottom:8px;
+}
+.notice > a{
+    font-size:14px;
+    color:#646464;
+    display:block;
+    margin-top:15px;
+}
+.notice > a label{
+    display:block;
+    float:left;
+    width:4px;
+    height:4px;
+    background:#1b629b;
+    margin:6px 5px 0px 0px;
+}
+.notice > a span{
+    float:right;
+    margin-right:-7px;
+}
+.class{
+    width:310px;
+    height:60px;
+    margin-top:20px;
+}
+.class a{
+    float:left;
+}
+.class .excellent span{
+    display:block;
+    color:#646464;
+    font-size:14px;
+    margin-left:5px;
+}
+.class .excellent span:first-child{
+    font-family:"Arial";
+    color:#646464;
+    font-size:16px;
+    margin-bottom:15px;
+}
+.class .excellent span:first-child label{
+    display:inline-block;
+    width:34px;
+    line-height:18px;
+    color:#fff;
+    text-align:center;
+    background:#eaac03;
+    border-radius:3px;
+    font-size:12px;
+    margin-left:10px;
+}
+.class .classSpace{
+    float:right;
+    font-size:14px;
+    margin-top:46px;
+}
+.firstThree .excellent span:first-child,.class .classSpace{
+    color:#eaac03;
+}
+.excellentClass{
+    height:540px;
+}
+.student{
+    display:inline-block;
+    margin:20px 19px 0px 0px;
+    width:180px;
+    height:230px;
+}
+.student p{
+    color:#333;
+    margin-top:10px;
+    font-size:14px;
+}
+.student .excellentPic{
+    float:right;
+    display:block;
+    width:27px;
+    height:30px;
+    margin:-33px 10px 0px 0px;
+    background:url(../Images/student.png) no-repeat;
+}
+.carouselAd .car_btns{
+    position:absolute;
+    top:35%;
+    width:43px;
+    height:130px;
+    cursor:pointer;
+    background:url(../Images/btns.png) no-repeat -105px 0px;
+}
+.carouselAd .car_btns.car_next{
+    right:0px;
+    background:url(../Images/btns.png) no-repeat 8px 0px;
+}
+.carouselAd .car_next.hover{
+    width:35px;
+    background:url(../Images/btns.png) no-repeat -70px 0px;
+}
+.carouselAd .car_prev.hover{
+    width:35px;
+    background:url(../Images/btns.png) no-repeat -35px 0px;
+}
+.carouselAd .carouselText{
+    display:none;
+}

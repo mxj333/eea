@@ -1,0 +1,30 @@
+<include file="Public:header"/>
+<eq name="everyModelCss" value="1">
+    <load href="__MPUBLIC__/Css/{$Think.controller_name|strtolower}Leader.css"/>
+</eq>
+<eq name="everyModelJs" value="1">
+    <load href="__MPUBLIC__/Js/model/{$Think.controller_name|strtolower}Leader.js"/>
+</eq>
+    <include file="Survey:left"/>
+    <include file="Survey:rightNav"/>
+        <div class="school">
+            <h3 class="survey_title">学校领导</h3>
+            <table class="leaderList" cellspacing="0px">
+                <tr>
+                    <volist name="list" id="info" mod="2">
+                        <td class="w100">{$key}</td>
+                        <td class="w_b258">{$info}</td>
+                        <eq name="mod" value="1">
+                            </tr>
+                            <tr>
+                        </eq>
+                    </volist>
+                    <if condition="count($list) % 2 eq 1">
+                        <td class="w100"></td>
+                        <td class="w_b258"></td>
+                    </if>
+                </tr>
+            </table>
+        </div>
+    <include file="Survey:rightBottom"/>
+<include file="Public:footer"/>

@@ -1,0 +1,121 @@
+<include file="Public:header"/>
+<include file="Public:left"/>
+<div id="list" class="margin_t10">
+    <ul class="list_header">
+        <li><span class="title">创建{$Think.session.selectDb}数据表</span><span class="return">返回</span></li>
+    </ul>
+    <form enctype="multipart/form-data" action="/{$Think.MODULE_NAME}/{$Think.CONTROLLER_NAME}/add" method="post">
+        <ul class="list_list">
+            <li class="w460">
+                <div class="row_left">表名：</div>
+                <div class="row_right"><input type="text" value="" name="tableName"></div>
+            </li>
+            <li>
+                <div class="row_left">类型：</div>
+                <div class="row_right">
+                    <select name="Engine">
+                        <option value="MyISAM" title="Default engine as of MySQL 3.23 with great performance">
+                        MyISAM
+                        </option>
+                        <option value="MEMORY" title="Hash based, stored in memory, useful for temporary tables">
+                        MEMORY
+                        </option>
+                        <option value="InnoDB" title="Supports transactions, row-level locking, and foreign keys" >
+                        InnoDB
+                        </option>
+                        <option value="BLACKHOLE" title="/dev/null storage engine (anything you write to it disappears)">
+                        BLACKHOLE
+                        </option>
+                        <option value="EXAMPLE" title="Example storage engine">
+                        EXAMPLE
+                        </option>
+                        <option value="ARCHIVE" title="Archive storage engine">
+                        ARCHIVE
+                        </option>
+                        <option value="FEDERATED" title="Federated MySQL storage engine">
+                        FEDERATED
+                        </option>
+                        <option value="MRG_MYISAM" title="Collection of identical MyISAM tables">
+                        MRG_MYISAM
+                        </option>
+                    </select>
+                </div>
+            </li>
+            <li>
+                <div class="row_left">注释：</div>
+                <div class="row_right">
+                    <input style="height:25px;margin-top:5px;" type="text" value="" name="Comment">
+                </div>
+            </li>
+            <li>
+                <div class="row_left">整理：</div>
+                <div class="row_right">
+                    <select name="Charset">
+                        <option value="utf8" > UTF8 </option>
+                        <option value="gb2312" > GB2312 </option>
+                        <option value="gbk" > GBK </option>
+                    </select>
+                </div>
+            </li>
+            <li class="w460">
+                <div class="row_left">字段：</div>
+                <div class="row_right"><span class="addField">增加</span></div>
+            </li>
+            <li>
+                <table class="fields">
+                    <tr><th style="width:122px;">字段</th><th style="width:82px;">类型</th><th style="width:62px;">长度</th><th style="width:122px;">属性</th><th style="width:52px;">为空</th><th style="width:62px;">默认</th><th style="width:72px;">额外</th><th style="width:52px;">其他</th><th style="width:82px;">注释</th><th >操作</th></tr>
+                </table>
+            </li>
+            <li>
+                <span class="row_right">
+                    <input type="hidden" name="attr" value="table">
+                    <input type="hidden" name="action" value="new">
+                    <button type="submit" value="" class="save btn">保存</button>
+                </span>
+            </li>
+        </ul>
+    </form>
+</div>
+<script type="text/javascript">
+<!--
+    $(function() {
+
+        $('.return').click(function() {
+            location.href = CONTROLLER + '/shows/attr/database';
+        })
+
+        $('.addField').click(function() {
+            $('.fields').append(getOneFieldRow());
+        }).click();
+
+        $('.fields i').live('click', function() {
+            if ($('.fields tr').size() > 2) {
+                $(this).parents('tr').remove();
+            }
+        })
+    })
+
+    function getOneFieldRow() {
+        var str = '<tr>';
+        str += '<td><input style="width:120px;" type="text" name="name[]"></td>';
+        str += '<td><select style="width:80px;" name="type[]"><option value="VARCHAR" selected="selected">VARCHAR</option><option value="TINYINT">TINYINT</option><option value="TEXT">TEXT</option><option value="DATE">DATE</option><option value="SMALLINT">SMALLINT</option><option value="MEDIUMINT">MEDIUMINT</option><option value="INT">INT</option><option value="BIGINT">BIGINT</option><option value="FLOAT">FLOAT</option><option value="DOUBLE">DOUBLE</option><option value="DECIMAL">DECIMAL</option><option value="DATETIME">DATETIME</option><option value="TIMESTAMP">TIMESTAMP</option><option value="TIME">TIME</option><option value="YEAR">YEAR</option><option value="CHAR">CHAR</option><option value="TINYBLOB">TINYBLOB</option><option value="TINYTEXT">TINYTEXT</option><option value="BLOB">BLOB</option><option value="MEDIUMBLOB">MEDIUMBLOB</option><option value="MEDIUMTEXT">MEDIUMTEXT</option><option value="LONGBLOB">LONGBLOB</option><option value="LONGTEXT">LONGTEXT</option><option value="ENUM">ENUM</option><option value="SET">SET</option><option value="BOOL">BOOL</option><option value="BINARY">BINARY</option><option value="VARBINARY">VARBINARY</option></select></td>';
+        str += '<td><input type="text" style="width:60px;" value="10" name="length[]"></td>';
+        str += '<td><select name="attribute[]" style="width:120px;"><option value="" selected="selected"></option><option value="UNSIGNED">UNSIGNED</option><option value="UNSIGNED ZEROFILL">UNSIGNED ZEROFILL</option><option value="ON UPDATE CURRENT_TIMESTAMP">ON UPDATE CURRENT_TIMESTAMP</option></select></td>';
+        str += '<td><select style="width:50px;" name="null[]"><option value="NULL">允许</option><option value="NOT NULL">不允许</option></select></td>';
+        str += '<td><input type="text" style="width:60px;" name="default[]"></td>';
+        str += '<td><select name="autoinc[]" style="width:70px;"><option value=""></option><option value="AUTO_INCREMENT">自动增长</option></select></td>';
+        str += '<td><select style="width:50px;" name="extra[]"><option value=""></option><option value="PRIMARY KEY">主键</option><option value="INDEX">索引</option><option value="UNIQUE">唯一</option></select></td>';
+        str += '<td><input type="text" style="width:80px;" name="comment[]"></td>';
+        str += '<td><i>删除</i></td>';
+        str += '</tr>';
+        return str;
+    }
+//-->
+</script>
+<style>
+i{font-style:normal;cursor:pointer;}
+.fields{width:100%;border:0;margin:0;border-collapse:collapse;border-spacing:0;}
+.fields td{padding:0;text-align:center;}
+.fields input, .fields span, .fields select{height:25px;margin:0px 2px;line-height:35px;}
+</style>
+<include file="Public:footer"/>

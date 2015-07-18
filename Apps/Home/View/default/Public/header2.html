@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <load href="__PUBLIC__/Js/jquery.js"/>
+    <load href="__PUBLIC__/Css/base.css,__MPUBLIC__/Css/common.css"/>
+    <title>{$Think.config.web_title}</title>
+    <script type="text/javascript">
+        var ROOT = '__ROOT__';
+        var APP = '__APP__';
+        var MODULE = '__MODULE__';
+        var ACTION = '__ACTION__';
+        var SELF = '__SELF__';
+        var CONTROLLER = '__CONTROLLER__';
+        var MPUBLIC = '__MPUBLIC__';
+        var PUBLIC = '__PUBLIC__';
+        var HOME_MODULE = '{$home_module}';
+    </script>
+</head>
+<body>
+<!--页面头部开始 -->
+<div id="dkt_header">
+    <div class="headTop">
+        <div class="wrap">
+            <div class="fastKeys">
+                <if condition="strtolower(CONTROLLER_NAME) neq 'index'">
+                    <a class="htip" href="{$info|getUrlAddress=###, 'index', 'index'}">平台首页</a>
+                </if>
+                <a class="htip" <if condition="strtolower(CONTROLLER_NAME) eq 'client'">href="javascript:void(0);"<else/>href="{$info|getUrlAddress=###, 'index', 'client'}" target="_blank"</if>>客户端下载</a>
+            </div>
+            <ul class="headerNav">
+                <if condition="session('me_nickname')">
+                    <li>
+                        <a class="htip" href="{$info|getUrlAddress=###, 'index', 'index', 'member', session(C('user_auth_key'))}">{$Think.session.me_nickname}
+                            <span></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="htip" href="{$info|getUrlAddress=###, 'logout', 'login'}">注销</a>
+                        <span></span>
+                    </li>
+                <else/>
+                    <li>
+                        <a class="htip nav_login" href="javascript:void(0);">登录</a>
+                        <span></span>
+                    </li>
+                    <li>
+                        <a <if condition="strtolower(CONTROLLER_NAME) eq 'register'">class="htip on"<else/>class="htip"</if> href="{$info|getUrlAddress=###, 'index', 'register'}">注册</a>
+                        <span></span>
+                    </li>
+                </if>
+                <li>
+                    <a class="htip" href="javascript:void(0);">微课
+                        <span></span>
+                    </a>
+                    <ul class="hSubMenu">
+                        <li>
+                            <a class="on" href="javascript:void(0);">
+                                课程提醒
+                                <label>1</label>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">
+                            课程更新
+                            <label></label>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">网站导航</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="logo_login size1000">
+        <a href="javascript:void(0);" class="logo">
+            <span></span>
+            <label class="foYa font16 color_555">{$Think.config.web_title}</label>
+            <label class="foAr color_999"></label>
+        </a>
+        <div class="appInfor">注册</div>
+        <div class="login">
+            已有账号 马上去<a href="javascript:void(0);" class="color_e6">登录</a>
+        </div>
+    </div>
+</div>
+<div id="dkt_content" class="wrap">

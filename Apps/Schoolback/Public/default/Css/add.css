@@ -1,0 +1,133 @@
+#wrap{
+    width:1000px;
+    margin-top:20px;
+}
+.right{
+    height:860px;
+    width:910px;
+    position:relative;
+    float:left;
+}
+.list_header{
+    line-height:37px;
+    height:38px;
+    border-bottom:1px solid #d0d1d2;
+}
+.list_header span{
+    color:#333;
+    font-family:"宋体";
+    font-size:12px;
+}
+.list_header li .title{
+    border-bottom:none;
+    padding-bottom:0px;
+}
+.list_header li .title label{
+    background:url(../Images/user.png) no-repeat;
+    display:block;
+    float:left;
+    height:15px;
+    margin:10px 5px 0 20px;
+    width:18px;
+}
+.list_header li .return{
+    float:right;
+    cursor:pointer;
+    background:url(../Images/pics.png) no-repeat 0px -47px;
+    display:block;
+    padding-left:28px;
+    width:34px;
+    line-height:24px;
+    margin:7px 15px 0px 0px;
+}
+.right form{
+    border:#ccc solid 1px;
+    min-height: 600px;
+}
+.row_left,.row_right{
+    float:left;
+    margin-top:10px;
+    color:#333;
+}
+.row_left{
+    width:85px;
+    text-align:right;
+    line-height:24px;
+    font-size:14px;
+    margin-left:10px;
+}
+.row_right{
+    width:600px;
+}
+.list_list li{
+    clear:both;
+    height: 45px;
+}
+.row_right select{
+    border:1px solid #ccc;
+    height:28px;
+    margin-right:10px;
+    width:138px;
+}
+.row_right input[type="radio"],.row_right input[type="checkbox"]{
+    margin-top:5px;
+}
+.row_right input[type="radio"] ~ em,.row_right input[type="checkbox"] ~ em{
+    margin:0px 10px 0px 3px;
+}
+.row_right input[type="text"],.row_right input[type="password"]{
+    border:1px solid #ccc;
+    color:#333;
+    height:28px;
+    margin-right:50px;
+    padding-left:5px;
+    width:193px;
+}
+.row_right textarea{
+    border:1px solid #ccc;
+    padding-left:5px;
+    height:98px;
+    width:598px;
+    resize:none;
+}
+.row_right input[type="file"]{
+    height:28px;
+    width:198px;
+    border:#ccc solid 1px;
+}
+.row_right span{
+    font-size: 14px;
+    line-height: 24px;
+    margin-left: 10px;
+}
+.btn{
+    display:inline-block;
+    background:#0181e3;
+    border:none;
+    color: #fff;
+    font-family:"Microsoft YaHei";
+    font-size:14px;
+    height:30px;
+    text-align:center;
+    margin-left:95px;
+    width:80px;
+}
+.footer{
+    clear:both;
+    margin-bottom:70px;
+}
+.pass{
+    margin:10px 20px 0px 35px;
+}
+.nopass{
+    margin:10px 0px 0px 0px;
+}
+.row_right label .keywordsAdd{
+    background:#fff;
+    margin-right:20px;
+}
+.coverBtn{
+    border:#0181e3 dashed 1px;
+    display:inline-block;
+    padding:5px;
+}

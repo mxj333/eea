@@ -1,0 +1,124 @@
+*{
+    margin:0;
+    padding:0;
+    list-style:none;
+    font-size:14px;
+}
+body{
+    width:100%;
+    font-family: "Hiragino Sans GB","Hiragino Sans GB W3","Microsoft YaHei","微软雅黑",tahoma,arial,simhei,"黑体";
+    font-size:12px;
+    background:#ccc;
+}
+.left {
+    float:left;
+    width:35%;
+    height:100%;
+    border-right:1px solid #87f4ff;
+}
+.left div {
+    float:left;
+    width:100%;
+    min-height:25px;
+    margin-top:10px;
+}
+.left div select,.left div input,.left div label {
+    float:left;
+    height:25px;
+    line-height:25px;
+    font-size:16px;
+}
+.left div select,.left div input {
+    padding-left:5px;
+    border:1px solid #87f4ff;
+}
+.left div select {
+    cursor:pointer;
+}
+.left div label {
+    width:25%;
+    text-align:right;
+    margin-right:8px;
+}
+.left div select,.left div input {
+    width:50%;
+}
+.left div textarea {
+    float:left;
+    width:50%;
+    min-height:25px;
+    line-height:25px;
+    margin-top:10px;
+    border:1px solid #87f4ff;
+    resize:vertical;
+    color:#444;
+}
+.left div p {
+    float:left;
+    width:20%;
+    line-height:20px;
+    margin:10px 0px 0px 5px;
+    color:#F76060;
+}
+.left div span {
+    color: #f00;
+    display: block;
+    float: left;
+    font-size: 12px;
+    height: 25px;
+    line-height: 25px;
+    margin-left: 30%;
+    overflow: hidden;
+    width: 40%;
+}
+.left .submit input {
+    display:block;
+    width:174px;
+    height:38px;
+    line-height:38px;
+    margin-left:27%;
+    margin-top:20px;
+    background:#87f4ff;
+    border:none;
+    color:#000;
+    cursor:pointer;
+}
+.left .submit input:hover {
+    background-position:0px -38px;
+}
+.right {
+    width:60%;
+    float:left;
+    margin:10px 0px 0px 20px;
+}
+.right ul {
+    clear:both;
+}
+.right ul li {
+    float:left;
+    width:150px;
+    height:40px;
+    line-height:30px;
+    text-align:center;
+    cursor:pointer;
+}
+.right ul li.on {
+    color:#87f4ff;
+    background:url("/Apps/Test/Public/default/Images/Home/group_li.png") no-repeat bottom ;
+}
+.right .news {
+    float:left;
+    width:100%;
+    min_height:520px;
+    padding:15px 10px;
+    background:#F2F2F2;
+}
+.news .show {
+    display:none;
+    word-wrap: break-word;
+}
+td {
+    line-height:30px;
+    padding:10px 0px 0px 10px;
+    border:1px solid #ccc;
+}

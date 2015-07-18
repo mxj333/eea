@@ -1,0 +1,145 @@
+<include file="Public:header"/>
+<eq name="everyModelCss" value="1">
+    <load href="__MPUBLIC__/Css/{$Think.controller_name|strtolower}Search.css"/>
+</eq>
+<eq name="everyModelJs" value="1">
+    <load href="__MPUBLIC__/Js/model/{$Think.controller_name|strtolower}Search.js"/>
+</eq>
+    <div class="wrap marT20">
+        <ul class="searchList">
+            <li alt="1">
+                <label class="cue">学制:</label>
+                <div>
+                    <a href="javascript:void(0);" attr="0">全部</a>
+                    <volist name="tag[4]" id="schoolType">
+                        <a href="javascript:void(0);" attr="{$key}">{$schoolType}</a>
+                    </volist>
+                </div>
+            </li>
+            <li alt="2">
+                <label class="cue">学科:</label>
+                <div>
+                    <a href="javascript:void(0);" attr="0">全部</a>
+                    <volist name="tag[5]" id="subject">
+                        <a href="javascript:void(0);" attr="{$key}">{$subject}</a>
+                    </volist>
+                </div>
+            </li>
+            <li alt="3">
+                <label class="cue">年级:</label>
+                <div>
+                    <a href="javascript:void(0);" attr="0">全部</a>
+                    <volist name="tag[7]" id="grade">
+                        <a href="javascript:void(0);" attr="{$key}">{$grade}</a>
+                    </volist>
+                </div>
+            </li>
+            <li alt="4">
+                <label class="cue">类型:</label>
+                <div>
+                    <a href="javascript:void(0);" attr="0">全部</a>
+                    <volist name="resCate" id="rc_name">
+                        <a href="javascript:void(0);" attr="{$key}">{$rc_name}</a>
+                    </volist>
+                </div>
+            </li>
+            <li alt="5">
+                <label class="cue">格式:</label>
+                <div>
+                    <a href="javascript:void(0);" attr="0">全部</a>
+                    <volist name="resType" id="rt_info">
+                        <a href="javascript:void(0);" attr="{$rt_info.rt_id}">{$rt_info.rt_title}</a>
+                    </volist>
+                </div>
+            </li>
+            <li class="conditions">
+                <label class="cue">筛选条件:</label>
+            </li>
+        </ul>
+        <div class="sort">
+            <label class="cue">排序:</label>
+            <span class="uploadTime" attr="time">上传时间<label class="down"></label></span>
+            <span attr="comment">评论</span>
+            <span attr="download">下载</span>
+        </div>
+        <ul class="resourcelist c_left">
+            <volist name="resourceList[3]['list']" id="resourceInfo">
+                <li class="re_item">
+                    <a href="{$resourceInfo|getUrlAddress=###, 'detail', 'resource'}" class="fl">
+                        <img src="{$resourceInfo.res_image}" width="80" height="80" border="0" />
+                    </a>
+                    <div>
+                        <a href="{$resourceInfo|getUrlAddress=###, 'detail', 'resource'}">{$resourceInfo.res_title|getShortTitle=###,20}</a>
+                        <p><span>{$resourceInfo.rc_title}</span>/{$resourceInfo['school_type']}/{$resourceInfo['grade']}/{$resourceInfo['subject']}
+                        <p>浏览：<span>{$resourceInfo.res_hits|intval}</span>次&nbsp;&nbsp;&nbsp;&nbsp;下载：<span>{$resourceInfo.res_downloads|intval}</span>次&nbsp;&nbsp;评论：<span>{$resourceInfo.res_comment_count|intval}</span>次&nbsp;&nbsp;智慧豆：{$resourceInfo.res_download_points|intval}个</p>
+                    </div>
+                    <p>
+                        <for start="0" end="$resourceInfo['score']">
+                            <img src="__MPUBLIC__/Images/star1.png">
+                        </for>
+                        <for start="0" end="5-$resourceInfo['score']">
+                            <img src="__MPUBLIC__/Images/star2.png">
+                        </for>
+                        <span>{$resourceInfo.score|intval}分</span>
+                    </p>
+                </li>
+            </volist>
+        </ul>
+        <div class="search_resource c_right">
+            <div class="tree_location"></div>
+            <include file="Resource:tree"/>
+            <!--<form class="d_search" action="{$search_keywords_link}" method="post">
+                <input type="text" value="搜索资源..." />
+                <input class="mySubmit" type="button" />
+            </form>
+            <div class="hot_resource item marT20 resItem">
+                <h3 class="c_title">
+                    <span>热门</span>
+                    <label>Hot</label>
+                </h3>
+                <volist name="hotList[3]['list']" id="hotInfo">
+                    <a href="{$hotInfo|getUrlAddress=###, 'detail', 'resource'}">
+                        <img 
+                        <if condition="$hotInfo['rt_id'] eq 1">
+                            src="__MPUBLIC__/Images/infor_1.png"
+                        <elseif condition="$hotInfo['rt_id'] eq 2" />
+                            src="__MPUBLIC__/Images/infor_2.png"
+                        <elseif condition="$hotInfo['rt_id'] eq 3" />
+                            src="__MPUBLIC__/Images/infor_3.png"
+                        <else/>
+                            src="__MPUBLIC__/Images/infor_4.png"
+                        </if>
+                        alt="{$hotInfo.res_title}" title="{$hotInfo.res_title}" />
+                        {$hotInfo.res_title|getShortTitle=###,18}
+                    </a>
+                </volist>
+            </div>
+            <div class="new_resource item marT20 resItem">
+                <h3 class="c_title">
+                    <span>最新</span>
+                    <label>Newest</label>
+                </h3>
+                <volist name="newList[3]['list']" id="newInfo">
+                    <a href="{$newInfo|getUrlAddress=###, 'detail', 'resource'}">
+                        <img 
+                        <if condition="$newInfo['rt_id'] eq 1">
+                            src="__MPUBLIC__/Images/infor_1.png"
+                        <elseif condition="$newInfo['rt_id'] eq 2" />
+                            src="__MPUBLIC__/Images/infor_2.png"
+                        <elseif condition="$newInfo['rt_id'] eq 3" />
+                            src="__MPUBLIC__/Images/infor_3.png"
+                        <else/>
+                            src="__MPUBLIC__/Images/infor_4.png"
+                        </if>
+                        alt="{$newInfo.res_title}" title="{$newInfo.res_title}" />
+                        {$newInfo.res_title|getShortTitle=###,18}
+                    </a>
+                </volist>
+            </div>-->
+        </div>
+        <div class="clear"></div>
+        <div class="pageNumber">
+            {$resourceList[3]['page']}
+        </div>
+    </div>
+<include file="Public:footer"/>

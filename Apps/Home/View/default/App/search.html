@@ -1,0 +1,47 @@
+<include file="Public:header"/>
+<eq name="everyModelCss" value="1">
+    <load href="__MPUBLIC__/Css/{$Think.controller_name|strtolower}Search.css"/>
+</eq>
+<eq name="everyModelJs" value="1">
+    <load href="__MPUBLIC__/Js/model/{$Think.controller_name|strtolower}Search.js"/>
+</eq>
+    <!--内容导航开始-->
+    <include file="App:nav"/>
+    <div class="app_sort">
+        <label>全部应用</label>
+        <include file="App:sort"/>
+    </div>
+    <div class="appList">
+        <volist name="alist['list']" id="a_info">
+            <div class="item_wrap">
+                <div class="item_app">
+                    <img src="{$a_info.a_logo}" width="60" height="60" border="0" alt="{$a_info.a_title}" />
+                    <div class="item_detail">
+                        <p class="appName">{$a_info.a_title|getShortTitle=###,10}</p>
+                        <p class="appPraise">
+                            <label>好评度：</label>
+                            <span class="star">
+                                <for start="0" end="$a_info['score']">
+                                    <img src="__MPUBLIC__/Images/star1.png">
+                                </for>
+                                <for start="0" end="5-$a_info['score']">
+                                    <img src="__MPUBLIC__/Images/star2.png">
+                                </for>
+                            </span>
+                        </p>
+                        <p class="appType">{$a_info.ac_title}<span>{$a_info.a_download_points|intval}豆</span></p>
+                    </div>
+                    <div class="item_abstract">
+                        <p>{$a_info.a_description|getShortTitle=###,38}</p>
+                        <a class="enterApp" href="{$a_info|getUrlAddress=###, 'detail', 'app'}">进入应用</a>
+                        <a class="addApp" href="javascript:void(0);">添加应用</a>
+                    </div>
+                </div>
+            </div>
+        </volist>
+        <div class="clear"></div>
+        <div class="pageBtn">
+            {$alist['page']}
+        </div>
+    </div>
+<include file="Public:footer"/>

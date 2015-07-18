@@ -1,0 +1,41 @@
+<include file="Public:header"/>
+<include file="Public:left"/>
+<div id="list" class="margin_t10">
+    <ul class="list_header">
+        <li><span class="title">评论展示</span><span class="return">返回</span></li>
+    </ul>
+        <ul class="list_list">
+            <li class="w460">
+                <div class="row_left">{:L('TITLE')}</div>
+                <div class="row_right">
+                    <span>{$vo.art_title}</span>
+                </div>
+            </li>
+            <li class="w460">
+                <div class="row_left">{:L('CONTENT')}</div>
+                <div class="row_right">
+                    <span>{$vo.aco_content}</span>
+                </div>
+            </li>
+            <li class="w460">
+                <div class="row_left">{:L('NICKNAME')}</div>
+                <div class="row_right">
+                    <span>{$vo.me_nickname}</span>
+                </div>
+            </li>
+            <li class="w460">
+                <div class="row_left">{:L('TIME')}</div>
+                <div class="row_right">
+                    <span>{$vo.aco_created}</span>
+                </div>
+            </li>
+            <li class="w460">
+                <div class="row_left">{:L('STATUS')}</div>
+                <div class="row_right">
+                    <span><if condition="$vo['aco_status'] eq 1">{:L('ENABLE')}<else/>{:L('DISABLE')}</if></span>
+                </div>
+            </li>
+        </ul>
+    </form>
+</div>
+<include file="Public:footer"/>

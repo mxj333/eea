@@ -1,0 +1,170 @@
+<include file="Public:headerTop"/>
+<include file="Public:headerNav"/>
+<include file="Adv:headerAdv4"/>
+<include file="Public:headerSearch"/>
+<include file="Article:headerNav"/>
+<include file="Public:headerBottom"/>
+<load href="__MPUBLIC__/Css/gallery.css"/>
+<load href="__MPUBLIC__/Js/model/gallery.js"/>
+<eq name="everyModelCss" value="1">
+    <load href="__MPUBLIC__/Css/{$Think.controller_name|strtolower}Detail.css"/>
+</eq>
+<eq name="everyModelJs" value="1">
+    <load href="__MPUBLIC__/Js/model/{$Think.controller_name|strtolower}Detail.js"/>
+</eq>
+    <div class="detailShow c_left marT20">
+        <div class="pics">
+            <div class="detailTitle">
+                <h1>{$vo['article']['art_title']|getShortTitle=###,30}</h1>
+                <div>
+                    <span>{$vo['article']['art_designated_published']|date='Y年m月d日',###}</span>
+                    <span class="count">
+                        收藏
+                        &nbsp;&nbsp;评论：<span>{$vo['article']['art_comment_count']|intval}</span>次
+                    </span>
+                    <span class="share">
+                        <span>分享：</span>
+                    </span>
+                </div>
+            </div>
+            <div class="pic">
+                <div id="DB_gallery">
+                    <div class="DB_imgSet">
+                        <div class="DB_imgWin"><img alt="{$vo['pic'][0]['f_title']}" title="{$vo['pic'][0]['f_title']}" src="{$vo['pic'][0]['fileoriginalpath']}" style="display: inline;"></div>
+                        <div class="DB_prevBtn" style="display: none;"><img alt="上一页" src="__MPUBLIC__/Images/prev_off.png"></div>
+                        <div class="DB_nextBtn"><img alt="下一页" src="__MPUBLIC__/Images/next_off.png"></div>
+                    </div>
+                    <div class="DB_thumSet">
+                        <ul class="DB_thumMove">
+                            <volist name="vo['pic']" id="pic_list">
+                                <li>
+                                    <a href="{$pic_list.fileoriginalpath}">
+                                        <img alt="{$pic_list.f_title}" title="{$pic_list.f_title}" src="{$pic_list.filepath}">
+                                        <img src="__MPUBLIC__/Images/cover.png" class="thumCover" visibility="hidden" style="visibility: hidden;">
+                                    </a>
+                                </li>
+                            </volist>
+                            <div class="DB_thumLine" style="left: 0px;">
+                            </div>
+                        </ul>
+                        
+                        <div class="DB_prevPageBtn" style="display: none;"><img alt="上一页" src="__MPUBLIC__/Images/prev_page.png"></div>
+                        <div class="DB_nextPageBtn"><img alt="下一页" src="__MPUBLIC__/Images/next_page.png"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="evaluation marT20">
+            <ul class="contentNav contents">
+                <li class="on"><a href="javascript:void(0);">产品评价</a></li>
+            </ul>
+            <ul class="comentShow">
+                <li class="com_list marT20">
+                    <a href="javascript:void(0);"><img width="60" border="0" height="60" alt="head pic" src="__MPUBLIC__/Tmp/space5.jpg"></a>
+                    <div class="com_detail">
+                        <p class="com_infor">
+                            <a href="javascript:void(0);">小样012364</a>
+                            <span class="com_date">2014-02-02 16:20:23 发布</span>
+                        </p>
+                        <p>终于出iphone版了哟，甚好甚好！之前在Android上体验过啦。“只看楼主”这个功能很适合像我这种追“直播贴”的人哟~豆瓣控必备！</p>
+                        <div class="com_btn">
+                            <span class="praise">
+                                <span></span>
+                                （11）
+                            </span>
+                            <a class="com_comment" href="javascript:void(0);">
+                                <span></span>
+                                （18）
+                            </a>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </li>
+                <li class="com_list marT20">
+                    <a href="javascript:void(0);"><img width="60" border="0" height="60" alt="head pic" src="__MPUBLIC__/Tmp/space6.jpg"></a>
+                    <div class="com_detail">
+                        <p class="com_infor">
+                            <a href="javascript:void(0);">小样012364</a>
+                            <span class="com_date">2014-02-02 16:20:23 发布</span>
+                        </p>
+                        <p>终于出iphone版了哟，甚好甚好！之前在Android上体验过啦。“只看楼主”这个功能很适合像我这种追“直播贴”的人哟~豆瓣控必备！</p>
+                        <div class="com_btn">
+                            <span class="praise">
+                                <span></span>
+                                （11）
+                            </span>
+                            <a class="com_comment" href="javascript:void(0);">
+                                <span></span>
+                                （18）
+                            </a>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </li>
+            </ul>
+            <p class="flex moreComment">查看下10条评论</p>
+        </div>
+    </div>
+    <div class="newsRank_school c_right">
+        <div class="focusNews marT20">
+            <h3 class="re_title">
+                <a href="javascript:void(0);">
+                    <span>
+                        <label></label>
+                        焦点新闻
+                    </span>
+                </a>
+            </h3>
+            <volist name="focus" id="foc_info">
+                <div class="focus">
+                    <a href="{$foc_info|getUrlAddress=###,'detail','article'}" class="news_title">{$foc_info.art_title|getShortTitle=###,17}</a>
+                    <div class="news_itemThree">
+                        <a href="{$foc_info|getUrlAddress=###,'detail','article'}">
+                            <img width="80" border="0" height="80" alt="focus news" src="{$foc_info.art_cover}" alt="{$foc_info.art_title}" title="{$foc_info.art_title}">
+                        </a>
+                        <div>
+                            <a href="javascript:void(0);">特别报道</a>
+                            <p>
+                                {$foc_info.art_summary|getShortTitle=###,34}
+                                <a href="{$foc_info|getUrlAddress=###,'detail','article'}">[详细]</a>
+                            </p>
+                            <p>浏览：{$foc_info.art_hits|intval}次</p>
+                        </div>
+                    </div>
+                </div>
+            </volist>
+        </div>
+        <div class="newsRank marT20">
+            <h3 class="re_title">
+                <a href="javascript:void(0);">
+                    <span>
+                        <label></label>
+                        新闻排行
+                    </span>
+                </a>
+            </h3>
+            <volist name="rank" id="rank_info">
+                <a href="{$rank_info|getUrlAddress=###,'detail','article'}">
+                    <span>{$key+1}</span>
+                    {$rank_info.art_title|getShortTitle=###,19}
+                </a>
+            </volist>
+        </div>
+        <include file="Adv:rightAdv3"/>
+    </div>
+    <div class="clear"></div>
+    <include file="Adv:footerAdv2"/>
+<script type="text/javascript">
+$(function() {
+    $('#DB_gallery').DB_gallery({
+        thumWidth:80,            
+        thumGap:8,                
+        thumMoveStep:4,           
+        moveSpeed:300,            
+        fadeSpeed:500,
+		nMaxWidth:658,
+		nMaxHeight:448,
+    });
+});
+</script>
+<include file="Public:footer"/>

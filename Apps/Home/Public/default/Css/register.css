@@ -1,0 +1,172 @@
+#dkt_content{
+    width:1000px;
+    height:590px;
+}
+.logo_login{
+    margin-top:25px;
+    height:41px;
+}
+.login{
+    width:114px;
+    font-family:"宋体";
+    color:#646464;
+    float:right;
+    line-height:41px;
+}
+.contentLeft{
+    width:660px;
+    float:left;
+    margin:20px 20px 0px 0px;
+}
+.prompts{
+    padding-left:20px;
+}
+.prompt{
+    width:210px;
+    float:left;
+    color:#ccc;
+    font-family:"宋体";
+    margin-right:3px;
+}
+.prompt span{
+    margin:2px 1px 0px 0px;
+    display:block;
+    float:right;
+}
+.writeInfor{
+    margin-top:65px;
+}
+.fromStyle{
+    margin-bottom:20px;
+    font-size:14px;
+    color:#333;
+    clear:both;
+    height:37px;
+}
+.fromStyle label{
+    width:80px;
+    display:block;
+    line-height:35px;
+    float:left;
+    text-align:right;
+    margin-right:10px;
+}
+.fromStyle input{
+    width:240px;
+    height:35px;
+    border:#ccc solid 1px;
+    border-radius:4px;
+    color:#333;
+    float:left;
+    padding-left:10px;
+}
+.fromStyle > p{
+    line-height:35px;
+    float:left;
+    font-family:"宋体";
+    color:#646464;
+    font-size:12px;
+    margin-left:10px;
+}
+.fromStyle > p > span{
+    display:block;
+    float:left;
+    color:#fff;
+    width:16px;
+    background:#228ee6;
+    border-radius:16px;
+    line-height:16px;
+    text-align:center;
+    margin:10px 10px 0px 0px;
+    font-weight:bold;
+}
+.fromStyle .tipError{
+    background:#ebc356;
+}
+.fromStyle .focu{
+    border:#228ee6 solid 1px;
+}
+.pwStrength{
+    float:left;
+    width:240px;
+    height:16px;
+    margin:10px 0px 20px 90px;
+}
+.pwStrength p{
+    width:80px;
+    float:left;
+    margin-left:0px;
+    font-size:12px;
+    font-family:"宋体";
+    color:#646464;
+    line-height:16px;
+    display:none;
+}
+.pwStrength p span{
+    display:block;
+    width:60px;
+    float:left;
+    height:16px;
+    margin-right:4px;
+}
+.weak{
+    background:#b1d5f3;
+}
+.middle{
+    background:#6ab3ef;
+}
+.strong{
+    background:#ccc;
+}
+.verificaty input{
+    width:85px;
+    margin-right:20px;
+    float:left;
+}
+.verificaty img{
+    width:130px;
+    height:37px;
+    line-height:35px;
+    float:left;
+}
+.protocol{
+    clear:both;
+    margin-left:90px;
+}
+.protocol label{
+    font-family:"宋体";
+}
+.protocol label span{
+    margin: 1px -12px 0 0;
+}
+.nextBtu{
+    margin:40px 0px 0px 90px;
+}
+.nextBtu input{
+    width:250px;
+    height:40px;
+    background:#228ee6;
+    border:none;
+    border-radius:4px;
+    font-size:22px;
+    color:#fff;
+    font-weight:bold;
+}
+.contentRight{
+    width:320px;
+    margin-top:20px;
+    float:left;
+}
+.title{
+    font-size:14px;
+    font-family:"宋体";
+    padding-bottom:5px;
+    float:left;
+    color:#646464;
+    font-weight:normal;
+}
+.thirdLogin a{
+    display:block;
+    float:left;
+    margin:10px 20px 0px 0px;
+}

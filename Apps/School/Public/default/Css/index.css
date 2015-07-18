@@ -1,0 +1,213 @@
+.carouselAd{
+    margin-top:10px;
+}
+.carouselAd .car_btns{
+    position:absolute;
+    top:35%;
+    width:43px;
+    height:130px;
+    cursor:pointer;
+    background:url(../Images/btns.png) no-repeat -105px 0px;
+}
+.carouselAd .car_btns.car_prev{
+    left:40px;
+}
+.carouselAd .car_btns.car_next{
+    right:40px;
+    background:url(../Images/btns.png) no-repeat 8px 0px;
+}
+.carouselAd .car_next.hover{
+    width:35px;
+    background:url(../Images/btns.png) no-repeat -70px 0px;
+}
+.carouselAd .car_prev.hover{
+    width:35px;
+    background:url(../Images/btns.png) no-repeat -35px 0px;
+}
+.resource_news,.notice_class{
+    height:740px;
+    margin-top:40px;
+}
+.resource_news .newsItem > .picNews{
+    float:left;
+    position:relative;
+    margin-bottom:0px;
+	width:180px;
+	height:180px;
+}
+.newsItem{
+	width:660px;
+}
+.newsItem .picNews p{
+    position:absolute;
+    width:180px;
+    line-height:30px;
+    height:30px;
+    background:rgba(0,0,0,0.5);
+    bottom:0px;
+    text-align:center;
+    color:#f2f2f2;
+    overflow:hidden;
+}
+.textNews{
+    margin-left:200px;
+}
+.textNews > a{
+    color:#323232;
+    font-size:18px;
+    display:block;
+    width:450px;
+    height:22px;
+    overflow:hidden;
+    font-weight:bold;
+}
+.textNews > a:hover{
+    color:#ca4341;
+}
+.textNews p{
+    color:#646464;
+    margin-top:10px;
+    width:450px;
+    height:15px;
+    overflow:hidden;
+}
+.news{
+    height:226px;
+    border-bottom:#e6e6e6 solid 1px;
+}
+.resource{
+    height:256px;
+}
+.resItem{
+    width:290px;
+    float:left;
+    border-bottom:#e6e6e6 solid 1px;
+    border-radius:10px;
+    padding:0px 15px;
+    height:255px;
+}
+.resItem > a{
+    font-size:14px;
+    color:#646464;
+    line-height:17px;
+    margin-bottom:11px;
+    display:block;
+    width:290px;
+    height:17px;
+    overflow:hidden;
+}
+.resItem .c_title{
+    margin-bottom:10px;
+}
+.resItem > a img{
+    float:left;
+    margin-right:10px;
+}
+.classes{
+    height:409px;
+    border-bottom:#e6e6e6 solid 1px;
+    border-radius:10px;
+    padding:0px 15px;
+}
+.class{
+    height:60px;
+    margin:15px 0px 0px;
+    width:287px;
+}
+.class a{
+    float:left;
+}
+.class .excellent span{
+    display:block;
+    color:#646464;
+    font-size:14px;
+    margin-left:5px;
+}
+.class .excellent span:first-child{
+    font-family:"Arial";
+    color:#646464;
+    font-size:16px;
+    margin-bottom:15px;
+}
+.class .excellent span:first-child label{
+    display:inline-block;
+    width:34px;
+    line-height:18px;
+    color:#fff;
+    text-align:center;
+    background:#ca4341;
+    border-radius:3px;
+    font-size:12px;
+    margin-left:10px;
+}
+.class .classSpace{
+    float:right;
+    font-size:14px;
+    margin-top:46px;
+}
+.firstThree .excellent span:first-child,.class .classSpace{
+    color:#ca4341;
+}
+.teach_space{
+    clear:both;
+    height:292px;
+    border-bottom:#e6e6e6 solid 1px;
+    border-radius:10px;
+    padding:0px 15px;
+}
+.space,.space > span ,.space > a{
+    float:left;
+}
+.space{
+    width:229px;
+    height:105px;
+    border:#ccc solid 1px;
+    position:relative;
+    margin:20px 10px 0px 0px;
+}
+.space > span{
+    display:block;
+    width:33px;
+    height:33px;
+    background:url(../Images/rank.png) no-repeat 0px 0px;
+    position:absolute;
+}
+.space > span.rank2{
+    background:url(../Images/rank.png) no-repeat -33px 0px;
+}
+.space > span.rank3{
+    background:url(../Images/rank.png) no-repeat -66px 0px;
+}
+.space > a{
+    color:#323232;
+    margin-left:14px;
+}
+.space > a p{
+    margin-bottom:8px;
+}
+.students{
+    height:277px;
+    padding-left:15px;
+}
+.student{
+    display:inline-block;
+    float:left;
+    margin:15px 17px 0px 0px;
+    width:180px;
+    height:238px;
+    border-bottom:#e6e6e6 solid 1px;
+    border-radius:10px;
+}
+.student p{
+    color:#646464;
+    margin-top:10px;
+    font-size:14px;
+}
+.student .excellentPic{
+    float:right;
+    display:block;
+    width:35px;
+    height:35px;
+    margin:-38px 10px 0px 0px;
+    background:url(../Images/pics.png) no-repeat -1px -31px;
+}

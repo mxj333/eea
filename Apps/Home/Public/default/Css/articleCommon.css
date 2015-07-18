@@ -1,0 +1,244 @@
+#dkt_content{
+    width:1000px;
+}
+.c_left{
+    float:left;
+    margin-right:20px;
+    width:660px;
+}
+.c_right{
+    float:left;
+    width:320px;
+}
+.recommend{
+    width:660px;
+    margin-right:20px;
+    float:left;
+    font-size:14px;
+    height:320px;
+}
+.ad,.news{
+    float:left;
+}
+.adAbstract{
+    height:30px;
+    color:#fff;
+    line-height:30px;
+    text-align:center;
+    font-family:"宋体";
+    background:rgba(0,0,0,0.4);
+    margin-top:-30px;
+    position:relative;
+}
+.news{
+    margin-left:20px;
+}
+.news div a{
+    display:block;
+    color:#333;
+    margin-bottom:10px;
+}
+.news div a img{
+    vertical-align:middle;
+    margin-right:10px;
+}
+.news div .first{
+    font-size:16px;
+    color:#228ee6;
+}
+.title{
+    padding-bottom:0px;
+    font-size:20px;
+    font-weight:normal;
+}
+.title span{
+    padding:0px 0px 5px 0px;
+    float:left;
+}
+.newsList_lf a:hover,.newsList_rg a:hover{
+    color:#228ee6;
+}
+/*右侧*/
+.boxTip{
+    display:block;
+    float:left;
+    width:6px;
+    height:6px;
+    background:#228ee6;
+    margin:9px 10px 0px 0px;
+}
+.guessNews,.rankNav,.specialTopic{
+    margin-top:20px;
+}
+.new{
+    margin-bottom:12px;
+}
+.new a{
+    font-size:14px;
+    color:#333;
+}
+.rankingList{
+    margin-top:10px;
+}
+.rankNav{
+    height:40px;
+    width:200px;
+}
+.rankNav li{
+    width:100px;
+    background:#49a8f6;
+    float:left;
+}
+.rankNav li a{
+    display:block;
+    line-height:40px;
+    text-align:center;
+    color:#fff;
+    font-size:18px;
+}
+.rankNav li.on{
+    background:#228ee6;
+}
+.popularity{
+    margin-top:15px;
+}
+.headlines .item{
+    margin-top:20px;
+    height:80px;
+}
+.headlines .item > *{
+    float:left;
+}
+.headlines .item .item_detail{
+    width:192px;
+    margin-left:10px;
+    font-family:"宋体";
+}
+.headlines .item .item_detail a{
+    font-size:14px;
+    color:#333;
+    font-weight:bold;
+    line-height:20px;
+}
+.headlines .item .item_detail p{
+    margin-top:10px;
+}
+.headlines .item .item_detail .date{
+    font-size:14px;
+    color:#646464;
+}
+.headlines .item_count{
+    color:#228ee6;
+}
+.rateInput{
+    position:relative;
+    height:143px;
+}
+.rateInput textarea{
+    width:638px;
+    height:78px;
+    resize:none;
+    border:#ccc solid 1px;
+    font-size:14px;
+    padding:10px;
+}
+.rateInput input{
+    width:98px;
+    height:33px;
+    background:#fff;
+    border:#228ee6 solid 1px;
+    color:#228ee6;
+    font-family:"Microsoft YaHei";
+    font-size:16px;
+    float:right;
+    margin-top:10px;
+    border-radius:4px;
+    cursor:pointer;
+}
+.rateInput label{
+    position:absolute;
+    bottom:50px;
+    right:10px;
+    color:#646464;
+    font-size:14px;
+}
+.userRates{
+    margin-top:20px;
+    font-family:"宋体";
+    color:#333;
+}
+.userRates h3{
+    font-size:14px;
+    line-height:40px;
+    background:#eef2f4;
+    padding-left:10px;
+}
+.userRates h3 span{
+    color:#646464;
+}
+.moreRates{
+    border-bottom:#ccc dashed 1px;
+    height:35px;
+    line-height:35px;
+    text-align:center;
+}
+.moreRates a{
+    color:#646464;
+}
+.relatedArticle,.moreRates a{
+    font-family:"宋体";
+    font-size:0;
+}
+.relatedArticle h3{
+    color:#333;
+    font-size:14px;
+    margin:20px 0px;
+}
+.relatedArticle a{
+    color:#333;
+    font-size:14px;
+    display:inline-block;
+    width:327px;
+    margin-bottom:13px;
+}
+.relatedArticle a span{
+    display:block;
+    width:4px;
+    height:4px;
+    background:#646464;
+    float:left;
+    margin:5px 10px 0px 0px;
+}
+.searchArea{
+    border-top:#ccc solid 1px;
+    margin-top:20px;
+}
+.searchArea div{
+    width:321px;
+    margin-top:15px;
+}
+.searchArea .text{
+    width:248px;
+    height:28px;
+    border:#ccc solid 1px;
+    float:none;
+    padding-left:10px;
+}
+.searchArea .search{
+    width:60px;
+    height:30px;
+    cursor:pointer;
+}
+.searchArea .search span{
+    margin:4px 20px;
+}
+.location{
+    background:#f8f8f8;
+    line-height:30px;
+    margin-top:15px;
+    color:#646464;
+    font-family:"宋体";
+}
+.location a{
+    color:#333;
+}

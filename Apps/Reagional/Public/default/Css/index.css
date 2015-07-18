@@ -1,0 +1,226 @@
+@import url(myFormSpace.css);
+
+.category a span{
+    background:url(../Images/cotegroy.png) no-repeat;
+}
+.census{
+    display:block;
+    width:200px;
+    height:79px;
+    border:#ccc solid 1px;
+    float:left;
+    margin:20px 0px 0px 20px;
+    text-align:center;
+}
+.adminIndex{
+    height:auto;
+}
+.census p{
+    color:rgba(255,255,255,0.9);
+    margin-top:7px;
+    font-family:"Microsoft YaHei";
+}
+.census .number{
+    margin-top:15px;
+    font-size:24px;
+}
+.census .number span{
+    display:inline-block;
+    width:24px;
+    height:30px;
+    margin-right:20px;
+    vertical-align:middle;
+}
+.userCensus{
+    background:#6395e8;
+}
+.userCensus .number span{
+    background:url(../Images/census.png) no-repeat 0px 0px;
+}
+.resourceCensus{
+    background:#63e892;
+}
+.resourceCensus .number span{
+    background:url(../Images/census.png) no-repeat -24px 0px;
+}
+.appCensus{
+    background:#ef9d6b;
+}
+.appCensus .number span{
+    background:url(../Images/census.png) no-repeat -48px 0px;
+}
+.schoolCensus{
+    background:#5dacec;
+}
+.schoolCensus .number span{
+    background:url(../Images/census.png) no-repeat -72px 0px;
+}
+.warn_func{
+    width:422px;
+    height:187px;
+    border:#ccc solid 1px;
+    float:left;
+    margin:20px 0px 0px 20px;
+}
+.warn_func p{
+    height:36px;
+    border-bottom:#ccc solid 1px;
+    background:#f8f8f8;
+    line-height:36px;
+    font-size:14px;
+    color:#333;
+    padding-left:20px;
+}
+.warn_func div{
+    margin-top:20px;s
+}
+.warn div a,.warn div a span,.func div a{
+    display:block;
+    float:left;
+}
+.warn div a{
+    font-size:14px;
+    color:#333;
+    width:181px;
+    height:50px;
+    margin:0px 0px 10px 20px;
+    background:#ebf6ff;
+    line-height:50px;
+    font-family:"Microsoft YaHei";
+}
+.warn div a span{
+    width:30px;
+    height:40px;
+    background:#0181e3;
+    color:rgba(255,255,255,0.9);
+    padding:5px 10px;
+    line-height:normal;
+    margin-right:30px;
+}
+.func div a{
+    margin:0px 5px 15px 25px;
+    width:70px;
+    line-height:27px;
+    background:#0181e3;
+    text-align:center;
+    color:rgba(255,255,255,0.9);
+}
+.titleBox{
+    height:24px;
+    border-top:#ccc solid 1px;
+    text-align:center;
+    font-size:18px;
+    color:#0181e3;
+    padding-top:15px;
+}
+.dateTable{
+    width:320px;
+    height:320px;
+    margin:15px 20px 0px 20px;
+}
+.date{
+    height:26px;
+}
+.date label{
+    float:left;
+    line-height:26px;
+}
+.date select{
+    height:26px;
+    width:140px;
+    background:#fff;
+    border:1px solid #ccc;
+}
+.dataTable{
+    margin:20px 0px 0px 0px;
+    border:1px solid #ccc;
+    border-radius:3px;
+    clear:both;
+    color:#333;
+    height:273px;
+    text-align:center;
+    width:320px;
+}
+.dataTable .tableHead th {
+    background:url(../Images/tableHead.png) repeat-x;
+    font-weight:normal;
+    height:30px;
+}
+.dataTable tr td{
+    border-bottom:1px solid #efefef;
+    height:19px;
+    width:0;
+}
+.lineCensus{
+    width:524px;
+    margin-top:30px;
+}
+.map{
+    margin:40px 86px 0px 20px;
+}
+.rankList{
+    width:448px;
+    text-align:center;
+    color:#333;
+    font-family:"SimSun";
+    margin-top:43px;
+}
+.rankList caption{
+    font-size:14px;
+    text-align:left;
+    margin:0px 0px 8px 25px;
+    font-weight:bold;
+}
+.rankList td,.rankList th{
+    height:37px;
+    border-bottom:#ccc solid 1px;
+}
+.rankList th{
+    color:#0181e3;
+    font-size:14px;
+    border-bottom:#0181e3 solid 1px;
+}
+.rankList td span{
+    display:block;
+    color:#fff;
+    background:#0181e3;
+    width:18px;
+    height:18px;
+    border-radius:3px;
+    line-height:20px;
+}
+.w55{
+    width:55px;
+}
+.rankList td .bgColor{
+    background:#ccc;
+}
+.loadBar{
+    margin:20px 0px 0px 20px;
+    height:20px;
+}
+.loadBar span{
+    color:#333;
+    font-size:14px;
+}
+.bar{
+    width:795px;
+    height:20px;
+    background:#e8e8e8;
+    float:right;
+    margin-right:15px;
+}
+.bar span{
+    color:#fff;
+    background-image:-moz-linear-gradient(left, #0181e3, #62bbff);/*ff*/
+    background:-o-linear-gradient(left, #0181e3 0%,#62bbff 100%);/*Opera*/
+    background-image:-webkit-gradient(linear, left, right, color-stop(0, #0181e3), color-stop(1,#62bbff)); /*Chrome*/
+    filter:progid:DXImageTransform.Microsoft.Gradient(startColorstr="#0181e3", endColorstr="#62bbff", GradientType="1"); /*IE*/
+    width:0%;
+    display:block;
+    text-align:center;
+    margin:0px;
+}
+.histogram{
+    margin:38px 0px 18px 20px;
+}

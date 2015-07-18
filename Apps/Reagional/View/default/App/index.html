@@ -1,0 +1,34 @@
+<include file="Public:header"/>
+<include file="Public:left"/>
+<include file="Public:right"/>
+<load href="__MPUBLIC__/Css/list.css"/>
+<eq name="everyModelCss" value="1">
+    <load href="__MPUBLIC__/Css/{$Think.controller_name|strtolower}.css"/>
+</eq>
+<eq name="everyModelJs" value="1">
+    <load href="__MPUBLIC__/Js/model/{$Think.controller_name|strtolower}.js"/>
+</eq>
+    <div class="appManagements management">
+        <div class="appManagement">
+            <ul class="nav">
+                <volist name="appCategory" id="cate">
+                    <li><a <if condition="$ac_id eq $key">class="on"</if> href="javascript:void(0);" attr="{$key}">{$cate}</a></li>
+                </volist>
+            </ul>
+            <div class="apps">
+                <div class="funsBtn">
+                    <!--<a class="all" href="javascript:void(0);">全选</a>
+                    <a class="reverse" href="javascript:void(0);">反选</a>
+                    <a class="cancelAll" href="javascript:void(0);">全部取消</a>-->
+                </div>
+                <volist name="list['list']" id="info">
+                    <a class="on app" href="{$info.a_link}"  target="_blank">
+                        <img src="{$info.a_logo}" width="60" height="60" alt="app" />
+                        <span class="ellipsis">{$info.a_title}</span>
+                    </a>
+                </volist>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+<include file="Public:footer"/>

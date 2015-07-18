@@ -1,0 +1,15 @@
+        <div class="survey_detail">
+            <div class="location">
+                <label></label>
+                <a href="javascript:void(0);">首页</a>/
+                <a href="javascript:void(0);">学校概况</a>/
+                <if condition="strtolower(ACTION_NAME) eq 'leader'">
+                    <a href="javascript:void(0);">学校领导</a>
+                <elseif condition="strtolower(ACTION_NAME) eq 'organization'" />
+                    <a href="javascript:void(0);">组织机构</a>
+                <elseif condition="strtolower(ACTION_NAME) eq 'shows'" />
+                    <a href="javascript:void(0);">校园展示</a>
+                <else/>
+                    <a href="javascript:void(0);">学校简介</a>
+                </if>
+            </div>

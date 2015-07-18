@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <load href="__PUBLIC__/Js/jquery.js"/>
+    <load href="__PUBLIC__/Css/base.css,__MPUBLIC__/Css/common.css"/>
+    <title>{$area_title}平台</title>
+    <script type="text/javascript">
+        var ROOT = '__ROOT__';
+        var APP = '__APP__';
+        var MODULE = '__MODULE__';
+        var ACTION = '__ACTION__';
+        var SELF = '__SELF__';
+        var CONTROLLER = '__CONTROLLER__';
+        var MPUBLIC = '__MPUBLIC__';
+        var PUBLIC = '__PUBLIC__';
+        var AREA_MODULE = '{$area_module}';
+    </script>
+</head>
+<body>
+<!-- 开始头部 -->
+<div id="dkt_header">
+    <div class="headTop">
+        <div class="wrap">
+            <ul class="fastKeys">
+                <li>
+                    <a href="/">平台首页</a>
+                </li>
+                <li class="on">
+                    <a <if condition="CONTROLLER_NAME neq 'Index'">href="{$area_module|strtolower}"<else/>href="javascript:void(0);"</if>>区域首页</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">移动客户端<span></span></a>
+                </li>
+            </ul>
+            <div class="headerMenu">
+                <span>{$time|helloTime}好，</span>
+                <ul class="hMenu">
+                    <li>
+                        <if condition="$Think['session']['meNickName']">
+                            <a href="javascript:void(0);">{$Think.session.meNickName}
+                        <else/>
+                            <a href="javascript:void(0);">游客
+                        </if>
+                        <span></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="on" href="javascript:void(0);">评测<span></span></a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">微课<span></span></a>
+                        <ul class="hSubMenu">
+                            <li>
+                                <a href="javascript:void(0);">课程提醒<label>1</label></a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);">课程更新<label></label></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">网站导航</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,345 @@
+<include file="Public:header"/>
+<include file="Public:left"/>
+<script>
+var MAX_NUM = "{$max_num}";
+var GRADE_NUM = {$grade_num};
+</script>
+<eq name="everyModelCss" value="1">
+<load href="__MPUBLIC__/Css/resourceAdd.css"/>
+</eq>
+<eq name="everyModelJs" value="1">
+<load href="__MPUBLIC__/Js/model/resourceAdd.js"/>
+</eq>
+<div id="list" class="margin_t5">
+        <ul class="list_header">
+            <li>
+                <span class="title">
+                    <if condition="strtolower(CONTROLLER_NAME) neq 'resource'">
+                        展示
+                    <elseif condition="ACTION_NAME eq 'edit'" />
+                        编辑
+                    <else/>
+                        新增
+                    </if>
+                </span>
+                <span class="return" attr="{$p}">返回</span>
+            </li>
+        </ul>
+        <form enctype="multipart/form-data" action="/{$Think.MODULE_NAME}/{$Think.CONTROLLER_NAME}/{$Think.ACTION_NAME}/" method="post">
+            <fieldset>
+                <legend>资源内容描述</legend>
+                <ul class="list_list">
+                    <li class="w460">
+                        <div class="row_left"><font color="red">*</font>标题：</div>
+                        <div class="row_right">
+                            <input type="text" name="res_title" <if condition="$vo['res_title']">value="{$vo.res_title}"</if>>
+                        </div>
+                    </li>
+                    <li class="w460">
+                        <div class="row_left"><font color="red">*</font>使用类型：</div>
+                        <div class="row_right">
+                            <select name="rc_id">
+                                <volist name="category" id="cate_title">
+                                    <option value="{$key}" <if condition="$vo['rc_id'] eq $key">selected</if>>{$cate_title}</option>
+                                </volist>
+                            </select>
+                        </div>
+                    </li>
+                    <li class="w460">
+                        <div class="row_left"><font color="red">*</font>上传：</div>
+                        <div class="row_right">
+                            <eq name="ACTION_NAME" value="add">
+                                <input type="hidden" name="rf_id" value="0"/>
+                                <label>文件名称：<input class="showContent" title="" type="text" name="rf_title" value="" disabled="disabled" placeholder="上传的文件名..." /></label>
+                                <label>上传进度：<input type="text" name="rf_progress_bar" value="0%"  disabled="disabled"/></label>
+                                <input type="hidden" name="rt_id" value="0"/>
+                                <input type="hidden" name="res_transform_status" value="0"/>
+                                <include file="Resource:plupload"/>
+                            <else/>
+                                <include file="Resource:show"/>
+                            </eq>
+                        </div>
+                    </li>
+                    <li class="w460">
+                        <div class="row_left">版本：</div>
+                        <div class="row_right">
+                            <select name="res_version">
+                                <volist name="version" id="version_title">
+                                    <option value="{$key}" <if condition="$vo['res_version'] eq $key">selected</if>>{$version_title}</option>
+                                </volist>
+                            </select>
+                        </div>
+                    </li>
+                    <li class="w460">
+                        <div class="row_left">学制：</div>
+                        <div class="row_right">
+                            <select name="res_school_type">
+                                <volist name="school_type" id="school_type_title">
+                                    <option value="{$key}" <if condition="$vo['res_school_type'] eq $key">selected</if>>{$school_type_title}</option>
+                                </volist>
+                            </select>
+                        </div>
+                    </li>
+                    <li class="w460">
+                        <div class="row_left">年级：</div>
+                        <div class="row_right">
+                            <select name="res_grade">
+                                <volist name="grade" id="grade_title">
+                                    <option value="{$key}" <if condition="$vo['res_grade'] eq $key">selected</if>>{$grade_title}</option>
+                                </volist>
+                            </select>
+                        </div>
+                    </li>
+                    <li class="w460">
+                        <div class="row_left">学期：</div>
+                        <div class="row_right">
+                            <select name="res_semester">
+                                <volist name="semester" id="semester_title">
+                                    <option value="{$key}" <if condition="$vo['res_semester'] eq $key">selected</if>>{$semester_title}</option>
+                                </volist>
+                            </select>
+                        </div>
+                    </li>
+                    <li class="w460">
+                        <div class="row_left">学科：</div>
+                        <div class="row_right">
+                            <select name="res_subject">
+                                <volist name="subject" id="subject_title">
+                                    <option value="{$key}" <if condition="$vo['res_subject'] eq $key">selected</if>>{$subject_title}</option>
+                                </volist>
+                            </select>
+                        </div>
+                    </li>
+                    <li class="w460">
+                        <div class="row_left">课文目录：</div>
+                        <div class="row_right">
+                            <input type="hidden" name="directory" <if condition="$vo['directory']['ids']">value="{$vo.directory.ids}"</if>>
+                            <label>所选目录：<input type="text" name="directory_title" <if condition="$vo['directory']['titles']">value="{$vo.directory.titles}"</if> disabled="disabled" placeholder="已选择目录..."/></label>
+                            <if condition="strtolower(CONTROLLER_NAME) eq 'resource'">
+                                <a class="coverBtn addDirectory" href="javascript:;">添加目录</a>
+                            </if>
+                        </div>
+                    </li>
+                    <li class="w460">
+                        <div class="row_left">知识点：</div>
+                        <div class="row_right">
+                            <input type="hidden" name="knowledge" <if condition="$vo['knowledge']['ids']">value="{$vo.knowledge.ids}"</if>>
+                            <label>所选知识点：<input type="text" name="knowledge_title" <if condition="$vo['knowledge']['titles']">value="{$vo.knowledge.titles}"</if> disabled="disabled" placeholder="已选择知识点..."/></label>
+                            <if condition="strtolower(CONTROLLER_NAME) eq 'resource'">
+                                <a class="coverBtn addKnowledge" href="javascript:;">添加知识点</a>
+                            </if>
+                        </div>
+                    </li>
+                    <li class="w460">
+                        <div class="row_left">标签：</div>
+                        <div class="row_right">
+                            <input type="hidden" name="keywords" <if condition="$vo['keywords']['ids']">value="{$vo.keywords.ids}"</if>>
+                            <label>所选标签：<input type="text" name="keywords_title" <if condition="$vo['keywords']['titles']">value="{$vo.keywords.titles}"</if> disabled="disabled" placeholder="已选择标签..."/></label>
+                            <if condition="strtolower(CONTROLLER_NAME) eq 'resource'">
+                                <a class="coverBtn addTag" href="javascript:;">添加标签</a>
+                            </if>
+                        </div>
+                    </li>
+                    <li class="h80">
+                        <div class="row_left">摘要：</div>
+                        <div class="row_right">
+                            <textarea cols="35" rows="5" name="res_summary"><if condition="$vo['res_summary']">{$vo.res_summary}</if></textarea>
+                        </div>
+                    </li>
+                    <li class="w460">
+                        <div class="row_left">语种：</div>
+                        <div class="row_right">
+                            <input type="text" name="res_language" <if condition="$vo['res_language']">value="{$vo.res_language}"<else/>value="汉语"</if>>
+                        </div>
+                    </li>
+                    <li class="w460">
+                        <div class="row_left">学习者：</div>
+                        <div class="row_right">
+                            <select name="res_audience_learner">
+                                <volist name="learner" id="learner_title">
+                                    <option value="{$key}" <if condition="$vo['res_audience_learner'] eq $key">selected</if>>{$learner_title}</option>
+                                </volist>
+                            </select>
+                        </div>
+                    </li>
+                    <li class="w460">
+                        <div class="row_left">教育类型：</div>
+                        <div class="row_right">
+                            <select name="res_audience_educational_type">
+                                <volist name="educational" id="educational_title">
+                                    <option value="{$key}" <if condition="$vo['res_audience_educational_type'] eq $key">selected</if>>{$educational_title}</option>
+                                </volist>
+                            </select>
+                        </div>
+                    </li>
+                </ul>
+            </fieldset>
+            <fieldset>
+                <legend>知识产权信息</legend>
+                <ul class="list_list">
+                    <li class="w460">
+                        <div class="row_left">是否原创：</div>
+                        <div class="row_right">
+                            <select name="res_is_original">
+                                <option value="9" <if condition="$vo['res_is_original'] eq 9">selected</if>>非原创</option>
+                                <option value="1" <if condition="$vo['res_is_original'] eq 1">selected</if>>原创</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li class="w460">
+                        <div class="row_left"><font color="red">*</font>作者：</div>
+                        <div class="row_right">
+                            <input type="text" name="res_author" <if condition="$vo['res_author']">value="{$vo.res_author}"</if>>
+                        </div>
+                    </li>
+                    <li class="w460">
+                        <div class="row_left">出版者姓名：</div>
+                        <div class="row_right">
+                            <input type="text" name="res_published_name" <if condition="$vo['res_published_name']">value="{$vo.res_published_name}"</if>>
+                        </div>
+                    </li>
+                    <li class="w460">
+                        <div class="row_left">出版者公司：</div>
+                        <div class="row_right">
+                            <input type="text" name="res_published_company" <if condition="$vo['res_published_company']">value="{$vo.res_published_company}"</if>>
+                        </div>
+                    </li>
+                    <li class="w460">
+                        <div class="row_left">其他作者：</div>
+                        <div class="row_right">
+                            <input type="text" name="res_other_author" <if condition="$vo['res_other_author']">value="{$vo.res_other_author}"</if>>
+                        </div>
+                    </li>
+                    <li class="w460">
+                        <div class="row_left">发行时间：</div>
+                        <div class="row_right">
+                            <input type="text" <if condition="$vo['res_issused']">value="{$vo.res_issused}"<else/>value=""</if> onclick="WdatePicker({dateFmt:'yyyy-MM-dd',maxDate:'#{%y}-{%M}-#{%d}'});" name="res_issused">
+                        </div>
+                    </li>
+                    <li class="w460">
+                        <div class="row_left">是否收费：</div>
+                        <div class="row_right">
+                            <select name="res_permissions">
+                                <option value="9" <if condition="$vo['res_permissions'] eq 9">selected</if>>免费</option>
+                                <option value="1" <if condition="$vo['res_permissions'] eq 1">selected</if>>收费</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li class="w460">
+                        <div class="row_left"><font color="red">*</font>所需智慧豆：</div>
+                        <div class="row_right">
+                            <input type="text" name="res_download_points" <if condition="$vo['res_download_points']">value="{$vo.res_download_points}"</if>>
+                        </div>
+                    </li>
+                </ul>
+            </fieldset>
+            <fieldset>
+                <legend>外部属性描述</legend>
+                <ul class="list_list">
+                    <li class="w460">
+                        <div class="row_left">元数据语种：</div>
+                        <div class="row_right">
+                            <input type="text" name="res_metadata_language" <if condition="$vo['res_metadata_language']">value="{$vo.res_metadata_language}"<else/>value="汉语"</if>>
+                        </div>
+                    </li>
+                    <li class="h80">
+                        <div class="row_left">元数据方案：</div>
+                        <div class="row_right">
+                            <textarea cols="35" rows="5" name="res_metadata_scheme"><if condition="$vo['res_metadata_scheme']">{$vo.res_metadata_scheme}</if></textarea>
+                        </div>
+                    </li>
+                </ul>
+            </fieldset>
+            <fieldset>
+                <legend>其他类型</legend>
+                <ul class="list_list">
+                    <li class="w460">
+                        <div class="row_left">是否推荐：</div>
+                        <div class="row_right">
+                            <select name="res_is_recommend">
+                                <option value="9" <if condition="$vo['res_is_recommend'] eq 9">selected</if>>不推荐</option>
+                                <option value="1" <if condition="$vo['res_is_recommend'] eq 1">selected</if>>推荐</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li class="w460">
+                        <div class="row_left">是否优质：</div>
+                        <div class="row_right">
+                            <select name="res_is_excellent">
+                                <option value="9" <if condition="$vo['res_is_excellent'] eq 9">selected</if>>非优质</option>
+                                <option value="1" <if condition="$vo['res_is_excellent'] eq 1">selected</if>>优质</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li class="w460">
+                        <div class="row_left">是否推送：</div>
+                        <div class="row_right">
+                            <select name="res_is_pushed">
+                                <option value="9" <if condition="$vo['res_is_pushed'] eq 9">selected</if>>不推送</option>
+                                <option value="1" <if condition="$vo['res_is_pushed'] eq 1">selected</if>>推送</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li class="w460">
+                        <div class="row_left">短标题：</div>
+                        <div class="row_right">
+                            <input type="text" name="res_short_title" <if condition="$vo['res_short_title']">value="{$vo.res_short_title}"</if>>
+                        </div>
+                    </li>
+                    <li class="w460">
+                        <div class="row_left">是否发布：</div>
+                        <div class="row_right">
+                            <select name="res_is_published">
+                                <option value="1" <if condition="$vo['res_is_published'] eq 1">selected</if>>发布</option>
+                                <option value="9" <if condition="$vo['res_is_published'] eq 9">selected</if>>不发布</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li class="w460">
+                        <div class="row_left">显示时间：</div>
+                        <div class="row_right">
+                            <input type="text" <if condition="$vo['res_valid']">value="{$vo.res_valid}"<else/>value=""</if> onclick="WdatePicker({dateFmt:'yyyy-MM-dd',minDate:'#{%y}-{%M}-#{%d}'});" name="res_valid">
+                        </div>
+                    </li>
+                    <li class="w460">
+                        <div class="row_left">有效期：</div>
+                        <div class="row_right">
+                            <input type="text" <if condition="$vo['res_avaliable']">value="{$vo.res_avaliable}"<else/>value=""</if> onclick="WdatePicker({dateFmt:'yyyy-MM-dd',minDate:'#{%y}-{%M}-#{%d+1}'});" name="res_avaliable">
+                        </div>
+                    </li>
+                </ul>
+            </fieldset>
+            <ul class="list_list">
+                <li>
+                    <div class="row_right">
+                        <input type="hidden" name="res_id" <if condition="$vo['res_id']">value="{$vo.res_id}"</if>>
+                        <if condition="strtolower(CONTROLLER_NAME) eq 'resource'">
+                            <button type="submit" class="save btn">保存</button>
+                        <elseif condition="strtolower(CONTROLLER_NAME) eq 'resourcereview'" />
+                            <a class="pass btn" href="javascript:void(0)">通过</a><a class="nopass btn" href="javascript:void(0)">不通过</a>
+                        <elseif condition="strtolower(CONTROLLER_NAME) eq 'resourcerecycle'" />
+                            <a class="delete btn" href="javascript:void(0)">删除</a><a class="resume btn" href="javascript:void(0)">恢复</a>
+                        </if>
+                    </div>
+                </li>
+            </ul>
+        </form>
+    </div>
+    <div class="cover">
+        <div class="box" on="" pid="0" prevpid="0">
+            <div class="boxHeader wordStyle">
+                <a class="back" href="javascript:;"><img src="/Public/Images/back.png" width="14" height="14" border="0"/></a>
+                <img class="close" src="/Public/Images/cover_del.png" width="14" height="14" />
+                <div class="boxSearch">
+                </div>
+                <div class="onLabel"></div>
+            </div>
+            <div class="boxMiddle wordStyle pageBtn">
+                
+            </div>
+            <div class="boxBottom">
+                <a class="saveBtn" href="javascript:void(0);">保存</a>
+            </div>
+        </div>
+    </div>
+<include file="Public:footer"/>

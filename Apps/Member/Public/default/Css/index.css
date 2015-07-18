@@ -1,0 +1,102 @@
+.appMenu{
+    line-height:42px;
+}
+.appMenu a{
+    display:inline-block;
+    color:#646464;
+}
+.appMenu .menu{
+    line-height:22px;
+    font-size:14px;
+    border-left:#363738 solid 1px;
+    padding-left:17px;
+    margin-right:4px;
+}
+.appMenu .menu:hover span,.appMenu .menu span.on{
+    border-bottom:#228ee6 solid 2px;
+    padding-bottom:3px;
+}
+.appMenu .addGroup{
+    float:right;
+    width:83px;
+    line-height:30px;
+    border:#ccc solid 1px;
+    border-radius:3px;
+    background:#fff;
+    text-align:center;
+    margin-top:5px;
+}
+.appList{
+    min-height:420px;
+    border-left:#ccc solid 1px;
+    background:#fff;
+    margin-top:13px;
+}
+.app{
+    width:164px;
+    height:189px;
+    border:#ccc solid 1px;
+    border-left:none;
+    float:left;
+    text-align:center;
+    padding-top:15px;
+    color:#646464;
+    margin-bottom:10px;
+}
+.app .app_name{
+    font-size:14px;
+    margin:14px 0px 13px;
+}
+.app .app_parise,.app a{
+    color:#333;
+}
+.app_detail{
+    margin-top:6px;
+    width:144px;
+    line-height:25px;
+    text-align:left;
+}
+.app_detail a{
+    border:1px solid #ccc;
+    border-radius:3px;
+    display:none;
+    line-height:28px;
+    text-align:center;
+    width:59px;
+    margin:11px 4px 0px 0px;
+}
+.app_detail .enter{
+    border:1px solid #228ee6;
+    background:#228ee6;
+    color:#fff;
+}
+.pageBtn{
+    margin-top:20px;
+}
+.resource{
+    height:460px;
+}
+.resource .re_list li{
+    height:79px;
+    border-top:#ccc solid 1px;
+    width:auto;
+    padding-left:10px;
+}
+.re_list li > div {
+    width:150px;
+}
+.re_list li > div a{
+    color:#000;
+    font-size:14px;
+}
+.resource .re_list li .collection{
+    display:block;
+    width:65px;
+    line-height:31px;
+    background:#228ee6;
+    color:#f2f2f2;
+    font-size:14px;
+    text-align:center;
+    border-radius:3px;
+    margin-top:25px;
+}

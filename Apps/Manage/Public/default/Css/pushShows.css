@@ -1,0 +1,13 @@
+.row_left{
+    cursor:auto;
+}
+.addRule:hover,.delRule:hover{
+    color:#0181e3;
+}
+.rule em{
+    margin-right:5px;
+}
+.rule select,.rule input{
+    background:#fff;
+    border:#ccc solid 1px;
+}

@@ -1,0 +1,40 @@
+<include file="Public:header"/>
+<eq name="everyModelCss" value="1">
+    <load href="__MPUBLIC__/Css/{$Think.controller_name|strtolower}Detail.css"/>
+</eq>
+<eq name="everyModelJs" value="1">
+    <load href="__MPUBLIC__/Js/model/{$Think.controller_name|strtolower}Detail.js"/>
+</eq>
+    <div class="wrap">
+        <div class="notice_detail c_left marT20">
+            <div class="location">
+                <label></label>
+                <a href="{$info|getUrlAddress=###, 'index', 'index'}">首页</a>/
+                <a href="javascript:void(0);">公告</a>/
+                <a href="{$info|getUrlAddress=###, 'search', 'notice'}">列表</a>/
+                <a href="javascript:void(0);">正文</a>
+            </div>
+            <div class="detail">
+                <h3 class="d_title">{$vo['no_title']}</h3>
+                <p class="infor">上传：{$vo['me_nickname']} 时间：{$vo['no_starttime']}</p>
+                <p>{$vo['no_content']}</p>
+            </div>
+        </div>
+        <div class="search_notice c_right marT20">
+            <form class="d_search" action="{$search_keywords_link}" method="post">
+                <input type="text" value="搜索..." />
+                <input class="mySubmit" type="button" />
+            </form>
+            <div class="notice item marT20">
+                <h3 class="c_title">
+                    <span>公告</span>
+                    <label>Notice</label>
+                </h3>
+                <volist name="noticeList['list']" id="no_info">
+                    <a class="ellipsis" href="{$no_info|getUrlAddress=###, 'detail', 'notice'}"><label></label>{$no_info.no_title|getShortTitle=###,20}</a>
+                </volist>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+<include file="Public:footer"/>

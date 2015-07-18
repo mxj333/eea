@@ -1,0 +1,220 @@
+<include file="Public:header"/>
+<load href="/Public/Css/rating_simple.css"/>
+<load href="/Public/Js/rating_simple.js"/>
+<eq name="everyModelCss" value="1">
+    <load href="__MPUBLIC__/Css/{$Think.controller_name|strtolower}Detail.css"/>
+</eq>
+<eq name="everyModelJs" value="1">
+    <load href="__MPUBLIC__/Js/model/{$Think.controller_name|strtolower}Detail.js"/>
+</eq>
+    <div class="location">
+        您的位置: 
+        <a href="{$info|getUrlAddress=###, 'index', 'index'}">首页 </a>
+        >>
+        <a href="{$info|getUrlAddress=###, 'search', 'app'}">应用</a>
+        >> 应用详情
+    </div>
+    <div class="app">
+        <div class="app_item">
+            <img src="{$vo.a_logo}" width="80" height="80" border="0" alt="{$vo.a_title}" title="{$vo.a_title}"/>
+            <div class="item_detail">
+                <p class="name">
+                    {$vo.ac_title}
+                    <a href="javascript:void(0);"><span></span>举报</a>
+                </p>
+                <p class="praise">
+                    <span class="star">
+                        <for start="0" end="$vo['score']">
+                            <img src="__MPUBLIC__/Images/sth.gif">
+                        </for>
+                        <for start="0" end="5-$vo['score']">
+                            <img src="__MPUBLIC__/Images/nst.gif">
+                        </for>
+                        <span>&nbsp;{$vo['score']|intval}分</span>
+                    </span>
+                    <span class="hand">
+                        <span></span>
+                        1564赞
+                    </span>
+                </p>
+                <p class="detail">
+                    <span>大小: {$vo.com_size|intval|byteFormat} 版本: {$vo.a_version} 下载次数: {$vo.a_downloads|intval}</span>
+                    <span>类别： {$vo.ac_title}</span>
+                    <span>语言： {$vo.a_language|default='中文'}</span>
+                </p>
+                <p class="author">
+                    上架时间： {$vo.a_online_time} 作者： {$vo.a_author}
+                </p>
+            </div>
+        </div>
+        <div class="item_btns">
+            <a class="downBtn" href="javascript:void(0);">下载到移动端</a>
+            <a class="addBtn" href="javascript:void(0);">添加我的应用</a>
+            <div class="qrCode">
+                <if condition="$vo['a_code_logo']">
+                    <img src="{$vo.a_code_logo}" width="80" height="80" border="0" alt="code" />
+                    用手机扫二维码
+                </if>
+            </div>
+        </div>
+    </div>
+    <div class="appPics marT20">
+        <p class="app_title">应用截图</p>
+        <div class="pic">
+            <ul class="list">
+                <volist name="vo['pic']" id="pic_info">
+                    <li>
+                        <img src="{$Think.config.uploads_root_path|substr=1}{$Think.config.app_pic_path}{$pic_info.af_savepath}/{$pic_info.af_id}_b.{$pic_info.af_ext}" width="180" height="180" border="0" alt="{$pic_info.af_title}" title="{$pic_info.af_title}" />
+                    </li>
+                </volist>
+            </ul>
+        </div>
+    </div>
+    <div class="appDetail marT20">
+        <p class="app_title">应用详细</p>
+        <div class="show">
+            <p>{$vo.a_description}</p>
+        </div>
+        <div class="flex">
+            <label>展开</label>
+            <span></span>
+        </div>
+    </div>
+    <div class="appComment marT20">
+        <p class="app_title">应用评论</p>
+        <form action="#" method="post">
+            <div class="score">
+                <label>评分：</label>
+                <input class="rating_simple" type="hidden" value="4">
+            </div>
+            <div class="inputBox">
+                <div class="headPic">
+                    <img src="__MPUBLIC__/Tmp/rate_head3.jpg" width="60" height="60" border="0" alt="headPic" />
+                </div>
+                <textarea></textarea>
+            </div>
+            <div class="Publish">
+                <label>文明上网理性发言</label>
+                <input type="button" name="Publish" value="发表" />
+            </div>
+        </form>
+        <ul class="commentList">
+            <li>
+                <a href="javascript:void(0);">
+                    <img src="__MPUBLIC__/Tmp/ucenter4.png" width="60" height="60" border="0" alt="user" />
+                </a>
+                <div class="comment_detail">
+                    <p class="commentInfor">
+                        <a href="javascript:void(0);">希望在先</a>
+                        <span class="star">
+                            <img src="__MPUBLIC__/Images/star1.png">
+                            <img src="__MPUBLIC__/Images/star1.png">
+                            <img src="__MPUBLIC__/Images/star1.png">
+                            <img src="__MPUBLIC__/Images/star1.png">
+                            <img src="__MPUBLIC__/Images/star2.png">
+                        </span>
+                        <span>4个小时前</span>
+                    </p>
+                    <p class="commentMessage">
+                        <label>此地，部队面临着许多现实困难。部队领导连提了三</label>
+                        <a class="repaly" href="javascript:void(0);">
+                            <span></span>
+                            回复
+                        </a>
+                    </p>
+                </div>
+                <div class="clear"></div>
+            </li>
+            <li>
+                <a href="javascript:void(0);">
+                    <img src="__MPUBLIC__/Tmp/ucenter2.png" width="60" height="60" border="0" alt="user" />
+                </a>
+                <div class="comment_detail">
+                    <p class="commentInfor">
+                        <a href="javascript:void(0);">希望在先</a>
+                        <span class="star">
+                            <img src="__MPUBLIC__/Images/star1.png">
+                            <img src="__MPUBLIC__/Images/star1.png">
+                            <img src="__MPUBLIC__/Images/star1.png">
+                            <img src="__MPUBLIC__/Images/star1.png">
+                            <img src="__MPUBLIC__/Images/star2.png">
+                        </span>
+                        <span>4个小时前</span>
+                    </p>
+                    <p class="commentMessage">
+                        <label>此地，部队面临着许多现实困难。部队领导连提了三</label>
+                        <a class="repaly" href="javascript:void(0);">
+                            <span></span>
+                            回复
+                        </a>
+                    </p>
+                </div>
+                <div class="clear"></div>
+            </li>
+            <li>
+                <a href="javascript:void(0);">
+                    <img src="__MPUBLIC__/Tmp/rate_head2.jpg" width="60" height="60" border="0" alt="user" />
+                </a>
+                <div class="comment_detail">
+                    <p class="commentInfor">
+                        <a href="javascript:void(0);">希望在先</a>
+                        <span class="star">
+                            <img src="__MPUBLIC__/Images/star1.png">
+                            <img src="__MPUBLIC__/Images/star1.png">
+                            <img src="__MPUBLIC__/Images/star1.png">
+                            <img src="__MPUBLIC__/Images/star1.png">
+                            <img src="__MPUBLIC__/Images/star2.png">
+                        </span>
+                        <span>4个小时前</span>
+                    </p>
+                    <p class="commentMessage">
+                        <label>此地，部队面临着许多现实困难。部队领导连提了三</label>
+                        <a class="repaly" href="javascript:void(0);">
+                            <span></span>
+                            回复
+                        </a>
+                    </p>
+                </div>
+                <div class="clear"></div>
+                <ul class="replayList">
+                    <li>
+                        <a href="javascript:void(0);">
+                            <img src="__MPUBLIC__/Tmp/rate_head3.jpg" width="60" height="60" border="0" alt="user" />
+                        </a>
+                        <div class="comment_detail">
+                            <p class="commentInfor">
+                                <a href="javascript:void(0);">希望在先</a>
+                                <span class="star">
+                                    <img src="__MPUBLIC__/Images/star1.png">
+                                    <img src="__MPUBLIC__/Images/star1.png">
+                                    <img src="__MPUBLIC__/Images/star1.png">
+                                    <img src="__MPUBLIC__/Images/star1.png">
+                                    <img src="__MPUBLIC__/Images/star2.png">
+                                </span>
+                                <span>4个小时前</span>
+                            </p>
+                            <p class="commentMessage">
+                                <label>此地，部队面临着许多现实困难。部队领导连提了三</label>
+                                <a class="repaly" href="javascript:void(0);">
+                                    <span></span>
+                                    回复
+                                </a>
+                            </p>
+                        </div>
+                        <div class="clear"></div>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <div class="pageBtn">
+            <a href="javascript:void(0);">下一页</a>
+            <a class="on" href="javascript:void(0);">1</a>
+            <a href="javascript:void(0);">2</a>
+            <a href="javascript:void(0);">3</a>
+            <a href="javascript:void(0);">4</a>
+            <a href="javascript:void(0);">5</a>
+            <a href="javascript:void(0);">下一页</a>
+            <a href="javascript:void(0);">下5页</a>
+        </div>
+    </div>
+<include file="Public:footer"/>

@@ -1,0 +1,114 @@
+.appManagements{
+    height:auto;
+}
+.appManagements a{
+    color:#333;
+    font-family:"Microsoft YaHei";
+}
+.nav{
+    border-bottom:#eee solid 1px;
+    line-height:39px;
+    font-size:14px;
+    height:39px;
+}
+.nav li{
+    display:inline;
+}
+.nav li a{
+    display:block;
+    width:88px;
+    height:35px;
+    float:left;
+    margin-top:2px;
+    line-height:35px;
+    text-align:center;
+    margin-left:2px;
+}
+.nav li a.on{
+    background:#0181e3;
+    color:#fff;
+}
+.app{
+    display:block;
+    float:left;
+    width:92px;
+    height:83px;
+    margin:0px 3px 32px 25px;
+}
+.app img{
+    margin-left:16px;
+    position:relative;
+    z-index:-1;
+}
+.app span{
+    display:block;
+    font-family:"宋体";
+    text-align:center;
+    margin-top:10px;
+}
+.apps .on{
+    /*background:url(../Images/appChecked.png) no-repeat 80% 0%;*/
+}
+.apps > div{
+    margin:10px 10px;
+}
+.funcBtn{
+    float:left;
+}
+.funcBtn button {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    color: #333;
+    font-family: "Microsoft YaHei";
+    height: 30px;
+    margin-right:10px;
+    width: 67px;
+}
+.funcBtn button span {
+    display: block;
+    float: left;
+    height: 15px;
+    margin: 2px 2px 0 6px;
+    width: 15px;
+}
+.funcBtn .save span{
+    background: rgba(0, 0, 0, 0) url("../Images/funcBtns.png") no-repeat scroll -74px 2px;
+}
+.funcBtn .del span{
+    background:url(../Images/funcBtns.png) no-repeat -43px 2px;
+}
+.archives{
+    float:left;
+    margin-right:20px;
+}
+.archives input{
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    height: 28px;
+    margin-left:10px;
+    width: 145px;
+    padding-left: 5px;
+}
+.archives select{
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    height: 28px;
+    margin-left:10px;
+    width: 150px;
+}
+.archives .textarea {
+    float: left;
+    margin: 45px 0;
+}
+.archives .marTitle {
+    float: left;
+    margin: 5px 0 0 20px;
+}
+.archives textarea {
+    border: 1px solid #ccc;
+    height: 100px;
+    padding-left: 5px;
+    resize: none;
+    width: 560px;
+}

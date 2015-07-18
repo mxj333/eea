@@ -1,0 +1,98 @@
+<include file="Public:header"/>
+<include file="Public:left"/>
+<eq name="everyModelCss" value="1">
+    <load href="__MPUBLIC__/Css/{$Think.controller_name|strtolower}.css"/>
+</eq>
+<eq name="everyModelJs" value="1">
+    <load href="__MPUBLIC__/Js/model/{$Think.controller_name|strtolower}.js"/>
+</eq>
+    <div class="category">
+            <a class="school_title" href="javascript:void(0);">
+                <label></label>
+                学校统计
+            </a>
+            <span class="refresh gradient"><label></label>刷新</span>
+        </div>
+        <ul class="total">
+            <li class="userTotal">
+                <a href="javascript:void(0);">
+                    <label></label>
+                    <span>
+                        <label>用户个数<label>
+                        <label>{$total_num.member}<label>
+                    </span>
+                    <img src="__MPUBLIC__/Images/pic4.png" width="70" height="30" border="0" />
+                </a>
+            </li>
+            <li class="resourceTotal">
+                <a href="javascript:void(0);">
+                    <label></label>
+                    <span>
+                        <label>资源个数<label>
+                        <label>{$total_num.resource}<label>
+                    </span>
+                    <img src="__MPUBLIC__/Images/pic2.png" width="70" height="30" border="0" />
+                </a>
+            </li>
+            <li class="appTotal">
+                <a href="javascript:void(0);">
+                    <label></label>
+                    <span>
+                        <label>资讯个数<label>
+                        <label>{$total_num.article}<label>
+                    </span>
+                    <img src="__MPUBLIC__/Images/pic3.png" width="70" height="30" border="0" />
+                </a>
+            </li>
+            <li class="classTotal">
+                <a href="javascript:void(0);">
+                    <label></label>
+                    <span>
+                        <label>班级个数<label>
+                        <label>{$total_num.class}<label>
+                    </span>
+                    <img src="__MPUBLIC__/Images/pic5.png" width="70" height="30" border="0" />
+                </a>
+            </li>
+        </ul>
+        <div class="userSpread pieChart cartogram">
+            <div class="category">
+                <a class="school_title" href="javascript:void(0);">
+                    <label></label>
+                    用户身份统计
+                </a>
+            </div>
+            <div class="chart" id="member">
+            </div>
+        </div>
+        <div class="resource columnChart cartogram">
+            <div class="category">
+                <a class="school_title" href="javascript:void(0);">
+                    <label></label>
+                    资源统计
+                </a>
+            </div>
+            <div class="chart" id="resource">
+            </div>
+        </div>
+        <div class="article columnChart cartogram">
+            <div class="category">
+                <a class="school_title" href="javascript:void(0);">
+                    <label></label>
+                    资讯统计
+                </a>
+            </div>
+            <div class="chart" id="article">
+            </div>
+        </div>
+        <div class="class columnChart cartogram">
+            <div class="category">
+                <a class="school_title" href="javascript:void(0);">
+                    <label></label>
+                    班级统计
+                </a>
+            </div>
+            <div class="chart" id="class">
+            </div>
+        </div>
+<include file="Public:footer"/>

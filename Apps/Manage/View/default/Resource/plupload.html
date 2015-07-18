@@ -1,0 +1,69 @@
+<script type="text/javascript" src="/Public/Js/plupload/plupload.full.min.js"></script>
+<div id="filelist" style="display:none;">浏览器不支持Flash,Silverlight,HTML5</div>
+<div id="container">
+    <a id="pickfiles" href="javascript:;">选择文件</a> 
+    <a id="uploadfiles" href="javascript:;">上传文件</a>
+</div>
+<pre id="console"></pre>
+<script type="text/javascript">
+// Custom example logic
+var uploader = new plupload.Uploader({
+	runtimes : 'html5,flash,silverlight,html4',
+	browse_button : 'pickfiles', // you can pass in id...
+	container: document.getElementById('container'), // ... or DOM Element itself
+	url : CONTROLLER + '/upload/',
+	flash_swf_url : '/Public/Js/plupload/Moxie.swf',
+	silverlight_xap_url : '/Public/Js/plupload/Moxie.xap',
+	max_file_size: '10240mb',
+    chunk_size: '512kb',
+    unique_names : true,
+    multi_selection : false,
+
+	init: {
+		PostInit: function() {
+			document.getElementById('filelist').innerHTML = '';
+
+			document.getElementById('uploadfiles').onclick = function() {
+				uploader.start();
+				return false;
+			};
+		},
+		FilesAdded: function(up, files) {
+            document.getElementById('filelist').innerHTML = '';
+            document.getElementById('filelist').innerHTML = '<div id="' + files[0].id + '">' + files[0].name + ' (' + plupload.formatSize(files[0].size) + ') <b></b></div>';
+            if(uploader.files.length>1){ // 最多上传1张图
+                uploader.files.splice(0, 1);
+            }
+            $('input[name=rf_title]').val(files[0].name + ' (' + plupload.formatSize(files[0].size) + ')');
+            $('input[name=rf_progress_bar]').val('0%');
+            $('input[name=rf_id]').val('');
+            $('input[name=rt_id]').val('');
+            $('input[name=res_transform_status]').val('');
+		},
+		UploadProgress: function(up, file) {
+			document.getElementById(file.id).getElementsByTagName('b')[0].innerHTML = '<span>' + file.percent + "%</span>";
+            $('input[name=rf_progress_bar]').val(file.percent + '%');
+		},
+        //文件上传完成后动作，每上传完一个文件均会执行
+        FileUploaded: function(up, file, info){
+            $('input[name=rf_id]').val('0');
+            $('input[name=rt_id]').val('0');
+            $('input[name=res_transform_status]').val('0');
+            $('input[name=rf_title]').val('');
+
+            var res = JSON.parse(info.response);
+            if (res.result) {
+                $('input[name=rf_id]').val(res.id);
+                $('input[name=rt_id]').val(res.rt_id);
+                $('input[name=res_transform_status]').val(res.transform_status);
+                $('input[name=rf_title]').val(file.name + ' (' + plupload.formatSize(file.size) + ')');
+            }
+            
+        },
+		Error: function(up, err) {
+			document.getElementById('console').innerHTML += "\nError #" + err.code + ": " + err.message;
+		}
+	}
+});
+uploader.init();
+</script>
